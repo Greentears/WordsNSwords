@@ -17,6 +17,8 @@ writeFileSync(join(dist, "styles.css"), (await transform(css, { loader: "css", m
 cpSync(join(root, "public"), dist, { recursive: true });
 const users = join(root, "..", "users");
 if (existsSync(users)) cpSync(users, join(dist, "users"), { recursive: true });
+const languages = join(root, "..", "languages");
+if (existsSync(languages)) cpSync(languages, join(dist, "languages"), { recursive: true });
 await makeIcons(join(dist, "icons"));
 
 const walk = (d) => readdirSync(d).flatMap((f) => (statSync(join(d, f)).isDirectory() ? walk(join(d, f)) : [join(d, f)]));

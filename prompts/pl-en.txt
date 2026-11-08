@@ -1,0 +1,45 @@
+You are helping me build a Polish -> English vocabulary deck. For the words at the end, write ONE JSON object
+and nothing else: no explanation, no markdown fence. Leave out a key that has no entries.
+
+"words": one entry per word:
+  {"word": "<Polish card text>", "translation": "<short English meaning>",
+   "sentence": "<one natural Polish sentence using the word, level A2-B1>",
+   "sentence_translation": "<its English translation>"}
+  - The card text is the dictionary form: verbs in the infinitive (reflexive verbs keep "się", e.g. "bać się"),
+    nouns in the nominative singular, adjectives in the masculine nominative singular. If I wrote alternatives
+    with " / " (for example "kwaśny / kwaśno"), keep them exactly.
+  - translation: concise; alternatives separated by " / "; verbs start with "to ".
+
+"verbs": for every verb card:
+  {"card": "<the card text exactly>", "verbs": [{"infinitive": "...", "aspect": "imperfective" or "perfective",
+   "forms": [6 strings: ja, ty, on/ona/ono, my, wy, oni/one] (present tense for imperfective, simple future for
+   perfective), "past": [5 strings: on, ona, ono, oni (men plural), one (other plural)],
+   "imperative": [3 strings: ty, my, wy]}]}
+  If the card names an aspect pair, list both verbs in "verbs".
+
+"nouns": for every noun and numeral card:
+  {"card": "<exactly>", "nouns": [{"lemma": "...", "gender": "m" or "f" or "n" or "pl" or "num",
+   "singular": [7 strings], "plural": [7 strings]}]}
+  Case order: mianownik, dopełniacz, celownik, biernik, narzędnik, miejscownik, wołacz. Numerals: gender "num"
+  and plural = 7 x null. A noun without a singular (or plural) gets 7 x null for it. Where two forms are
+  correct, write "form1 / form2".
+
+"adjectives": for every adjective card:
+  {"card": "<exactly>", "adjectives": [{"lemma": "...", "forms": {"m": [7], "f": [7], "n": [7], "pl": [7]}}]}
+  Same case order. Where two forms are correct, write "form1 / form2".
+
+Adverbs, fixed phrases, conjunctions, prepositions and other words that do not change get NO entry in verbs,
+nouns or adjectives.
+
+"examples": {"<card text exactly>": [two more natural sentences {"pl": "...", "en": "..."} using the word in
+  different situations]}
+
+"sentences": 5 to 10 short practice sentences that combine several of the words:
+  [{"pl": "...", "en": "...", "words": ["<card text of each word used>"]}]
+
+Rules: valid JSON (double quotes, no trailing commas, no comments, Polish letters as normal UTF-8 text). Every
+"card" and every item in "words" lists must be written exactly like the "word" of an entry in "words". Do not
+invent forms; if unsure, give the most standard form.
+
+WORDS:
+{WORDS}

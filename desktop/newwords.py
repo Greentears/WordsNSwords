@@ -178,16 +178,23 @@ def merge(folder: str | Path, data: dict) -> dict[str, int]:
     return added
 
 
-def check_and_merge(folder: str | Path, text: str) -> tuple[list[str], dict[str, int]]:
-    """Parse the AI's answer (it may be wrapped in a ```json fence), validate it, merge it if it is fine."""
+def parse_answer(text: str) -> tuple[Any, str | None]:
+    """Parse the AI's answer (it may be wrapped in a ```json fence). Returns (data, error)."""
     text = text.strip()
     if text.startswith("```"):
         text = text.split("\n", 1)[1] if "\n" in text else ""
         text = text.rsplit("```", 1)[0]
     try:
-        data = json.loads(text)
+        return json.loads(text), None
     except ValueError as exc:
-        return [f"The answer is not valid JSON: {exc}"], {}
+        return None, f"The answer is not valid JSON: {exc}"
+
+
+def check_and_merge(folder: str | Path, text: str) -> tuple[list[str], dict[str, int]]:
+    """Parse the AI's answer, validate it, merge it if it is fine."""
+    data, error = parse_answer(text)
+    if error:
+        return [error], {}
     existing = {w["word"] for w in _read(Path(folder) / "words.json", [])}
     errors = validate(data, existing)
     return (errors, {}) if errors else ([], merge(folder, data))

@@ -303,3 +303,9 @@ ul.plain { list-style: none; margin: 0; padding: 0; display: flex; flex-directio
 
 .welcome { display: flex; flex-direction: column; gap: 14px; padding: max(32px, env(safe-area-inset-top)) 20px 24px; max-width: 420px; margin: 0 auto; }
 .welcome h1 { font-size: 30px; margin: 0; }
+
+/* Add words */
+textarea.field { width: 100%; min-height: 96px; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); font: inherit; font-size: 16px; color: inherit; resize: vertical; }
+.aw-result { display: flex; flex-direction: column; gap: 8px; }
+.aw-bad { color: var(--bad); font-weight: 600; margin: 0; }
+.aw-ok { color: var(--ok, var(--accent)); font-weight: 600; margin: 0; }

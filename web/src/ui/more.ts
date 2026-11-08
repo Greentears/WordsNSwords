@@ -6,6 +6,7 @@ import { DEFAULT_SETTINGS, type Settings } from "../state";
 import { kvClearAll } from "../store";
 import type { Shell } from "./shell";
 import { seg, toggleRow } from "./shell";
+import { addWordsSheet } from "./addwords";
 
 const fmtDate = (t: number | null) => (t ? new Date(t).toLocaleString(undefined, { dateStyle: "medium", timeStyle: "short" }) : "never");
 
@@ -105,7 +106,8 @@ export function moreScreen(shell: Shell): HTMLElement {
           if (!r.ok) { shell.toast(`No word list for "${app.settings.user}" in the repository (or no connection).`); return; }
           shell.toast(r.added || r.updated ? `Added ${r.added}, updated ${r.updated}. Your progress is kept.` : "Your words are up to date.");
           shell.refreshBadges(); render();
-        } }, "Update words from the repository"))),
+        } }, "Update words from the repository")),
+        h("div", { class: "row" }, h("button", { class: "btn", style: { flex: "1" }, onclick: () => addWordsSheet(shell) }, "Add words"))),
       h("p", { class: "section-title" }, "Appearance"),
       h("div", { class: "group" }, h("div", { class: "row" }, seg<Settings["theme"]>([["system", "System"], ["light", "Light"], ["dark", "Dark"]], app.settings.theme, (v) => { app.settings.theme = v; app.saveSettings(); }))),
 

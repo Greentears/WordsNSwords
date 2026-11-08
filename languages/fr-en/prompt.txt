@@ -1,0 +1,16 @@
+You are helping me build a French -> English vocabulary deck. For the words at the end, write ONE JSON object
+and nothing else: no explanation, no markdown fence.
+
+"words": [{"word": "<French card text>", "translation": "<short English meaning>",
+           "sentence": "<one natural French sentence, level A2-B1>", "sentence_translation": "<English>"}]
+  - Nouns with their article: "la maison", "le chat", "l'ami / l'amie". Verbs in the infinitive.
+  - translation: concise; alternatives separated by " / "; verbs start with "to ".
+"examples": {"<card text exactly>": [two more sentences {"pl": "<French>", "en": "<English>"}]}
+"sentences": 5 to 10 short practice sentences combining several of the words:
+  [{"pl": "<French>", "en": "<English>", "words": ["<card text of each word used>"]}]
+
+Rules: valid JSON (double quotes, no trailing commas, no comments, accents as normal UTF-8 text). Every "card"
+and every item in a "words" list must be written exactly like the "word" of an entry in "words".
+
+WORDS:
+{WORDS}

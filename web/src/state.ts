@@ -8,6 +8,7 @@ import {
 import { GameManager, type Repository } from "./dungeon";
 import { kvGet, kvSet } from "./store";
 import { mergeWords } from "./core/backup";
+import { checkAndMerge, emptyDeck, merge as mergeNewWords, type Counts, type DeckData, type Json } from "./core/newwords";
 
 export interface Settings { theme: "system" | "light" | "dark"; englishFirst: boolean; showExamples: boolean; showGrammar: boolean; user: string }
 export const DEFAULT_SETTINGS: Settings = { theme: "system", englishFirst: false, showExamples: true, showGrammar: true, user: "" };
@@ -39,6 +40,12 @@ export class App {
   source = "";
   /** The dungeon save (same schema as the desktop dungeon_progress.json); stays on this phone. */
   dungeonSave: unknown = null;
+  /** Answers added with "Add words" on this phone (checked and merged); replayed over the repo tables. */
+  additions: Json[] = [];
+  /** The part of `additions` that has not been sent for review yet. */
+  unsent: Json[] = [];
+  /** The tables exactly as the site delivers them (without the additions). */
+  private repoTables: DeckData = emptyDeck();
   private gameInstance: GameManager | null = null;
   private dungeonRepo: Repository = {
     load: () => this.dungeonSave,
@@ -77,13 +84,52 @@ export class App {
 
   private async loadTables(base: string): Promise<void> {
     const [verbs, nouns, adjs, ex, sents] = await Promise.all(["verbs", "nouns", "adjectives", "examples", "sentences"].map((n) => this.fetchJson(`${base}/${n}.json`)));
-    this.conj = loadConjugations(verbs);
-    this.decl = loadDeclensions(nouns);
-    this.adj = loadAdjectives(adjs);
-    this.examples = loadExamples(ex);
-    try { this.sentences = loadSentences(sents); } catch { this.sentences = []; }
+    const list = (v: unknown) => (Array.isArray(v) ? (v as Json[]) : []);
+    this.repoTables = {
+      words: [], verbs: list(verbs), nouns: list(nouns), adjectives: list(adjs),
+      examples: ex && typeof ex === "object" && !Array.isArray(ex) ? (ex as DeckData["examples"]) : {},
+      sentences: list(sents),
+    };
+    this.applyTables();
+  }
+
+  private saveAdditions(): void {
+    const adds = JSON.parse(JSON.stringify(this.additions)), pend = JSON.parse(JSON.stringify(this.unsent));
+    this.chain(async () => { await kvSet(this.ns("additions"), adds); await kvSet(this.ns("pending"), pend); });
+  }
+
+  /** Forget what was sent for review (the cards stay on this phone). */
+  clearPending(): void { this.unsent = []; this.saveAdditions(); }
+
+  /** Repo tables + the additions made on this phone. */
+  private applyTables(): void {
+    let t = this.repoTables;
+    for (const a of this.additions) t = mergeNewWords(t, a).deck;
+    this.conj = loadConjugations(t.verbs.length ? t.verbs : null);
+    this.decl = loadDeclensions(t.nouns.length ? t.nouns : null);
+    this.adj = loadAdjectives(t.adjectives.length ? t.adjectives : null);
+    this.examples = loadExamples(t.examples);
+    try { this.sentences = loadSentences(t.sentences); } catch { this.sentences = []; }
     this.forms = knownForms(this.conj, this.decl, this.adj);
     this.gameInstance = null;
+  }
+
+  /** Check an AI answer and, if it is fine, add the new cards and tables on this phone. */
+  async addWords(text: string): Promise<{ errors: string[] } | { errors: []; counts: Counts }> {
+    const current: DeckData = { ...this.repoTables, words: this.deck.words.map((w) => wordToJson(w)) };
+    let t = current;
+    for (const a of this.additions) t = mergeNewWords(t, a).deck;
+    const r = checkAndMerge({ ...t, words: current.words }, text);
+    if (r.errors.length || !r.data || !r.counts) return { errors: r.errors };
+    const have = new Set(this.deck.words.map((w) => w.word));
+    const freshJson = r.deck!.words.filter((w) => !have.has(w.word as string));
+    const fresh = freshJson.length ? parseWords(freshJson) : [];
+    this.additions = [...this.additions, r.data];
+    this.unsent = [...this.unsent, r.data];
+    this.saveAdditions();
+    this.applyTables();
+    this.replaceWords([...this.deck.words, ...fresh]);
+    return { errors: [], counts: r.counts };
   }
 
   /**
@@ -125,6 +171,8 @@ export class App {
     this.stats = (await kvGet<Stats>(this.ns("stats"))) ?? {};
     this.meta = { ...this.meta, ...((await kvGet<Meta>(this.ns("meta"))) ?? {}) };
     this.dungeonSave = (await kvGet<unknown>(this.ns("dungeon"))) ?? null;
+    this.additions = (await kvGet<Json[]>(this.ns("additions"))) ?? [];
+    this.unsent = (await kvGet<Json[]>(this.ns("pending"))) ?? [];
     await this.loadTables(base);
     return "ok";
   }

@@ -24,6 +24,21 @@ local/                   your progress on THIS computer (levels, dungeon save). 
 
 ## Adding words with an AI
 
+> **In the apps:** phone → More → *Add words*; PC → File → *Add words…*. Type the words, copy the prompt (built from
+> `languages/<deck>/prompt.txt`, the same file the blocks below show), paste the AI's answer and press *Check and add*.
+> Problems are listed and can be copied back to the AI. The prompt blocks below are generated:
+> edit `languages/<deck>/prompt.txt`, then run `python tools/sync_readme_prompts.py`.
+
+**Send for review (pull request).** After *Check and add*, a *Send for review* button appears. It opens a pull request
+on GitHub with your new cards and tables, so you can look at them and merge. Anyone without a token can use
+*Copy what I added instead* and send you the text.
+- The token is typed into the app once and stays on that device only (phone: private app storage; PC:
+  `local/github_token.txt`, which git ignores). It is never in the code, the repository, the published site or a backup.
+- Make a fine-grained token at GitHub -> Settings -> Developer settings -> Personal access tokens: only the
+  `WordsNSwords` repository, an expiry date, permissions **Contents: read & write** and **Pull requests: read & write**.
+- If the token is lost or leaked, delete it on GitHub; nothing else needs to change.
+
+
 The cards, the sentences and the grammar tables are JSON files in `users/<name>/<deck>/`. An AI chat (any
 assistant) can write them for you if you give it the format. The **tables depend on the language**: Polish has
 conjugation and seven-case declension tables; French needs other tables, which the apps don't show yet.
@@ -40,6 +55,7 @@ conjugation and seven-case declension tables; French needs other tables, which t
 
 ### Prompt for a Polish -> English deck (`pl-en`)
 
+<!-- prompt:pl-en -->
 ````text
 You are helping me build a Polish -> English vocabulary deck. For the words at the end, write ONE JSON object
 and nothing else: no explanation, no markdown fence. Leave out a key that has no entries.
@@ -89,6 +105,7 @@ WORDS:
 - biletomat
 - kwaśny / kwaśno
 ````
+<!-- /prompt:pl-en -->
 
 ### Prompt for a French -> English deck (`fr-en`)
 
@@ -96,6 +113,7 @@ French has no tables in the apps yet, so ask only for cards, examples and practi
 `examples` and `sentences` are still called `pl` and `en` (they mean "the language you learn" and "English");
 that will be renamed when French is added to the apps.
 
+<!-- prompt:fr-en -->
 ````text
 You are helping me build a French -> English vocabulary deck. For the words at the end, write ONE JSON object
 and nothing else: no explanation, no markdown fence.
@@ -115,6 +133,7 @@ WORDS:
 - la maison
 - manger
 ````
+<!-- /prompt:fr-en -->
 
 ## Publishing the phone app (GitHub Pages)
 

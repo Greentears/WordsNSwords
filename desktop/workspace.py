@@ -32,6 +32,10 @@ class Workspace:
     deck: str = DEFAULT_DECK
 
     @property
+    def slug_name(self) -> str:
+        return slug(self.user)
+
+    @property
     def content_dir(self) -> Path:
         return self.root / "users" / slug(self.user) / self.deck
 

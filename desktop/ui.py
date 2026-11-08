@@ -322,6 +322,10 @@ class FlashcardWindow(QMainWindow):
 
         file_menu.addSeparator()
 
+        add_words_action = QAction("&Add words…", self)
+        add_words_action.triggered.connect(self.add_words)
+        file_menu.addAction(add_words_action)
+
         export_action = QAction("&Export backup…", self)
         export_action.triggered.connect(self.export_backup)
         file_menu.addAction(export_action)
@@ -576,6 +580,16 @@ class FlashcardWindow(QMainWindow):
             self, "Backup imported",
             f"{result['updated']} cards updated, {result['unchanged']} unchanged, "
             f"{result['skipped']} not in your word list.{note}")
+
+    def add_words(self):
+        if not self.workspace:
+            QMessageBox.information(self, "Add words", "Adding words needs the WordsNSwords folder (users/<name>/…).")
+            return
+        from addwords_ui import AddWordsDialog
+        dialog = AddWordsDialog(self.workspace, self)
+        dialog.exec()
+        if dialog.changed:
+            self._load_file(self.json_path)
 
     def open_json(self):
         path, _ = QFileDialog.getOpenFileName(

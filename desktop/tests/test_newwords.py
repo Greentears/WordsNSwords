@@ -83,3 +83,16 @@ class MergeTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class PromptTests(unittest.TestCase):
+    """The prompts in prompts/ are the single source; the README shows the same text."""
+    ROOT = Path(__file__).resolve().parents[2]
+    SAMPLES = {"pl-en": "- bać się\n- biletomat\n- kwaśny / kwaśno", "fr-en": "- la maison\n- manger"}
+
+    def test_readme_shows_the_prompt_files(self):
+        readme = (self.ROOT / "README.md").read_text(encoding="utf-8")
+        for deck, sample in self.SAMPLES.items():
+            text = (self.ROOT / "prompts" / f"{deck}.txt").read_text(encoding="utf-8")
+            self.assertEqual(text.count("{WORDS}"), 1, deck)
+            self.assertIn(text.replace("{WORDS}", sample).rstrip(), readme, deck)
