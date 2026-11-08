@@ -1,0 +1,2694 @@
+[
+  {
+    "card": "bać się",
+    "verbs": [
+      {
+        "infinitive": "bać się",
+        "aspect": "imperfective",
+        "forms": [
+          "boję się",
+          "boisz się",
+          "boi się",
+          "boimy się",
+          "boicie się",
+          "boją się"
+        ],
+        "past": [
+          "bał się",
+          "bała się",
+          "bało się",
+          "bali się",
+          "bały się"
+        ],
+        "imperative": [
+          "bój się",
+          "bójmy się",
+          "bójcie się"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "denerwować się",
+    "verbs": [
+      {
+        "infinitive": "denerwować się",
+        "aspect": "imperfective",
+        "forms": [
+          "denerwuję się",
+          "denerwujesz się",
+          "denerwuje się",
+          "denerwujemy się",
+          "denerwujecie się",
+          "denerwują się"
+        ],
+        "past": [
+          "denerwował się",
+          "denerwowała się",
+          "denerwowało się",
+          "denerwowali się",
+          "denerwowały się"
+        ],
+        "imperative": [
+          "denerwuj się",
+          "denerwujmy się",
+          "denerwujcie się"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "dokończyć",
+    "verbs": [
+      {
+        "infinitive": "dokończyć",
+        "aspect": "perfective",
+        "forms": [
+          "dokończę",
+          "dokończysz",
+          "dokończy",
+          "dokończymy",
+          "dokończycie",
+          "dokończą"
+        ],
+        "past": [
+          "dokończył",
+          "dokończyła",
+          "dokończyło",
+          "dokończyli",
+          "dokończyły"
+        ],
+        "imperative": [
+          "dokończ",
+          "dokończmy",
+          "dokończcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "działać",
+    "verbs": [
+      {
+        "infinitive": "działać",
+        "aspect": "imperfective",
+        "forms": [
+          "działam",
+          "działasz",
+          "działa",
+          "działamy",
+          "działacie",
+          "działają"
+        ],
+        "past": [
+          "działał",
+          "działała",
+          "działało",
+          "działali",
+          "działały"
+        ],
+        "imperative": [
+          "działaj",
+          "działajmy",
+          "działajcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "gotować",
+    "verbs": [
+      {
+        "infinitive": "gotować",
+        "aspect": "imperfective",
+        "forms": [
+          "gotuję",
+          "gotujesz",
+          "gotuje",
+          "gotujemy",
+          "gotujecie",
+          "gotują"
+        ],
+        "past": [
+          "gotował",
+          "gotowała",
+          "gotowało",
+          "gotowali",
+          "gotowały"
+        ],
+        "imperative": [
+          "gotuj",
+          "gotujmy",
+          "gotujcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "robić",
+    "verbs": [
+      {
+        "infinitive": "robić",
+        "aspect": "imperfective",
+        "forms": [
+          "robię",
+          "robisz",
+          "robi",
+          "robimy",
+          "robicie",
+          "robią"
+        ],
+        "past": [
+          "robił",
+          "robiła",
+          "robiło",
+          "robili",
+          "robiły"
+        ],
+        "imperative": [
+          "rób",
+          "róbmy",
+          "róbcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "kroić",
+    "verbs": [
+      {
+        "infinitive": "kroić",
+        "aspect": "imperfective",
+        "forms": [
+          "kroję",
+          "kroisz",
+          "kroi",
+          "kroimy",
+          "kroicie",
+          "kroją"
+        ],
+        "past": [
+          "kroił",
+          "kroiła",
+          "kroiło",
+          "kroili",
+          "kroiły"
+        ],
+        "imperative": [
+          "krój",
+          "krójmy",
+          "krójcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "mijać",
+    "verbs": [
+      {
+        "infinitive": "mijać",
+        "aspect": "imperfective",
+        "forms": [
+          "mijam",
+          "mijasz",
+          "mija",
+          "mijamy",
+          "mijacie",
+          "mijają"
+        ],
+        "past": [
+          "mijał",
+          "mijała",
+          "mijało",
+          "mijali",
+          "mijały"
+        ],
+        "imperative": [
+          "mijaj",
+          "mijajmy",
+          "mijajcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "mieszać",
+    "verbs": [
+      {
+        "infinitive": "mieszać",
+        "aspect": "imperfective",
+        "forms": [
+          "mieszam",
+          "mieszasz",
+          "miesza",
+          "mieszamy",
+          "mieszacie",
+          "mieszają"
+        ],
+        "past": [
+          "mieszał",
+          "mieszała",
+          "mieszało",
+          "mieszali",
+          "mieszały"
+        ],
+        "imperative": [
+          "mieszaj",
+          "mieszajmy",
+          "mieszajcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "nadejdzie",
+    "verbs": [
+      {
+        "infinitive": "nadejść",
+        "aspect": "perfective",
+        "forms": [
+          "nadejdę",
+          "nadejdziesz",
+          "nadejdzie",
+          "nadejdziemy",
+          "nadejdziecie",
+          "nadejdą"
+        ],
+        "past": [
+          "nadszedł",
+          "nadeszła",
+          "nadeszło",
+          "nadeszli",
+          "nadeszły"
+        ],
+        "imperative": [
+          "nadejdź",
+          "nadejdźmy",
+          "nadejdźcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "odważyć się",
+    "verbs": [
+      {
+        "infinitive": "odważyć się",
+        "aspect": "perfective",
+        "forms": [
+          "odważę się",
+          "odważysz się",
+          "odważy się",
+          "odważymy się",
+          "odważycie się",
+          "odważą się"
+        ],
+        "past": [
+          "odważył się",
+          "odważyła się",
+          "odważyło się",
+          "odważyli się",
+          "odważyły się"
+        ],
+        "imperative": [
+          "odważ się",
+          "odważmy się",
+          "odważcie się"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "oświadczyć się",
+    "verbs": [
+      {
+        "infinitive": "oświadczyć się",
+        "aspect": "perfective",
+        "forms": [
+          "oświadczę się",
+          "oświadczysz się",
+          "oświadczy się",
+          "oświadczymy się",
+          "oświadczycie się",
+          "oświadczą się"
+        ],
+        "past": [
+          "oświadczył się",
+          "oświadczyła się",
+          "oświadczyło się",
+          "oświadczyli się",
+          "oświadczyły się"
+        ],
+        "imperative": [
+          "oświadcz się",
+          "oświadczmy się",
+          "oświadczcie się"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "pachnieć",
+    "verbs": [
+      {
+        "infinitive": "pachnieć",
+        "aspect": "imperfective",
+        "forms": [
+          "pachnę",
+          "pachniesz",
+          "pachnie",
+          "pachniemy",
+          "pachniecie",
+          "pachną"
+        ],
+        "past": [
+          "pachniał",
+          "pachniała",
+          "pachniało",
+          "pachnieli",
+          "pachniały"
+        ],
+        "imperative": [
+          "pachnij",
+          "pachnijmy",
+          "pachnijcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "piec",
+    "verbs": [
+      {
+        "infinitive": "piec",
+        "aspect": "imperfective",
+        "forms": [
+          "piekę",
+          "pieczesz",
+          "piecze",
+          "pieczemy",
+          "pieczecie",
+          "pieką"
+        ],
+        "past": [
+          "piekł",
+          "piekła",
+          "piekło",
+          "piekli",
+          "piekły"
+        ],
+        "imperative": [
+          "piecz",
+          "pieczmy",
+          "pieczcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "pochodzić (z)",
+    "verbs": [
+      {
+        "infinitive": "pochodzić",
+        "aspect": "imperfective",
+        "forms": [
+          "pochodzę",
+          "pochodzisz",
+          "pochodzi",
+          "pochodzimy",
+          "pochodzicie",
+          "pochodzą"
+        ],
+        "past": [
+          "pochodził",
+          "pochodziła",
+          "pochodziło",
+          "pochodzili",
+          "pochodziły"
+        ],
+        "imperative": [
+          "pochodź",
+          "pochodźmy",
+          "pochodźcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "podróżować",
+    "verbs": [
+      {
+        "infinitive": "podróżować",
+        "aspect": "imperfective",
+        "forms": [
+          "podróżuję",
+          "podróżujesz",
+          "podróżuje",
+          "podróżujemy",
+          "podróżujecie",
+          "podróżują"
+        ],
+        "past": [
+          "podróżował",
+          "podróżowała",
+          "podróżowało",
+          "podróżowali",
+          "podróżowały"
+        ],
+        "imperative": [
+          "podróżuj",
+          "podróżujmy",
+          "podróżujcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "pokroić",
+    "verbs": [
+      {
+        "infinitive": "pokroić",
+        "aspect": "perfective",
+        "forms": [
+          "pokroję",
+          "pokroisz",
+          "pokroi",
+          "pokroimy",
+          "pokroicie",
+          "pokroją"
+        ],
+        "past": [
+          "pokroił",
+          "pokroiła",
+          "pokroiło",
+          "pokroili",
+          "pokroiły"
+        ],
+        "imperative": [
+          "pokrój",
+          "pokrójmy",
+          "pokrójcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "polecać",
+    "verbs": [
+      {
+        "infinitive": "polecać",
+        "aspect": "imperfective",
+        "forms": [
+          "polecam",
+          "polecasz",
+          "poleca",
+          "polecamy",
+          "polecacie",
+          "polecają"
+        ],
+        "past": [
+          "polecał",
+          "polecała",
+          "polecało",
+          "polecali",
+          "polecały"
+        ],
+        "imperative": [
+          "polecaj",
+          "polecajmy",
+          "polecajcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "położyć",
+    "verbs": [
+      {
+        "infinitive": "położyć",
+        "aspect": "perfective",
+        "forms": [
+          "położę",
+          "położysz",
+          "położy",
+          "położymy",
+          "położycie",
+          "położą"
+        ],
+        "past": [
+          "położył",
+          "położyła",
+          "położyło",
+          "położyli",
+          "położyły"
+        ],
+        "imperative": [
+          "połóż",
+          "połóżmy",
+          "połóżcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "poznać się",
+    "verbs": [
+      {
+        "infinitive": "poznać się",
+        "aspect": "perfective",
+        "forms": [
+          "poznam się",
+          "poznasz się",
+          "pozna się",
+          "poznamy się",
+          "poznacie się",
+          "poznają się"
+        ],
+        "past": [
+          "poznał się",
+          "poznała się",
+          "poznało się",
+          "poznali się",
+          "poznały się"
+        ],
+        "imperative": [
+          "poznaj się",
+          "poznajmy się",
+          "poznajcie się"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "pożyczyć",
+    "verbs": [
+      {
+        "infinitive": "pożyczyć",
+        "aspect": "perfective",
+        "forms": [
+          "pożyczę",
+          "pożyczysz",
+          "pożyczy",
+          "pożyczymy",
+          "pożyczycie",
+          "pożyczą"
+        ],
+        "past": [
+          "pożyczył",
+          "pożyczyła",
+          "pożyczyło",
+          "pożyczyli",
+          "pożyczyły"
+        ],
+        "imperative": [
+          "pożycz",
+          "pożyczmy",
+          "pożyczcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "pracować jako...",
+    "verbs": [
+      {
+        "infinitive": "pracować",
+        "aspect": "imperfective",
+        "forms": [
+          "pracuję",
+          "pracujesz",
+          "pracuje",
+          "pracujemy",
+          "pracujecie",
+          "pracują"
+        ],
+        "past": [
+          "pracował",
+          "pracowała",
+          "pracowało",
+          "pracowali",
+          "pracowały"
+        ],
+        "imperative": [
+          "pracuj",
+          "pracujmy",
+          "pracujcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "przejść",
+    "verbs": [
+      {
+        "infinitive": "przejść",
+        "aspect": "perfective",
+        "forms": [
+          "przejdę",
+          "przejdziesz",
+          "przejdzie",
+          "przejdziemy",
+          "przejdziecie",
+          "przejdą"
+        ],
+        "past": [
+          "przeszedł",
+          "przeszła",
+          "przeszło",
+          "przeszli",
+          "przeszły"
+        ],
+        "imperative": [
+          "przejdź",
+          "przejdźmy",
+          "przejdźcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "przenosić",
+    "verbs": [
+      {
+        "infinitive": "przenosić",
+        "aspect": "imperfective",
+        "forms": [
+          "przenoszę",
+          "przenosisz",
+          "przenosi",
+          "przenosimy",
+          "przenosicie",
+          "przenoszą"
+        ],
+        "past": [
+          "przenosił",
+          "przenosiła",
+          "przenosiło",
+          "przenosili",
+          "przenosiły"
+        ],
+        "imperative": [
+          "przenoś",
+          "przenośmy",
+          "przenoście"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "przynieść",
+    "verbs": [
+      {
+        "infinitive": "przynieść",
+        "aspect": "perfective",
+        "forms": [
+          "przyniosę",
+          "przyniesiesz",
+          "przyniesie",
+          "przyniesiemy",
+          "przyniesiecie",
+          "przyniosą"
+        ],
+        "past": [
+          "przyniósł",
+          "przyniosła",
+          "przyniosło",
+          "przynieśli",
+          "przyniosły"
+        ],
+        "imperative": [
+          "przynieś",
+          "przynieśmy",
+          "przynieście"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "przebywać",
+    "verbs": [
+      {
+        "infinitive": "przebywać",
+        "aspect": "imperfective",
+        "forms": [
+          "przebywam",
+          "przebywasz",
+          "przebywa",
+          "przebywamy",
+          "przebywacie",
+          "przebywają"
+        ],
+        "past": [
+          "przebywał",
+          "przebywała",
+          "przebywało",
+          "przebywali",
+          "przebywały"
+        ],
+        "imperative": [
+          "przebywaj",
+          "przebywajmy",
+          "przebywajcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "przygotowywać",
+    "verbs": [
+      {
+        "infinitive": "przygotowywać",
+        "aspect": "imperfective",
+        "forms": [
+          "przygotowuję",
+          "przygotowujesz",
+          "przygotowuje",
+          "przygotowujemy",
+          "przygotowujecie",
+          "przygotowują"
+        ],
+        "past": [
+          "przygotowywał",
+          "przygotowywała",
+          "przygotowywało",
+          "przygotowywali",
+          "przygotowywały"
+        ],
+        "imperative": [
+          "przygotowuj",
+          "przygotowujmy",
+          "przygotowujcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "przyciągnąć",
+    "verbs": [
+      {
+        "infinitive": "przyciągnąć",
+        "aspect": "perfective",
+        "forms": [
+          "przyciągnę",
+          "przyciągniesz",
+          "przyciągnie",
+          "przyciągniemy",
+          "przyciągniecie",
+          "przyciągną"
+        ],
+        "past": [
+          "przyciągnął",
+          "przyciągnęła",
+          "przyciągnęło",
+          "przyciągnęli",
+          "przyciągnęły"
+        ],
+        "imperative": [
+          "przyciągnij",
+          "przyciągnijmy",
+          "przyciągnijcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "przyprawiać",
+    "verbs": [
+      {
+        "infinitive": "przyprawiać",
+        "aspect": "imperfective",
+        "forms": [
+          "przyprawiam",
+          "przyprawiasz",
+          "przyprawia",
+          "przyprawiamy",
+          "przyprawiacie",
+          "przyprawiają"
+        ],
+        "past": [
+          "przyprawiał",
+          "przyprawiała",
+          "przyprawiało",
+          "przyprawiali",
+          "przyprawiały"
+        ],
+        "imperative": [
+          "przyprawiaj",
+          "przyprawiajmy",
+          "przyprawiajcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "przytyć",
+    "verbs": [
+      {
+        "infinitive": "przytyć",
+        "aspect": "perfective",
+        "forms": [
+          "przytyję",
+          "przytyjesz",
+          "przytyje",
+          "przytyjemy",
+          "przytyjecie",
+          "przytyją"
+        ],
+        "past": [
+          "przytył",
+          "przytyła",
+          "przytyło",
+          "przytyli",
+          "przytyły"
+        ],
+        "imperative": [
+          "przytyj",
+          "przytyjmy",
+          "przytyjcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "siekać",
+    "verbs": [
+      {
+        "infinitive": "siekać",
+        "aspect": "imperfective",
+        "forms": [
+          "siekam",
+          "siekasz",
+          "sieka",
+          "siekamy",
+          "siekacie",
+          "siekają"
+        ],
+        "past": [
+          "siekał",
+          "siekała",
+          "siekało",
+          "siekali",
+          "siekały"
+        ],
+        "imperative": [
+          "siekaj",
+          "siekajmy",
+          "siekajcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "smażyć",
+    "verbs": [
+      {
+        "infinitive": "smażyć",
+        "aspect": "imperfective",
+        "forms": [
+          "smażę",
+          "smażysz",
+          "smaży",
+          "smażymy",
+          "smażycie",
+          "smażą"
+        ],
+        "past": [
+          "smażył",
+          "smażyła",
+          "smażyło",
+          "smażyli",
+          "smażyły"
+        ],
+        "imperative": [
+          "smaż",
+          "smażmy",
+          "smażcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "sprawdzić",
+    "verbs": [
+      {
+        "infinitive": "sprawdzić",
+        "aspect": "perfective",
+        "forms": [
+          "sprawdzę",
+          "sprawdzisz",
+          "sprawdzi",
+          "sprawdzimy",
+          "sprawdzicie",
+          "sprawdzą"
+        ],
+        "past": [
+          "sprawdził",
+          "sprawdziła",
+          "sprawdziło",
+          "sprawdzili",
+          "sprawdziły"
+        ],
+        "imperative": [
+          "sprawdź",
+          "sprawdźmy",
+          "sprawdźcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "tęsknić (za)",
+    "verbs": [
+      {
+        "infinitive": "tęsknić",
+        "aspect": "imperfective",
+        "forms": [
+          "tęsknię",
+          "tęsknisz",
+          "tęskni",
+          "tęsknimy",
+          "tęsknicie",
+          "tęsknią"
+        ],
+        "past": [
+          "tęsknił",
+          "tęskniła",
+          "tęskniło",
+          "tęsknili",
+          "tęskniły"
+        ],
+        "imperative": [
+          "tęsknij",
+          "tęsknijmy",
+          "tęsknijcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "usunąć zapach",
+    "verbs": [
+      {
+        "infinitive": "usunąć",
+        "aspect": "perfective",
+        "forms": [
+          "usunę",
+          "usuniesz",
+          "usunie",
+          "usuniemy",
+          "usuniecie",
+          "usuną"
+        ],
+        "past": [
+          "usunął",
+          "usunęła",
+          "usunęło",
+          "usunęli",
+          "usunęły"
+        ],
+        "imperative": [
+          "usuń",
+          "usuńmy",
+          "usuńcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "uwielbiam",
+    "verbs": [
+      {
+        "infinitive": "uwielbiać",
+        "aspect": "imperfective",
+        "forms": [
+          "uwielbiam",
+          "uwielbiasz",
+          "uwielbia",
+          "uwielbiamy",
+          "uwielbiacie",
+          "uwielbiają"
+        ],
+        "past": [
+          "uwielbiał",
+          "uwielbiała",
+          "uwielbiało",
+          "uwielbiali",
+          "uwielbiały"
+        ],
+        "imperative": [
+          "uwielbiaj",
+          "uwielbiajmy",
+          "uwielbiajcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "wpłacić",
+    "verbs": [
+      {
+        "infinitive": "wpłacić",
+        "aspect": "perfective",
+        "forms": [
+          "wpłacę",
+          "wpłacisz",
+          "wpłaci",
+          "wpłacimy",
+          "wpłacicie",
+          "wpłacą"
+        ],
+        "past": [
+          "wpłacił",
+          "wpłaciła",
+          "wpłaciło",
+          "wpłacili",
+          "wpłaciły"
+        ],
+        "imperative": [
+          "wpłać",
+          "wpłaćmy",
+          "wpłaćcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "wymienić się",
+    "verbs": [
+      {
+        "infinitive": "wymienić się",
+        "aspect": "perfective",
+        "forms": [
+          "wymienię się",
+          "wymienisz się",
+          "wymieni się",
+          "wymienimy się",
+          "wymienicie się",
+          "wymienią się"
+        ],
+        "past": [
+          "wymienił się",
+          "wymieniła się",
+          "wymieniło się",
+          "wymienili się",
+          "wymieniły się"
+        ],
+        "imperative": [
+          "wymień się",
+          "wymieńmy się",
+          "wymieńcie się"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "zaczynać",
+    "verbs": [
+      {
+        "infinitive": "zaczynać",
+        "aspect": "imperfective",
+        "forms": [
+          "zaczynam",
+          "zaczynasz",
+          "zaczyna",
+          "zaczynamy",
+          "zaczynacie",
+          "zaczynają"
+        ],
+        "past": [
+          "zaczynał",
+          "zaczynała",
+          "zaczynało",
+          "zaczynali",
+          "zaczynały"
+        ],
+        "imperative": [
+          "zaczynaj",
+          "zaczynajmy",
+          "zaczynajcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "zadziałać",
+    "verbs": [
+      {
+        "infinitive": "zadziałać",
+        "aspect": "perfective",
+        "forms": [
+          "zadziałam",
+          "zadziałasz",
+          "zadziała",
+          "zadziałamy",
+          "zadziałacie",
+          "zadziałają"
+        ],
+        "past": [
+          "zadziałał",
+          "zadziałała",
+          "zadziałało",
+          "zadziałali",
+          "zadziałały"
+        ],
+        "imperative": [
+          "zadziałaj",
+          "zadziałajmy",
+          "zadziałajcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "zamierzać",
+    "verbs": [
+      {
+        "infinitive": "zamierzać",
+        "aspect": "imperfective",
+        "forms": [
+          "zamierzam",
+          "zamierzasz",
+          "zamierza",
+          "zamierzamy",
+          "zamierzacie",
+          "zamierzają"
+        ],
+        "past": [
+          "zamierzał",
+          "zamierzała",
+          "zamierzało",
+          "zamierzali",
+          "zamierzały"
+        ],
+        "imperative": [
+          "zamierzaj",
+          "zamierzajmy",
+          "zamierzajcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "zapiszesz?",
+    "verbs": [
+      {
+        "infinitive": "zapisać",
+        "aspect": "perfective",
+        "forms": [
+          "zapiszę",
+          "zapiszesz",
+          "zapisze",
+          "zapiszemy",
+          "zapiszecie",
+          "zapiszą"
+        ],
+        "past": [
+          "zapisał",
+          "zapisała",
+          "zapisało",
+          "zapisali",
+          "zapisały"
+        ],
+        "imperative": [
+          "zapisz",
+          "zapiszmy",
+          "zapiszcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "zaręczyć się",
+    "verbs": [
+      {
+        "infinitive": "zaręczyć się",
+        "aspect": "perfective",
+        "forms": [
+          "zaręczę się",
+          "zaręczysz się",
+          "zaręczy się",
+          "zaręczymy się",
+          "zaręczycie się",
+          "zaręczą się"
+        ],
+        "past": [
+          "zaręczył się",
+          "zaręczyła się",
+          "zaręczyło się",
+          "zaręczyli się",
+          "zaręczyły się"
+        ],
+        "imperative": [
+          "zaręcz się",
+          "zaręczmy się",
+          "zaręczcie się"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "zaskoczyć",
+    "verbs": [
+      {
+        "infinitive": "zaskoczyć",
+        "aspect": "perfective",
+        "forms": [
+          "zaskoczę",
+          "zaskoczysz",
+          "zaskoczy",
+          "zaskoczymy",
+          "zaskoczycie",
+          "zaskoczą"
+        ],
+        "past": [
+          "zaskoczył",
+          "zaskoczyła",
+          "zaskoczyło",
+          "zaskoczyli",
+          "zaskoczyły"
+        ],
+        "imperative": [
+          "zaskocz",
+          "zaskoczmy",
+          "zaskoczcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "zawiązać",
+    "verbs": [
+      {
+        "infinitive": "zawiązać",
+        "aspect": "perfective",
+        "forms": [
+          "zawiążę",
+          "zawiążesz",
+          "zawiąże",
+          "zawiążemy",
+          "zawiążecie",
+          "zawiążą"
+        ],
+        "past": [
+          "zawiązał",
+          "zawiązała",
+          "zawiązało",
+          "zawiązali",
+          "zawiązały"
+        ],
+        "imperative": [
+          "zawiąż",
+          "zawiążmy",
+          "zawiążcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "zdobywać punkty",
+    "verbs": [
+      {
+        "infinitive": "zdobywać",
+        "aspect": "imperfective",
+        "forms": [
+          "zdobywam",
+          "zdobywasz",
+          "zdobywa",
+          "zdobywamy",
+          "zdobywacie",
+          "zdobywają"
+        ],
+        "past": [
+          "zdobywał",
+          "zdobywała",
+          "zdobywało",
+          "zdobywali",
+          "zdobywały"
+        ],
+        "imperative": [
+          "zdobywaj",
+          "zdobywajmy",
+          "zdobywajcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "znaleźć",
+    "verbs": [
+      {
+        "infinitive": "znaleźć",
+        "aspect": "perfective",
+        "forms": [
+          "znajdę",
+          "znajdziesz",
+          "znajdzie",
+          "znajdziemy",
+          "znajdziecie",
+          "znajdą"
+        ],
+        "past": [
+          "znalazł",
+          "znalazła",
+          "znalazło",
+          "znaleźli",
+          "znalazły"
+        ],
+        "imperative": [
+          "znajdź",
+          "znajdźmy",
+          "znajdźcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "zostawić",
+    "verbs": [
+      {
+        "infinitive": "zostawić",
+        "aspect": "perfective",
+        "forms": [
+          "zostawię",
+          "zostawisz",
+          "zostawi",
+          "zostawimy",
+          "zostawicie",
+          "zostawią"
+        ],
+        "past": [
+          "zostawił",
+          "zostawiła",
+          "zostawiło",
+          "zostawili",
+          "zostawiły"
+        ],
+        "imperative": [
+          "zostaw",
+          "zostawmy",
+          "zostawcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "przyciągać",
+    "verbs": [
+      {
+        "infinitive": "przyciągać",
+        "aspect": "imperfective",
+        "forms": [
+          "przyciągam",
+          "przyciągasz",
+          "przyciąga",
+          "przyciągamy",
+          "przyciągacie",
+          "przyciągają"
+        ],
+        "past": [
+          "przyciągał",
+          "przyciągała",
+          "przyciągało",
+          "przyciągali",
+          "przyciągały"
+        ],
+        "imperative": [
+          "przyciągaj",
+          "przyciągajmy",
+          "przyciągajcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "weźmie",
+    "verbs": [
+      {
+        "infinitive": "wziąć",
+        "aspect": "perfective",
+        "forms": [
+          "wezmę",
+          "weźmiesz",
+          "weźmie",
+          "weźmiemy",
+          "weźmiecie",
+          "wezmą"
+        ],
+        "past": [
+          "wziął",
+          "wzięła",
+          "wzięło",
+          "wzięli",
+          "wzięły"
+        ],
+        "imperative": [
+          "weź",
+          "weźmy",
+          "weźcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "wzbudzać",
+    "verbs": [
+      {
+        "infinitive": "wzbudzać",
+        "aspect": "imperfective",
+        "forms": [
+          "wzbudzam",
+          "wzbudzasz",
+          "wzbudza",
+          "wzbudzamy",
+          "wzbudzacie",
+          "wzbudzają"
+        ],
+        "past": [
+          "wzbudzał",
+          "wzbudzała",
+          "wzbudzało",
+          "wzbudzali",
+          "wzbudzały"
+        ],
+        "imperative": [
+          "wzbudzaj",
+          "wzbudzajmy",
+          "wzbudzajcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "nagram",
+    "verbs": [
+      {
+        "infinitive": "nagrać",
+        "aspect": "perfective",
+        "forms": [
+          "nagram",
+          "nagrasz",
+          "nagra",
+          "nagramy",
+          "nagracie",
+          "nagrają"
+        ],
+        "past": [
+          "nagrał",
+          "nagrała",
+          "nagrało",
+          "nagrali",
+          "nagrały"
+        ],
+        "imperative": [
+          "nagraj",
+          "nagrajmy",
+          "nagrajcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "przyjdzie",
+    "verbs": [
+      {
+        "infinitive": "przyjść",
+        "aspect": "perfective",
+        "forms": [
+          "przyjdę",
+          "przyjdziesz",
+          "przyjdzie",
+          "przyjdziemy",
+          "przyjdziecie",
+          "przyjdą"
+        ],
+        "past": [
+          "przyszedł",
+          "przyszła",
+          "przyszło",
+          "przyszli",
+          "przyszły"
+        ],
+        "imperative": [
+          "przyjdź",
+          "przyjdźmy",
+          "przyjdźcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "przekonywać",
+    "verbs": [
+      {
+        "infinitive": "przekonywać",
+        "aspect": "imperfective",
+        "forms": [
+          "przekonuję",
+          "przekonujesz",
+          "przekonuje",
+          "przekonujemy",
+          "przekonujecie",
+          "przekonują"
+        ],
+        "past": [
+          "przekonywał",
+          "przekonywała",
+          "przekonywało",
+          "przekonywali",
+          "przekonywały"
+        ],
+        "imperative": [
+          "przekonuj",
+          "przekonujmy",
+          "przekonujcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "polecieć",
+    "verbs": [
+      {
+        "infinitive": "polecieć",
+        "aspect": "perfective",
+        "forms": [
+          "polecę",
+          "polecisz",
+          "poleci",
+          "polecimy",
+          "polecicie",
+          "polecą"
+        ],
+        "past": [
+          "poleciał",
+          "poleciała",
+          "poleciało",
+          "polecieli",
+          "poleciały"
+        ],
+        "imperative": [
+          "poleć",
+          "polećmy",
+          "polećcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "pomagać",
+    "verbs": [
+      {
+        "infinitive": "pomagać",
+        "aspect": "imperfective",
+        "forms": [
+          "pomagam",
+          "pomagasz",
+          "pomaga",
+          "pomagamy",
+          "pomagacie",
+          "pomagają"
+        ],
+        "past": [
+          "pomagał",
+          "pomagała",
+          "pomagało",
+          "pomagali",
+          "pomagały"
+        ],
+        "imperative": [
+          "pomagaj",
+          "pomagajmy",
+          "pomagajcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "dorosnąć",
+    "verbs": [
+      {
+        "infinitive": "dorosnąć",
+        "aspect": "perfective",
+        "forms": [
+          "dorosnę",
+          "dorośniesz",
+          "dorośnie",
+          "dorośniemy",
+          "dorośniecie",
+          "dorosną"
+        ],
+        "past": [
+          "dorósł",
+          "dorosła",
+          "dorosło",
+          "dorośli",
+          "dorosły"
+        ],
+        "imperative": [
+          "dorośnij",
+          "dorośnijmy",
+          "dorośnijcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "zacząć",
+    "verbs": [
+      {
+        "infinitive": "zacząć",
+        "aspect": "perfective",
+        "forms": [
+          "zacznę",
+          "zaczniesz",
+          "zacznie",
+          "zaczniemy",
+          "zaczniecie",
+          "zaczną"
+        ],
+        "past": [
+          "zaczął",
+          "zaczęła",
+          "zaczęło",
+          "zaczęli",
+          "zaczęły"
+        ],
+        "imperative": [
+          "zacznij",
+          "zacznijmy",
+          "zacznijcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "zgadnąć",
+    "verbs": [
+      {
+        "infinitive": "zgadnąć",
+        "aspect": "perfective",
+        "forms": [
+          "zgadnę",
+          "zgadniesz",
+          "zgadnie",
+          "zgadniemy",
+          "zgadniecie",
+          "zgadną"
+        ],
+        "past": [
+          "zgadł",
+          "zgadła",
+          "zgadło",
+          "zgadli",
+          "zgadły"
+        ],
+        "imperative": [
+          "zgadnij",
+          "zgadnijmy",
+          "zgadnijcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "prowadzić",
+    "verbs": [
+      {
+        "infinitive": "prowadzić",
+        "aspect": "imperfective",
+        "forms": [
+          "prowadzę",
+          "prowadzisz",
+          "prowadzi",
+          "prowadzimy",
+          "prowadzicie",
+          "prowadzą"
+        ],
+        "past": [
+          "prowadził",
+          "prowadziła",
+          "prowadziło",
+          "prowadzili",
+          "prowadziły"
+        ],
+        "imperative": [
+          "prowadź",
+          "prowadźmy",
+          "prowadźcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "traktować",
+    "verbs": [
+      {
+        "infinitive": "traktować",
+        "aspect": "imperfective",
+        "forms": [
+          "traktuję",
+          "traktujesz",
+          "traktuje",
+          "traktujemy",
+          "traktujecie",
+          "traktują"
+        ],
+        "past": [
+          "traktował",
+          "traktowała",
+          "traktowało",
+          "traktowali",
+          "traktowały"
+        ],
+        "imperative": [
+          "traktuj",
+          "traktujmy",
+          "traktujcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "oczekiwać",
+    "verbs": [
+      {
+        "infinitive": "oczekiwać",
+        "aspect": "imperfective",
+        "forms": [
+          "oczekuję",
+          "oczekujesz",
+          "oczekuje",
+          "oczekujemy",
+          "oczekujecie",
+          "oczekują"
+        ],
+        "past": [
+          "oczekiwał",
+          "oczekiwała",
+          "oczekiwało",
+          "oczekiwali",
+          "oczekiwały"
+        ],
+        "imperative": [
+          "oczekuj",
+          "oczekujmy",
+          "oczekujcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "nosić",
+    "verbs": [
+      {
+        "infinitive": "nosić",
+        "aspect": "imperfective",
+        "forms": [
+          "noszę",
+          "nosisz",
+          "nosi",
+          "nosimy",
+          "nosicie",
+          "noszą"
+        ],
+        "past": [
+          "nosił",
+          "nosiła",
+          "nosiło",
+          "nosili",
+          "nosiły"
+        ],
+        "imperative": [
+          "noś",
+          "nośmy",
+          "noście"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "przenieść się",
+    "verbs": [
+      {
+        "infinitive": "przenieść się",
+        "aspect": "perfective",
+        "forms": [
+          "przeniosę się",
+          "przeniesiesz się",
+          "przeniesie się",
+          "przeniesiemy się",
+          "przeniesiecie się",
+          "przeniosą się"
+        ],
+        "past": [
+          "przeniósł się",
+          "przeniosła się",
+          "przeniosło się",
+          "przenieśli się",
+          "przeniosły się"
+        ],
+        "imperative": [
+          "przenieś się",
+          "przenieśmy się",
+          "przenieście się"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "poruszyć",
+    "verbs": [
+      {
+        "infinitive": "poruszyć",
+        "aspect": "perfective",
+        "forms": [
+          "poruszę",
+          "poruszysz",
+          "poruszy",
+          "poruszymy",
+          "poruszycie",
+          "poruszą"
+        ],
+        "past": [
+          "poruszył",
+          "poruszyła",
+          "poruszyło",
+          "poruszyli",
+          "poruszyły"
+        ],
+        "imperative": [
+          "porusz",
+          "poruszmy",
+          "poruszcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "zabezpieczyć się",
+    "verbs": [
+      {
+        "infinitive": "zabezpieczyć się",
+        "aspect": "perfective",
+        "forms": [
+          "zabezpieczę się",
+          "zabezpieczysz się",
+          "zabezpieczy się",
+          "zabezpieczymy się",
+          "zabezpieczycie się",
+          "zabezpieczą się"
+        ],
+        "past": [
+          "zabezpieczył się",
+          "zabezpieczyła się",
+          "zabezpieczyło się",
+          "zabezpieczyli się",
+          "zabezpieczyły się"
+        ],
+        "imperative": [
+          "zabezpiecz się",
+          "zabezpieczmy się",
+          "zabezpieczcie się"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "zorientować się",
+    "verbs": [
+      {
+        "infinitive": "zorientować się",
+        "aspect": "perfective",
+        "forms": [
+          "zorientuję się",
+          "zorientujesz się",
+          "zorientuje się",
+          "zorientujemy się",
+          "zorientujecie się",
+          "zorientują się"
+        ],
+        "past": [
+          "zorientował się",
+          "zorientowała się",
+          "zorientowało się",
+          "zorientowali się",
+          "zorientowały się"
+        ],
+        "imperative": [
+          "zorientuj się",
+          "zorientujmy się",
+          "zorientujcie się"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "pozwalać",
+    "verbs": [
+      {
+        "infinitive": "pozwalać",
+        "aspect": "imperfective",
+        "forms": [
+          "pozwalam",
+          "pozwalasz",
+          "pozwala",
+          "pozwalamy",
+          "pozwalacie",
+          "pozwalają"
+        ],
+        "past": [
+          "pozwalał",
+          "pozwalała",
+          "pozwalało",
+          "pozwalali",
+          "pozwalały"
+        ],
+        "imperative": [
+          "pozwalaj",
+          "pozwalajmy",
+          "pozwalajcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "wejść",
+    "verbs": [
+      {
+        "infinitive": "wejść",
+        "aspect": "perfective",
+        "forms": [
+          "wejdę",
+          "wejdziesz",
+          "wejdzie",
+          "wejdziemy",
+          "wejdziecie",
+          "wejdą"
+        ],
+        "past": [
+          "wszedł",
+          "weszła",
+          "weszło",
+          "weszli",
+          "weszły"
+        ],
+        "imperative": [
+          "wejdź",
+          "wejdźmy",
+          "wejdźcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "wachlować",
+    "verbs": [
+      {
+        "infinitive": "wachlować",
+        "aspect": "imperfective",
+        "forms": [
+          "wachluję",
+          "wachlujesz",
+          "wachluje",
+          "wachlujemy",
+          "wachlujecie",
+          "wachlują"
+        ],
+        "past": [
+          "wachlował",
+          "wachlowała",
+          "wachlowało",
+          "wachlowali",
+          "wachlowały"
+        ],
+        "imperative": [
+          "wachluj",
+          "wachlujmy",
+          "wachlujcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "zmierzać (do)",
+    "verbs": [
+      {
+        "infinitive": "zmierzać",
+        "aspect": "imperfective",
+        "forms": [
+          "zmierzam",
+          "zmierzasz",
+          "zmierza",
+          "zmierzamy",
+          "zmierzacie",
+          "zmierzają"
+        ],
+        "past": [
+          "zmierzał",
+          "zmierzała",
+          "zmierzało",
+          "zmierzali",
+          "zmierzały"
+        ],
+        "imperative": [
+          "zmierzaj",
+          "zmierzajmy",
+          "zmierzajcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "otwierać się",
+    "verbs": [
+      {
+        "infinitive": "otwierać się",
+        "aspect": "imperfective",
+        "forms": [
+          "otwieram się",
+          "otwierasz się",
+          "otwiera się",
+          "otwieramy się",
+          "otwieracie się",
+          "otwierają się"
+        ],
+        "past": [
+          "otwierał się",
+          "otwierała się",
+          "otwierało się",
+          "otwierali się",
+          "otwierały się"
+        ],
+        "imperative": [
+          "otwieraj się",
+          "otwierajmy się",
+          "otwierajcie się"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "zdjąć",
+    "verbs": [
+      {
+        "infinitive": "zdjąć",
+        "aspect": "perfective",
+        "forms": [
+          "zdejmę",
+          "zdejmiesz",
+          "zdejmie",
+          "zdejmiemy",
+          "zdejmiecie",
+          "zdejmą"
+        ],
+        "past": [
+          "zdjął",
+          "zdjęła",
+          "zdjęło",
+          "zdjęli",
+          "zdjęły"
+        ],
+        "imperative": [
+          "zdejmij",
+          "zdejmijmy",
+          "zdejmijcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "suszyć",
+    "verbs": [
+      {
+        "infinitive": "suszyć",
+        "aspect": "imperfective",
+        "forms": [
+          "suszę",
+          "suszysz",
+          "suszy",
+          "suszymy",
+          "suszycie",
+          "suszą"
+        ],
+        "past": [
+          "suszył",
+          "suszyła",
+          "suszyło",
+          "suszyli",
+          "suszyły"
+        ],
+        "imperative": [
+          "susz",
+          "suszmy",
+          "suszcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "stwierdzić",
+    "verbs": [
+      {
+        "infinitive": "stwierdzić",
+        "aspect": "perfective",
+        "forms": [
+          "stwierdzę",
+          "stwierdzisz",
+          "stwierdzi",
+          "stwierdzimy",
+          "stwierdzicie",
+          "stwierdzą"
+        ],
+        "past": [
+          "stwierdził",
+          "stwierdziła",
+          "stwierdziło",
+          "stwierdzili",
+          "stwierdziły"
+        ],
+        "imperative": [
+          "stwierdź",
+          "stwierdźmy",
+          "stwierdźcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "zdążyć",
+    "verbs": [
+      {
+        "infinitive": "zdążyć",
+        "aspect": "perfective",
+        "forms": [
+          "zdążę",
+          "zdążysz",
+          "zdąży",
+          "zdążymy",
+          "zdążycie",
+          "zdążą"
+        ],
+        "past": [
+          "zdążył",
+          "zdążyła",
+          "zdążyło",
+          "zdążyli",
+          "zdążyły"
+        ],
+        "imperative": [
+          "zdąż",
+          "zdążmy",
+          "zdążcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "potrafić",
+    "verbs": [
+      {
+        "infinitive": "potrafić",
+        "aspect": "imperfective",
+        "forms": [
+          "potrafię",
+          "potrafisz",
+          "potrafi",
+          "potrafimy",
+          "potraficie",
+          "potrafią"
+        ],
+        "past": [
+          "potrafił",
+          "potrafiła",
+          "potrafiło",
+          "potrafili",
+          "potrafiły"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "niszczyć",
+    "verbs": [
+      {
+        "infinitive": "niszczyć",
+        "aspect": "imperfective",
+        "forms": [
+          "niszczę",
+          "niszczysz",
+          "niszczy",
+          "niszczymy",
+          "niszczycie",
+          "niszczą"
+        ],
+        "past": [
+          "niszczył",
+          "niszczyła",
+          "niszczyło",
+          "niszczyli",
+          "niszczyły"
+        ],
+        "imperative": [
+          "niszcz",
+          "niszczmy",
+          "niszczcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "odczuwać",
+    "verbs": [
+      {
+        "infinitive": "odczuwać",
+        "aspect": "imperfective",
+        "forms": [
+          "odczuwam",
+          "odczuwasz",
+          "odczuwa",
+          "odczuwamy",
+          "odczuwacie",
+          "odczuwają"
+        ],
+        "past": [
+          "odczuwał",
+          "odczuwała",
+          "odczuwało",
+          "odczuwali",
+          "odczuwały"
+        ],
+        "imperative": [
+          "odczuwaj",
+          "odczuwajmy",
+          "odczuwajcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "wywoływać",
+    "verbs": [
+      {
+        "infinitive": "wywoływać",
+        "aspect": "imperfective",
+        "forms": [
+          "wywołuję",
+          "wywołujesz",
+          "wywołuje",
+          "wywołujemy",
+          "wywołujecie",
+          "wywołują"
+        ],
+        "past": [
+          "wywoływał",
+          "wywoływała",
+          "wywoływało",
+          "wywoływali",
+          "wywoływały"
+        ],
+        "imperative": [
+          "wywołuj",
+          "wywołujmy",
+          "wywołujcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "zachować",
+    "verbs": [
+      {
+        "infinitive": "zachować",
+        "aspect": "perfective",
+        "forms": [
+          "zachowam",
+          "zachowasz",
+          "zachowa",
+          "zachowamy",
+          "zachowacie",
+          "zachowają"
+        ],
+        "past": [
+          "zachował",
+          "zachowała",
+          "zachowało",
+          "zachowali",
+          "zachowały"
+        ],
+        "imperative": [
+          "zachowaj",
+          "zachowajmy",
+          "zachowajcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "oglądać",
+    "verbs": [
+      {
+        "infinitive": "oglądać",
+        "aspect": "imperfective",
+        "forms": [
+          "oglądam",
+          "oglądasz",
+          "ogląda",
+          "oglądamy",
+          "oglądacie",
+          "oglądają"
+        ],
+        "past": [
+          "oglądał",
+          "oglądała",
+          "oglądało",
+          "oglądali",
+          "oglądały"
+        ],
+        "imperative": [
+          "oglądaj",
+          "oglądajmy",
+          "oglądajcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "obejrzeć",
+    "verbs": [
+      {
+        "infinitive": "obejrzeć",
+        "aspect": "perfective",
+        "forms": [
+          "obejrzę",
+          "obejrzysz",
+          "obejrzy",
+          "obejrzymy",
+          "obejrzycie",
+          "obejrzą"
+        ],
+        "past": [
+          "obejrzał",
+          "obejrzała",
+          "obejrzało",
+          "obejrzeli",
+          "obejrzały"
+        ],
+        "imperative": [
+          "obejrzyj",
+          "obejrzyjmy",
+          "obejrzyjcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "omówić",
+    "verbs": [
+      {
+        "infinitive": "omówić",
+        "aspect": "perfective",
+        "forms": [
+          "omówię",
+          "omówisz",
+          "omówi",
+          "omówimy",
+          "omówicie",
+          "omówią"
+        ],
+        "past": [
+          "omówił",
+          "omówiła",
+          "omówiło",
+          "omówili",
+          "omówiły"
+        ],
+        "imperative": [
+          "omów",
+          "omówmy",
+          "omówcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "przebrać się",
+    "verbs": [
+      {
+        "infinitive": "przebrać się",
+        "aspect": "perfective",
+        "forms": [
+          "przebiorę się",
+          "przebierzesz się",
+          "przebierze się",
+          "przebierzemy się",
+          "przebierzecie się",
+          "przebiorą się"
+        ],
+        "past": [
+          "przebrał się",
+          "przebrała się",
+          "przebrało się",
+          "przebrali się",
+          "przebrały się"
+        ],
+        "imperative": [
+          "przebierz się",
+          "przebierzmy się",
+          "przebierzcie się"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "wymiotować",
+    "verbs": [
+      {
+        "infinitive": "wymiotować",
+        "aspect": "imperfective",
+        "forms": [
+          "wymiotuję",
+          "wymiotujesz",
+          "wymiotuje",
+          "wymiotujemy",
+          "wymiotujecie",
+          "wymiotują"
+        ],
+        "past": [
+          "wymiotował",
+          "wymiotowała",
+          "wymiotowało",
+          "wymiotowali",
+          "wymiotowały"
+        ],
+        "imperative": [
+          "wymiotuj",
+          "wymiotujmy",
+          "wymiotujcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "odpocząć",
+    "verbs": [
+      {
+        "infinitive": "odpocząć",
+        "aspect": "perfective",
+        "forms": [
+          "odpocznę",
+          "odpoczniesz",
+          "odpocznie",
+          "odpoczniemy",
+          "odpoczniecie",
+          "odpoczną"
+        ],
+        "past": [
+          "odpoczął",
+          "odpoczęła",
+          "odpoczęło",
+          "odpoczęli",
+          "odpoczęły"
+        ],
+        "imperative": [
+          "odpocznij",
+          "odpocznijmy",
+          "odpocznijcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "zamieszkać na stałe",
+    "verbs": [
+      {
+        "infinitive": "zamieszkać",
+        "aspect": "perfective",
+        "forms": [
+          "zamieszkam na stałe",
+          "zamieszkasz na stałe",
+          "zamieszka na stałe",
+          "zamieszkamy na stałe",
+          "zamieszkacie na stałe",
+          "zamieszkają na stałe"
+        ],
+        "past": [
+          "zamieszkał na stałe",
+          "zamieszkała na stałe",
+          "zamieszkało na stałe",
+          "zamieszkali na stałe",
+          "zamieszkały na stałe"
+        ],
+        "imperative": [
+          "zamieszkaj na stałe",
+          "zamieszkajmy na stałe",
+          "zamieszkajcie na stałe"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "wyjechać",
+    "verbs": [
+      {
+        "infinitive": "wyjechać",
+        "aspect": "perfective",
+        "forms": [
+          "wyjadę",
+          "wyjedziesz",
+          "wyjedzie",
+          "wyjedziemy",
+          "wyjedziecie",
+          "wyjadą"
+        ],
+        "past": [
+          "wyjechał",
+          "wyjechała",
+          "wyjechało",
+          "wyjechali",
+          "wyjechały"
+        ],
+        "imperative": [
+          "wyjedź",
+          "wyjedźmy",
+          "wyjedźcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "zniknąć",
+    "verbs": [
+      {
+        "infinitive": "zniknąć",
+        "aspect": "perfective",
+        "forms": [
+          "zniknę",
+          "znikniesz",
+          "zniknie",
+          "znikniemy",
+          "znikniecie",
+          "znikną"
+        ],
+        "past": [
+          "zniknął",
+          "zniknęła",
+          "zniknęło",
+          "zniknęli",
+          "zniknęły"
+        ],
+        "imperative": [
+          "zniknij",
+          "zniknijmy",
+          "zniknijcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "podkręcać",
+    "verbs": [
+      {
+        "infinitive": "podkręcać",
+        "aspect": "imperfective",
+        "forms": [
+          "podkręcam",
+          "podkręcasz",
+          "podkręca",
+          "podkręcamy",
+          "podkręcacie",
+          "podkręcają"
+        ],
+        "past": [
+          "podkręcał",
+          "podkręcała",
+          "podkręcało",
+          "podkręcali",
+          "podkręcały"
+        ],
+        "imperative": [
+          "podkręcaj",
+          "podkręcajmy",
+          "podkręcajcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "wykorzystywać",
+    "verbs": [
+      {
+        "infinitive": "wykorzystywać",
+        "aspect": "imperfective",
+        "forms": [
+          "wykorzystuję",
+          "wykorzystujesz",
+          "wykorzystuje",
+          "wykorzystujemy",
+          "wykorzystujecie",
+          "wykorzystują"
+        ],
+        "past": [
+          "wykorzystywał",
+          "wykorzystywała",
+          "wykorzystywało",
+          "wykorzystywali",
+          "wykorzystywały"
+        ],
+        "imperative": [
+          "wykorzystuj",
+          "wykorzystujmy",
+          "wykorzystujcie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "chronić",
+    "verbs": [
+      {
+        "infinitive": "chronić",
+        "aspect": "imperfective",
+        "forms": [
+          "chronię",
+          "chronisz",
+          "chroni",
+          "chronimy",
+          "chronicie",
+          "chronią"
+        ],
+        "past": [
+          "chronił",
+          "chroniła",
+          "chroniło",
+          "chronili",
+          "chroniły"
+        ],
+        "imperative": [
+          "chroń",
+          "chrońmy",
+          "chrońcie"
+        ]
+      }
+    ]
+  }
+]

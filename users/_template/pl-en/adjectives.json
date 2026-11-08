@@ -1,0 +1,48 @@
+[
+  {
+    "card": "domowy / domowo",
+    "adjectives": [
+      {
+        "lemma": "domowy",
+        "forms": {
+          "m": [
+            "domowy",
+            "domowego",
+            "domowemu",
+            "domowy / domowego",
+            "domowym",
+            "domowym",
+            "domowy"
+          ],
+          "f": [
+            "domowa",
+            "domowej",
+            "domowej",
+            "domową",
+            "domową",
+            "domowej",
+            "domowa"
+          ],
+          "n": [
+            "domowe",
+            "domowego",
+            "domowemu",
+            "domowe",
+            "domowym",
+            "domowym",
+            "domowe"
+          ],
+          "pl": [
+            "domowi / domowe",
+            "domowych",
+            "domowym",
+            "domowych / domowe",
+            "domowymi",
+            "domowych",
+            "domowi / domowe"
+          ]
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,89 @@
+[
+  {
+    "card": "bać się",
+    "verbs": [
+      {
+        "infinitive": "bać się",
+        "aspect": "imperfective",
+        "forms": [
+          "boję się",
+          "boisz się",
+          "boi się",
+          "boimy się",
+          "boicie się",
+          "boją się"
+        ],
+        "past": [
+          "bał się",
+          "bała się",
+          "bało się",
+          "bali się",
+          "bały się"
+        ],
+        "imperative": [
+          "bój się",
+          "bójmy się",
+          "bójcie się"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "denerwować się",
+    "verbs": [
+      {
+        "infinitive": "denerwować się",
+        "aspect": "imperfective",
+        "forms": [
+          "denerwuję się",
+          "denerwujesz się",
+          "denerwuje się",
+          "denerwujemy się",
+          "denerwujecie się",
+          "denerwują się"
+        ],
+        "past": [
+          "denerwował się",
+          "denerwowała się",
+          "denerwowało się",
+          "denerwowali się",
+          "denerwowały się"
+        ],
+        "imperative": [
+          "denerwuj się",
+          "denerwujmy się",
+          "denerwujcie się"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "dokończyć",
+    "verbs": [
+      {
+        "infinitive": "dokończyć",
+        "aspect": "perfective",
+        "forms": [
+          "dokończę",
+          "dokończysz",
+          "dokończy",
+          "dokończymy",
+          "dokończycie",
+          "dokończą"
+        ],
+        "past": [
+          "dokończył",
+          "dokończyła",
+          "dokończyło",
+          "dokończyli",
+          "dokończyły"
+        ],
+        "imperative": [
+          "dokończ",
+          "dokończmy",
+          "dokończcie"
+        ]
+      }
+    ]
+  }
+]

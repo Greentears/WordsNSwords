@@ -1,0 +1,92 @@
+[
+    {
+        "word": "bać się",
+        "translation": "to be afraid of",
+        "sentence": "Dzieci boją się ciemności.",
+        "sentence_translation": "Children are afraid of the dark."
+    },
+    {
+        "word": "bardzo mi smakuje",
+        "translation": "I like the taste very much / It's delicious",
+        "sentence": "Ta zupa jest świetna, bardzo mi smakuje!",
+        "sentence_translation": "This soup is great, I like the taste very much!"
+    },
+    {
+        "word": "biletomat",
+        "translation": "ticket machine",
+        "sentence": "Bilet kupisz w biletomacie na przystanku.",
+        "sentence_translation": "You can buy a ticket at the ticket machine at the stop."
+    },
+    {
+        "word": "chodnik",
+        "translation": "sidewalk",
+        "sentence": "Dzieci bawią się na chodniku przed domem.",
+        "sentence_translation": "The children are playing on the sidewalk in front of the house."
+    },
+    {
+        "word": "co mogę zrobić?",
+        "translation": "what can I do?",
+        "sentence": "Jestem gotowy do pomocy. Co mogę zrobić?",
+        "sentence_translation": "I'm ready to help. What can I do?"
+    },
+    {
+        "word": "co mam pokroić?",
+        "translation": "what should I cut?",
+        "sentence": "Cebula jest już obrana. Co mam pokroić?",
+        "sentence_translation": "The onion is already peeled. What should I cut?"
+    },
+    {
+        "word": "czajnik",
+        "translation": "kettle",
+        "sentence": "Woda w czajniku już się gotuje.",
+        "sentence_translation": "The water in the kettle is already boiling."
+    },
+    {
+        "word": "denerwować się",
+        "translation": "to get nervous / annoyed",
+        "sentence": "Nie denerwuj się, wszystko będzie dobrze.",
+        "sentence_translation": "Don't get nervous, everything will be fine."
+    },
+    {
+        "word": "deska do krojenia",
+        "translation": "cutting board",
+        "sentence": "Połóż warzywa na desce do krojenia.",
+        "sentence_translation": "Put the vegetables on the cutting board."
+    },
+    {
+        "word": "dla profesjonalnych graczy",
+        "translation": "for professional players",
+        "sentence": "Ten turniej jest tylko dla profesjonalnych graczy.",
+        "sentence_translation": "This tournament is only for professional players."
+    },
+    {
+        "word": "dla wielu ludzi",
+        "translation": "for many people",
+        "sentence": "Dla wielu ludzi rodzina jest najważniejsza.",
+        "sentence_translation": "For many people, family is the most important thing."
+    },
+    {
+        "word": "dobre / ładne pachnie",
+        "translation": "smells good / nice",
+        "sentence": "W kuchni dobrze pachnie, a kwiaty na stole ładnie pachną.",
+        "sentence_translation": "It smells good in the kitchen, and the flowers on the table smell lovely."
+    },
+    {
+        "word": "dokończyć",
+        "translation": "to finish",
+        "sentence": "Muszę dokończyć pracę przed obiadem.",
+        "sentence_translation": "I have to finish my work before lunch."
+    },
+    {
+        "word": "dolewka",
+        "translation": "refill",
+        "sentence": "Czy w tej restauracji jest darmowa dolewka kawy?",
+        "sentence_translation": "Is there a free coffee refill in this restaurant?"
+    },
+    {
+        "word": "domowy / domowo",
+        "translation": "homemade / homely",
+        "sentence": "Babcia robi najlepszy domowy chleb, a w jej kuchni jest domowo i ciepło.",
+        "sentence_translation": "Grandma makes the best homemade bread, and her kitchen feels homely and warm."
+    }
+]

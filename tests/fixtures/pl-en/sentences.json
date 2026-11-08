@@ -1,0 +1,766 @@
+[
+  {
+    "pl": "Zespół zdobywa punkty, bo wcześniej dobrze się przygotował.",
+    "en": "The team is earning points because it prepared well beforehand.",
+    "words": [
+      "zespół",
+      "zdobywać punkty",
+      "wcześniej"
+    ]
+  },
+  {
+    "pl": "Była wzruszona, bo chłopak oświadczył jej się w sekrecie i dał jej pierścionek.",
+    "en": "She was moved because her boyfriend proposed to her in secret and gave her a ring.",
+    "words": [
+      "wzruszony / wzruszona",
+      "oświadczyć się",
+      "w sekrecie",
+      "pierścionek"
+    ]
+  },
+  {
+    "pl": "Muszę sprawdzić, czy w tym sklepie są dostępne świeże naleśniki z twarogiem.",
+    "en": "I have to check whether fresh pancakes with quark are available in this shop.",
+    "words": [
+      "sprawdzić",
+      "dostępne",
+      "świeży / świeżo",
+      "naleśnik",
+      "twaróg"
+    ]
+  },
+  {
+    "pl": "Na skrzyżowaniu są korki, więc autobus przyjedzie później.",
+    "en": "There are traffic jams at the intersection, so the bus will arrive later.",
+    "words": [
+      "skrzyżowanie",
+      "korek"
+    ]
+  },
+  {
+    "pl": "Poproszę stolik w kąciku, bo chcę spokojnie porozmawiać i zjeść posiłek.",
+    "en": "A table in the little corner, please, because I want to talk in peace and have a meal.",
+    "words": [
+      "stolik",
+      "kącik",
+      "posiłek"
+    ]
+  },
+  {
+    "pl": "Zostaw sznurek na półce w kuchni, bo jeszcze go potrzebuję.",
+    "en": "Leave the string on the shelf in the kitchen, because I still need it.",
+    "words": [
+      "zostawić",
+      "sznurek",
+      "półka",
+      "jeszcze"
+    ]
+  },
+  {
+    "pl": "Nie mogę znaleźć pożyczonej książki, a jutro mam powtórkę.",
+    "en": "I can't find the borrowed book, and tomorrow I have a review.",
+    "words": [
+      "znaleźć",
+      "pożyczyć",
+      "powtórka"
+    ]
+  },
+  {
+    "pl": "Czy mogę pożyczyć twój wózek? Mój koszyk jest za mały na tyle zakupów.",
+    "en": "Can I borrow your trolley? My basket is too small for so much shopping.",
+    "words": [
+      "pożyczyć",
+      "wózek",
+      "koszyk"
+    ]
+  },
+  {
+    "pl": "Mój przyjaciel jest wściekły, bo w urzędzie musiał długo stać w kolejce.",
+    "en": "My friend is furious because he had to stand in a queue for a long time at the office.",
+    "words": [
+      "przyjaciel",
+      "wściekły / wściekła",
+      "urząd",
+      "kolejka"
+    ]
+  },
+  {
+    "pl": "Podobno jakość jedzenia w tym hotelu jest zbyt słaba.",
+    "en": "Apparently the quality of the food in this hotel is too poor.",
+    "words": [
+      "podobno",
+      "jakość",
+      "zbyt"
+    ]
+  },
+  {
+    "pl": "Czajnik przestał działać, więc gotuję wodę w garnku.",
+    "en": "The kettle stopped working, so I'm boiling water in a pot.",
+    "words": [
+      "czajnik",
+      "działać",
+      "gotować",
+      "garnek"
+    ]
+  },
+  {
+    "pl": "Babcia miesza nadzienie w dużej misce, a potem piecze ciasto.",
+    "en": "Grandma stirs the filling in a big bowl, and then bakes a cake.",
+    "words": [
+      "mieszać",
+      "nadzienie",
+      "miska",
+      "piec"
+    ]
+  },
+  {
+    "pl": "Ta torba jest lekka, ale większa niż moja.",
+    "en": "This bag is light, but bigger than mine.",
+    "words": [
+      "lekki / lekko",
+      "większy",
+      "niż"
+    ]
+  },
+  {
+    "pl": "Dawno nie byłem w Polsce, więc tęsknię za rodziną i polskim jedzeniem.",
+    "en": "I haven't been in Poland for a long time, so I miss my family and Polish food.",
+    "words": [
+      "dawno",
+      "tęsknić (za)",
+      "polski"
+    ]
+  },
+  {
+    "pl": "Kuzyn przyjdzie jutro i weźmie ze sobą żurawinę do sałatki.",
+    "en": "My cousin will come tomorrow and will take cranberries along for the salad.",
+    "words": [
+      "przyjdzie",
+      "weźmie",
+      "żurawina"
+    ]
+  },
+  {
+    "pl": "Zamierzam zacząć dzień od śniadania, ale najpierw muszę sprawdzić pogodę.",
+    "en": "I intend to start the day with breakfast, but first I have to check the weather.",
+    "words": [
+      "zamierzać",
+      "zacząć",
+      "śniadanie",
+      "sprawdzić"
+    ]
+  },
+  {
+    "pl": "Kelner zostawił paragon na stole, a ja zostawiłem napiwek.",
+    "en": "The waiter left the receipt on the table, and I left a tip.",
+    "words": [
+      "zostawić",
+      "paragon",
+      "napiwek"
+    ]
+  },
+  {
+    "pl": "Nie odważyłem się poprosić o dolewkę, chociaż kawa była bardzo dobra.",
+    "en": "I didn't dare ask for a refill, although the coffee was very good.",
+    "words": [
+      "odważyć się",
+      "dolewka"
+    ]
+  },
+  {
+    "pl": "Ta wieża przyciąga turystów, bo widok z góry robi duże wrażenie.",
+    "en": "This tower attracts tourists, because the view from the top makes a big impression.",
+    "words": [
+      "wieża",
+      "przyciągać",
+      "wrażenie"
+    ]
+  },
+  {
+    "pl": "Mam do ciebie prośbę. Zapiszesz mój numer, żebym go nie zgubił?",
+    "en": "I have a request for you. Will you write down my number so that I don't lose it?",
+    "words": [
+      "prośba",
+      "zapiszesz?"
+    ]
+  },
+  {
+    "pl": "Dzieci były zaskoczone, kiedy smok zionął ogniem na zamek.",
+    "en": "The children were surprised when the dragon breathed fire at the castle.",
+    "words": [
+      "zaskoczony / zaskoczona",
+      "smok zionął ogniem"
+    ]
+  },
+  {
+    "pl": "Trzeba zawiązać buty, zanim przejdziemy przez skrzyżowanie.",
+    "en": "You have to tie your shoes before we cross the intersection.",
+    "words": [
+      "trzeba",
+      "zawiązać",
+      "przejść",
+      "skrzyżowanie"
+    ]
+  },
+  {
+    "pl": "Dla wielu ludzi przyszłość jest ważna, dlatego chcą się zabezpieczyć.",
+    "en": "For many people the future is important, which is why they want to protect themselves.",
+    "words": [
+      "dla wielu ludzi",
+      "przyszłość",
+      "zabezpieczyć się"
+    ]
+  },
+  {
+    "pl": "Bogactwo to nie wszystko, ale dobra jakość życia jest istotna.",
+    "en": "Wealth isn't everything, but a good quality of life is important.",
+    "words": [
+      "bogactwo",
+      "jakość",
+      "istotna / ważna"
+    ]
+  },
+  {
+    "pl": "Spróbuj zgadnąć, co jest w pudełku, patrząc tylko na jego kształt.",
+    "en": "Try to guess what is in the box, looking only at its shape.",
+    "words": [
+      "zgadnąć",
+      "patrząc"
+    ]
+  },
+  {
+    "pl": "Lekarz musiał stwierdzić, że ten lek jest dostępny tylko na receptę.",
+    "en": "The doctor had to state that this medicine is available only on prescription.",
+    "words": [
+      "stwierdzić",
+      "lek",
+      "dostępne"
+    ]
+  },
+  {
+    "pl": "Na poprawinach były pogaduszki do rana i świetna muzyka na żywo.",
+    "en": "At the after-party there was chit-chat until morning and great live music.",
+    "words": [
+      "poprawiny",
+      "pogaduszki",
+      "żywo / na żywo"
+    ]
+  },
+  {
+    "pl": "Świadek wygłosił krótką mowę podczas uroczystości, a pan młody był bardzo wzruszony.",
+    "en": "The best man gave a short speech during the ceremony, and the groom was very moved.",
+    "words": [
+      "świadek",
+      "uroczystość",
+      "wzruszony / wzruszona"
+    ]
+  },
+  {
+    "pl": "Muszę wpłacić pieniądze i wymienić się numerem konta z kolegą.",
+    "en": "I have to pay in some money and exchange account numbers with my colleague.",
+    "words": [
+      "wpłacić",
+      "wymienić się",
+      "kolega"
+    ]
+  },
+  {
+    "pl": "Film był śmieszny, ale zakończenie wzbudziło zbyt duże emocje.",
+    "en": "The film was funny, but the ending aroused too much emotion.",
+    "words": [
+      "śmieszny",
+      "wzbudzać",
+      "zbyt"
+    ]
+  },
+  {
+    "pl": "Zimą jest szaro-buro, więc łatwo przytyć, bo rzadko wychodzę z domu.",
+    "en": "In winter it's grey and gloomy, so it's easy to gain weight because I rarely go out.",
+    "words": [
+      "szaro-buro",
+      "przytyć",
+      "rzadko"
+    ]
+  },
+  {
+    "pl": "Nasza zmywarka nie działa, więc musimy myć naczynia ręcznie.",
+    "en": "Our dishwasher isn't working, so we have to wash the dishes by hand.",
+    "words": [
+      "zmywarka",
+      "działać",
+      "naczynie"
+    ]
+  },
+  {
+    "pl": "Połóż jabłko na wadze i sprawdź, ile waży.",
+    "en": "Put the apple on the scales and check how much it weighs.",
+    "words": [
+      "położyć",
+      "waga",
+      "sprawdzić"
+    ]
+  },
+  {
+    "pl": "Chciała zaskoczyć narzeczonego, więc zaplanowała wszystko w sekrecie.",
+    "en": "She wanted to surprise her fiancé, so she planned everything in secret.",
+    "words": [
+      "zaskoczyć",
+      "w sekrecie"
+    ]
+  },
+  {
+    "pl": "Zaręczyli się niedawno, ale ślub będzie dopiero za półtora roku.",
+    "en": "They got engaged recently, but the wedding will only be in a year and a half.",
+    "words": [
+      "zaręczyć się",
+      "ślub",
+      "półtora roku"
+    ]
+  },
+  {
+    "pl": "Ta zupa jest zbyt kwaśna, więc dodaj trochę cukru i dobrze zamieszaj.",
+    "en": "This soup is too sour, so add some sugar and stir well.",
+    "words": [
+      "kwaśny / kwaśno",
+      "zbyt",
+      "mieszać"
+    ]
+  },
+  {
+    "pl": "Autobus musi mijać wiele aut, a na chodniku jest dużo ludzi.",
+    "en": "The bus has to pass many cars, and there are lots of people on the sidewalk.",
+    "words": [
+      "mijać",
+      "chodnik"
+    ]
+  },
+  {
+    "pl": "Zdarza się, że nie mogę znaleźć kluczy, a wtedy szukam ich w każdym pokoju.",
+    "en": "It happens that I can't find my keys, and then I look for them in every room.",
+    "words": [
+      "zdarza",
+      "znaleźć",
+      "każdy"
+    ]
+  },
+  {
+    "pl": "Prowadzę samochód ostrożnie, bo w mieście są duże korki.",
+    "en": "I drive carefully because there are big traffic jams in the city.",
+    "words": [
+      "prowadzić",
+      "korek"
+    ]
+  },
+  {
+    "pl": "Nagram krótki film o tym, jak dobrze traktować gości.",
+    "en": "I'll record a short video about how to treat guests well.",
+    "words": [
+      "nagram",
+      "traktować"
+    ]
+  },
+  {
+    "pl": "Kamienie szlachetne są drogie, bo ich jakość musi być bardzo wysoka.",
+    "en": "Gemstones are expensive because their quality has to be very high.",
+    "words": [
+      "kamień szlachetny",
+      "jakość"
+    ]
+  },
+  {
+    "pl": "Te rady trzeba brać z przymrużeniem oka, bo źródło nie jest pewne.",
+    "en": "You have to take this advice with a pinch of salt, because the source isn't certain.",
+    "words": [
+      "trzeba",
+      "z przymrużeniem oka",
+      "źródło",
+      "zasób"
+    ]
+  },
+  {
+    "pl": "Jestem trochę przejęty, bo na spotkaniu zespołu muszę poruszyć trudny temat.",
+    "en": "I'm a bit worked up because at the team meeting I have to bring up a difficult subject.",
+    "words": [
+      "przejęty",
+      "zespół",
+      "poruszyć"
+    ]
+  },
+  {
+    "pl": "Wymowa tego przymiotnika jest trudna, ale rzeczownik jest łatwy.",
+    "en": "The pronunciation of this adjective is difficult, but the noun is easy.",
+    "words": [
+      "wymowa",
+      "przymiotnik",
+      "rzeczownik"
+    ]
+  },
+  {
+    "pl": "Siostra przyjdzie wcześniej, aby pomagać mi przy zamówieniu.",
+    "en": "My sister will come earlier to help me with the order.",
+    "words": [
+      "przyjdzie",
+      "wcześniej",
+      "aby",
+      "pomagać",
+      "zamówienie"
+    ]
+  },
+  {
+    "pl": "Żurawina jest bardzo kwaśna, a twaróg z cukrem jest słodki.",
+    "en": "Cranberry is very sour, and quark with sugar is sweet.",
+    "words": [
+      "żurawina",
+      "kwaśny / kwaśno",
+      "twaróg",
+      "słodki / słodko"
+    ]
+  },
+  {
+    "pl": "W Polsce kiedyś była obowiązkowa służba wojskowa, ale dziś jej nie ma.",
+    "en": "In Poland there used to be mandatory military service, but today there isn't any.",
+    "words": [
+      "obowiązkowa służba wojskowa"
+    ]
+  },
+  {
+    "pl": "Chciałbym ci polecić restaurację, w której wszystko jest świeże i smaczne.",
+    "en": "I'd like to recommend a restaurant to you where everything is fresh and tasty.",
+    "words": [
+      "polecać",
+      "świeży / świeżo",
+      "smaczny / smacznie"
+    ]
+  },
+  {
+    "pl": "To miasto jest płaskie i jest tu niewiele wieżowców.",
+    "en": "This city is flat and there are few skyscrapers here.",
+    "words": [
+      "płaski",
+      "wieżowiec"
+    ]
+  },
+  {
+    "pl": "Kiedy w kuchni brakuje świeżego powietrza, trudno usunąć zapach.",
+    "en": "When the kitchen lacks fresh air, it's hard to remove the smell.",
+    "words": [
+      "brakuje",
+      "świeży / świeżo",
+      "usunąć zapach"
+    ]
+  },
+  {
+    "pl": "Zamierzam polecieć do Włoch i nosić tam lekkie ubrania.",
+    "en": "I intend to fly to Italy and wear light clothes there.",
+    "words": [
+      "zamierzać",
+      "polecieć",
+      "nosić",
+      "lekki / lekko"
+    ]
+  },
+  {
+    "pl": "Dorosłem w małym mieście, ale teraz mieszkam w dużym, gdzie jest dużo wieżowców.",
+    "en": "I grew up in a small town, but now I live in a big one, where there are a lot of skyscrapers.",
+    "words": [
+      "dorosnąć",
+      "wieżowiec"
+    ]
+  },
+  {
+    "pl": "Nawet bym poszedł na wycieczkę, gdyby pogoda była lepsza.",
+    "en": "I would even go on a trip if the weather were better.",
+    "words": [
+      "nawet bym",
+      "wycieczka"
+    ]
+  },
+  {
+    "pl": "Nie oczekuj, że wszystko będzie szałowe od pierwszego dnia.",
+    "en": "Don't expect everything to be fantastic from the first day.",
+    "words": [
+      "oczekiwać",
+      "szałowy"
+    ]
+  },
+  {
+    "pl": "Na widowni było dużo ludzi i wszyscy byli wzruszeni, kiedy zespół grał na żywo.",
+    "en": "There were a lot of people in the audience and everyone was moved when the band played live.",
+    "words": [
+      "widownia",
+      "wzruszony / wzruszona",
+      "zespół",
+      "żywo / na żywo"
+    ]
+  },
+  {
+    "pl": "Nie próbuj mnie przekonywać, bo przyszłość pokaże, kto miał rację.",
+    "en": "Don't try to convince me, because the future will show who was right.",
+    "words": [
+      "przekonywać",
+      "przyszłość"
+    ]
+  },
+  {
+    "pl": "Początek kursu był trudny, a moja wymowa była bardzo zła.",
+    "en": "The beginning of the course was hard, and my pronunciation was very bad.",
+    "words": [
+      "początek",
+      "wymowa"
+    ]
+  },
+  {
+    "pl": "Przenieśliśmy się do większego mieszkania, bo mieliśmy zbyt mało miejsca.",
+    "en": "We moved to a bigger flat because we had too little space.",
+    "words": [
+      "przenieść się",
+      "większy",
+      "zbyt"
+    ]
+  },
+  {
+    "pl": "Przynieś proszę szklanki, a ja zostawię talerze na stole.",
+    "en": "Please bring the glasses, and I'll leave the plates on the table.",
+    "words": [
+      "przenosić",
+      "przynieść",
+      "zostawić",
+      "talerz"
+    ]
+  },
+  {
+    "pl": "Dziadkowie przebywają teraz na wsi, a my tęsknimy za nimi.",
+    "en": "My grandparents are staying in the countryside now, and we miss them.",
+    "words": [
+      "przebywać",
+      "tęsknić (za)"
+    ]
+  },
+  {
+    "pl": "Szef jest wściekły, bo klient nie chce zapłacić, a jakość pracy była dobra.",
+    "en": "The boss is furious because the client doesn't want to pay, even though the quality of the work was good.",
+    "words": [
+      "wściekły / wściekła",
+      "jakość"
+    ]
+  },
+  {
+    "pl": "Moja ciocia to prawdziwa psiara, ale podobno kociary są bardziej spokojne.",
+    "en": "My aunt is a real dog lover, but apparently cat lovers are calmer.",
+    "words": [
+      "psiara",
+      "kociara",
+      "podobno"
+    ]
+  },
+  {
+    "pl": "Poprosiłem o dolewkę, a potem długo siedziałem w kąciku i czytałem.",
+    "en": "I asked for a refill, and then I sat in the little corner for a long time reading.",
+    "words": [
+      "dolewka",
+      "kącik"
+    ]
+  },
+  {
+    "pl": "Kuzynka dawno nie była w Polsce, ale jutro przyjdzie na wesele.",
+    "en": "My cousin hasn't been in Poland for a long time, but tomorrow she will come to the wedding party.",
+    "words": [
+      "dawno",
+      "przyjdzie",
+      "wesele"
+    ]
+  },
+  {
+    "pl": "Nie zapominaj o prośbie, bo to dla mnie istotna sprawa.",
+    "en": "Don't forget my request, because it's an important matter for me.",
+    "words": [
+      "prośba",
+      "istotna / ważna"
+    ]
+  },
+  {
+    "pl": "Weszliśmy do spa i zorientowaliśmy się, że jest tam zupełnie pusto.",
+    "en": "We went into the spa and realised it was completely empty.",
+    "words": [
+      "wejść",
+      "zorientować się",
+      "pusto"
+    ]
+  },
+  {
+    "pl": "Po basenie zmierzam do szatni, żeby suszyć włosy i zdjąć mokry kostium.",
+    "en": "After the pool I head to the changing room to dry my hair and take off my wet swimsuit.",
+    "words": [
+      "zmierzać (do)",
+      "suszyć",
+      "zdjąć"
+    ]
+  },
+  {
+    "pl": "Ceny w tym spa są przystępne, a wszędzie są znaki z godzinami otwarcia.",
+    "en": "The prices in this spa are affordable, and there are signs with the opening hours everywhere.",
+    "words": [
+      "przystępny / przystępne",
+      "wszędzie",
+      "znak"
+    ]
+  },
+  {
+    "pl": "Moja siostrzenica obejrzała dwa odcinki serialu, a potem cicho zasnęła.",
+    "en": "My niece watched two episodes of the series and then fell asleep quietly.",
+    "words": [
+      "siostrzenica",
+      "odcinek",
+      "cicho"
+    ]
+  },
+  {
+    "pl": "Lekarz sprawdził moje ciśnienie krwi i pozwolił mi wrócić do pracy.",
+    "en": "The doctor checked my blood pressure and allowed me to go back to work.",
+    "words": [
+      "ciśnienie krwi",
+      "pozwalać"
+    ]
+  },
+  {
+    "pl": "Mięta rośnie wszędzie w moim ogrodzie, a ilość liści jest ogromna.",
+    "en": "Mint grows everywhere in my garden, and the amount of leaves is huge.",
+    "words": [
+      "mięta",
+      "wszędzie",
+      "ilość"
+    ]
+  },
+  {
+    "pl": "Nie mam żadnych powodów, żeby się denerwować.",
+    "en": "I have no reasons to get nervous.",
+    "words": [
+      "żaden / żadna / żadne",
+      "powód",
+      "denerwować się"
+    ]
+  },
+  {
+    "pl": "Rzeczy zostawiłem w szafce, a drzwi do saun otwierały się same.",
+    "en": "I left my things in the locker, and the doors to the saunas opened by themselves.",
+    "words": [
+      "szafka",
+      "otwierać się",
+      "zostawić"
+    ]
+  },
+  {
+    "pl": "W małym pokoju nie było przestrzeni, więc wachlował się gazetą.",
+    "en": "There was no space in the small room, so he fanned himself with a newspaper.",
+    "words": [
+      "przestrzeń",
+      "wachlować"
+    ]
+  },
+  {
+    "pl": "Mówisz, że w tym mieście brakuje aktywności. W jakim znaczeniu?",
+    "en": "You say this city lacks activities. In what sense?",
+    "words": [
+      "aktywność",
+      "w jakim znaczeniu?",
+      "brakuje"
+    ]
+  },
+  {
+    "pl": "Stamtąd widać, że domy są rozsiane po całej dolinie.",
+    "en": "From there you can see the houses are scattered across the whole valley.",
+    "words": [
+      "stamtąd",
+      "rozsiany / rozsiane"
+    ]
+  },
+  {
+    "pl": "Po przejściu burzy mieszkańcy wioski jeszcze długo odczuwali skutki.",
+    "en": "After the storm had passed, the villagers felt the effects for a long time.",
+    "words": [
+      "po przejściu",
+      "wioska",
+      "odczuwać",
+      "skutek"
+    ]
+  },
+  {
+    "pl": "Zamiast narzekać, omówmy ten problem z uczestnikami.",
+    "en": "Instead of complaining, let's discuss this problem with the participants.",
+    "words": [
+      "zamiast",
+      "omówić",
+      "uczestnik"
+    ]
+  },
+  {
+    "pl": "Nie jestem pewien, czy zdążę, bo na drodze jest ogromny korek.",
+    "en": "I'm not sure I'll make it, because there is a huge traffic jam on the road.",
+    "words": [
+      "nie jestem pewien / pewny",
+      "zdążyć",
+      "ogromny",
+      "korek"
+    ]
+  },
+  {
+    "pl": "Większość uczestników potrafi pływać, ale mniejszość boi się wody.",
+    "en": "Most participants can swim, but a minority is afraid of water.",
+    "words": [
+      "większość",
+      "uczestnik",
+      "potrafić",
+      "mniejszość",
+      "bać się"
+    ]
+  },
+  {
+    "pl": "Zamiast kupować butelki, piję kranówę prosto z kranu.",
+    "en": "Instead of buying bottles, I drink tap water straight from the tap.",
+    "words": [
+      "zamiast",
+      "kranówa",
+      "kran"
+    ]
+  },
+  {
+    "pl": "Silny wiatr potrafi niszczyć domy i wywoływać ogromne szkody w wioskach.",
+    "en": "Strong wind can destroy houses and cause huge damage in villages.",
+    "words": [
+      "niszczyć",
+      "potrafić",
+      "wywoływać",
+      "ogromny",
+      "wioska"
+    ]
+  },
+  {
+    "pl": "Ta książka jest poświęcona polskim idiomom, na przykład „strach ma wielkie oczy”.",
+    "en": "This book is devoted to Polish idioms, for example \"fear has big eyes\".",
+    "words": [
+      "poświęcony",
+      "idiom",
+      "strach ma wielkie oczy"
+    ]
+  },
+  {
+    "pl": "Oglądam ten film od pół godziny i wciąż nie rozumiem tego zwrotu.",
+    "en": "I've been watching this film for half an hour and I still don't understand this expression.",
+    "words": [
+      "oglądać",
+      "pół",
+      "wciąż",
+      "zwrot"
+    ]
+  },
+  {
+    "pl": "Zachowaj paragon, bo ta część zamienna kosztuje ponad sto złotych.",
+    "en": "Keep the receipt, because this spare part costs over a hundred zloty.",
+    "words": [
+      "zachować",
+      "paragon",
+      "część zamienna",
+      "ponad"
+    ]
+  }
+]

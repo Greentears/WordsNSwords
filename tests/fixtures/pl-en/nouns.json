@@ -1,0 +1,3579 @@
+[
+  {
+    "card": "biletomat",
+    "nouns": [
+      {
+        "lemma": "biletomat",
+        "gender": "m",
+        "singular": [
+          "biletomat",
+          "biletomatu",
+          "biletomatowi",
+          "biletomat",
+          "biletomatem",
+          "biletomacie",
+          "biletomacie"
+        ],
+        "plural": [
+          "biletomaty",
+          "biletomatów",
+          "biletomatom",
+          "biletomaty",
+          "biletomatami",
+          "biletomatach",
+          "biletomaty"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "chodnik",
+    "nouns": [
+      {
+        "lemma": "chodnik",
+        "gender": "m",
+        "singular": [
+          "chodnik",
+          "chodnika",
+          "chodnikowi",
+          "chodnik",
+          "chodnikiem",
+          "chodniku",
+          "chodniku"
+        ],
+        "plural": [
+          "chodniki",
+          "chodników",
+          "chodnikom",
+          "chodniki",
+          "chodnikami",
+          "chodnikach",
+          "chodniki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "czajnik",
+    "nouns": [
+      {
+        "lemma": "czajnik",
+        "gender": "m",
+        "singular": [
+          "czajnik",
+          "czajnika",
+          "czajnikowi",
+          "czajnik",
+          "czajnikiem",
+          "czajniku",
+          "czajniku"
+        ],
+        "plural": [
+          "czajniki",
+          "czajników",
+          "czajnikom",
+          "czajniki",
+          "czajnikami",
+          "czajnikach",
+          "czajniki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "deska do krojenia",
+    "nouns": [
+      {
+        "lemma": "deska do krojenia",
+        "gender": "f",
+        "singular": [
+          "deska do krojenia",
+          "deski do krojenia",
+          "desce do krojenia",
+          "deskę do krojenia",
+          "deską do krojenia",
+          "desce do krojenia",
+          "deska do krojenia"
+        ],
+        "plural": [
+          "deski do krojenia",
+          "desek do krojenia",
+          "deskom do krojenia",
+          "deski do krojenia",
+          "deskami do krojenia",
+          "deskach do krojenia",
+          "deski do krojenia"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "dolewka",
+    "nouns": [
+      {
+        "lemma": "dolewka",
+        "gender": "f",
+        "singular": [
+          "dolewka",
+          "dolewki",
+          "dolewce",
+          "dolewkę",
+          "dolewką",
+          "dolewce",
+          "dolewko"
+        ],
+        "plural": [
+          "dolewki",
+          "dolewek",
+          "dolewkom",
+          "dolewki",
+          "dolewkami",
+          "dolewkach",
+          "dolewki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "dodatek",
+    "nouns": [
+      {
+        "lemma": "dodatek",
+        "gender": "m",
+        "singular": [
+          "dodatek",
+          "dodatku",
+          "dodatkowi",
+          "dodatek",
+          "dodatkiem",
+          "dodatku",
+          "dodatku"
+        ],
+        "plural": [
+          "dodatki",
+          "dodatków",
+          "dodatkom",
+          "dodatki",
+          "dodatkami",
+          "dodatkach",
+          "dodatki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "dział",
+    "nouns": [
+      {
+        "lemma": "dział",
+        "gender": "m",
+        "singular": [
+          "dział",
+          "działu",
+          "działowi",
+          "dział",
+          "działem",
+          "dziale",
+          "dziale"
+        ],
+        "plural": [
+          "działy",
+          "działów",
+          "działom",
+          "działy",
+          "działami",
+          "działach",
+          "działy"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "garnek",
+    "nouns": [
+      {
+        "lemma": "garnek",
+        "gender": "m",
+        "singular": [
+          "garnek",
+          "garnka",
+          "garnkowi",
+          "garnek",
+          "garnkiem",
+          "garnku",
+          "garnku"
+        ],
+        "plural": [
+          "garnki",
+          "garnków",
+          "garnkom",
+          "garnki",
+          "garnkami",
+          "garnkach",
+          "garnki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "gotówka",
+    "nouns": [
+      {
+        "lemma": "gotówka",
+        "gender": "f",
+        "singular": [
+          "gotówka",
+          "gotówki",
+          "gotówce",
+          "gotówkę",
+          "gotówką",
+          "gotówce",
+          "gotówko"
+        ],
+        "plural": [
+          "gotówki",
+          "gotówek",
+          "gotówkom",
+          "gotówki",
+          "gotówkami",
+          "gotówkach",
+          "gotówki"
+        ],
+        "rare_plural": true
+      }
+    ]
+  },
+  {
+    "card": "gracz",
+    "nouns": [
+      {
+        "lemma": "gracz",
+        "gender": "m",
+        "singular": [
+          "gracz",
+          "gracza",
+          "graczowi",
+          "gracza",
+          "graczem",
+          "graczu",
+          "graczu"
+        ],
+        "plural": [
+          "gracze",
+          "graczy",
+          "graczom",
+          "graczy",
+          "graczami",
+          "graczach",
+          "gracze"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "jakość",
+    "nouns": [
+      {
+        "lemma": "jakość",
+        "gender": "f",
+        "singular": [
+          "jakość",
+          "jakości",
+          "jakości",
+          "jakość",
+          "jakością",
+          "jakości",
+          "jakości"
+        ],
+        "plural": [
+          "jakości",
+          "jakości",
+          "jakościom",
+          "jakości",
+          "jakościami",
+          "jakościach",
+          "jakości"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "karta dań",
+    "nouns": [
+      {
+        "lemma": "karta dań",
+        "gender": "f",
+        "singular": [
+          "karta dań",
+          "karty dań",
+          "karcie dań",
+          "kartę dań",
+          "kartą dań",
+          "karcie dań",
+          "karto dań"
+        ],
+        "plural": [
+          "karty dań",
+          "kart dań",
+          "kartom dań",
+          "karty dań",
+          "kartami dań",
+          "kartach dań",
+          "karty dań"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "katar",
+    "nouns": [
+      {
+        "lemma": "katar",
+        "gender": "m",
+        "singular": [
+          "katar",
+          "kataru",
+          "katarowi",
+          "katar",
+          "katarem",
+          "katarze",
+          "katarze"
+        ],
+        "plural": [
+          "katary",
+          "katarów",
+          "katarom",
+          "katary",
+          "katarami",
+          "katarach",
+          "katary"
+        ],
+        "rare_plural": true
+      }
+    ]
+  },
+  {
+    "card": "kieliszek",
+    "nouns": [
+      {
+        "lemma": "kieliszek",
+        "gender": "m",
+        "singular": [
+          "kieliszek",
+          "kieliszka",
+          "kieliszkowi",
+          "kieliszek",
+          "kieliszkiem",
+          "kieliszku",
+          "kieliszku"
+        ],
+        "plural": [
+          "kieliszki",
+          "kieliszków",
+          "kieliszkom",
+          "kieliszki",
+          "kieliszkami",
+          "kieliszkach",
+          "kieliszki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "kolejka",
+    "nouns": [
+      {
+        "lemma": "kolejka",
+        "gender": "f",
+        "singular": [
+          "kolejka",
+          "kolejki",
+          "kolejce",
+          "kolejkę",
+          "kolejką",
+          "kolejce",
+          "kolejko"
+        ],
+        "plural": [
+          "kolejki",
+          "kolejek",
+          "kolejkom",
+          "kolejki",
+          "kolejkami",
+          "kolejkach",
+          "kolejki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "korek",
+    "nouns": [
+      {
+        "lemma": "korek",
+        "gender": "m",
+        "singular": [
+          "korek",
+          "korka",
+          "korkowi",
+          "korek",
+          "korkiem",
+          "korku",
+          "korku"
+        ],
+        "plural": [
+          "korki",
+          "korków",
+          "korkom",
+          "korki",
+          "korkami",
+          "korkach",
+          "korki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "koszyk",
+    "nouns": [
+      {
+        "lemma": "koszyk",
+        "gender": "m",
+        "singular": [
+          "koszyk",
+          "koszyka",
+          "koszykowi",
+          "koszyk",
+          "koszykiem",
+          "koszyku",
+          "koszyku"
+        ],
+        "plural": [
+          "koszyki",
+          "koszyków",
+          "koszykom",
+          "koszyki",
+          "koszykami",
+          "koszykach",
+          "koszyki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "lek",
+    "nouns": [
+      {
+        "lemma": "lek",
+        "gender": "m",
+        "singular": [
+          "lek",
+          "leku",
+          "lekowi",
+          "lek",
+          "lekiem",
+          "leku",
+          "leku"
+        ],
+        "plural": [
+          "leki",
+          "leków",
+          "lekom",
+          "leki",
+          "lekami",
+          "lekach",
+          "leki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "mandat",
+    "nouns": [
+      {
+        "lemma": "mandat",
+        "gender": "m",
+        "singular": [
+          "mandat",
+          "mandatu",
+          "mandatowi",
+          "mandat",
+          "mandatem",
+          "mandacie",
+          "mandacie"
+        ],
+        "plural": [
+          "mandaty",
+          "mandatów",
+          "mandatom",
+          "mandaty",
+          "mandatami",
+          "mandatach",
+          "mandaty"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "miska",
+    "nouns": [
+      {
+        "lemma": "miska",
+        "gender": "f",
+        "singular": [
+          "miska",
+          "miski",
+          "misce",
+          "miskę",
+          "miską",
+          "misce",
+          "misko"
+        ],
+        "plural": [
+          "miski",
+          "misek",
+          "miskom",
+          "miski",
+          "miskami",
+          "miskach",
+          "miski"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "cel",
+    "nouns": [
+      {
+        "lemma": "cel",
+        "gender": "m",
+        "singular": [
+          "cel",
+          "celu",
+          "celowi",
+          "cel",
+          "celem",
+          "celu",
+          "celu"
+        ],
+        "plural": [
+          "cele",
+          "celów",
+          "celom",
+          "cele",
+          "celami",
+          "celach",
+          "cele"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "naczynie",
+    "nouns": [
+      {
+        "lemma": "naczynie",
+        "gender": "n",
+        "singular": [
+          "naczynie",
+          "naczynia",
+          "naczyniu",
+          "naczynie",
+          "naczyniem",
+          "naczyniu",
+          "naczynie"
+        ],
+        "plural": [
+          "naczynia",
+          "naczyń",
+          "naczyniom",
+          "naczynia",
+          "naczyniami",
+          "naczyniach",
+          "naczynia"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "naleśnik",
+    "nouns": [
+      {
+        "lemma": "naleśnik",
+        "gender": "m",
+        "singular": [
+          "naleśnik",
+          "naleśnika",
+          "naleśnikowi",
+          "naleśnik",
+          "naleśnikiem",
+          "naleśniku",
+          "naleśniku"
+        ],
+        "plural": [
+          "naleśniki",
+          "naleśników",
+          "naleśnikom",
+          "naleśniki",
+          "naleśnikami",
+          "naleśnikach",
+          "naleśniki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "napiwek",
+    "nouns": [
+      {
+        "lemma": "napiwek",
+        "gender": "m",
+        "singular": [
+          "napiwek",
+          "napiwku",
+          "napiwkowi",
+          "napiwek",
+          "napiwkiem",
+          "napiwku",
+          "napiwku"
+        ],
+        "plural": [
+          "napiwki",
+          "napiwków",
+          "napiwkom",
+          "napiwki",
+          "napiwkami",
+          "napiwkach",
+          "napiwki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "napój",
+    "nouns": [
+      {
+        "lemma": "napój",
+        "gender": "m",
+        "singular": [
+          "napój",
+          "napoju",
+          "napojowi",
+          "napój",
+          "napojem",
+          "napoju",
+          "napoju"
+        ],
+        "plural": [
+          "napoje",
+          "napojów",
+          "napojom",
+          "napoje",
+          "napojami",
+          "napojach",
+          "napoje"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "narzeczona",
+    "nouns": [
+      {
+        "lemma": "narzeczona",
+        "gender": "f",
+        "singular": [
+          "narzeczona",
+          "narzeczonej",
+          "narzeczonej",
+          "narzeczoną",
+          "narzeczoną",
+          "narzeczonej",
+          "narzeczona"
+        ],
+        "plural": [
+          "narzeczone",
+          "narzeczonych",
+          "narzeczonym",
+          "narzeczone",
+          "narzeczonymi",
+          "narzeczonych",
+          "narzeczone"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "obowiązkowa służba wojskowa",
+    "nouns": [
+      {
+        "lemma": "obowiązkowa służba wojskowa",
+        "gender": "f",
+        "singular": [
+          "obowiązkowa służba wojskowa",
+          "obowiązkowej służby wojskowej",
+          "obowiązkowej służbie wojskowej",
+          "obowiązkową służbę wojskową",
+          "obowiązkową służbą wojskową",
+          "obowiązkowej służbie wojskowej",
+          "obowiązkowa służbo wojskowa"
+        ],
+        "plural": [
+          "obowiązkowe służby wojskowe",
+          "obowiązkowych służb wojskowych",
+          "obowiązkowym służbom wojskowym",
+          "obowiązkowe służby wojskowe",
+          "obowiązkowymi służbami wojskowymi",
+          "obowiązkowych służbach wojskowych",
+          "obowiązkowe służby wojskowe"
+        ],
+        "rare_plural": true
+      }
+    ]
+  },
+  {
+    "card": "opóźnienie",
+    "nouns": [
+      {
+        "lemma": "opóźnienie",
+        "gender": "n",
+        "singular": [
+          "opóźnienie",
+          "opóźnienia",
+          "opóźnieniu",
+          "opóźnienie",
+          "opóźnieniem",
+          "opóźnieniu",
+          "opóźnienie"
+        ],
+        "plural": [
+          "opóźnienia",
+          "opóźnień",
+          "opóźnieniom",
+          "opóźnienia",
+          "opóźnieniami",
+          "opóźnieniach",
+          "opóźnienia"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "paragon",
+    "nouns": [
+      {
+        "lemma": "paragon",
+        "gender": "m",
+        "singular": [
+          "paragon",
+          "paragonu",
+          "paragonowi",
+          "paragon",
+          "paragonem",
+          "paragonie",
+          "paragonie"
+        ],
+        "plural": [
+          "paragony",
+          "paragonów",
+          "paragonom",
+          "paragony",
+          "paragonami",
+          "paragonach",
+          "paragony"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "patelnia",
+    "nouns": [
+      {
+        "lemma": "patelnia",
+        "gender": "f",
+        "singular": [
+          "patelnia",
+          "patelni",
+          "patelni",
+          "patelnię",
+          "patelnią",
+          "patelni",
+          "patelnio"
+        ],
+        "plural": [
+          "patelnie",
+          "patelni",
+          "patelniom",
+          "patelnie",
+          "patelniami",
+          "patelniach",
+          "patelnie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "piekarnik",
+    "nouns": [
+      {
+        "lemma": "piekarnik",
+        "gender": "m",
+        "singular": [
+          "piekarnik",
+          "piekarnika",
+          "piekarnikowi",
+          "piekarnik",
+          "piekarnikiem",
+          "piekarniku",
+          "piekarniku"
+        ],
+        "plural": [
+          "piekarniki",
+          "piekarników",
+          "piekarnikom",
+          "piekarniki",
+          "piekarnikami",
+          "piekarnikach",
+          "piekarniki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "początek",
+    "nouns": [
+      {
+        "lemma": "początek",
+        "gender": "m",
+        "singular": [
+          "początek",
+          "początku",
+          "początkowi",
+          "początek",
+          "początkiem",
+          "początku",
+          "początku"
+        ],
+        "plural": [
+          "początki",
+          "początków",
+          "początkom",
+          "początki",
+          "początkami",
+          "początkach",
+          "początki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "podróż poślubna",
+    "nouns": [
+      {
+        "lemma": "podróż poślubna",
+        "gender": "f",
+        "singular": [
+          "podróż poślubna",
+          "podróży poślubnej",
+          "podróży poślubnej",
+          "podróż poślubną",
+          "podróżą poślubną",
+          "podróży poślubnej",
+          "podróży poślubna"
+        ],
+        "plural": [
+          "podróże poślubne",
+          "podróży poślubnych",
+          "podróżom poślubnym",
+          "podróże poślubne",
+          "podróżami poślubnymi",
+          "podróżach poślubnych",
+          "podróże poślubne"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "poprawiny",
+    "nouns": [
+      {
+        "lemma": "poprawiny",
+        "gender": "pl",
+        "singular": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "plural": [
+          "poprawiny",
+          "poprawin",
+          "poprawinom",
+          "poprawiny",
+          "poprawinami",
+          "poprawinach",
+          "poprawiny"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "powtórka",
+    "nouns": [
+      {
+        "lemma": "powtórka",
+        "gender": "f",
+        "singular": [
+          "powtórka",
+          "powtórki",
+          "powtórce",
+          "powtórkę",
+          "powtórką",
+          "powtórce",
+          "powtórko"
+        ],
+        "plural": [
+          "powtórki",
+          "powtórek",
+          "powtórkom",
+          "powtórki",
+          "powtórkami",
+          "powtórkach",
+          "powtórki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "półka",
+    "nouns": [
+      {
+        "lemma": "półka",
+        "gender": "f",
+        "singular": [
+          "półka",
+          "półki",
+          "półce",
+          "półkę",
+          "półką",
+          "półce",
+          "półko"
+        ],
+        "plural": [
+          "półki",
+          "półek",
+          "półkom",
+          "półki",
+          "półkami",
+          "półkach",
+          "półki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "przystanek",
+    "nouns": [
+      {
+        "lemma": "przystanek",
+        "gender": "m",
+        "singular": [
+          "przystanek",
+          "przystanku",
+          "przystankowi",
+          "przystanek",
+          "przystankiem",
+          "przystanku",
+          "przystanku"
+        ],
+        "plural": [
+          "przystanki",
+          "przystanków",
+          "przystankom",
+          "przystanki",
+          "przystankami",
+          "przystankach",
+          "przystanki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "przystawka",
+    "nouns": [
+      {
+        "lemma": "przystawka",
+        "gender": "f",
+        "singular": [
+          "przystawka",
+          "przystawki",
+          "przystawce",
+          "przystawkę",
+          "przystawką",
+          "przystawce",
+          "przystawko"
+        ],
+        "plural": [
+          "przystawki",
+          "przystawek",
+          "przystawkom",
+          "przystawki",
+          "przystawkami",
+          "przystawkach",
+          "przystawki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "przymiotnik",
+    "nouns": [
+      {
+        "lemma": "przymiotnik",
+        "gender": "m",
+        "singular": [
+          "przymiotnik",
+          "przymiotnika",
+          "przymiotnikowi",
+          "przymiotnik",
+          "przymiotnikiem",
+          "przymiotniku",
+          "przymiotniku"
+        ],
+        "plural": [
+          "przymiotniki",
+          "przymiotników",
+          "przymiotnikom",
+          "przymiotniki",
+          "przymiotnikami",
+          "przymiotnikach",
+          "przymiotniki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "przysłówek",
+    "nouns": [
+      {
+        "lemma": "przysłówek",
+        "gender": "m",
+        "singular": [
+          "przysłówek",
+          "przysłówka",
+          "przysłówkowi",
+          "przysłówek",
+          "przysłówkiem",
+          "przysłówku",
+          "przysłówku"
+        ],
+        "plural": [
+          "przysłówki",
+          "przysłówków",
+          "przysłówkom",
+          "przysłówki",
+          "przysłówkami",
+          "przysłówkach",
+          "przysłówki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "rzeczownik",
+    "nouns": [
+      {
+        "lemma": "rzeczownik",
+        "gender": "m",
+        "singular": [
+          "rzeczownik",
+          "rzeczownika",
+          "rzeczownikowi",
+          "rzeczownik",
+          "rzeczownikiem",
+          "rzeczowniku",
+          "rzeczowniku"
+        ],
+        "plural": [
+          "rzeczowniki",
+          "rzeczowników",
+          "rzeczownikom",
+          "rzeczowniki",
+          "rzeczownikami",
+          "rzeczownikach",
+          "rzeczowniki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "prośba",
+    "nouns": [
+      {
+        "lemma": "prośba",
+        "gender": "f",
+        "singular": [
+          "prośba",
+          "prośby",
+          "prośbie",
+          "prośbę",
+          "prośbą",
+          "prośbie",
+          "prośbo"
+        ],
+        "plural": [
+          "prośby",
+          "próśb",
+          "prośbom",
+          "prośby",
+          "prośbami",
+          "prośbach",
+          "prośby"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "psiara",
+    "nouns": [
+      {
+        "lemma": "psiara",
+        "gender": "f",
+        "singular": [
+          "psiara",
+          "psiary",
+          "psiarze",
+          "psiarę",
+          "psiarą",
+          "psiarze",
+          "psiaro"
+        ],
+        "plural": [
+          "psiary",
+          "psiar",
+          "psiarom",
+          "psiary",
+          "psiarami",
+          "psiarach",
+          "psiary"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "kociara",
+    "nouns": [
+      {
+        "lemma": "kociara",
+        "gender": "f",
+        "singular": [
+          "kociara",
+          "kociary",
+          "kociarze",
+          "kociarę",
+          "kociarą",
+          "kociarze",
+          "kociaro"
+        ],
+        "plural": [
+          "kociary",
+          "kociar",
+          "kociarom",
+          "kociary",
+          "kociarami",
+          "kociarach",
+          "kociary"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "reklamówka",
+    "nouns": [
+      {
+        "lemma": "reklamówka",
+        "gender": "f",
+        "singular": [
+          "reklamówka",
+          "reklamówki",
+          "reklamówce",
+          "reklamówkę",
+          "reklamówką",
+          "reklamówce",
+          "reklamówko"
+        ],
+        "plural": [
+          "reklamówki",
+          "reklamówek",
+          "reklamówkom",
+          "reklamówki",
+          "reklamówkami",
+          "reklamówkach",
+          "reklamówki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "reszta",
+    "nouns": [
+      {
+        "lemma": "reszta",
+        "gender": "f",
+        "singular": [
+          "reszta",
+          "reszty",
+          "reszcie",
+          "resztę",
+          "resztą",
+          "reszcie",
+          "reszto"
+        ],
+        "plural": [
+          "reszty",
+          "reszt",
+          "resztom",
+          "reszty",
+          "resztami",
+          "resztach",
+          "reszty"
+        ],
+        "rare_plural": true
+      }
+    ]
+  },
+  {
+    "card": "rozkład jazdy",
+    "nouns": [
+      {
+        "lemma": "rozkład jazdy",
+        "gender": "m",
+        "singular": [
+          "rozkład jazdy",
+          "rozkładu jazdy",
+          "rozkładowi jazdy",
+          "rozkład jazdy",
+          "rozkładem jazdy",
+          "rozkładzie jazdy",
+          "rozkładzie jazdy"
+        ],
+        "plural": [
+          "rozkłady jazdy",
+          "rozkładów jazdy",
+          "rozkładom jazdy",
+          "rozkłady jazdy",
+          "rozkładami jazdy",
+          "rozkładach jazdy",
+          "rozkłady jazdy"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "skrzyżowanie",
+    "nouns": [
+      {
+        "lemma": "skrzyżowanie",
+        "gender": "n",
+        "singular": [
+          "skrzyżowanie",
+          "skrzyżowania",
+          "skrzyżowaniu",
+          "skrzyżowanie",
+          "skrzyżowaniem",
+          "skrzyżowaniu",
+          "skrzyżowanie"
+        ],
+        "plural": [
+          "skrzyżowania",
+          "skrzyżowań",
+          "skrzyżowaniom",
+          "skrzyżowania",
+          "skrzyżowaniami",
+          "skrzyżowaniach",
+          "skrzyżowania"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "stolik",
+    "nouns": [
+      {
+        "lemma": "stolik",
+        "gender": "m",
+        "singular": [
+          "stolik",
+          "stolika",
+          "stolikowi",
+          "stolik",
+          "stolikiem",
+          "stoliku",
+          "stoliku"
+        ],
+        "plural": [
+          "stoliki",
+          "stolików",
+          "stolikom",
+          "stoliki",
+          "stolikami",
+          "stolikach",
+          "stoliki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "sznurek",
+    "nouns": [
+      {
+        "lemma": "sznurek",
+        "gender": "m",
+        "singular": [
+          "sznurek",
+          "sznurka",
+          "sznurkowi",
+          "sznurek",
+          "sznurkiem",
+          "sznurku",
+          "sznurku"
+        ],
+        "plural": [
+          "sznurki",
+          "sznurków",
+          "sznurkom",
+          "sznurki",
+          "sznurkami",
+          "sznurkach",
+          "sznurki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "sztućce",
+    "nouns": [
+      {
+        "lemma": "sztućce",
+        "gender": "pl",
+        "singular": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "plural": [
+          "sztućce",
+          "sztućców",
+          "sztućcom",
+          "sztućce",
+          "sztućcami",
+          "sztućcach",
+          "sztućce"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "świadek",
+    "nouns": [
+      {
+        "lemma": "świadek",
+        "gender": "m",
+        "singular": [
+          "świadek",
+          "świadka",
+          "świadkowi",
+          "świadka",
+          "świadkiem",
+          "świadku",
+          "świadku"
+        ],
+        "plural": [
+          "świadkowie",
+          "świadków",
+          "świadkom",
+          "świadków",
+          "świadkami",
+          "świadkach",
+          "świadkowie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "ślub",
+    "nouns": [
+      {
+        "lemma": "ślub",
+        "gender": "m",
+        "singular": [
+          "ślub",
+          "ślubu",
+          "ślubowi",
+          "ślub",
+          "ślubem",
+          "ślubie",
+          "ślubie"
+        ],
+        "plural": [
+          "śluby",
+          "ślubów",
+          "ślubom",
+          "śluby",
+          "ślubami",
+          "ślubach",
+          "śluby"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "talerz",
+    "nouns": [
+      {
+        "lemma": "talerz",
+        "gender": "m",
+        "singular": [
+          "talerz",
+          "talerza",
+          "talerzowi",
+          "talerz",
+          "talerzem",
+          "talerzu",
+          "talerzu"
+        ],
+        "plural": [
+          "talerze",
+          "talerzy",
+          "talerzom",
+          "talerze",
+          "talerzami",
+          "talerzach",
+          "talerze"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "tatar",
+    "nouns": [
+      {
+        "lemma": "tatar",
+        "gender": "m",
+        "singular": [
+          "tatar",
+          "tatara",
+          "tatarowi",
+          "tatar / tatara",
+          "tatarem",
+          "tatarze",
+          "tatarze"
+        ],
+        "plural": [
+          "tatary",
+          "tatarów",
+          "tatarom",
+          "tatary",
+          "tatarami",
+          "tatarach",
+          "tatary"
+        ],
+        "rare_plural": true
+      }
+    ]
+  },
+  {
+    "card": "tłumacz",
+    "nouns": [
+      {
+        "lemma": "tłumacz",
+        "gender": "m",
+        "singular": [
+          "tłumacz",
+          "tłumacza",
+          "tłumaczowi",
+          "tłumacza",
+          "tłumaczem",
+          "tłumaczu",
+          "tłumaczu"
+        ],
+        "plural": [
+          "tłumacze",
+          "tłumaczy",
+          "tłumaczom",
+          "tłumaczy",
+          "tłumaczami",
+          "tłumaczach",
+          "tłumacze"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "uroczystość",
+    "nouns": [
+      {
+        "lemma": "uroczystość",
+        "gender": "f",
+        "singular": [
+          "uroczystość",
+          "uroczystości",
+          "uroczystości",
+          "uroczystość",
+          "uroczystością",
+          "uroczystości",
+          "uroczystości"
+        ],
+        "plural": [
+          "uroczystości",
+          "uroczystości",
+          "uroczystościom",
+          "uroczystości",
+          "uroczystościami",
+          "uroczystościach",
+          "uroczystości"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "urząd",
+    "nouns": [
+      {
+        "lemma": "urząd",
+        "gender": "m",
+        "singular": [
+          "urząd",
+          "urzędu",
+          "urzędowi",
+          "urząd",
+          "urzędem",
+          "urzędzie",
+          "urzędzie"
+        ],
+        "plural": [
+          "urzędy",
+          "urzędów",
+          "urzędom",
+          "urzędy",
+          "urzędami",
+          "urzędach",
+          "urzędy"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "waga",
+    "nouns": [
+      {
+        "lemma": "waga",
+        "gender": "f",
+        "singular": [
+          "waga",
+          "wagi",
+          "wadze",
+          "wagę",
+          "wagą",
+          "wadze",
+          "wago"
+        ],
+        "plural": [
+          "wagi",
+          "wag",
+          "wagom",
+          "wagi",
+          "wagami",
+          "wagach",
+          "wagi"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "wesele",
+    "nouns": [
+      {
+        "lemma": "wesele",
+        "gender": "n",
+        "singular": [
+          "wesele",
+          "wesela",
+          "weselu",
+          "wesele",
+          "weselem",
+          "weselu",
+          "wesele"
+        ],
+        "plural": [
+          "wesela",
+          "wesel",
+          "weselom",
+          "wesela",
+          "weselami",
+          "weselach",
+          "wesela"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "widownia",
+    "nouns": [
+      {
+        "lemma": "widownia",
+        "gender": "f",
+        "singular": [
+          "widownia",
+          "widowni",
+          "widowni",
+          "widownię",
+          "widownią",
+          "widowni",
+          "widownio"
+        ],
+        "plural": [
+          "widownie",
+          "widowni",
+          "widowniom",
+          "widownie",
+          "widowniami",
+          "widowniach",
+          "widownie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "wieża",
+    "nouns": [
+      {
+        "lemma": "wieża",
+        "gender": "f",
+        "singular": [
+          "wieża",
+          "wieży",
+          "wieży",
+          "wieżę",
+          "wieżą",
+          "wieży",
+          "wieżo"
+        ],
+        "plural": [
+          "wieże",
+          "wież",
+          "wieżom",
+          "wieże",
+          "wieżami",
+          "wieżach",
+          "wieże"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "wózek",
+    "nouns": [
+      {
+        "lemma": "wózek",
+        "gender": "m",
+        "singular": [
+          "wózek",
+          "wózka",
+          "wózkowi",
+          "wózek",
+          "wózkiem",
+          "wózku",
+          "wózku"
+        ],
+        "plural": [
+          "wózki",
+          "wózków",
+          "wózkom",
+          "wózki",
+          "wózkami",
+          "wózkach",
+          "wózki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "wycieczka",
+    "nouns": [
+      {
+        "lemma": "wycieczka",
+        "gender": "f",
+        "singular": [
+          "wycieczka",
+          "wycieczki",
+          "wycieczce",
+          "wycieczkę",
+          "wycieczką",
+          "wycieczce",
+          "wycieczko"
+        ],
+        "plural": [
+          "wycieczki",
+          "wycieczek",
+          "wycieczkom",
+          "wycieczki",
+          "wycieczkami",
+          "wycieczkach",
+          "wycieczki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "wydarzenie",
+    "nouns": [
+      {
+        "lemma": "wydarzenie",
+        "gender": "n",
+        "singular": [
+          "wydarzenie",
+          "wydarzenia",
+          "wydarzeniu",
+          "wydarzenie",
+          "wydarzeniem",
+          "wydarzeniu",
+          "wydarzenie"
+        ],
+        "plural": [
+          "wydarzenia",
+          "wydarzeń",
+          "wydarzeniom",
+          "wydarzenia",
+          "wydarzeniami",
+          "wydarzeniach",
+          "wydarzenia"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "wymowa",
+    "nouns": [
+      {
+        "lemma": "wymowa",
+        "gender": "f",
+        "singular": [
+          "wymowa",
+          "wymowy",
+          "wymowie",
+          "wymowę",
+          "wymową",
+          "wymowie",
+          "wymowo"
+        ],
+        "plural": [
+          "wymowy",
+          "wymów",
+          "wymowom",
+          "wymowy",
+          "wymowami",
+          "wymowach",
+          "wymowy"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "zagadnienie",
+    "nouns": [
+      {
+        "lemma": "zagadnienie",
+        "gender": "n",
+        "singular": [
+          "zagadnienie",
+          "zagadnienia",
+          "zagadnieniu",
+          "zagadnienie",
+          "zagadnieniem",
+          "zagadnieniu",
+          "zagadnienie"
+        ],
+        "plural": [
+          "zagadnienia",
+          "zagadnień",
+          "zagadnieniom",
+          "zagadnienia",
+          "zagadnieniami",
+          "zagadnieniach",
+          "zagadnienia"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "zamówienie",
+    "nouns": [
+      {
+        "lemma": "zamówienie",
+        "gender": "n",
+        "singular": [
+          "zamówienie",
+          "zamówienia",
+          "zamówieniu",
+          "zamówienie",
+          "zamówieniem",
+          "zamówieniu",
+          "zamówienie"
+        ],
+        "plural": [
+          "zamówienia",
+          "zamówień",
+          "zamówieniom",
+          "zamówienia",
+          "zamówieniami",
+          "zamówieniach",
+          "zamówienia"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "zamrażarka",
+    "nouns": [
+      {
+        "lemma": "zamrażarka",
+        "gender": "f",
+        "singular": [
+          "zamrażarka",
+          "zamrażarki",
+          "zamrażarce",
+          "zamrażarkę",
+          "zamrażarką",
+          "zamrażarce",
+          "zamrażarko"
+        ],
+        "plural": [
+          "zamrażarki",
+          "zamrażarek",
+          "zamrażarkom",
+          "zamrażarki",
+          "zamrażarkami",
+          "zamrażarkach",
+          "zamrażarki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "zwrot",
+    "nouns": [
+      {
+        "lemma": "zwrot",
+        "gender": "m",
+        "singular": [
+          "zwrot",
+          "zwrotu",
+          "zwrotowi",
+          "zwrot",
+          "zwrotem",
+          "zwrocie",
+          "zwrocie"
+        ],
+        "plural": [
+          "zwroty",
+          "zwrotów",
+          "zwrotom",
+          "zwroty",
+          "zwrotami",
+          "zwrotach",
+          "zwroty"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "źródło",
+    "nouns": [
+      {
+        "lemma": "źródło",
+        "gender": "n",
+        "singular": [
+          "źródło",
+          "źródła",
+          "źródłu",
+          "źródło",
+          "źródłem",
+          "źródle",
+          "źródło"
+        ],
+        "plural": [
+          "źródła",
+          "źródeł",
+          "źródłom",
+          "źródła",
+          "źródłami",
+          "źródłach",
+          "źródła"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "zasób",
+    "nouns": [
+      {
+        "lemma": "zasób",
+        "gender": "m",
+        "singular": [
+          "zasób",
+          "zasobu",
+          "zasobowi",
+          "zasób",
+          "zasobem",
+          "zasobie",
+          "zasobie"
+        ],
+        "plural": [
+          "zasoby",
+          "zasobów",
+          "zasobom",
+          "zasoby",
+          "zasobami",
+          "zasobach",
+          "zasoby"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "posiłek",
+    "nouns": [
+      {
+        "lemma": "posiłek",
+        "gender": "m",
+        "singular": [
+          "posiłek",
+          "posiłku",
+          "posiłkowi",
+          "posiłek",
+          "posiłkiem",
+          "posiłku",
+          "posiłku"
+        ],
+        "plural": [
+          "posiłki",
+          "posiłków",
+          "posiłkom",
+          "posiłki",
+          "posiłkami",
+          "posiłkach",
+          "posiłki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "nadzienie",
+    "nouns": [
+      {
+        "lemma": "nadzienie",
+        "gender": "n",
+        "singular": [
+          "nadzienie",
+          "nadzienia",
+          "nadzieniu",
+          "nadzienie",
+          "nadzieniem",
+          "nadzieniu",
+          "nadzienie"
+        ],
+        "plural": [
+          "nadzienia",
+          "nadzień",
+          "nadzieniom",
+          "nadzienia",
+          "nadzieniami",
+          "nadzieniach",
+          "nadzienia"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "pogaduszki",
+    "nouns": [
+      {
+        "lemma": "pogaduszki",
+        "gender": "pl",
+        "singular": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "plural": [
+          "pogaduszki",
+          "pogaduszek",
+          "pogaduszkom",
+          "pogaduszki",
+          "pogaduszkami",
+          "pogaduszkach",
+          "pogaduszki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "bogactwo",
+    "nouns": [
+      {
+        "lemma": "bogactwo",
+        "gender": "n",
+        "singular": [
+          "bogactwo",
+          "bogactwa",
+          "bogactwu",
+          "bogactwo",
+          "bogactwem",
+          "bogactwie",
+          "bogactwo"
+        ],
+        "plural": [
+          "bogactwa",
+          "bogactw",
+          "bogactwom",
+          "bogactwa",
+          "bogactwami",
+          "bogactwach",
+          "bogactwa"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "przyszłość",
+    "nouns": [
+      {
+        "lemma": "przyszłość",
+        "gender": "f",
+        "singular": [
+          "przyszłość",
+          "przyszłości",
+          "przyszłości",
+          "przyszłość",
+          "przyszłością",
+          "przyszłości",
+          "przyszłości"
+        ],
+        "plural": [
+          "przyszłości",
+          "przyszłości",
+          "przyszłościom",
+          "przyszłości",
+          "przyszłościami",
+          "przyszłościach",
+          "przyszłości"
+        ],
+        "rare_plural": true
+      }
+    ]
+  },
+  {
+    "card": "zainteresowanie",
+    "nouns": [
+      {
+        "lemma": "zainteresowanie",
+        "gender": "n",
+        "singular": [
+          "zainteresowanie",
+          "zainteresowania",
+          "zainteresowaniu",
+          "zainteresowanie",
+          "zainteresowaniem",
+          "zainteresowaniu",
+          "zainteresowanie"
+        ],
+        "plural": [
+          "zainteresowania",
+          "zainteresowań",
+          "zainteresowaniom",
+          "zainteresowania",
+          "zainteresowaniami",
+          "zainteresowaniach",
+          "zainteresowania"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "nagrywanie",
+    "nouns": [
+      {
+        "lemma": "nagrywanie",
+        "gender": "n",
+        "singular": [
+          "nagrywanie",
+          "nagrywania",
+          "nagrywaniu",
+          "nagrywanie",
+          "nagrywaniem",
+          "nagrywaniu",
+          "nagrywanie"
+        ],
+        "plural": [
+          "nagrywania",
+          "nagrywań",
+          "nagrywaniom",
+          "nagrywania",
+          "nagrywaniami",
+          "nagrywaniach",
+          "nagrywania"
+        ],
+        "rare_plural": true
+      }
+    ]
+  },
+  {
+    "card": "kolega",
+    "nouns": [
+      {
+        "lemma": "kolega",
+        "gender": "m",
+        "singular": [
+          "kolega",
+          "kolegi",
+          "koledze",
+          "kolegę",
+          "kolegą",
+          "koledze",
+          "kolego"
+        ],
+        "plural": [
+          "koledzy",
+          "kolegów",
+          "kolegom",
+          "kolegów",
+          "kolegami",
+          "kolegach",
+          "koledzy"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "koleżanka",
+    "nouns": [
+      {
+        "lemma": "koleżanka",
+        "gender": "f",
+        "singular": [
+          "koleżanka",
+          "koleżanki",
+          "koleżance",
+          "koleżankę",
+          "koleżanką",
+          "koleżance",
+          "koleżanko"
+        ],
+        "plural": [
+          "koleżanki",
+          "koleżanek",
+          "koleżankom",
+          "koleżanki",
+          "koleżankami",
+          "koleżankach",
+          "koleżanki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "znajomy",
+    "nouns": [
+      {
+        "lemma": "znajomy",
+        "gender": "m",
+        "singular": [
+          "znajomy",
+          "znajomego",
+          "znajomemu",
+          "znajomego",
+          "znajomym",
+          "znajomym",
+          "znajomy"
+        ],
+        "plural": [
+          "znajomi",
+          "znajomych",
+          "znajomym",
+          "znajomych",
+          "znajomymi",
+          "znajomych",
+          "znajomi"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "przyjaciel",
+    "nouns": [
+      {
+        "lemma": "przyjaciel",
+        "gender": "m",
+        "singular": [
+          "przyjaciel",
+          "przyjaciela",
+          "przyjacielowi",
+          "przyjaciela",
+          "przyjacielem",
+          "przyjacielu",
+          "przyjacielu"
+        ],
+        "plural": [
+          "przyjaciele",
+          "przyjaciół",
+          "przyjaciołom",
+          "przyjaciół",
+          "przyjaciółmi",
+          "przyjaciołach",
+          "przyjaciele"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "danie",
+    "nouns": [
+      {
+        "lemma": "danie",
+        "gender": "n",
+        "singular": [
+          "danie",
+          "dania",
+          "daniu",
+          "danie",
+          "daniem",
+          "daniu",
+          "danie"
+        ],
+        "plural": [
+          "dania",
+          "dań",
+          "daniom",
+          "dania",
+          "daniami",
+          "daniach",
+          "dania"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "zespół",
+    "nouns": [
+      {
+        "lemma": "zespół",
+        "gender": "m",
+        "singular": [
+          "zespół",
+          "zespołu",
+          "zespołowi",
+          "zespół",
+          "zespołem",
+          "zespole",
+          "zespole"
+        ],
+        "plural": [
+          "zespoły",
+          "zespołów",
+          "zespołom",
+          "zespoły",
+          "zespołami",
+          "zespołach",
+          "zespoły"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "wrażenie",
+    "nouns": [
+      {
+        "lemma": "wrażenie",
+        "gender": "n",
+        "singular": [
+          "wrażenie",
+          "wrażenia",
+          "wrażeniu",
+          "wrażenie",
+          "wrażeniem",
+          "wrażeniu",
+          "wrażenie"
+        ],
+        "plural": [
+          "wrażenia",
+          "wrażeń",
+          "wrażeniom",
+          "wrażenia",
+          "wrażeniami",
+          "wrażeniach",
+          "wrażenia"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "wieżowiec",
+    "nouns": [
+      {
+        "lemma": "wieżowiec",
+        "gender": "m",
+        "singular": [
+          "wieżowiec",
+          "wieżowca",
+          "wieżowcowi",
+          "wieżowiec",
+          "wieżowcem",
+          "wieżowcu",
+          "wieżowcu"
+        ],
+        "plural": [
+          "wieżowce",
+          "wieżowców",
+          "wieżowcom",
+          "wieżowce",
+          "wieżowcami",
+          "wieżowcach",
+          "wieżowce"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "pierścionek",
+    "nouns": [
+      {
+        "lemma": "pierścionek",
+        "gender": "m",
+        "singular": [
+          "pierścionek",
+          "pierścionka",
+          "pierścionkowi",
+          "pierścionek",
+          "pierścionkiem",
+          "pierścionku",
+          "pierścionku"
+        ],
+        "plural": [
+          "pierścionki",
+          "pierścionków",
+          "pierścionkom",
+          "pierścionki",
+          "pierścionkami",
+          "pierścionkach",
+          "pierścionki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "pierścionek zaręczynowy",
+    "nouns": [
+      {
+        "lemma": "pierścionek zaręczynowy",
+        "gender": "m",
+        "singular": [
+          "pierścionek zaręczynowy",
+          "pierścionka zaręczynowego",
+          "pierścionkowi zaręczynowemu",
+          "pierścionek zaręczynowy",
+          "pierścionkiem zaręczynowym",
+          "pierścionku zaręczynowym",
+          "pierścionku zaręczynowy"
+        ],
+        "plural": [
+          "pierścionki zaręczynowe",
+          "pierścionków zaręczynowych",
+          "pierścionkom zaręczynowym",
+          "pierścionki zaręczynowe",
+          "pierścionkami zaręczynowymi",
+          "pierścionkach zaręczynowych",
+          "pierścionki zaręczynowe"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "kącik",
+    "nouns": [
+      {
+        "lemma": "kącik",
+        "gender": "m",
+        "singular": [
+          "kącik",
+          "kącika",
+          "kącikowi",
+          "kącik",
+          "kącikiem",
+          "kąciku",
+          "kąciku"
+        ],
+        "plural": [
+          "kąciki",
+          "kącików",
+          "kącikom",
+          "kąciki",
+          "kącikami",
+          "kącikach",
+          "kąciki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "siostrzenica",
+    "nouns": [
+      {
+        "lemma": "siostrzenica",
+        "gender": "f",
+        "singular": [
+          "siostrzenica",
+          "siostrzenicy",
+          "siostrzenicy",
+          "siostrzenicę",
+          "siostrzenicą",
+          "siostrzenicy",
+          "siostrzenico"
+        ],
+        "plural": [
+          "siostrzenice",
+          "siostrzenic",
+          "siostrzenicom",
+          "siostrzenice",
+          "siostrzenicami",
+          "siostrzenicach",
+          "siostrzenice"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "znak",
+    "nouns": [
+      {
+        "lemma": "znak",
+        "gender": "m",
+        "singular": [
+          "znak",
+          "znaku",
+          "znakowi",
+          "znak",
+          "znakiem",
+          "znaku",
+          "znaku"
+        ],
+        "plural": [
+          "znaki",
+          "znaków",
+          "znakom",
+          "znaki",
+          "znakami",
+          "znakach",
+          "znaki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "aktywność",
+    "nouns": [
+      {
+        "lemma": "aktywność",
+        "gender": "f",
+        "singular": [
+          "aktywność",
+          "aktywności",
+          "aktywności",
+          "aktywność",
+          "aktywnością",
+          "aktywności",
+          "aktywności"
+        ],
+        "plural": [
+          "aktywności",
+          "aktywności",
+          "aktywnościom",
+          "aktywności",
+          "aktywnościami",
+          "aktywnościach",
+          "aktywności"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "przestrzeń",
+    "nouns": [
+      {
+        "lemma": "przestrzeń",
+        "gender": "f",
+        "singular": [
+          "przestrzeń",
+          "przestrzeni",
+          "przestrzeni",
+          "przestrzeń",
+          "przestrzenią",
+          "przestrzeni",
+          "przestrzeni"
+        ],
+        "plural": [
+          "przestrzenie",
+          "przestrzeni",
+          "przestrzeniom",
+          "przestrzenie",
+          "przestrzeniami",
+          "przestrzeniach",
+          "przestrzenie"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "mięta",
+    "nouns": [
+      {
+        "lemma": "mięta",
+        "gender": "f",
+        "singular": [
+          "mięta",
+          "mięty",
+          "mięcie",
+          "miętę",
+          "miętą",
+          "mięcie",
+          "mięto"
+        ],
+        "plural": [
+          "mięty",
+          "mięt",
+          "miętom",
+          "mięty",
+          "miętami",
+          "miętach",
+          "mięty"
+        ],
+        "rare_plural": true
+      }
+    ]
+  },
+  {
+    "card": "odcinek",
+    "nouns": [
+      {
+        "lemma": "odcinek",
+        "gender": "m",
+        "singular": [
+          "odcinek",
+          "odcinka",
+          "odcinkowi",
+          "odcinek",
+          "odcinkiem",
+          "odcinku",
+          "odcinku"
+        ],
+        "plural": [
+          "odcinki",
+          "odcinków",
+          "odcinkom",
+          "odcinki",
+          "odcinkami",
+          "odcinkach",
+          "odcinki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "powód",
+    "nouns": [
+      {
+        "lemma": "powód",
+        "gender": "m",
+        "singular": [
+          "powód",
+          "powodu",
+          "powodowi",
+          "powód",
+          "powodem",
+          "powodzie",
+          "powodzie"
+        ],
+        "plural": [
+          "powody",
+          "powodów",
+          "powodom",
+          "powody",
+          "powodami",
+          "powodach",
+          "powody"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "ilość",
+    "nouns": [
+      {
+        "lemma": "ilość",
+        "gender": "f",
+        "singular": [
+          "ilość",
+          "ilości",
+          "ilości",
+          "ilość",
+          "ilością",
+          "ilości",
+          "ilości"
+        ],
+        "plural": [
+          "ilości",
+          "ilości",
+          "ilościom",
+          "ilości",
+          "ilościami",
+          "ilościach",
+          "ilości"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "szafka",
+    "nouns": [
+      {
+        "lemma": "szafka",
+        "gender": "f",
+        "singular": [
+          "szafka",
+          "szafki",
+          "szafce",
+          "szafkę",
+          "szafką",
+          "szafce",
+          "szafko"
+        ],
+        "plural": [
+          "szafki",
+          "szafek",
+          "szafkom",
+          "szafki",
+          "szafkami",
+          "szafkach",
+          "szafki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "ciśnienie krwi",
+    "nouns": [
+      {
+        "lemma": "ciśnienie krwi",
+        "gender": "n",
+        "singular": [
+          "ciśnienie krwi",
+          "ciśnienia krwi",
+          "ciśnieniu krwi",
+          "ciśnienie krwi",
+          "ciśnieniem krwi",
+          "ciśnieniu krwi",
+          "ciśnienie krwi"
+        ],
+        "plural": [
+          "ciśnienia krwi",
+          "ciśnień krwi",
+          "ciśnieniom krwi",
+          "ciśnienia krwi",
+          "ciśnieniami krwi",
+          "ciśnieniach krwi",
+          "ciśnienia krwi"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "żurawina",
+    "nouns": [
+      {
+        "lemma": "żurawina",
+        "gender": "f",
+        "singular": [
+          "żurawina",
+          "żurawiny",
+          "żurawinie",
+          "żurawinę",
+          "żurawiną",
+          "żurawinie",
+          "żurawino"
+        ],
+        "plural": [
+          "żurawiny",
+          "żurawin",
+          "żurawinom",
+          "żurawiny",
+          "żurawinami",
+          "żurawinach",
+          "żurawiny"
+        ],
+        "rare_plural": true
+      }
+    ]
+  },
+  {
+    "card": "twaróg",
+    "nouns": [
+      {
+        "lemma": "twaróg",
+        "gender": "m",
+        "singular": [
+          "twaróg",
+          "twarogu",
+          "twarogowi",
+          "twaróg",
+          "twarogiem",
+          "twarogu",
+          "twarogu"
+        ],
+        "plural": [
+          "twarogi",
+          "twarogów",
+          "twarogom",
+          "twarogi",
+          "twarogami",
+          "twarogach",
+          "twarogi"
+        ],
+        "rare_plural": true
+      }
+    ]
+  },
+  {
+    "card": "cienka kromka",
+    "nouns": [
+      {
+        "lemma": "cienka kromka",
+        "gender": "f",
+        "singular": [
+          "cienka kromka",
+          "cienkiej kromki",
+          "cienkiej kromce",
+          "cienką kromkę",
+          "cienką kromką",
+          "cienkiej kromce",
+          "cienka kromko"
+        ],
+        "plural": [
+          "cienkie kromki",
+          "cienkich kromek",
+          "cienkim kromkom",
+          "cienkie kromki",
+          "cienkimi kromkami",
+          "cienkich kromkach",
+          "cienkie kromki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "kamień szlachetny",
+    "nouns": [
+      {
+        "lemma": "kamień szlachetny",
+        "gender": "m",
+        "singular": [
+          "kamień szlachetny",
+          "kamienia szlachetnego",
+          "kamieniowi szlachetnemu",
+          "kamień szlachetny",
+          "kamieniem szlachetnym",
+          "kamieniu szlachetnym",
+          "kamieniu szlachetny"
+        ],
+        "plural": [
+          "kamienie szlachetne",
+          "kamieni szlachetnych",
+          "kamieniom szlachetnym",
+          "kamienie szlachetne",
+          "kamieniami szlachetnymi",
+          "kamieniach szlachetnych",
+          "kamienie szlachetne"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "zmywarka",
+    "nouns": [
+      {
+        "lemma": "zmywarka",
+        "gender": "f",
+        "singular": [
+          "zmywarka",
+          "zmywarki",
+          "zmywarce",
+          "zmywarkę",
+          "zmywarką",
+          "zmywarce",
+          "zmywarko"
+        ],
+        "plural": [
+          "zmywarki",
+          "zmywarek",
+          "zmywarkom",
+          "zmywarki",
+          "zmywarkami",
+          "zmywarkach",
+          "zmywarki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "śniadanie",
+    "nouns": [
+      {
+        "lemma": "śniadanie",
+        "gender": "n",
+        "singular": [
+          "śniadanie",
+          "śniadania",
+          "śniadaniu",
+          "śniadanie",
+          "śniadaniem",
+          "śniadaniu",
+          "śniadanie"
+        ],
+        "plural": [
+          "śniadania",
+          "śniadań",
+          "śniadaniom",
+          "śniadania",
+          "śniadaniami",
+          "śniadaniach",
+          "śniadania"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "idiom",
+    "nouns": [
+      {
+        "lemma": "idiom",
+        "gender": "m",
+        "singular": [
+          "idiom",
+          "idiomu",
+          "idiomowi",
+          "idiom",
+          "idiomem",
+          "idiomie",
+          "idiomie"
+        ],
+        "plural": [
+          "idiomy",
+          "idiomów",
+          "idiomom",
+          "idiomy",
+          "idiomami",
+          "idiomach",
+          "idiomy"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "część",
+    "nouns": [
+      {
+        "lemma": "część",
+        "gender": "f",
+        "singular": [
+          "część",
+          "części",
+          "części",
+          "część",
+          "częścią",
+          "części",
+          "części"
+        ],
+        "plural": [
+          "części",
+          "części",
+          "częściom",
+          "części",
+          "częściami",
+          "częściach",
+          "części"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "część zamienna",
+    "nouns": [
+      {
+        "lemma": "część zamienna",
+        "gender": "f",
+        "singular": [
+          "część zamienna",
+          "części zamiennej",
+          "części zamiennej",
+          "część zamienną",
+          "częścią zamienną",
+          "części zamiennej",
+          "części zamienna"
+        ],
+        "plural": [
+          "części zamienne",
+          "części zamiennych",
+          "częściom zamiennym",
+          "części zamienne",
+          "częściami zamiennymi",
+          "częściach zamiennych",
+          "części zamienne"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "wioska",
+    "nouns": [
+      {
+        "lemma": "wioska",
+        "gender": "f",
+        "singular": [
+          "wioska",
+          "wioski",
+          "wiosce",
+          "wioskę",
+          "wioską",
+          "wiosce",
+          "wiosko"
+        ],
+        "plural": [
+          "wioski",
+          "wiosek",
+          "wioskom",
+          "wioski",
+          "wioskami",
+          "wioskach",
+          "wioski"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "skutek",
+    "nouns": [
+      {
+        "lemma": "skutek",
+        "gender": "m",
+        "singular": [
+          "skutek",
+          "skutku",
+          "skutkowi",
+          "skutek",
+          "skutkiem",
+          "skutku",
+          "skutku"
+        ],
+        "plural": [
+          "skutki",
+          "skutków",
+          "skutkom",
+          "skutki",
+          "skutkami",
+          "skutkach",
+          "skutki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "kran",
+    "nouns": [
+      {
+        "lemma": "kran",
+        "gender": "m",
+        "singular": [
+          "kran",
+          "kranu",
+          "kranowi",
+          "kran",
+          "kranem",
+          "kranie",
+          "kranie"
+        ],
+        "plural": [
+          "krany",
+          "kranów",
+          "kranom",
+          "krany",
+          "kranami",
+          "kranach",
+          "krany"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "kranówa",
+    "nouns": [
+      {
+        "lemma": "kranówa",
+        "gender": "f",
+        "singular": [
+          "kranówa",
+          "kranówy",
+          "kranówie",
+          "kranówę",
+          "kranówą",
+          "kranówie",
+          "kranówo"
+        ],
+        "plural": [
+          "kranówy",
+          "kranów",
+          "kranówom",
+          "kranówy",
+          "kranówami",
+          "kranówach",
+          "kranówy"
+        ],
+        "rare_plural": true
+      }
+    ]
+  },
+  {
+    "card": "wyrażenie",
+    "nouns": [
+      {
+        "lemma": "wyrażenie",
+        "gender": "n",
+        "singular": [
+          "wyrażenie",
+          "wyrażenia",
+          "wyrażeniu",
+          "wyrażenie",
+          "wyrażeniem",
+          "wyrażeniu",
+          "wyrażenie"
+        ],
+        "plural": [
+          "wyrażenia",
+          "wyrażeń",
+          "wyrażeniom",
+          "wyrażenia",
+          "wyrażeniami",
+          "wyrażeniach",
+          "wyrażenia"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "para",
+    "nouns": [
+      {
+        "lemma": "para",
+        "gender": "f",
+        "singular": [
+          "para",
+          "pary",
+          "parze",
+          "parę",
+          "parą",
+          "parze",
+          "paro"
+        ],
+        "plural": [
+          "pary",
+          "par",
+          "parom",
+          "pary",
+          "parami",
+          "parach",
+          "pary"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "uczestnik",
+    "nouns": [
+      {
+        "lemma": "uczestnik",
+        "gender": "m",
+        "singular": [
+          "uczestnik",
+          "uczestnika",
+          "uczestnikowi",
+          "uczestnika",
+          "uczestnikiem",
+          "uczestniku",
+          "uczestniku"
+        ],
+        "plural": [
+          "uczestnicy",
+          "uczestników",
+          "uczestnikom",
+          "uczestników",
+          "uczestnikami",
+          "uczestnikach",
+          "uczestnicy"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "połowa",
+    "nouns": [
+      {
+        "lemma": "połowa",
+        "gender": "f",
+        "singular": [
+          "połowa",
+          "połowy",
+          "połowie",
+          "połowę",
+          "połową",
+          "połowie",
+          "połowo"
+        ],
+        "plural": [
+          "połowy",
+          "połów",
+          "połowom",
+          "połowy",
+          "połowami",
+          "połowach",
+          "połowy"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "większość",
+    "nouns": [
+      {
+        "lemma": "większość",
+        "gender": "f",
+        "singular": [
+          "większość",
+          "większości",
+          "większości",
+          "większość",
+          "większością",
+          "większości",
+          "większości"
+        ],
+        "plural": [
+          "większości",
+          "większości",
+          "większościom",
+          "większości",
+          "większościami",
+          "większościach",
+          "większości"
+        ],
+        "rare_plural": true
+      }
+    ]
+  },
+  {
+    "card": "mniejszość",
+    "nouns": [
+      {
+        "lemma": "mniejszość",
+        "gender": "f",
+        "singular": [
+          "mniejszość",
+          "mniejszości",
+          "mniejszości",
+          "mniejszość",
+          "mniejszością",
+          "mniejszości",
+          "mniejszości"
+        ],
+        "plural": [
+          "mniejszości",
+          "mniejszości",
+          "mniejszościom",
+          "mniejszości",
+          "mniejszościami",
+          "mniejszościach",
+          "mniejszości"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "dziesięć",
+    "nouns": [
+      {
+        "lemma": "dziesięć",
+        "gender": "num",
+        "singular": [
+          "dziesięć",
+          "dziesięciu",
+          "dziesięciu",
+          "dziesięć",
+          "dziesięcioma / dziesięciu",
+          "dziesięciu",
+          "dziesięć"
+        ],
+        "plural": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "card": "dwanaście",
+    "nouns": [
+      {
+        "lemma": "dwanaście",
+        "gender": "num",
+        "singular": [
+          "dwanaście",
+          "dwunastu",
+          "dwunastu",
+          "dwanaście",
+          "dwunastoma / dwunastu",
+          "dwunastu",
+          "dwanaście"
+        ],
+        "plural": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "card": "dwadzieścia",
+    "nouns": [
+      {
+        "lemma": "dwadzieścia",
+        "gender": "num",
+        "singular": [
+          "dwadzieścia",
+          "dwudziestu",
+          "dwudziestu",
+          "dwadzieścia",
+          "dwudziestoma / dwudziestu",
+          "dwudziestu",
+          "dwadzieścia"
+        ],
+        "plural": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "card": "dwieście",
+    "nouns": [
+      {
+        "lemma": "dwieście",
+        "gender": "num",
+        "singular": [
+          "dwieście",
+          "dwustu",
+          "dwustu",
+          "dwieście",
+          "dwustoma / dwustu",
+          "dwustu",
+          "dwieście"
+        ],
+        "plural": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "card": "płaszcz",
+    "nouns": [
+      {
+        "lemma": "płaszcz",
+        "gender": "m",
+        "singular": [
+          "płaszcz",
+          "płaszcza",
+          "płaszczowi",
+          "płaszcz",
+          "płaszczem",
+          "płaszczu",
+          "płaszczu"
+        ],
+        "plural": [
+          "płaszcze",
+          "płaszczy",
+          "płaszczom",
+          "płaszcze",
+          "płaszczami",
+          "płaszczach",
+          "płaszcze"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "przebranie",
+    "nouns": [
+      {
+        "lemma": "przebranie",
+        "gender": "n",
+        "singular": [
+          "przebranie",
+          "przebrania",
+          "przebraniu",
+          "przebranie",
+          "przebraniem",
+          "przebraniu",
+          "przebranie"
+        ],
+        "plural": [
+          "przebrania",
+          "przebrań",
+          "przebraniom",
+          "przebrania",
+          "przebraniami",
+          "przebraniach",
+          "przebrania"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "składnik",
+    "nouns": [
+      {
+        "lemma": "składnik",
+        "gender": "m",
+        "singular": [
+          "składnik",
+          "składnika",
+          "składnikowi",
+          "składnik",
+          "składnikiem",
+          "składniku",
+          "składniku"
+        ],
+        "plural": [
+          "składniki",
+          "składników",
+          "składnikom",
+          "składniki",
+          "składnikami",
+          "składnikach",
+          "składniki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "kostka",
+    "nouns": [
+      {
+        "lemma": "kostka",
+        "gender": "f",
+        "singular": [
+          "kostka",
+          "kostki",
+          "kostce",
+          "kostkę",
+          "kostką",
+          "kostce",
+          "kostko"
+        ],
+        "plural": [
+          "kostki",
+          "kostek",
+          "kostkom",
+          "kostki",
+          "kostkami",
+          "kostkach",
+          "kostki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "zasada",
+    "nouns": [
+      {
+        "lemma": "zasada",
+        "gender": "f",
+        "singular": [
+          "zasada",
+          "zasady",
+          "zasadzie",
+          "zasadę",
+          "zasadą",
+          "zasadzie",
+          "zasado"
+        ],
+        "plural": [
+          "zasady",
+          "zasad",
+          "zasadom",
+          "zasady",
+          "zasadami",
+          "zasadach",
+          "zasady"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "szacunek",
+    "nouns": [
+      {
+        "lemma": "szacunek",
+        "gender": "m",
+        "singular": [
+          "szacunek",
+          "szacunku",
+          "szacunkowi",
+          "szacunek",
+          "szacunkiem",
+          "szacunku",
+          "szacunku"
+        ],
+        "plural": [
+          "szacunki",
+          "szacunków",
+          "szacunkom",
+          "szacunki",
+          "szacunkami",
+          "szacunkach",
+          "szacunki"
+        ],
+        "rare_plural": true
+      }
+    ]
+  },
+  {
+    "card": "kierunek",
+    "nouns": [
+      {
+        "lemma": "kierunek",
+        "gender": "m",
+        "singular": [
+          "kierunek",
+          "kierunku",
+          "kierunkowi",
+          "kierunek",
+          "kierunkiem",
+          "kierunku",
+          "kierunku"
+        ],
+        "plural": [
+          "kierunki",
+          "kierunków",
+          "kierunkom",
+          "kierunki",
+          "kierunkami",
+          "kierunkach",
+          "kierunki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "zmiana",
+    "nouns": [
+      {
+        "lemma": "zmiana",
+        "gender": "f",
+        "singular": [
+          "zmiana",
+          "zmiany",
+          "zmianie",
+          "zmianę",
+          "zmianą",
+          "zmianie",
+          "zmiano"
+        ],
+        "plural": [
+          "zmiany",
+          "zmian",
+          "zmianom",
+          "zmiany",
+          "zmianami",
+          "zmianach",
+          "zmiany"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "możliwość",
+    "nouns": [
+      {
+        "lemma": "możliwość",
+        "gender": "f",
+        "singular": [
+          "możliwość",
+          "możliwości",
+          "możliwości",
+          "możliwość",
+          "możliwością",
+          "możliwości",
+          "możliwości"
+        ],
+        "plural": [
+          "możliwości",
+          "możliwości",
+          "możliwościom",
+          "możliwości",
+          "możliwościami",
+          "możliwościach",
+          "możliwości"
+        ]
+      }
+    ]
+  }
+]

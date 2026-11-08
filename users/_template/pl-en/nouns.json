@@ -1,0 +1,137 @@
+[
+  {
+    "card": "biletomat",
+    "nouns": [
+      {
+        "lemma": "biletomat",
+        "gender": "m",
+        "singular": [
+          "biletomat",
+          "biletomatu",
+          "biletomatowi",
+          "biletomat",
+          "biletomatem",
+          "biletomacie",
+          "biletomacie"
+        ],
+        "plural": [
+          "biletomaty",
+          "biletomatów",
+          "biletomatom",
+          "biletomaty",
+          "biletomatami",
+          "biletomatach",
+          "biletomaty"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "chodnik",
+    "nouns": [
+      {
+        "lemma": "chodnik",
+        "gender": "m",
+        "singular": [
+          "chodnik",
+          "chodnika",
+          "chodnikowi",
+          "chodnik",
+          "chodnikiem",
+          "chodniku",
+          "chodniku"
+        ],
+        "plural": [
+          "chodniki",
+          "chodników",
+          "chodnikom",
+          "chodniki",
+          "chodnikami",
+          "chodnikach",
+          "chodniki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "czajnik",
+    "nouns": [
+      {
+        "lemma": "czajnik",
+        "gender": "m",
+        "singular": [
+          "czajnik",
+          "czajnika",
+          "czajnikowi",
+          "czajnik",
+          "czajnikiem",
+          "czajniku",
+          "czajniku"
+        ],
+        "plural": [
+          "czajniki",
+          "czajników",
+          "czajnikom",
+          "czajniki",
+          "czajnikami",
+          "czajnikach",
+          "czajniki"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "deska do krojenia",
+    "nouns": [
+      {
+        "lemma": "deska do krojenia",
+        "gender": "f",
+        "singular": [
+          "deska do krojenia",
+          "deski do krojenia",
+          "desce do krojenia",
+          "deskę do krojenia",
+          "deską do krojenia",
+          "desce do krojenia",
+          "deska do krojenia"
+        ],
+        "plural": [
+          "deski do krojenia",
+          "desek do krojenia",
+          "deskom do krojenia",
+          "deski do krojenia",
+          "deskami do krojenia",
+          "deskach do krojenia",
+          "deski do krojenia"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "dolewka",
+    "nouns": [
+      {
+        "lemma": "dolewka",
+        "gender": "f",
+        "singular": [
+          "dolewka",
+          "dolewki",
+          "dolewce",
+          "dolewkę",
+          "dolewką",
+          "dolewce",
+          "dolewko"
+        ],
+        "plural": [
+          "dolewki",
+          "dolewek",
+          "dolewkom",
+          "dolewki",
+          "dolewkami",
+          "dolewkach",
+          "dolewki"
+        ]
+      }
+    ]
+  }
+]

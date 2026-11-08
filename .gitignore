@@ -1,0 +1,13 @@
+# Your learning progress and dungeon saves stay on each device (copy them with the backup file).
+local/
+*.tmp
+__pycache__/
+.venv/
+node_modules/
+dist/
+desktop/dist/
+desktop/build/
+*.spec
+dungeon_progress.json
+progress.json
+.DS_Store

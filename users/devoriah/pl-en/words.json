@@ -1,0 +1,1940 @@
+[
+    {
+        "word": "bać się",
+        "translation": "to be afraid of",
+        "sentence": "Dzieci boją się ciemności.",
+        "sentence_translation": "Children are afraid of the dark."
+    },
+    {
+        "word": "bardzo mi smakuje",
+        "translation": "I like the taste very much / It's delicious",
+        "sentence": "Ta zupa jest świetna, bardzo mi smakuje!",
+        "sentence_translation": "This soup is great, I like the taste very much!"
+    },
+    {
+        "word": "biletomat",
+        "translation": "ticket machine",
+        "sentence": "Bilet kupisz w biletomacie na przystanku.",
+        "sentence_translation": "You can buy a ticket at the ticket machine at the stop."
+    },
+    {
+        "word": "chodnik",
+        "translation": "sidewalk",
+        "sentence": "Dzieci bawią się na chodniku przed domem.",
+        "sentence_translation": "The children are playing on the sidewalk in front of the house."
+    },
+    {
+        "word": "co mogę zrobić?",
+        "translation": "what can I do?",
+        "sentence": "Jestem gotowy do pomocy. Co mogę zrobić?",
+        "sentence_translation": "I'm ready to help. What can I do?"
+    },
+    {
+        "word": "co mam pokroić?",
+        "translation": "what should I cut?",
+        "sentence": "Cebula jest już obrana. Co mam pokroić?",
+        "sentence_translation": "The onion is already peeled. What should I cut?"
+    },
+    {
+        "word": "czajnik",
+        "translation": "kettle",
+        "sentence": "Woda w czajniku już się gotuje.",
+        "sentence_translation": "The water in the kettle is already boiling."
+    },
+    {
+        "word": "denerwować się",
+        "translation": "to get nervous / annoyed",
+        "sentence": "Nie denerwuj się, wszystko będzie dobrze.",
+        "sentence_translation": "Don't get nervous, everything will be fine."
+    },
+    {
+        "word": "deska do krojenia",
+        "translation": "cutting board",
+        "sentence": "Połóż warzywa na desce do krojenia.",
+        "sentence_translation": "Put the vegetables on the cutting board."
+    },
+    {
+        "word": "dla profesjonalnych graczy",
+        "translation": "for professional players",
+        "sentence": "Ten turniej jest tylko dla profesjonalnych graczy.",
+        "sentence_translation": "This tournament is only for professional players."
+    },
+    {
+        "word": "dla wielu ludzi",
+        "translation": "for many people",
+        "sentence": "Dla wielu ludzi rodzina jest najważniejsza.",
+        "sentence_translation": "For many people, family is the most important thing."
+    },
+    {
+        "word": "dobre / ładne pachnie",
+        "translation": "smells good / nice",
+        "sentence": "W kuchni dobrze pachnie, a kwiaty na stole ładnie pachną.",
+        "sentence_translation": "It smells good in the kitchen, and the flowers on the table smell lovely."
+    },
+    {
+        "word": "dokończyć",
+        "translation": "to finish",
+        "sentence": "Muszę dokończyć pracę przed obiadem.",
+        "sentence_translation": "I have to finish my work before lunch."
+    },
+    {
+        "word": "dolewka",
+        "translation": "refill",
+        "sentence": "Czy w tej restauracji jest darmowa dolewka kawy?",
+        "sentence_translation": "Is there a free coffee refill in this restaurant?"
+    },
+    {
+        "word": "domowy / domowo",
+        "translation": "homemade / homely",
+        "sentence": "Babcia robi najlepszy domowy chleb, a w jej kuchni jest domowo i ciepło.",
+        "sentence_translation": "Grandma makes the best homemade bread, and her kitchen feels homely and warm."
+    },
+    {
+        "word": "dodatek",
+        "translation": "side dish",
+        "sentence": "Do kotleta zamówiłem ziemniaki jako dodatek.",
+        "sentence_translation": "I ordered potatoes as a side dish with the cutlet."
+    },
+    {
+        "word": "działać",
+        "translation": "to work / function",
+        "sentence": "Nasz piekarnik przestał działać.",
+        "sentence_translation": "Our oven stopped working."
+    },
+    {
+        "word": "dział",
+        "translation": "section / department",
+        "sentence": "Dział z owocami jest po lewej stronie sklepu.",
+        "sentence_translation": "The fruit section is on the left side of the shop."
+    },
+    {
+        "word": "dziesięć",
+        "translation": "ten",
+        "sentence": "Mam dziesięć minut do autobusu.",
+        "sentence_translation": "I have ten minutes until the bus."
+    },
+    {
+        "word": "dwanaście",
+        "translation": "twelve",
+        "sentence": "Jest już dwanaście stopni na dworze.",
+        "sentence_translation": "It's already twelve degrees outside."
+    },
+    {
+        "word": "dwadzieścia",
+        "translation": "twenty",
+        "sentence": "Ten bilet kosztuje dwadzieścia złotych.",
+        "sentence_translation": "This ticket costs twenty zloty."
+    },
+    {
+        "word": "dwieście",
+        "translation": "two hundred",
+        "sentence": "W tym pokoju jest dwieście książek.",
+        "sentence_translation": "There are two hundred books in this room."
+    },
+    {
+        "word": "garnek",
+        "translation": "pot / saucepan",
+        "sentence": "Wlej wodę do dużego garnka.",
+        "sentence_translation": "Pour the water into a big pot."
+    },
+    {
+        "word": "gdzie mogę to położyć?",
+        "translation": "where can I put this?",
+        "sentence": "Mam ciężką torbę. Gdzie mogę to położyć?",
+        "sentence_translation": "I have a heavy bag. Where can I put this?"
+    },
+    {
+        "word": "gotować",
+        "translation": "to cook / boil",
+        "sentence": "Lubię gotować dla przyjaciół w weekend.",
+        "sentence_translation": "I like to cook for friends at the weekend."
+    },
+    {
+        "word": "gotówka",
+        "translation": "cash",
+        "sentence": "Czy mogę zapłacić gotówką?",
+        "sentence_translation": "Can I pay with cash?"
+    },
+    {
+        "word": "gracz",
+        "translation": "player",
+        "sentence": "Gracze wchodzą na boisko.",
+        "sentence_translation": "The players are entering the pitch."
+    },
+    {
+        "word": "ile tego potrzebujemy?",
+        "translation": "how much of this do we need?",
+        "sentence": "Robimy ciasto. Ile tego potrzebujemy?",
+        "sentence_translation": "We're making a cake. How much of this do we need?"
+    },
+    {
+        "word": "istotna / ważna",
+        "translation": "important",
+        "sentence": "To jest bardzo ważna i istotna informacja.",
+        "sentence_translation": "This is very important and essential information."
+    },
+    {
+        "word": "jakość",
+        "translation": "quality",
+        "sentence": "Jakość tego produktu jest naprawdę dobra.",
+        "sentence_translation": "The quality of this product is really good."
+    },
+    {
+        "word": "jeszcze",
+        "translation": "still / yet / more",
+        "sentence": "Czy chcesz jeszcze herbaty?",
+        "sentence_translation": "Would you like some more tea?"
+    },
+    {
+        "word": "robić",
+        "translation": "to do / to make",
+        "sentence": "Co lubisz robić w weekend?",
+        "sentence_translation": "What do you like to do at the weekend?"
+    },
+    {
+        "word": "karta dań",
+        "translation": "menu",
+        "sentence": "Poproszę kartę dań.",
+        "sentence_translation": "The menu, please."
+    },
+    {
+        "word": "katar",
+        "translation": "runny nose",
+        "sentence": "Mam katar i boli mnie gardło.",
+        "sentence_translation": "I have a runny nose and a sore throat."
+    },
+    {
+        "word": "kieliszek",
+        "translation": "wine glass",
+        "sentence": "Poproszę kieliszek czerwonego wina.",
+        "sentence_translation": "A glass of red wine, please."
+    },
+    {
+        "word": "kolejka",
+        "translation": "queue / cabines",
+        "sentence": "W sklepie jest długa kolejka do kasy.",
+        "sentence_translation": "There is a long queue at the checkout in the shop."
+    },
+    {
+        "word": "korek",
+        "translation": "traffic jam",
+        "sentence": "Rano w mieście są duże korki.",
+        "sentence_translation": "There are big traffic jams in the city in the morning."
+    },
+    {
+        "word": "koszyk",
+        "translation": "shopping basket",
+        "sentence": "Włożyłem chleb i mleko do koszyka.",
+        "sentence_translation": "I put bread and milk in the basket."
+    },
+    {
+        "word": "kroić",
+        "translation": "to cut / slice",
+        "sentence": "Lubię kroić warzywa na sałatkę.",
+        "sentence_translation": "I like to slice vegetables for a salad."
+    },
+    {
+        "word": "kwaśny / kwaśno",
+        "translation": "sour",
+        "sentence": "To jabłko jest kwaśne, a sos smakuje zbyt kwaśno.",
+        "sentence_translation": "This apple is sour, and the sauce tastes too sour."
+    },
+    {
+        "word": "lek",
+        "translation": "medicine / drug",
+        "sentence": "Ten lek trzeba brać dwa razy dziennie.",
+        "sentence_translation": "This medicine has to be taken twice a day."
+    },
+    {
+        "word": "lekki / lekko",
+        "translation": "light / lightly",
+        "sentence": "Mam lekki plecak i lekko się ubieram latem.",
+        "sentence_translation": "I have a light backpack, and I dress lightly in summer."
+    },
+    {
+        "word": "mam już to dodać?",
+        "translation": "should I add this already?",
+        "sentence": "Woda się gotuje. Mam już to dodać?",
+        "sentence_translation": "The water is boiling. Should I add this already?"
+    },
+    {
+        "word": "mandat",
+        "translation": "fine",
+        "sentence": "Dostałem mandat za złe parkowanie.",
+        "sentence_translation": "I got a fine for parking badly."
+    },
+    {
+        "word": "mijać",
+        "translation": "to pass",
+        "sentence": "Autobus musi mijać wolniejsze samochody.",
+        "sentence_translation": "The bus has to pass the slower cars."
+    },
+    {
+        "word": "miska",
+        "translation": "bowl",
+        "sentence": "Wsyp mąkę do dużej miski.",
+        "sentence_translation": "Pour the flour into a big bowl."
+    },
+    {
+        "word": "mieszać",
+        "translation": "to stir / mix",
+        "sentence": "Trzeba stale mieszać zupę, żeby się nie przypaliła.",
+        "sentence_translation": "You have to keep stirring the soup so it doesn't burn."
+    },
+    {
+        "word": "mogę spróbować?",
+        "translation": "can I try / taste it?",
+        "sentence": "Ten sernik wygląda pysznie. Mogę spróbować?",
+        "sentence_translation": "This cheesecake looks delicious. Can I try it?"
+    },
+    {
+        "word": "mogę w czymś pomóc?",
+        "translation": "can I help with something?",
+        "sentence": "Dzień dobry, mogę w czymś pomóc?",
+        "sentence_translation": "Good morning, can I help with something?"
+    },
+    {
+        "word": "cel",
+        "translation": "goal / aim",
+        "sentence": "Mój cel to nauczyć się polskiego, a moje cele na ten rok są jasne.",
+        "sentence_translation": "My goal is to learn Polish, and my goals for this year are clear."
+    },
+    {
+        "word": "na wynos",
+        "translation": "take away",
+        "sentence": "Poproszę dwie kawy na wynos.",
+        "sentence_translation": "Two coffees to take away, please."
+    },
+    {
+        "word": "naczynie",
+        "translation": "dish / piece of tableware",
+        "sentence": "Po kolacji myję wszystkie naczynia.",
+        "sentence_translation": "After dinner I wash all the dishes."
+    },
+    {
+        "word": "nadejdzie",
+        "translation": "will come",
+        "sentence": "Wiosna wkrótce nadejdzie.",
+        "sentence_translation": "Spring will come soon."
+    },
+    {
+        "word": "naleśnik",
+        "translation": "pancake / crepe",
+        "sentence": "Na śniadanie zjadłem naleśniki z dżemem.",
+        "sentence_translation": "For breakfast I ate pancakes with jam."
+    },
+    {
+        "word": "napiwek",
+        "translation": "tip",
+        "sentence": "Zostawiłem kelnerowi duży napiwek.",
+        "sentence_translation": "I left the waiter a big tip."
+    },
+    {
+        "word": "napój",
+        "translation": "drink / beverage",
+        "sentence": "Zimne napoje są w lodówce.",
+        "sentence_translation": "The cold drinks are in the fridge."
+    },
+    {
+        "word": "narzeczona",
+        "translation": "fiancée",
+        "sentence": "Moja narzeczona pracuje w Warszawie.",
+        "sentence_translation": "My fiancée works in Warsaw."
+    },
+    {
+        "word": "nigdy",
+        "translation": "never",
+        "sentence": "Nigdy nie jadłem tatara.",
+        "sentence_translation": "I have never eaten steak tartare."
+    },
+    {
+        "word": "obowiązkowa służba wojskowa",
+        "translation": "mandatory military service",
+        "sentence": "W niektórych krajach istnieje obowiązkowa służba wojskowa.",
+        "sentence_translation": "In some countries there is mandatory military service."
+    },
+    {
+        "word": "odważyć się",
+        "translation": "to dare",
+        "sentence": "Nie odważyłem się zadzwonić do szefa.",
+        "sentence_translation": "I didn't dare to call my boss."
+    },
+    {
+        "word": "odwrotne / odwrotnie",
+        "translation": "opposite / vice versa",
+        "sentence": "Myślałem, że to prawda, ale było odwrotnie.",
+        "sentence_translation": "I thought it was true, but it was the opposite."
+    },
+    {
+        "word": "opóźnienie",
+        "translation": "delay",
+        "sentence": "Pociąg ma dwudziestominutowe opóźnienie.",
+        "sentence_translation": "The train has a twenty-minute delay."
+    },
+    {
+        "word": "ostry / ostro",
+        "translation": "spicy / sharp",
+        "sentence": "Ta zupa jest za ostra, a mój brat lubi jeść ostro.",
+        "sentence_translation": "This soup is too spicy, and my brother likes to eat spicy food."
+    },
+    {
+        "word": "oświadczyć się",
+        "translation": "to propose",
+        "sentence": "Wczoraj postanowił oświadczyć się swojej dziewczynie.",
+        "sentence_translation": "Yesterday he decided to propose to his girlfriend."
+    },
+    {
+        "word": "pachnieć",
+        "translation": "to smell",
+        "sentence": "Kwiaty w ogrodzie zaczynają pachnieć wiosną.",
+        "sentence_translation": "The flowers in the garden start to smell in spring."
+    },
+    {
+        "word": "paragon",
+        "translation": "receipt",
+        "sentence": "Proszę zachować paragon na wypadek reklamacji.",
+        "sentence_translation": "Please keep the receipt in case of a complaint."
+    },
+    {
+        "word": "patelnia",
+        "translation": "frying pan",
+        "sentence": "Rozgrzej olej na patelni.",
+        "sentence_translation": "Heat the oil in the frying pan."
+    },
+    {
+        "word": "piec",
+        "translation": "to bake / cook in oven",
+        "sentence": "W niedzielę lubię piec ciasto.",
+        "sentence_translation": "On Sundays I like to bake a cake."
+    },
+    {
+        "word": "piekarnik",
+        "translation": "oven",
+        "sentence": "Włóż kurczaka do piekarnika.",
+        "sentence_translation": "Put the chicken in the oven."
+    },
+    {
+        "word": "pikantny / pikantnie",
+        "translation": "spicy",
+        "sentence": "To jest pikantny sos, a ta zupa jest pikantnie przyprawiona.",
+        "sentence_translation": "This is a spicy sauce, and this soup is spicily seasoned."
+    },
+    {
+        "word": "pochodzić (z)",
+        "translation": "to come from / originate",
+        "sentence": "Skąd pochodzisz? Pochodzę z Belgii.",
+        "sentence_translation": "Where are you from? I come from Belgium."
+    },
+    {
+        "word": "początek",
+        "translation": "beginning",
+        "sentence": "Na początku filmu było bardzo cicho.",
+        "sentence_translation": "At the beginning of the film it was very quiet."
+    },
+    {
+        "word": "podekscytowany / podekscytowana",
+        "translation": "excited",
+        "sentence": "Jestem podekscytowany, bo jutro jadę na wakacje.",
+        "sentence_translation": "I'm excited because I'm going on holiday tomorrow."
+    },
+    {
+        "word": "podróżować",
+        "translation": "to travel",
+        "sentence": "Uwielbiam podróżować pociągiem po Europie.",
+        "sentence_translation": "I love travelling around Europe by train."
+    },
+    {
+        "word": "podróż poślubna",
+        "translation": "honeymoon",
+        "sentence": "Na podróż poślubną pojechali do Włoch.",
+        "sentence_translation": "They went to Italy for their honeymoon."
+    },
+    {
+        "word": "pokroić",
+        "translation": "to slice",
+        "sentence": "Proszę pokroić chleb na cienkie kromki.",
+        "sentence_translation": "Please slice the bread into thin slices."
+    },
+    {
+        "word": "polecać",
+        "translation": "to recommend",
+        "sentence": "Mogę polecić tę restaurację.",
+        "sentence_translation": "I can recommend this restaurant."
+    },
+    {
+        "word": "położyć",
+        "translation": "to put / place",
+        "sentence": "Chcę położyć książkę na półce.",
+        "sentence_translation": "I want to put the book on the shelf."
+    },
+    {
+        "word": "poprawiny",
+        "translation": "after-party (day after wedding)",
+        "sentence": "Poprawiny odbyły się następnego dnia po weselu.",
+        "sentence_translation": "The after-party took place the day after the wedding."
+    },
+    {
+        "word": "potrzebujecie jeszcze czegoś?",
+        "translation": "do you need anything else?",
+        "sentence": "Czy potrzebujecie jeszcze czegoś do jedzenia?",
+        "sentence_translation": "Do you need anything else to eat?"
+    },
+    {
+        "word": "powtórka",
+        "translation": "revision / review",
+        "sentence": "Jutro mamy powtórkę przed egzaminem.",
+        "sentence_translation": "Tomorrow we have a review before the exam."
+    },
+    {
+        "word": "poznać się",
+        "translation": "to get to know each other",
+        "sentence": "Poznaliśmy się na kursie języka polskiego.",
+        "sentence_translation": "We got to know each other at a Polish language course."
+    },
+    {
+        "word": "pożyczyć",
+        "translation": "to borrow / lend",
+        "sentence": "Czy mogę pożyczyć od ciebie długopis?",
+        "sentence_translation": "Can I borrow a pen from you?"
+    },
+    {
+        "word": "półka",
+        "translation": "shelf",
+        "sentence": "Słownik stoi na górnej półce.",
+        "sentence_translation": "The dictionary is on the top shelf."
+    },
+    {
+        "word": "półtora roku",
+        "translation": "1.5 years",
+        "sentence": "Uczę się polskiego od półtora roku.",
+        "sentence_translation": "I've been learning Polish for a year and a half."
+    },
+    {
+        "word": "prawdziwy",
+        "translation": "real / true",
+        "sentence": "To jest prawdziwy polski bigos.",
+        "sentence_translation": "This is a real Polish bigos."
+    },
+    {
+        "word": "pracować jako...",
+        "translation": "to work as...",
+        "sentence": "Chcę pracować jako tłumacz.",
+        "sentence_translation": "I want to work as a translator."
+    },
+    {
+        "word": "przejść",
+        "translation": "to go through",
+        "sentence": "Muszę przejść przez ulicę.",
+        "sentence_translation": "I have to cross the street."
+    },
+    {
+        "word": "przenosić",
+        "translation": "to carry / to move (something)",
+        "sentence": "Pomóż mi przenosić pudła do garażu.",
+        "sentence_translation": "Help me carry the boxes to the garage."
+    },
+    {
+        "word": "przynieść",
+        "translation": "to bring (by carrying)",
+        "sentence": "Możesz przynieść szklanki z kuchni?",
+        "sentence_translation": "Can you bring the glasses from the kitchen?"
+    },
+    {
+        "word": "przebywać",
+        "translation": "to stay / reside",
+        "sentence": "Moja siostra przebywa teraz w szpitalu.",
+        "sentence_translation": "My sister is staying in the hospital now."
+    },
+    {
+        "word": "przygotowywać",
+        "translation": "to prepare",
+        "sentence": "Mama lubi przygotowywać obiad dla całej rodziny.",
+        "sentence_translation": "Mum likes to prepare dinner for the whole family."
+    },
+    {
+        "word": "przyciągnąć",
+        "translation": "to attract / pull",
+        "sentence": "Reklama ma przyciągnąć nowych klientów.",
+        "sentence_translation": "The advert is meant to attract new customers."
+    },
+    {
+        "word": "przyprawiać",
+        "translation": "to season",
+        "sentence": "Lubię przyprawiać zupę świeżymi ziołami.",
+        "sentence_translation": "I like to season soup with fresh herbs."
+    },
+    {
+        "word": "przystanek",
+        "translation": "bus/tram stop",
+        "sentence": "Przystanek autobusowy jest za rogiem.",
+        "sentence_translation": "The bus stop is around the corner."
+    },
+    {
+        "word": "przystawka",
+        "translation": "appetizer",
+        "sentence": "Jako przystawkę zamówimy zupę.",
+        "sentence_translation": "We'll order soup as an appetizer."
+    },
+    {
+        "word": "przydatny",
+        "translation": "useful",
+        "sentence": "Ten słownik jest bardzo przydatny.",
+        "sentence_translation": "This dictionary is very useful."
+    },
+    {
+        "word": "przymiotnik",
+        "translation": "adjective",
+        "sentence": "Słowo „piękny” to przymiotnik.",
+        "sentence_translation": "The word \"beautiful\" is an adjective."
+    },
+    {
+        "word": "przysłówek",
+        "translation": "adverb",
+        "sentence": "Słowo „szybko” to przysłówek.",
+        "sentence_translation": "The word \"quickly\" is an adverb."
+    },
+    {
+        "word": "przytyć",
+        "translation": "to gain weight",
+        "sentence": "Zimą mogę łatwo przytyć.",
+        "sentence_translation": "In winter I can easily gain weight."
+    },
+    {
+        "word": "prowadzona przez",
+        "translation": "run / operated by",
+        "sentence": "Ta kawiarnia jest prowadzona przez młode małżeństwo.",
+        "sentence_translation": "This café is run by a young married couple."
+    },
+    {
+        "word": "prośba",
+        "translation": "request",
+        "sentence": "Mam do ciebie małą prośbę.",
+        "sentence_translation": "I have a small request for you."
+    },
+    {
+        "word": "psiara",
+        "translation": "dog lover (colloquial)",
+        "sentence": "Moja ciocia to prawdziwa psiara, ma trzy psy.",
+        "sentence_translation": "My aunt is a real dog lover, she has three dogs."
+    },
+    {
+        "word": "kociara",
+        "translation": "cat lover (colloquial)",
+        "sentence": "Moja sąsiadka to kociara, ma pięć kotów.",
+        "sentence_translation": "My neighbour is a cat lover, she has five cats."
+    },
+    {
+        "word": "raz w tygodniu",
+        "translation": "once a week",
+        "sentence": "Chodzę na basen raz w tygodniu.",
+        "sentence_translation": "I go to the swimming pool once a week."
+    },
+    {
+        "word": "reklamówka",
+        "translation": "plastic shopping bag",
+        "sentence": "Poproszę reklamówkę na zakupy.",
+        "sentence_translation": "A plastic bag for the shopping, please."
+    },
+    {
+        "word": "reszta",
+        "translation": "change (money)",
+        "sentence": "Dziękuję, reszta dla pana.",
+        "sentence_translation": "Thank you, keep the change."
+    },
+    {
+        "word": "rozkład jazdy",
+        "translation": "timetable",
+        "sentence": "Sprawdzę rozkład jazdy autobusów.",
+        "sentence_translation": "I'll check the bus timetable."
+    },
+    {
+        "word": "rzadko",
+        "translation": "rarely",
+        "sentence": "Rzadko jem mięso.",
+        "sentence_translation": "I rarely eat meat."
+    },
+    {
+        "word": "rzeczownik",
+        "translation": "noun",
+        "sentence": "Słowo „dom” to rzeczownik.",
+        "sentence_translation": "The word \"house\" is a noun."
+    },
+    {
+        "word": "siekać",
+        "translation": "to chop",
+        "sentence": "Trzeba drobno siekać cebulę.",
+        "sentence_translation": "You have to chop the onion finely."
+    },
+    {
+        "word": "skrzyżowanie",
+        "translation": "intersection",
+        "sentence": "Na skrzyżowaniu skręć w prawo.",
+        "sentence_translation": "Turn right at the intersection."
+    },
+    {
+        "word": "słodki / słodko",
+        "translation": "sweet",
+        "sentence": "Ten sok jest bardzo słodki, a ciasto smakuje słodko.",
+        "sentence_translation": "This juice is very sweet, and the cake tastes sweet."
+    },
+    {
+        "word": "słony / słono",
+        "translation": "salty",
+        "sentence": "Ta zupa jest za słona, bo wsypałem za dużo soli.",
+        "sentence_translation": "This soup is too salty because I added too much salt."
+    },
+    {
+        "word": "smażyć",
+        "translation": "to fry",
+        "sentence": "Będę smażyć jajka na śniadanie.",
+        "sentence_translation": "I'll fry eggs for breakfast."
+    },
+    {
+        "word": "smaczny / smacznie",
+        "translation": "tasty / delicious",
+        "sentence": "To był smaczny obiad, a tutaj zawsze smacznie gotują.",
+        "sentence_translation": "It was a tasty dinner, and they always cook deliciously here."
+    },
+    {
+        "word": "smok zionął ogniem",
+        "translation": "dragon breathed fire",
+        "sentence": "W bajce smok zionął ogniem na rycerza.",
+        "sentence_translation": "In the fairy tale, the dragon breathed fire at the knight."
+    },
+    {
+        "word": "sprawdzić",
+        "translation": "to check / verify",
+        "sentence": "Muszę sprawdzić, o której jest pociąg.",
+        "sentence_translation": "I have to check what time the train is."
+    },
+    {
+        "word": "stolik",
+        "translation": "table",
+        "sentence": "Poproszę stolik dla dwóch osób.",
+        "sentence_translation": "A table for two, please."
+    },
+    {
+        "word": "szaro-buro",
+        "translation": "gloomy / grey and dull weather",
+        "sentence": "Jesienią często jest szaro-buro.",
+        "sentence_translation": "In autumn it's often grey and gloomy."
+    },
+    {
+        "word": "sznurek",
+        "translation": "rope / string",
+        "sentence": "Do paczki potrzebuję kawałka sznurka, bo ten sznurek jest za krótki.",
+        "sentence_translation": "I need a piece of string for the parcel, because this string is too short."
+    },
+    {
+        "word": "sztućce",
+        "translation": "cutlery",
+        "sentence": "Połóż sztućce obok talerza.",
+        "sentence_translation": "Put the cutlery next to the plate."
+    },
+    {
+        "word": "śmieszny",
+        "translation": "funny",
+        "sentence": "To był bardzo śmieszny film.",
+        "sentence_translation": "It was a very funny film."
+    },
+    {
+        "word": "świeży / świeżo",
+        "translation": "fresh",
+        "sentence": "Kupiłem świeży chleb i świeżo wyciśnięty sok.",
+        "sentence_translation": "I bought fresh bread and freshly squeezed juice."
+    },
+    {
+        "word": "świadek",
+        "translation": "witness / best man",
+        "sentence": "Mój brat będzie świadkiem na ślubie.",
+        "sentence_translation": "My brother will be the best man at the wedding."
+    },
+    {
+        "word": "ślub",
+        "translation": "wedding ceremony",
+        "sentence": "Ich ślub odbędzie się w czerwcu.",
+        "sentence_translation": "Their wedding ceremony will take place in June."
+    },
+    {
+        "word": "talerz",
+        "translation": "plate",
+        "sentence": "Postaw talerz na stole.",
+        "sentence_translation": "Put the plate on the table."
+    },
+    {
+        "word": "tatar",
+        "translation": "steak tartare / raw beef",
+        "sentence": "Na przystawkę zamówiłem tatara z żółtkiem.",
+        "sentence_translation": "As a starter I ordered steak tartare with an egg yolk."
+    },
+    {
+        "word": "tęsknić (za)",
+        "translation": "to miss (someone / something)",
+        "sentence": "Tęsknię za rodziną, kiedy jestem za granicą.",
+        "sentence_translation": "I miss my family when I'm abroad."
+    },
+    {
+        "word": "to wygląda naprawdę smacznie",
+        "translation": "this looks really delicious",
+        "sentence": "Pokaż talerz! To wygląda naprawdę smacznie.",
+        "sentence_translation": "Show me the plate! This looks really delicious."
+    },
+    {
+        "word": "typowy",
+        "translation": "typical",
+        "sentence": "To jest typowy polski obiad.",
+        "sentence_translation": "This is a typical Polish lunch."
+    },
+    {
+        "word": "polski",
+        "translation": "Polish",
+        "sentence": "To jest polski chleb.",
+        "sentence_translation": "This is Polish bread."
+    },
+    {
+        "word": "danie",
+        "translation": "dish",
+        "sentence": "Moje ulubione danie to bigos.",
+        "sentence_translation": "My favourite dish is bigos."
+    },
+    {
+        "word": "tradycyjny / tradycyjnie",
+        "translation": "traditional",
+        "sentence": "To jest tradycyjny przepis, a to danie przygotowuje się tradycyjnie.",
+        "sentence_translation": "This is a traditional recipe, and this dish is prepared traditionally."
+    },
+    {
+        "word": "trzeba",
+        "translation": "one must / it is necessary to",
+        "sentence": "Trzeba zamówić stolik z wyprzedzeniem.",
+        "sentence_translation": "You have to book a table in advance."
+    },
+    {
+        "word": "tłumacz",
+        "translation": "translator / interpreter",
+        "sentence": "Mój tłumacz przetłumaczył cały dokument.",
+        "sentence_translation": "My translator translated the whole document."
+    },
+    {
+        "word": "uroczystość",
+        "translation": "celebration / ceremony",
+        "sentence": "Rodzina zebrała się na uroczystość.",
+        "sentence_translation": "The family gathered for the celebration."
+    },
+    {
+        "word": "urząd",
+        "translation": "office / institution",
+        "sentence": "Muszę iść do urzędu w sprawie dokumentów.",
+        "sentence_translation": "I have to go to the office about some documents."
+    },
+    {
+        "word": "usunąć zapach",
+        "translation": "remove odor",
+        "sentence": "Otwórz okno, żeby usunąć zapach z kuchni.",
+        "sentence_translation": "Open the window to remove the smell from the kitchen."
+    },
+    {
+        "word": "uwielbiam",
+        "translation": "I adore / I love",
+        "sentence": "Uwielbiam polskie pierogi.",
+        "sentence_translation": "I love Polish pierogi."
+    },
+    {
+        "word": "waga",
+        "translation": "scales",
+        "sentence": "Połóż mąkę na wadze.",
+        "sentence_translation": "Put the flour on the scales."
+    },
+    {
+        "word": "wesele",
+        "translation": "wedding party / reception",
+        "sentence": "Na weselu tańczyliśmy do rana.",
+        "sentence_translation": "At the wedding party we danced until morning."
+    },
+    {
+        "word": "widownia",
+        "translation": "spectators / audience",
+        "sentence": "Cała widownia biła brawo.",
+        "sentence_translation": "The whole audience applauded."
+    },
+    {
+        "word": "wieża",
+        "translation": "tower",
+        "sentence": "Z tej wieży widać całe miasto.",
+        "sentence_translation": "You can see the whole city from this tower."
+    },
+    {
+        "word": "wściekły / wściekła",
+        "translation": "furious",
+        "sentence": "Mój szef jest wściekły, a jego żona też jest wściekła.",
+        "sentence_translation": "My boss is furious, and his wife is furious too."
+    },
+    {
+        "word": "wózek",
+        "translation": "shopping cart",
+        "sentence": "Weź wózek, bo mamy dużo zakupów.",
+        "sentence_translation": "Take a trolley, because we have a lot of shopping."
+    },
+    {
+        "word": "wpłacić",
+        "translation": "to deposit / pay in",
+        "sentence": "Chcę wpłacić pieniądze na konto.",
+        "sentence_translation": "I want to pay money into my account."
+    },
+    {
+        "word": "wycieczka",
+        "translation": "trip / excursion",
+        "sentence": "W sobotę jedziemy na wycieczkę w góry.",
+        "sentence_translation": "On Saturday we're going on a trip to the mountains."
+    },
+    {
+        "word": "wydarzenie",
+        "translation": "event / events",
+        "sentence": "To było ważne wydarzenie, a w tym tygodniu mamy wiele wydarzeń.",
+        "sentence_translation": "It was an important event, and this week we have many events."
+    },
+    {
+        "word": "wygląda bardzo dobrze",
+        "translation": "looks very good",
+        "sentence": "Twój obiad wygląda bardzo dobrze.",
+        "sentence_translation": "Your dinner looks very good."
+    },
+    {
+        "word": "wymienić się",
+        "translation": "to exchange",
+        "sentence": "Chcemy wymienić się numerami telefonów.",
+        "sentence_translation": "We want to exchange phone numbers."
+    },
+    {
+        "word": "wymowa",
+        "translation": "pronunciation",
+        "sentence": "Twoja wymowa jest coraz lepsza.",
+        "sentence_translation": "Your pronunciation is getting better and better."
+    },
+    {
+        "word": "wyżej",
+        "translation": "higher / above",
+        "sentence": "Półka z książkami jest wyżej.",
+        "sentence_translation": "The shelf with the books is higher up."
+    },
+    {
+        "word": "wzruszony / wzruszona",
+        "translation": "moved / touched",
+        "sentence": "Była wzruszona, kiedy usłyszała tę piosenkę.",
+        "sentence_translation": "She was moved when she heard this song."
+    },
+    {
+        "word": "koleżanka",
+        "translation": "female friend / colleague",
+        "sentence": "Moja koleżanka mieszka w Gdańsku.",
+        "sentence_translation": "My friend (female) lives in Gdańsk."
+    },
+    {
+        "word": "kolega",
+        "translation": "male friend / colleague",
+        "sentence": "Mój kolega pracuje w banku.",
+        "sentence_translation": "My colleague (male) works in a bank."
+    },
+    {
+        "word": "znajomy",
+        "translation": "acquaintance",
+        "sentence": "To jest mój znajomy z pracy.",
+        "sentence_translation": "This is my acquaintance from work."
+    },
+    {
+        "word": "przyjaciel",
+        "translation": "friend",
+        "sentence": "Mój przyjaciel mieszka w Krakowie.",
+        "sentence_translation": "My friend lives in Kraków."
+    },
+    {
+        "word": "zaczynać",
+        "translation": "to start",
+        "sentence": "Lekcja zaczyna się o ósmej.",
+        "sentence_translation": "The lesson starts at eight."
+    },
+    {
+        "word": "zadziałać",
+        "translation": "to work / succeed",
+        "sentence": "Mam nadzieję, że ten plan zadziała.",
+        "sentence_translation": "I hope this plan will work."
+    },
+    {
+        "word": "zagadnienie",
+        "translation": "topic / issue",
+        "sentence": "Dzisiaj omówimy ważne zagadnienie.",
+        "sentence_translation": "Today we will discuss an important topic."
+    },
+    {
+        "word": "zamówienie",
+        "translation": "order",
+        "sentence": "Czy mogę złożyć zamówienie?",
+        "sentence_translation": "Can I place an order?"
+    },
+    {
+        "word": "zamrażarka",
+        "translation": "freezer",
+        "sentence": "Lody są w zamrażarce.",
+        "sentence_translation": "The ice cream is in the freezer."
+    },
+    {
+        "word": "zamierzać",
+        "translation": "to intend",
+        "sentence": "Zamierzam wyjechać na wakacje w sierpniu.",
+        "sentence_translation": "I intend to go on holiday in August."
+    },
+    {
+        "word": "zapiszesz?",
+        "translation": "will you write it down?",
+        "sentence": "Nie zapamiętam tego adresu. Zapiszesz?",
+        "sentence_translation": "I won't remember this address. Will you write it down?"
+    },
+    {
+        "word": "zaręczyć się",
+        "translation": "to get engaged",
+        "sentence": "Chcą zaręczyć się latem.",
+        "sentence_translation": "They want to get engaged in the summer."
+    },
+    {
+        "word": "zaskoczyć",
+        "translation": "to surprise",
+        "sentence": "Chcę zaskoczyć mamę prezentem.",
+        "sentence_translation": "I want to surprise Mum with a present."
+    },
+    {
+        "word": "zaskoczony / zaskoczona",
+        "translation": "surprised",
+        "sentence": "Byłam zaskoczona jego telefonem.",
+        "sentence_translation": "I was surprised by his phone call."
+    },
+    {
+        "word": "zawiązać",
+        "translation": "to tie",
+        "sentence": "Dziecko nie umie jeszcze zawiązać butów.",
+        "sentence_translation": "The child can't tie their shoes yet."
+    },
+    {
+        "word": "zawodowo",
+        "translation": "professionally",
+        "sentence": "Zawodowo zajmuję się informatyką.",
+        "sentence_translation": "Professionally, I work in IT."
+    },
+    {
+        "word": "zdobywać punkty",
+        "translation": "earn points",
+        "sentence": "W tej grze można zdobywać punkty.",
+        "sentence_translation": "In this game you can earn points."
+    },
+    {
+        "word": "zmywarka",
+        "translation": "dishwasher",
+        "sentence": "Włóż talerze do zmywarki.",
+        "sentence_translation": "Put the plates in the dishwasher."
+    },
+    {
+        "word": "znaleźć",
+        "translation": "to find",
+        "sentence": "Nie mogę znaleźć moich kluczy.",
+        "sentence_translation": "I can't find my keys."
+    },
+    {
+        "word": "zostawić",
+        "translation": "to leave (something)",
+        "sentence": "Możesz zostawić płaszcz w szatni.",
+        "sentence_translation": "You can leave your coat in the cloakroom."
+    },
+    {
+        "word": "zwrot",
+        "translation": "expression / phrase",
+        "sentence": "Poznałem nowy zwrot po polsku.",
+        "sentence_translation": "I learned a new phrase in Polish."
+    },
+    {
+        "word": "źródło",
+        "translation": "source / spring",
+        "sentence": "Internet to dobre źródło wiedzy.",
+        "sentence_translation": "The internet is a good source of knowledge."
+    },
+    {
+        "word": "zasób",
+        "translation": "resource",
+        "sentence": "Ta firma ma duże zasoby finansowe.",
+        "sentence_translation": "This company has large financial resources."
+    },
+    {
+        "word": "żebyś",
+        "translation": "so that you",
+        "sentence": "Zadzwonię, żebyś wiedział, że jestem już w domu.",
+        "sentence_translation": "I'll call so that you know I'm already at home."
+    },
+    {
+        "word": "żywo / na żywo",
+        "translation": "live",
+        "sentence": "Koncert pokazują na żywo w telewizji.",
+        "sentence_translation": "The concert is shown live on television."
+    },
+    {
+        "word": "posiłek",
+        "translation": "meal",
+        "sentence": "Najważniejszym posiłkiem dnia jest śniadanie.",
+        "sentence_translation": "The most important meal of the day is breakfast."
+    },
+    {
+        "word": "nadzienie",
+        "translation": "filling",
+        "sentence": "Te pierogi mają nadzienie z sera i ziemniaków.",
+        "sentence_translation": "These pierogi have a cheese and potato filling."
+    },
+    {
+        "word": "przyciągać",
+        "translation": "to attract (ongoing)",
+        "sentence": "Ta wystawa zawsze przyciąga tłumy turystów.",
+        "sentence_translation": "This exhibition always attracts crowds of tourists."
+    },
+    {
+        "word": "szałowy",
+        "translation": "awesome / fantastic (colloquial)",
+        "sentence": "Mieliśmy szałowy wieczór z przyjaciółmi.",
+        "sentence_translation": "We had a fantastic evening with friends."
+    },
+    {
+        "word": "podobno",
+        "translation": "reportedly / apparently",
+        "sentence": "Podobno jutro będzie padać.",
+        "sentence_translation": "Apparently it's going to rain tomorrow."
+    },
+    {
+        "word": "patrząc",
+        "translation": "while looking / looking at",
+        "sentence": "Patrząc na mapę, szukałem przystanku.",
+        "sentence_translation": "Looking at the map, I was searching for the stop."
+    },
+    {
+        "word": "weźmie",
+        "translation": "will take (he / she)",
+        "sentence": "Ona weźmie parasol, bo zapowiadają deszcz.",
+        "sentence_translation": "She will take an umbrella because rain is forecast."
+    },
+    {
+        "word": "kącik",
+        "translation": "little corner / nook",
+        "sentence": "Usiądę z książką w kąciku przy oknie.",
+        "sentence_translation": "I'll sit with a book in the little corner by the window."
+    },
+    {
+        "word": "wzbudzać",
+        "translation": "to arouse / to evoke",
+        "sentence": "Ten kanał nie wzbudza większego zainteresowania.",
+        "sentence_translation": "This channel doesn't arouse much interest."
+    },
+    {
+        "word": "zainteresowanie",
+        "translation": "interest",
+        "sentence": "Dzieci okazały duże zainteresowanie muzyką.",
+        "sentence_translation": "The children showed great interest in music."
+    },
+    {
+        "word": "większy",
+        "translation": "bigger / greater",
+        "sentence": "Ta torba jest większa niż moja.",
+        "sentence_translation": "This bag is bigger than mine."
+    },
+    {
+        "word": "nagrywanie",
+        "translation": "recording",
+        "sentence": "Nagrywanie filmów zajmuje mi dużo czasu.",
+        "sentence_translation": "Recording videos takes me a lot of time."
+    },
+    {
+        "word": "budżetowy",
+        "translation": "budget (adj.)",
+        "sentence": "To jest budżetowy hotel blisko dworca.",
+        "sentence_translation": "This is a budget hotel near the station."
+    },
+    {
+        "word": "śniadanie",
+        "translation": "breakfast",
+        "sentence": "Na śniadanie jem kanapki z serem.",
+        "sentence_translation": "For breakfast I eat cheese sandwiches."
+    },
+    {
+        "word": "najgorętszy",
+        "translation": "hottest",
+        "sentence": "Lipiec był najgorętszym miesiącem w roku.",
+        "sentence_translation": "July was the hottest month of the year."
+    },
+    {
+        "word": "nagram",
+        "translation": "I will record",
+        "sentence": "Jutro nagram nowy film o śniadaniu.",
+        "sentence_translation": "Tomorrow I will record a new video about breakfast."
+    },
+    {
+        "word": "kolokwialnie",
+        "translation": "colloquially",
+        "sentence": "Kolokwialnie mówi się „spoko”.",
+        "sentence_translation": "Colloquially, people say \"spoko\" (cool)."
+    },
+    {
+        "word": "twaróg",
+        "translation": "quark / cottage cheese",
+        "sentence": "Naleśniki z twarogiem to moje ulubione danie.",
+        "sentence_translation": "Pancakes with quark are my favourite dish."
+    },
+    {
+        "word": "brakuje",
+        "translation": "is missing / is lacking",
+        "sentence": "W lodówce brakuje mleka.",
+        "sentence_translation": "There is no milk left in the fridge."
+    },
+    {
+        "word": "stwierdzić",
+        "translation": "to state / determine",
+        "sentence": "Lekarz musiał stwierdzić, co jest przyczyną bólu.",
+        "sentence_translation": "The doctor had to determine what was causing the pain."
+    },
+    {
+        "word": "przyjdzie",
+        "translation": "will come",
+        "sentence": "Jutro przyjdzie do nas kuzyn.",
+        "sentence_translation": "A cousin will come to see us tomorrow."
+    },
+    {
+        "word": "dostępne",
+        "translation": "available",
+        "sentence": "Bilety są dostępne w internecie.",
+        "sentence_translation": "Tickets are available online."
+    },
+    {
+        "word": "nawet bym",
+        "translation": "I would even",
+        "sentence": "Nawet bym spróbował, ale nie mam czasu.",
+        "sentence_translation": "I would even try it, but I don't have time."
+    },
+    {
+        "word": "żurawina",
+        "translation": "cranberry",
+        "sentence": "Dodaj do sałatki trochę suszonej żurawiny.",
+        "sentence_translation": "Add some dried cranberries to the salad."
+    },
+    {
+        "word": "przekonywać",
+        "translation": "to convince",
+        "sentence": "Nie próbuj mnie przekonywać, już zdecydowałem.",
+        "sentence_translation": "Don't try to convince me, I've already decided."
+    },
+    {
+        "word": "zdarza",
+        "translation": "happens / occurs",
+        "sentence": "Czasem zdarza się, że pociąg się spóźnia.",
+        "sentence_translation": "Sometimes it happens that the train is late."
+    },
+    {
+        "word": "cienka kromka",
+        "translation": "thin slice",
+        "sentence": "Pokrój chleb na cienkie kromki.",
+        "sentence_translation": "Cut the bread into thin slices."
+    },
+    {
+        "word": "polecieć",
+        "translation": "to fly (go by plane)",
+        "sentence": "Poleciały do Rwandy.",
+        "sentence_translation": "They flew to Rwanda."
+    },
+    {
+        "word": "wcześniej",
+        "translation": "earlier / before",
+        "sentence": "Kuzynka była już w Rwandzie wcześniej.",
+        "sentence_translation": "My cousin had already been to Rwanda before."
+    },
+    {
+        "word": "pomagać",
+        "translation": "to help",
+        "sentence": "Siostra pomagała chłopakowi z pieniędzmi na szkołę.",
+        "sentence_translation": "My sister helped the boy with money for school."
+    },
+    {
+        "word": "dorosnąć",
+        "translation": "to grow up",
+        "sentence": "On dorósł w małym mieście.",
+        "sentence_translation": "He grew up in a small town."
+    },
+    {
+        "word": "zacząć",
+        "translation": "to begin (once)",
+        "sentence": "Nie wiem, gdzie zacząć.",
+        "sentence_translation": "I don't know where to start."
+    },
+    {
+        "word": "wieżowiec",
+        "translation": "skyscraper",
+        "sentence": "To miasto ma dużo wieżowców.",
+        "sentence_translation": "This city has a lot of skyscrapers."
+    },
+    {
+        "word": "wrażenie",
+        "translation": "impression",
+        "sentence": "Pierwsze wrażenie jest bardzo ważne.",
+        "sentence_translation": "The first impression is very important."
+    },
+    {
+        "word": "zgadnąć",
+        "translation": "to guess",
+        "sentence": "Spróbuj zgadnąć, co to jest.",
+        "sentence_translation": "Try to guess what it is."
+    },
+    {
+        "word": "prowadzić",
+        "translation": "to drive / to lead",
+        "sentence": "W Anglii prowadzą po lewej stronie.",
+        "sentence_translation": "In England they drive on the left side."
+    },
+    {
+        "word": "traktować",
+        "translation": "to treat",
+        "sentence": "W tym hotelu dobrze nas traktują.",
+        "sentence_translation": "They treat us well in this hotel."
+    },
+    {
+        "word": "niż",
+        "translation": "than",
+        "sentence": "Ona jest starsza niż ja.",
+        "sentence_translation": "She is older than me."
+    },
+    {
+        "word": "pierścionek",
+        "translation": "ring",
+        "sentence": "Ten pierścionek jest bardzo piękny.",
+        "sentence_translation": "This ring is very beautiful."
+    },
+    {
+        "word": "pierścionek zaręczynowy",
+        "translation": "engagement ring",
+        "sentence": "Poszły do sklepu z pierścionkami, żeby wybrać pierścionek zaręczynowy.",
+        "sentence_translation": "They went to a ring shop to choose an engagement ring."
+    },
+    {
+        "word": "oczekiwać",
+        "translation": "to expect",
+        "sentence": "Nie oczekiwała, że się oświadczysz.",
+        "sentence_translation": "She didn't expect you to propose."
+    },
+    {
+        "word": "w sekrecie",
+        "translation": "in secret",
+        "sentence": "Planowaliśmy to w sekrecie.",
+        "sentence_translation": "We planned it in secret."
+    },
+    {
+        "word": "aby",
+        "translation": "so that / in order to",
+        "sentence": "Znaleźliśmy coś, aby Patrycja była zajęta.",
+        "sentence_translation": "We found something to keep Patrycja busy."
+    },
+    {
+        "word": "nosić",
+        "translation": "to wear / to carry",
+        "sentence": "Idol nosi ten pierścionek.",
+        "sentence_translation": "The idol wears this ring."
+    },
+    {
+        "word": "każdy",
+        "translation": "each / every",
+        "sentence": "Z każdej lekcji dodaję nowe słowa do fiszek.",
+        "sentence_translation": "From every lesson I add new words to my flashcards."
+    },
+    {
+        "word": "przenieść się",
+        "translation": "to move (oneself) / to switch",
+        "sentence": "Przeniesiemy się do innego pokoju.",
+        "sentence_translation": "We will move to another room."
+    },
+    {
+        "word": "zespół",
+        "translation": "team / group / band",
+        "sentence": "Przeniesiemy się do innego zespołu.",
+        "sentence_translation": "We will move to another team."
+    },
+    {
+        "word": "poruszyć",
+        "translation": "to bring up / to touch on",
+        "sentence": "Chciałbym poruszyć inny temat.",
+        "sentence_translation": "I would like to bring up another subject."
+    },
+    {
+        "word": "dawno",
+        "translation": "long ago / for a long time",
+        "sentence": "Dawno nie jadłam czekolady.",
+        "sentence_translation": "I haven't eaten chocolate for a long time."
+    },
+    {
+        "word": "przejęty",
+        "translation": "moved / worked up / taken",
+        "sentence": "Była bardzo przejęta tą wiadomością.",
+        "sentence_translation": "She was very moved by the news."
+    },
+    {
+        "word": "pogaduszki",
+        "translation": "chit-chat / small talk",
+        "sentence": "Lubię pogaduszki przy kawie.",
+        "sentence_translation": "I like chit-chat over coffee."
+    },
+    {
+        "word": "zbyt",
+        "translation": "too / excessively",
+        "sentence": "Zupa nie była zbyt gorąca.",
+        "sentence_translation": "The soup wasn't too hot."
+    },
+    {
+        "word": "kamień szlachetny",
+        "translation": "gemstone / precious stone",
+        "sentence": "W tej gablocie są kamienie szlachetne.",
+        "sentence_translation": "There are gemstones in this display case."
+    },
+    {
+        "word": "z przymrużeniem oka",
+        "translation": "with a pinch of salt / tongue in cheek",
+        "sentence": "Te rady trzeba brać z przymrużeniem oka.",
+        "sentence_translation": "You have to take this advice with a pinch of salt."
+    },
+    {
+        "word": "zabezpieczyć się",
+        "translation": "to secure oneself / to protect oneself",
+        "sentence": "Chcę zabezpieczyć się na przyszłość.",
+        "sentence_translation": "I want to secure myself for the future."
+    },
+    {
+        "word": "przyszłość",
+        "translation": "future",
+        "sentence": "Myślę o przyszłości.",
+        "sentence_translation": "I'm thinking about the future."
+    },
+    {
+        "word": "bogactwo",
+        "translation": "wealth / riches",
+        "sentence": "Bogactwo nie daje szczęścia.",
+        "sentence_translation": "Wealth doesn't bring happiness."
+    },
+    {
+        "word": "płaski",
+        "translation": "flat",
+        "sentence": "Ta ulica jest bardzo płaska.",
+        "sentence_translation": "This street is very flat."
+    },
+    {
+        "word": "zorientować się",
+        "translation": "to realise / to get one's bearings",
+        "sentence": "Po chwili zorientowaliśmy się, że idziemy w złą stronę.",
+        "sentence_translation": "After a moment we realised we were going the wrong way."
+    },
+    {
+        "word": "stamtąd",
+        "translation": "from there",
+        "sentence": "Pojechaliśmy do Krakowa, a stamtąd do Zakopanego.",
+        "sentence_translation": "We went to Kraków, and from there to Zakopane."
+    },
+    {
+        "word": "siostrzenica",
+        "translation": "niece (sister's daughter)",
+        "sentence": "Moja siostrzenica ma pięć lat i uwielbia rysować.",
+        "sentence_translation": "My niece is five years old and loves drawing."
+    },
+    {
+        "word": "pozwalać",
+        "translation": "to allow / to let",
+        "sentence": "W tym parku nie pozwalają psom biegać bez smyczy.",
+        "sentence_translation": "In this park they don't allow dogs to run without a lead."
+    },
+    {
+        "word": "wejść",
+        "translation": "to enter / to go in",
+        "sentence": "Weszliśmy do środka i od razu poczuliśmy zapach mięty.",
+        "sentence_translation": "We went inside and immediately smelled mint."
+    },
+    {
+        "word": "wszędzie",
+        "translation": "everywhere",
+        "sentence": "W tym mieście są wszędzie znaki w dwóch językach.",
+        "sentence_translation": "In this city there are signs in two languages everywhere."
+    },
+    {
+        "word": "znak",
+        "translation": "sign / signs",
+        "sentence": "Przy drodze stoi znak zakazu parkowania.",
+        "sentence_translation": "There is a no-parking sign by the road."
+    },
+    {
+        "word": "aktywność",
+        "translation": "activity / activities",
+        "sentence": "W tym hotelu jest dużo aktywności dla dzieci.",
+        "sentence_translation": "This hotel has a lot of activities for children."
+    },
+    {
+        "word": "przestrzeń",
+        "translation": "space",
+        "sentence": "W salonie jest dużo wolnej przestrzeni.",
+        "sentence_translation": "There is a lot of free space in the living room."
+    },
+    {
+        "word": "mięta",
+        "translation": "mint",
+        "sentence": "Do herbaty dodaję świeżą miętę.",
+        "sentence_translation": "I add fresh mint to my tea."
+    },
+    {
+        "word": "pusto",
+        "translation": "empty / deserted",
+        "sentence": "We wtorek rano na basenie było zupełnie pusto.",
+        "sentence_translation": "On Tuesday morning the swimming pool was completely empty."
+    },
+    {
+        "word": "wachlować",
+        "translation": "to fan",
+        "sentence": "Wachlował się gazetą, bo było bardzo gorąco.",
+        "sentence_translation": "He fanned himself with a newspaper because it was very hot."
+    },
+    {
+        "word": "odcinek",
+        "translation": "episode / section",
+        "sentence": "Ona zrobiła dużo odcinków na tym kanale.",
+        "sentence_translation": "She made a lot of episodes on this channel."
+    },
+    {
+        "word": "zmierzać (do)",
+        "translation": "to head for / to be heading to",
+        "sentence": "Zmierzam do spa, żeby odpocząć po pracy.",
+        "sentence_translation": "I'm heading to the spa to relax after work."
+    },
+    {
+        "word": "żaden / żadna / żadne",
+        "translation": "no / none / not any",
+        "sentence": "Żaden z moich kolegów nie interesuje się żadnym sportem.",
+        "sentence_translation": "None of my friends is interested in any sport."
+    },
+    {
+        "word": "powód",
+        "translation": "reason / reasons",
+        "sentence": "Mam dobry powód, aby uczyć się polskiego. Nie potrzebuję powodów, żeby iść do spa.",
+        "sentence_translation": "I have a good reason to learn Polish. I don't need reasons to go to the spa."
+    },
+    {
+        "word": "przystępny / przystępne",
+        "translation": "affordable / accessible",
+        "sentence": "Ceny w tej restauracji są bardzo przystępne.",
+        "sentence_translation": "The prices in this restaurant are very affordable."
+    },
+    {
+        "word": "rozsiany / rozsiane",
+        "translation": "scattered / spread out",
+        "sentence": "Małe sklepy są rozsiane po całym mieście.",
+        "sentence_translation": "Small shops are scattered all over the city."
+    },
+    {
+        "word": "ilość",
+        "translation": "quantity / amount",
+        "sentence": "Sprawdź ilość mąki w przepisie.",
+        "sentence_translation": "Check the amount of flour in the recipe."
+    },
+    {
+        "word": "otwierać się",
+        "translation": "to open (by itself)",
+        "sentence": "Drzwi do spa otwierały się same, gdy ktoś podchodził.",
+        "sentence_translation": "The doors to the spa opened by themselves when someone came near."
+    },
+    {
+        "word": "szafka",
+        "translation": "locker / small cabinet",
+        "sentence": "Swoje rzeczy zostawiłem w szafce w szatni.",
+        "sentence_translation": "I left my things in the locker in the changing room."
+    },
+    {
+        "word": "zdjąć",
+        "translation": "to take off",
+        "sentence": "Proszę zdjąć buty przed wejściem.",
+        "sentence_translation": "Please take off your shoes before entering."
+    },
+    {
+        "word": "cicho",
+        "translation": "quietly / quiet",
+        "sentence": "W bibliotece trzeba mówić cicho.",
+        "sentence_translation": "In the library you have to speak quietly."
+    },
+    {
+        "word": "suszyć",
+        "translation": "to dry",
+        "sentence": "Po basenie suszę włosy suszarką.",
+        "sentence_translation": "After the pool I dry my hair with a hairdryer."
+    },
+    {
+        "word": "ciśnienie krwi",
+        "translation": "blood pressure",
+        "sentence": "Lekarz sprawdził moje ciśnienie krwi.",
+        "sentence_translation": "The doctor checked my blood pressure."
+    },
+    {
+        "word": "w jakim znaczeniu?",
+        "translation": "in what sense? / what do you mean?",
+        "sentence": "Mówisz, że to dziwne. W jakim znaczeniu?",
+        "sentence_translation": "You say it's strange. In what sense?"
+    },
+    {
+        "word": "zdążyć",
+        "translation": "to make it in time / manage to",
+        "sentence": "Biegnij szybko, to jeszcze zdążysz na pociąg.",
+        "sentence_translation": "Run fast and you'll still make it for the train."
+    },
+    {
+        "word": "poważnie",
+        "translation": "seriously",
+        "sentence": "Mówisz poważnie czy żartujesz?",
+        "sentence_translation": "Are you serious or joking?"
+    },
+    {
+        "word": "idiom",
+        "translation": "idiom",
+        "sentence": "„Strach ma wielkie oczy” to znany polski idiom.",
+        "sentence_translation": "\"Strach ma wielkie oczy\" is a well-known Polish idiom."
+    },
+    {
+        "word": "strach ma wielkie oczy",
+        "translation": "fear has big eyes (things look scarier than they are)",
+        "sentence": "Nie bój się ciemności, strach ma wielkie oczy.",
+        "sentence_translation": "Don't be afraid of the dark, fear has big eyes."
+    },
+    {
+        "word": "wciąż",
+        "translation": "still / yet",
+        "sentence": "Jest już późno, a on wciąż pracuje.",
+        "sentence_translation": "It's already late and he's still working."
+    },
+    {
+        "word": "część",
+        "translation": "part / portion",
+        "sentence": "Pierwsza część filmu była bardzo długa.",
+        "sentence_translation": "The first part of the film was very long."
+    },
+    {
+        "word": "część zamienna",
+        "translation": "spare part",
+        "sentence": "Mechanik zamówił część zamienną do mojego samochodu.",
+        "sentence_translation": "The mechanic ordered a spare part for my car."
+    },
+    {
+        "word": "nie jestem pewien / pewny",
+        "translation": "I'm not sure",
+        "sentence": "Nie jestem pewien, czy dzisiaj zdążę.",
+        "sentence_translation": "I'm not sure I'll make it today."
+    },
+    {
+        "word": "w niektórych krajach",
+        "translation": "in some countries",
+        "sentence": "W niektórych krajach zimą jest bardzo ciemno.",
+        "sentence_translation": "In some countries it is very dark in winter."
+    },
+    {
+        "word": "poświęcony",
+        "translation": "dedicated to / devoted to",
+        "sentence": "Czytam artykuł poświęcony zdrowemu odżywianiu.",
+        "sentence_translation": "I'm reading an article devoted to healthy eating."
+    },
+    {
+        "word": "potrafić",
+        "translation": "to be able to / to know how to",
+        "sentence": "Czy potrafisz pływać?",
+        "sentence_translation": "Can you swim?"
+    },
+    {
+        "word": "niszczyć",
+        "translation": "to destroy / to ruin",
+        "sentence": "Nie wolno niszczyć przyrody.",
+        "sentence_translation": "You must not destroy nature."
+    },
+    {
+        "word": "wioska",
+        "translation": "village",
+        "sentence": "Moja babcia mieszka w małej wiosce.",
+        "sentence_translation": "My grandmother lives in a small village."
+    },
+    {
+        "word": "po przejściu",
+        "translation": "after passing / after the passing of",
+        "sentence": "Po przejściu burzy znowu wyszło słońce.",
+        "sentence_translation": "After the storm had passed, the sun came out again."
+    },
+    {
+        "word": "odczuwać",
+        "translation": "to feel / to experience (effects, pain)",
+        "sentence": "Po długim biegu odczuwam zmęczenie w nogach.",
+        "sentence_translation": "After a long run I feel tiredness in my legs."
+    },
+    {
+        "word": "skutek",
+        "translation": "effect / consequence",
+        "sentence": "Skutek tego leku jest bardzo szybki.",
+        "sentence_translation": "The effect of this medicine is very quick."
+    },
+    {
+        "word": "wywoływać",
+        "translation": "to cause / to trigger / to provoke",
+        "sentence": "Silny wiatr może wywoływać duże szkody.",
+        "sentence_translation": "Strong wind can cause a lot of damage."
+    },
+    {
+        "word": "ogromny",
+        "translation": "huge / enormous",
+        "sentence": "To jest ogromny problem dla całego miasta.",
+        "sentence_translation": "This is a huge problem for the whole city."
+    },
+    {
+        "word": "zamiast",
+        "translation": "instead of",
+        "sentence": "Zamiast kawy wolę dzisiaj herbatę.",
+        "sentence_translation": "Instead of coffee, I prefer tea today."
+    },
+    {
+        "word": "kran",
+        "translation": "tap / faucet",
+        "sentence": "Zakręć kran, bo woda wciąż leci.",
+        "sentence_translation": "Turn off the tap, because the water is still running."
+    },
+    {
+        "word": "kranówa",
+        "translation": "tap water (colloquial)",
+        "sentence": "W Polsce kranówa jest bezpieczna do picia.",
+        "sentence_translation": "In Poland tap water is safe to drink."
+    },
+    {
+        "word": "zachować",
+        "translation": "to keep / to preserve",
+        "sentence": "Proszę zachować spokój i wyjść spokojnie.",
+        "sentence_translation": "Please keep calm and leave calmly."
+    },
+    {
+        "word": "wyrażenie",
+        "translation": "expression / phrase (= zwrot)",
+        "sentence": "To wyrażenie często słyszę w pracy.",
+        "sentence_translation": "I often hear this expression at work."
+    },
+    {
+        "word": "podany w nawiasie",
+        "translation": "given in brackets",
+        "sentence": "Wpisz wyraz podany w nawiasie.",
+        "sentence_translation": "Write the word given in brackets."
+    },
+    {
+        "word": "para",
+        "translation": "couple / pair / steam",
+        "sentence": "Ta para mieszka na naszej ulicy.",
+        "sentence_translation": "This couple lives on our street."
+    },
+    {
+        "word": "oglądać",
+        "translation": "to watch (ongoing)",
+        "sentence": "Wieczorem lubię oglądać seriale.",
+        "sentence_translation": "In the evening I like to watch series."
+    },
+    {
+        "word": "obejrzeć",
+        "translation": "to watch (to the end) / to have a look at",
+        "sentence": "Chcę obejrzeć ten film do końca.",
+        "sentence_translation": "I want to watch this film to the end."
+    },
+    {
+        "word": "omówić",
+        "translation": "to discuss / to go over",
+        "sentence": "Musimy omówić plan na przyszły tydzień.",
+        "sentence_translation": "We have to discuss the plan for next week."
+    },
+    {
+        "word": "uczestnik",
+        "translation": "participant",
+        "sentence": "Każdy uczestnik kursu dostał certyfikat.",
+        "sentence_translation": "Every participant of the course got a certificate."
+    },
+    {
+        "word": "połowa",
+        "translation": "half (noun)",
+        "sentence": "Połowa klasy była dziś nieobecna.",
+        "sentence_translation": "Half of the class was absent today."
+    },
+    {
+        "word": "pół",
+        "translation": "half (in compounds, e.g. pół godziny)",
+        "sentence": "Czekam na ciebie już pół godziny.",
+        "sentence_translation": "I've been waiting for you for half an hour."
+    },
+    {
+        "word": "ponad",
+        "translation": "over / above / more than",
+        "sentence": "Ta książka ma ponad trzysta stron.",
+        "sentence_translation": "This book has over three hundred pages."
+    },
+    {
+        "word": "większość",
+        "translation": "majority / most",
+        "sentence": "Większość ludzi lubi lato.",
+        "sentence_translation": "Most people like summer."
+    },
+    {
+        "word": "mniejszość",
+        "translation": "minority",
+        "sentence": "Mniejszość głosowała przeciwko temu pomysłowi.",
+        "sentence_translation": "A minority voted against this idea."
+    },
+    {
+        "word": "przebrać się",
+        "translation": "to change clothes / to dress up",
+        "sentence": "Po spacerze chcę przebrać się w suche ubranie.",
+        "sentence_translation": "After the walk I want to change into dry clothes."
+    },
+    {
+        "word": "płaszcz",
+        "translation": "coat / overcoat",
+        "sentence": "Na dworze jest zimno, weź ciepły płaszcz.",
+        "sentence_translation": "It's cold outside, take a warm coat."
+    },
+    {
+        "word": "wymiotować",
+        "translation": "to vomit",
+        "sentence": "Dziecko od rana wymiotuje i ma gorączkę.",
+        "sentence_translation": "The child has been vomiting since morning and has a fever."
+    },
+    {
+        "word": "przebranie",
+        "translation": "costume / disguise",
+        "sentence": "Na bal kupiłem śmieszne przebranie.",
+        "sentence_translation": "I bought a funny costume for the ball."
+    },
+    {
+        "word": "odpocząć",
+        "translation": "to rest / to relax",
+        "sentence": "Po pracy chcę chwilę odpocząć.",
+        "sentence_translation": "After work I want to rest for a moment."
+    },
+    {
+        "word": "zanim",
+        "translation": "before (conjunction)",
+        "sentence": "Zadzwoń do mnie, zanim wyjdziesz z domu.",
+        "sentence_translation": "Call me before you leave the house."
+    },
+    {
+        "word": "składnik",
+        "translation": "ingredient / component",
+        "sentence": "Mąka jest głównym składnikiem tego ciasta.",
+        "sentence_translation": "Flour is the main ingredient of this cake."
+    },
+    {
+        "word": "kostka",
+        "translation": "cube / ankle",
+        "sentence": "Pokrój ser w małe kostki.",
+        "sentence_translation": "Cut the cheese into small cubes."
+    },
+    {
+        "word": "należy",
+        "translation": "one should / it is necessary",
+        "sentence": "Przed użyciem należy dokładnie przeczytać instrukcję.",
+        "sentence_translation": "Before use you should read the instructions carefully."
+    },
+    {
+        "word": "tłusty",
+        "translation": "fatty / greasy",
+        "sentence": "Nie jem tłustego mięsa, bo szkodzi mi na żołądek.",
+        "sentence_translation": "I don't eat fatty meat because it upsets my stomach."
+    },
+    {
+        "word": "zamieszkać na stałe",
+        "translation": "to settle permanently / to move somewhere for good",
+        "sentence": "Po studiach chcę zamieszkać na stałe w Krakowie.",
+        "sentence_translation": "After my studies I want to settle permanently in Kraków."
+    },
+    {
+        "word": "zasada",
+        "translation": "rule / principle",
+        "sentence": "Pierwsza zasada tej gry jest bardzo prosta.",
+        "sentence_translation": "The first rule of this game is very simple."
+    },
+    {
+        "word": "zmartwiony",
+        "translation": "worried / upset",
+        "sentence": "Mama była zmartwiona, bo syn nie odbierał telefonu.",
+        "sentence_translation": "Mum was worried because her son wasn't answering the phone."
+    },
+    {
+        "word": "wyjechać",
+        "translation": "to leave / to go away (by vehicle)",
+        "sentence": "Jutro rano chcemy wyjechać na wakacje.",
+        "sentence_translation": "Tomorrow morning we want to leave for our holiday."
+    },
+    {
+        "word": "zniknąć",
+        "translation": "to disappear / to vanish",
+        "sentence": "Mój portfel zniknął z biurka.",
+        "sentence_translation": "My wallet disappeared from the desk."
+    },
+    {
+        "word": "nagle",
+        "translation": "suddenly",
+        "sentence": "Nagle w całym domu zgasło światło.",
+        "sentence_translation": "Suddenly the light went out in the whole house."
+    },
+    {
+        "word": "jakby",
+        "translation": "as if / as though",
+        "sentence": "Zachowujesz się, jakby nic się nie stało.",
+        "sentence_translation": "You behave as if nothing had happened."
+    },
+    {
+        "word": "podkręcać",
+        "translation": "to turn up / to crank up (volume, heating)",
+        "sentence": "Nie podkręcaj tak głośno muzyki.",
+        "sentence_translation": "Don't turn the music up so loud."
+    },
+    {
+        "word": "wkurzony",
+        "translation": "furious / pissed off (colloquial)",
+        "sentence": "Szef był wkurzony, bo znowu spóźniliśmy się z raportem.",
+        "sentence_translation": "The boss was furious because we were late with the report again."
+    },
+    {
+        "word": "wykorzystywać",
+        "translation": "to use / to take advantage of / to exploit",
+        "sentence": "Nie powinieneś wykorzystywać dobroci innych.",
+        "sentence_translation": "You shouldn't take advantage of other people's kindness."
+    },
+    {
+        "word": "szacunek",
+        "translation": "respect",
+        "sentence": "Dzieci powinny okazywać szacunek starszym.",
+        "sentence_translation": "Children should show respect to their elders."
+    },
+    {
+        "word": "wyższy koszt leczenia",
+        "translation": "higher cost of treatment",
+        "sentence": "Brak ubezpieczenia oznacza wyższy koszt leczenia.",
+        "sentence_translation": "Having no insurance means a higher cost of treatment."
+    },
+    {
+        "word": "kierunek",
+        "translation": "direction / field of study",
+        "sentence": "Jaki kierunek studiów wybrałeś?",
+        "sentence_translation": "Which field of study did you choose?"
+    },
+    {
+        "word": "zmiana",
+        "translation": "change / shift",
+        "sentence": "Dziś mam nocną zmianę w pracy.",
+        "sentence_translation": "Today I have a night shift at work."
+    },
+    {
+        "word": "możliwość",
+        "translation": "possibility / option",
+        "sentence": "Mamy możliwość wyboru między dwoma terminami.",
+        "sentence_translation": "We have the option of choosing between two dates."
+    },
+    {
+        "word": "chronić",
+        "translation": "to protect",
+        "sentence": "Ten krem chroni skórę przed słońcem.",
+        "sentence_translation": "This cream protects the skin from the sun."
+    }
+]

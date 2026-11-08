@@ -1,0 +1,152 @@
+{
+  "bać się": [
+    {
+      "pl": "Nie bój się, ten pies jest bardzo łagodny.",
+      "en": "Don't be afraid, this dog is very gentle."
+    },
+    {
+      "pl": "Boję się latać samolotem.",
+      "en": "I'm afraid of flying."
+    }
+  ],
+  "bardzo mi smakuje": [
+    {
+      "pl": "Dziękuję za obiad, bardzo mi smakuje.",
+      "en": "Thank you for the dinner, I like it very much."
+    },
+    {
+      "pl": "Ta pizza jest pyszna, bardzo mi smakuje!",
+      "en": "This pizza is delicious, I really like it!"
+    }
+  ],
+  "biletomat": [
+    {
+      "pl": "Biletomat nie przyjmuje kart, tylko monety.",
+      "en": "The ticket machine doesn't accept cards, only coins."
+    },
+    {
+      "pl": "Gdzie jest najbliższy biletomat?",
+      "en": "Where is the nearest ticket machine?"
+    }
+  ],
+  "chodnik": [
+    {
+      "pl": "Na chodniku leży dużo liści.",
+      "en": "There are a lot of leaves lying on the sidewalk."
+    },
+    {
+      "pl": "Proszę nie parkować na chodniku.",
+      "en": "Please don't park on the sidewalk."
+    }
+  ],
+  "co mogę zrobić?": [
+    {
+      "pl": "Mam problem z kontem. Co mogę zrobić?",
+      "en": "I have a problem with my account. What can I do?"
+    },
+    {
+      "pl": "Wszystko się zepsuło. Co mogę zrobić, żeby to naprawić?",
+      "en": "Everything broke. What can I do to fix it?"
+    }
+  ],
+  "co mam pokroić?": [
+    {
+      "pl": "Mam pomidory i ogórki. Co mam pokroić najpierw?",
+      "en": "I have tomatoes and cucumbers. What should I cut first?"
+    },
+    {
+      "pl": "Dziś gotuję pierwszy raz. Co mam pokroić?",
+      "en": "Today I'm cooking for the first time. What should I cut?"
+    }
+  ],
+  "czajnik": [
+    {
+      "pl": "Postaw czajnik na kuchence, zrobimy herbatę.",
+      "en": "Put the kettle on the stove, we'll make tea."
+    },
+    {
+      "pl": "W moim czajniku jest dużo kamienia.",
+      "en": "There is a lot of limescale in my kettle."
+    }
+  ],
+  "denerwować się": [
+    {
+      "pl": "Zawsze denerwuję się przed egzaminem.",
+      "en": "I always get nervous before an exam."
+    },
+    {
+      "pl": "Nie ma sensu denerwować się takimi drobiazgami.",
+      "en": "There's no point getting annoyed over such trifles."
+    }
+  ],
+  "deska do krojenia": [
+    {
+      "pl": "Ta deska do krojenia jest wykonana z drewna.",
+      "en": "This cutting board is made of wood."
+    },
+    {
+      "pl": "Umyj deskę do krojenia po mięsie.",
+      "en": "Wash the cutting board after the meat."
+    }
+  ],
+  "dla profesjonalnych graczy": [
+    {
+      "pl": "To specjalna klawiatura dla profesjonalnych graczy.",
+      "en": "This is a special keyboard for professional players."
+    },
+    {
+      "pl": "Organizują darmowe szkolenia dla profesjonalnych graczy.",
+      "en": "They organise free training for professional players."
+    }
+  ],
+  "dla wielu ludzi": [
+    {
+      "pl": "Dla wielu ludzi praca jest bardzo stresująca.",
+      "en": "For many people work is very stressful."
+    },
+    {
+      "pl": "Ten park jest ważnym miejscem dla wielu ludzi.",
+      "en": "This park is an important place for many people."
+    }
+  ],
+  "dobre / ładne pachnie": [
+    {
+      "pl": "Z piekarni dobrze pachnie świeżym chlebem.",
+      "en": "It smells good of fresh bread from the bakery."
+    },
+    {
+      "pl": "Twoje perfumy ładnie pachną.",
+      "en": "Your perfume smells lovely."
+    }
+  ],
+  "dokończyć": [
+    {
+      "pl": "Czy możesz dokończyć to zdanie?",
+      "en": "Can you finish this sentence?"
+    },
+    {
+      "pl": "Dokończymy rozmowę jutro, teraz muszę biec.",
+      "en": "We'll finish the conversation tomorrow, now I have to run."
+    }
+  ],
+  "dolewka": [
+    {
+      "pl": "Poproszę dolewkę lemoniady.",
+      "en": "A refill of lemonade, please."
+    },
+    {
+      "pl": "W tym barze dolewka jest za darmo.",
+      "en": "In this bar the refill is free."
+    }
+  ],
+  "domowy / domowo": [
+    {
+      "pl": "Chętnie zjem domowy rosół.",
+      "en": "I'd gladly eat homemade broth."
+    },
+    {
+      "pl": "U nich w domu jest bardzo domowo.",
+      "en": "It feels very homely at their house."
+    }
+  ]
+}
