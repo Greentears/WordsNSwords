@@ -1,0 +1,122 @@
+[
+    {
+        "word": "s'apercevoir",
+        "translation": "to realise / to notice",
+        "sentence": "Je me suis aperçu que j'avais oublié mon portefeuille à la maison.",
+        "sentence_translation": "I realised that I had forgotten my wallet at home."
+    },
+    {
+        "word": "négliger",
+        "translation": "to neglect / to overlook",
+        "sentence": "Il ne faut pas négliger les petits détails lorsqu'on prépare un projet.",
+        "sentence_translation": "You shouldn't overlook the small details when preparing a project."
+    },
+    {
+        "word": "bouleverser",
+        "translation": "to upset / to deeply affect",
+        "sentence": "Cette nouvelle a complètement bouleversé sa vie.",
+        "sentence_translation": "This news completely turned his life upside down."
+    },
+    {
+        "word": "entreprendre",
+        "translation": "to undertake / to embark on",
+        "sentence": "Elle a décidé d'entreprendre une formation pour changer de carrière.",
+        "sentence_translation": "She decided to undertake a training course to change careers."
+    },
+    {
+        "word": "se méfier",
+        "translation": "to be wary / to distrust",
+        "sentence": "Tu devrais te méfier des promesses qui semblent trop belles pour être vraies.",
+        "sentence_translation": "You should be wary of promises that seem too good to be true."
+    },
+    {
+        "word": "parvenir à",
+        "translation": "to manage to / to succeed in",
+        "sentence": "Malgré les difficultés, nous sommes parvenus à trouver une solution.",
+        "sentence_translation": "Despite the difficulties, we managed to find a solution."
+    },
+    {
+        "word": "remettre en question",
+        "translation": "to question / to challenge",
+        "sentence": "Il est parfois nécessaire de remettre en question ses propres convictions.",
+        "sentence_translation": "It is sometimes necessary to question one's own beliefs."
+    },
+    {
+        "word": "néanmoins",
+        "translation": "nevertheless / nonetheless",
+        "sentence": "Le projet présente certains risques. Néanmoins, nous avons décidé de continuer.",
+        "sentence_translation": "The project presents certain risks. Nevertheless, we decided to continue."
+    },
+    {
+        "word": "désormais",
+        "translation": "from now on / henceforth",
+        "sentence": "Désormais, toutes les réunions auront lieu le lundi matin.",
+        "sentence_translation": "From now on, all meetings will take place on Monday mornings."
+    },
+    {
+        "word": "à l'encontre de",
+        "translation": "contrary to / against",
+        "sentence": "Cette décision va à l'encontre de nos principes fondamentaux.",
+        "sentence_translation": "This decision goes against our fundamental principles."
+    },
+    {
+        "word": "enjeu",
+        "translation": "stake / issue / challenge",
+        "sentence": "Les enjeux économiques de cette décision sont considérables.",
+        "sentence_translation": "The economic stakes of this decision are considerable."
+    },
+    {
+        "word": "aboutissement",
+        "translation": "outcome / culmination",
+        "sentence": "La signature du contrat représente l'aboutissement de plusieurs mois de négociations.",
+        "sentence_translation": "Signing the contract represents the culmination of several months of negotiations."
+    },
+    {
+        "word": "méfiance",
+        "translation": "distrust / suspicion",
+        "sentence": "Sa méfiance envers les institutions s'est renforcée au fil des années.",
+        "sentence_translation": "His distrust of institutions has grown over the years."
+    },
+    {
+        "word": "ampleur",
+        "translation": "scale / extent / magnitude",
+        "sentence": "Personne n'avait anticipé l'ampleur des conséquences.",
+        "sentence_translation": "Nobody had anticipated the scale of the consequences."
+    },
+    {
+        "word": "conscience",
+        "translation": "awareness / conscience",
+        "sentence": "Il est important de prendre conscience de l'impact de nos actions sur l'environnement.",
+        "sentence_translation": "It is important to become aware of the impact of our actions on the environment."
+    },
+    {
+        "word": "pertinent",
+        "translation": "relevant / appropriate",
+        "sentence": "Ton commentaire soulève une question particulièrement pertinente.",
+        "sentence_translation": "Your comment raises a particularly relevant question."
+    },
+    {
+        "word": "incontournable",
+        "translation": "essential / indispensable / unavoidable",
+        "sentence": "La maîtrise de l'anglais est devenue incontournable dans de nombreux secteurs professionnels.",
+        "sentence_translation": "Mastering English has become essential in many professional sectors."
+    },
+    {
+        "word": "précaire",
+        "translation": "precarious / unstable / insecure",
+        "sentence": "De nombreuses personnes vivent dans des conditions de logement précaires.",
+        "sentence_translation": "Many people live in precarious housing conditions."
+    },
+    {
+        "word": "approfondi",
+        "translation": "in-depth / thorough",
+        "sentence": "Nous devons mener une analyse approfondie avant de prendre une décision.",
+        "sentence_translation": "We need to conduct an in-depth analysis before making a decision."
+    },
+    {
+        "word": "ambivalent",
+        "translation": "ambivalent / having mixed feelings",
+        "sentence": "Je reste ambivalent à l'idée de déménager à l'étranger.",
+        "sentence_translation": "I still have mixed feelings about moving abroad."
+    }
+]

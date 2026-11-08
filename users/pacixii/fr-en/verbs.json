@@ -1,0 +1,205 @@
+[
+  {
+    "card": "s'apercevoir",
+    "verbs": [
+      {
+        "infinitive": "s'apercevoir",
+        "aspect": "imperfective",
+        "forms": [
+          "je m'aperçois",
+          "tu t'aperçois",
+          "il/elle s'aperçoit",
+          "nous nous apercevons",
+          "vous vous apercevez",
+          "ils/elles s'aperçoivent"
+        ],
+        "past": [
+          "il s'est aperçu",
+          "elle s'est aperçue",
+          "nous nous sommes aperçus / aperçues",
+          "ils se sont aperçus",
+          "elles se sont aperçues"
+        ],
+        "imperative": [
+          "aperçois-toi",
+          "apercevons-nous",
+          "apercevez-vous"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "négliger",
+    "verbs": [
+      {
+        "infinitive": "négliger",
+        "aspect": "imperfective",
+        "forms": [
+          "je néglige",
+          "tu négliges",
+          "il/elle néglige",
+          "nous négligeons",
+          "vous négligez",
+          "ils/elles négligent"
+        ],
+        "past": [
+          "il a négligé",
+          "elle a négligé",
+          "nous avons négligé",
+          "ils ont négligé",
+          "elles ont négligé"
+        ],
+        "imperative": [
+          "néglige",
+          "négligeons",
+          "négligez"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "bouleverser",
+    "verbs": [
+      {
+        "infinitive": "bouleverser",
+        "aspect": "imperfective",
+        "forms": [
+          "je bouleverse",
+          "tu bouleverses",
+          "il/elle bouleverse",
+          "nous bouleversons",
+          "vous bouleversez",
+          "ils/elles bouleversent"
+        ],
+        "past": [
+          "il a bouleversé",
+          "elle a bouleversé",
+          "nous avons bouleversé",
+          "ils ont bouleversé",
+          "elles ont bouleversé"
+        ],
+        "imperative": [
+          "bouleverse",
+          "bouleversons",
+          "bouleversez"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "entreprendre",
+    "verbs": [
+      {
+        "infinitive": "entreprendre",
+        "aspect": "imperfective",
+        "forms": [
+          "j'entreprends",
+          "tu entreprends",
+          "il/elle entreprend",
+          "nous entreprenons",
+          "vous entreprenez",
+          "ils/elles entreprennent"
+        ],
+        "past": [
+          "il a entrepris",
+          "elle a entrepris",
+          "nous avons entrepris",
+          "ils ont entrepris",
+          "elles ont entrepris"
+        ],
+        "imperative": [
+          "entreprends",
+          "entreprenons",
+          "entreprenez"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "se méfier",
+    "verbs": [
+      {
+        "infinitive": "se méfier",
+        "aspect": "imperfective",
+        "forms": [
+          "je me méfie",
+          "tu te méfies",
+          "il/elle se méfie",
+          "nous nous méfions",
+          "vous vous méfiez",
+          "ils/elles se méfient"
+        ],
+        "past": [
+          "il s'est méfié",
+          "elle s'est méfiée",
+          "nous nous sommes méfiés / méfiées",
+          "ils se sont méfiés",
+          "elles se sont méfiées"
+        ],
+        "imperative": [
+          "méfie-toi",
+          "méfions-nous",
+          "méfiez-vous"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "parvenir à",
+    "verbs": [
+      {
+        "infinitive": "parvenir à",
+        "aspect": "imperfective",
+        "forms": [
+          "je parviens à",
+          "tu parviens à",
+          "il/elle parvient à",
+          "nous parvenons à",
+          "vous parvenez à",
+          "ils/elles parviennent à"
+        ],
+        "past": [
+          "il est parvenu à",
+          "elle est parvenue à",
+          "nous sommes parvenus / parvenues à",
+          "ils sont parvenus à",
+          "elles sont parvenues à"
+        ],
+        "imperative": [
+          "parviens à",
+          "parvenons à",
+          "parvenez à"
+        ]
+      }
+    ]
+  },
+  {
+    "card": "remettre en question",
+    "verbs": [
+      {
+        "infinitive": "remettre en question",
+        "aspect": "imperfective",
+        "forms": [
+          "je remets en question",
+          "tu remets en question",
+          "il/elle remet en question",
+          "nous remettons en question",
+          "vous remettez en question",
+          "ils/elles remettent en question"
+        ],
+        "past": [
+          "il a remis en question",
+          "elle a remis en question",
+          "nous avons remis en question",
+          "ils ont remis en question",
+          "elles ont remis en question"
+        ],
+        "imperative": [
+          "remets en question",
+          "remettons en question",
+          "remettez en question"
+        ]
+      }
+    ]
+  }
+]

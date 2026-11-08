@@ -1,0 +1,232 @@
+[
+  {
+    "card": "pertinent",
+    "adjectives": [
+      {
+        "lemma": "pertinent",
+        "forms": {
+          "m": [
+            "pertinent",
+            "pertinent",
+            "pertinent",
+            "pertinent",
+            "pertinent",
+            "pertinent",
+            "pertinent"
+          ],
+          "f": [
+            "pertinente",
+            "pertinente",
+            "pertinente",
+            "pertinente",
+            "pertinente",
+            "pertinente",
+            "pertinente"
+          ],
+          "n": [
+            "pertinent",
+            "pertinent",
+            "pertinent",
+            "pertinent",
+            "pertinent",
+            "pertinent",
+            "pertinent"
+          ],
+          "pl": [
+            "pertinents / pertinentes",
+            "pertinents / pertinentes",
+            "pertinents / pertinentes",
+            "pertinents / pertinentes",
+            "pertinents / pertinentes",
+            "pertinents / pertinentes",
+            "pertinents / pertinentes"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "card": "incontournable",
+    "adjectives": [
+      {
+        "lemma": "incontournable",
+        "forms": {
+          "m": [
+            "incontournable",
+            "incontournable",
+            "incontournable",
+            "incontournable",
+            "incontournable",
+            "incontournable",
+            "incontournable"
+          ],
+          "f": [
+            "incontournable",
+            "incontournable",
+            "incontournable",
+            "incontournable",
+            "incontournable",
+            "incontournable",
+            "incontournable"
+          ],
+          "n": [
+            "incontournable",
+            "incontournable",
+            "incontournable",
+            "incontournable",
+            "incontournable",
+            "incontournable",
+            "incontournable"
+          ],
+          "pl": [
+            "incontournables",
+            "incontournables",
+            "incontournables",
+            "incontournables",
+            "incontournables",
+            "incontournables",
+            "incontournables"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "card": "précaire",
+    "adjectives": [
+      {
+        "lemma": "précaire",
+        "forms": {
+          "m": [
+            "précaire",
+            "précaire",
+            "précaire",
+            "précaire",
+            "précaire",
+            "précaire",
+            "précaire"
+          ],
+          "f": [
+            "précaire",
+            "précaire",
+            "précaire",
+            "précaire",
+            "précaire",
+            "précaire",
+            "précaire"
+          ],
+          "n": [
+            "précaire",
+            "précaire",
+            "précaire",
+            "précaire",
+            "précaire",
+            "précaire",
+            "précaire"
+          ],
+          "pl": [
+            "précaires",
+            "précaires",
+            "précaires",
+            "précaires",
+            "précaires",
+            "précaires",
+            "précaires"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "card": "approfondi",
+    "adjectives": [
+      {
+        "lemma": "approfondi",
+        "forms": {
+          "m": [
+            "approfondi",
+            "approfondi",
+            "approfondi",
+            "approfondi",
+            "approfondi",
+            "approfondi",
+            "approfondi"
+          ],
+          "f": [
+            "approfondie",
+            "approfondie",
+            "approfondie",
+            "approfondie",
+            "approfondie",
+            "approfondie",
+            "approfondie"
+          ],
+          "n": [
+            "approfondi",
+            "approfondi",
+            "approfondi",
+            "approfondi",
+            "approfondi",
+            "approfondi",
+            "approfondi"
+          ],
+          "pl": [
+            "approfondis / approfondies",
+            "approfondis / approfondies",
+            "approfondis / approfondies",
+            "approfondis / approfondies",
+            "approfondis / approfondies",
+            "approfondis / approfondies",
+            "approfondis / approfondies"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "card": "ambivalent",
+    "adjectives": [
+      {
+        "lemma": "ambivalent",
+        "forms": {
+          "m": [
+            "ambivalent",
+            "ambivalent",
+            "ambivalent",
+            "ambivalent",
+            "ambivalent",
+            "ambivalent",
+            "ambivalent"
+          ],
+          "f": [
+            "ambivalente",
+            "ambivalente",
+            "ambivalente",
+            "ambivalente",
+            "ambivalente",
+            "ambivalente",
+            "ambivalente"
+          ],
+          "n": [
+            "ambivalent",
+            "ambivalent",
+            "ambivalent",
+            "ambivalent",
+            "ambivalent",
+            "ambivalent",
+            "ambivalent"
+          ],
+          "pl": [
+            "ambivalents / ambivalentes",
+            "ambivalents / ambivalentes",
+            "ambivalents / ambivalentes",
+            "ambivalents / ambivalentes",
+            "ambivalents / ambivalentes",
+            "ambivalents / ambivalentes",
+            "ambivalents / ambivalentes"
+          ]
+        }
+      }
+    ]
+  }
+]
