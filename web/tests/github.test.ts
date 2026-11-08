@@ -11,9 +11,10 @@ for (const p of ["words", "verbs", "nouns", "adjectives", "examples", "sentences
 const Q7 = ["a", "b", "c", "d", "e", "f", "g"];
 const addition = { words: [{ word: "kot", translation: "cat" }], nouns: [{ card: "kot", nouns: [{ lemma: "kot", gender: "m", singular: Q7, plural: Q7 }] }] };
 
-function fakeGithub(opts: { token?: string; takenBranches?: string[]; missingFolder?: boolean } = {}) {
+function fakeGithub(opts: { token?: string; takenBranches?: string[]; missingFolder?: boolean; branch?: string } = {}) {
   const log: { method: string; path: string; body?: any; auth?: string }[] = [];
   const puts: Record<string, string> = {};
+  const br = opts.branch ?? "main";
   const taken = new Set(opts.takenBranches ?? []);
   const fetchFn: FetchFn = async (url, init) => {
     const method = init?.method ?? "GET";
@@ -24,12 +25,14 @@ function fakeGithub(opts: { token?: string; takenBranches?: string[]; missingFol
     const reply = (status: number, data: unknown = {}) => ({ ok: status < 300, status, json: async () => data });
     if (auth !== `Bearer ${opts.token ?? "tok"}`) return reply(401);
     let m;
-    if (method === "GET" && (m = path.match(/^\/contents\/(.+?)\?ref=main$/))) {
+    if (method === "GET" && path === "") return reply(200, { default_branch: br });
+    if (method === "GET" && (m = path.match(/^\/contents\/(.+?)\?ref=(.+)$/))) {
+      if (m[2] !== br) return reply(404);
       const text = files[m[1]];
       if (opts.missingFolder || text === undefined) return reply(404);
       return reply(200, { sha: "sha-" + m[1], content: Buffer.from(text).toString("base64").replace(/(.{60})/g, "$1\n") });
     }
-    if (method === "GET" && path === "/git/ref/heads/main") return reply(200, { object: { sha: "HEAD1" } });
+    if (method === "GET" && path === `/git/ref/heads/${br}`) return reply(200, { object: { sha: "HEAD1" } });
     if (method === "POST" && path === "/git/refs") {
       if (taken.has(body.ref)) return reply(422);
       taken.add(body.ref);
@@ -98,4 +101,11 @@ test("send for review: needs a token, additions and a folder in the repo", async
 test("send for review: a network failure is reported plainly", async () => {
   const r = await sendForReview({ ...base, token: "tok", additions: [addition], fetchFn: async () => { throw new TypeError("x"); } });
   assert.ok(!r.ok && r.error === "No connection to GitHub.");
+});
+
+test("send for review: uses the repository's default branch (master)", async () => {
+  const g = fakeGithub({ branch: "master" });
+  const r = await sendForReview({ ...base, token: "tok", additions: [addition], fetchFn: g.fetchFn });
+  assert.ok(r.ok, JSON.stringify(r));
+  assert.equal(g.log.find((l) => l.path === "/pulls")!.body.base, "master");
 });

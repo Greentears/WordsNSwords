@@ -6,7 +6,6 @@
 import { merge, validate, type DeckData, type Json } from "./newwords";
 
 export const GITHUB_REPO = "Greentears/WordsNSwords";
-export const GITHUB_BASE = "main";
 const API = "https://api.github.com";
 const PARTS = ["words", "verbs", "nouns", "adjectives", "examples", "sentences"] as const;
 
@@ -47,7 +46,7 @@ function explain(status: number, what: string): string {
 }
 
 export async function sendForReview(o: SendOptions): Promise<SendResult> {
-  const repo = o.repo ?? GITHUB_REPO, base = o.base ?? GITHUB_BASE, f = o.fetchFn ?? ((u, i) => fetch(u, i));
+  const repo = o.repo ?? GITHUB_REPO, f = o.fetchFn ?? ((u, i) => fetch(u, i));
   const folder = `users/${o.slug}/${o.deck}`;
   const call = async (method: string, path: string, body?: unknown, okStatuses: number[] = []) => {
     let res;
@@ -64,7 +63,8 @@ export async function sendForReview(o: SendOptions): Promise<SendResult> {
   try {
     if (!o.token.trim()) return { ok: false, error: "No token entered." };
     if (!o.additions.length) return { ok: false, error: "Nothing to send: no words were added on this device.", nothingNew: true };
-    // 1. the files as they are on the base branch now
+    // 1. the repository's main branch (it may be called main or master) and its files as they are now
+    const base = o.base ?? ((await call("GET", "")).data.default_branch as string | undefined) ?? "main";
     const deck: DeckData = { words: [], verbs: [], nouns: [], adjectives: [], examples: {}, sentences: [] };
     const shas: Record<string, string> = {}, original: Record<string, string> = {};
     for (const part of PARTS) {

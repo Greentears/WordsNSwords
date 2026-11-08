@@ -17,7 +17,7 @@ NOW = datetime(2026, 11, 8, 15, 49, tzinfo=timezone.utc)
 PREFIX = "https://api.github.com/repos/Greentears/WordsNSwords"
 
 
-def fake(token="tok", taken=(), missing=False):
+def fake(token="tok", taken=(), missing=False, branch="main"):
     files = {f"users/anna/pl-en/{p.name}": p.read_text(encoding="utf-8") for p in FIX.glob("*.json")}
     state = {"log": [], "puts": {}, "taken": set(taken)}
 
@@ -27,12 +27,14 @@ def fake(token="tok", taken=(), missing=False):
         state["log"].append((method, path, data))
         if headers["Authorization"] != f"Bearer {token}":
             return 401, {}
+        if method == "GET" and path == "":
+            return 200, {"default_branch": branch}
         if method == "GET" and path.startswith("/contents/"):
-            name = path[len("/contents/"):].split("?")[0]
-            if missing or name not in files:
+            name, _, ref = path[len("/contents/"):].partition("?ref=")
+            if missing or name not in files or ref != branch:
                 return 404, {}
             return 200, {"sha": "s-" + name, "content": base64.b64encode(files[name].encode()).decode()}
-        if method == "GET" and path == "/git/ref/heads/main":
+        if method == "GET" and path == f"/git/ref/heads/{branch}":
             return 200, {"object": {"sha": "HEAD1"}}
         if method == "POST" and path == "/git/refs":
             if data["ref"] in state["taken"]:
@@ -64,6 +66,12 @@ class SendForReviewTests(unittest.TestCase):
         puts = [e for e in st["log"] if e[0] == "PUT"]
         self.assertTrue(all("sha" in e[2] for e in puts))
         self.assertEqual([e for e in st["log"] if e[1] == "/pulls"][0][2]["title"], "Add 1 word for anna")
+
+    def test_uses_the_default_branch_master(self):
+        request, st = fake(branch="master")
+        r = send([ADD], request)
+        self.assertTrue(r["ok"], r)
+        self.assertEqual([e for e in st["log"] if e[1] == "/pulls"][0][2]["base"], "master")
 
     def test_non_ascii_survives(self):
         request, st = fake()

@@ -18,7 +18,6 @@ from typing import Any, Callable
 import newwords
 
 GITHUB_REPO = "Greentears/WordsNSwords"
-GITHUB_BASE = "main"
 API = "https://api.github.com"
 PARTS = ("words", "verbs", "nouns", "adjectives", "examples", "sentences")
 EMPTY: dict[str, Any] = {"words": [], "verbs": [], "nouns": [], "adjectives": [], "examples": {}, "sentences": []}
@@ -64,7 +63,7 @@ def _stamp(now: datetime) -> str:
 
 
 def send_for_review(token: str, slug: str, deck: str, additions: list[dict], repo: str = GITHUB_REPO,
-                    base: str = GITHUB_BASE, request: Request | None = None, now: datetime | None = None) -> dict:
+                    base: str | None = None, request: Request | None = None, now: datetime | None = None) -> dict:
     """Returns {"ok": True, "url", "branch", "files"} or {"ok": False, "error", "nothing_new"?}."""
     request = request or _urllib_request
     folder_path = f"users/{slug}/{deck}"
@@ -86,6 +85,8 @@ def send_for_review(token: str, slug: str, deck: str, additions: list[dict], rep
             return {"ok": False, "error": "No token entered."}
         if not additions:
             return {"ok": False, "error": "Nothing to send: no words were added on this computer.", "nothing_new": True}
+        # the repository's main branch (it may be called main or master)
+        base = base or call("GET", "")[1].get("default_branch") or "main"
         with tempfile.TemporaryDirectory() as tmp:
             work = Path(tmp)
             shas: dict[str, str] = {}
