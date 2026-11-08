@@ -762,5 +762,53 @@
       "część zamienna",
       "ponad"
     ]
+  },
+  {
+    "pl": "Ciągle zastanawiam się, dlaczego on tak często narzeka.",
+    "en": "I constantly wonder why he complains so often.",
+    "words": [
+      "ciągle",
+      "zastanawiać się",
+      "narzekać"
+    ]
+  },
+  {
+    "pl": "Nie narzekaj, każdy ma czasami trudny dzień.",
+    "en": "Don't complain; everyone has a difficult day sometimes.",
+    "words": [
+      "narzekać"
+    ]
+  },
+  {
+    "pl": "Zastanów się, czy naprawdę potrzebujesz tego telefonu.",
+    "en": "Think about whether you really need this phone.",
+    "words": [
+      "zastanawiać się"
+    ]
+  },
+  {
+    "pl": "Ciągle pada deszcz, ale to nie jest wyjątek w listopadzie.",
+    "en": "It keeps raining, but that's not unusual in November.",
+    "words": [
+      "ciągle",
+      "wyjątek"
+    ]
+  },
+  {
+    "pl": "Zawsze narzekasz na pogodę, bez wyjątku!",
+    "en": "You always complain about the weather, without exception!",
+    "words": [
+      "narzekać",
+      "wyjątek"
+    ]
+  },
+  {
+    "pl": "Zastanawiam się, dlaczego ciągle narzekasz na swoją pracę.",
+    "en": "I wonder why you constantly complain about your job.",
+    "words": [
+      "zastanawiać się",
+      "ciągle",
+      "narzekać"
+    ]
   }
 ]
