@@ -1,10 +1,10 @@
-# Tests the project and publishes the phone app to GitHub Pages on every push to main.
+# Tests the project and publishes the phone app to GitHub Pages on every push to main or master.
 # One-time setup: repository Settings -> Pages -> Source: "GitHub Actions".
 name: Publish the phone app
 
 on:
   push:
-    branches: [main]
+    branches: [main, master]
   workflow_dispatch:
 
 permissions:

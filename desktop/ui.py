@@ -326,6 +326,11 @@ class FlashcardWindow(QMainWindow):
         add_words_action.triggered.connect(self.add_words)
         file_menu.addAction(add_words_action)
 
+        reload_action = QAction("&Reload words", self)
+        reload_action.setShortcut(QKeySequence("F5"))
+        reload_action.triggered.connect(lambda: self._load_file(self.json_path))
+        file_menu.addAction(reload_action)
+
         export_action = QAction("&Export backup…", self)
         export_action.triggered.connect(self.export_backup)
         file_menu.addAction(export_action)
