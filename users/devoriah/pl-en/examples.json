@@ -3228,5 +3228,45 @@
       "pl": "Musimy chronić środowisko.",
       "en": "We have to protect the environment."
     }
+  ],
+  "zastanawiać się": [
+    {
+      "pl": "Zastanawiam się, czy kupić nowy samochód.",
+      "en": "I'm wondering whether to buy a new car."
+    },
+    {
+      "pl": "Długo zastanawialiśmy się nad tym problemem.",
+      "en": "We thought about this problem for a long time."
+    }
+  ],
+  "ciągle": [
+    {
+      "pl": "Dlaczego ciągle patrzysz na telefon?",
+      "en": "Why are you constantly looking at your phone?"
+    },
+    {
+      "pl": "Ciągle mieszkam w tym samym mieszkaniu.",
+      "en": "I still live in the same apartment."
+    }
+  ],
+  "narzekać": [
+    {
+      "pl": "Nie lubię narzekać na swoją pracę.",
+      "en": "I don't like complaining about my job."
+    },
+    {
+      "pl": "Klienci narzekają, że ceny są za wysokie.",
+      "en": "Customers complain that prices are too high."
+    }
+  ],
+  "wyjątek": [
+    {
+      "pl": "Każdy może popełnić błąd, to żaden wyjątek.",
+      "en": "Anyone can make a mistake; that's nothing unusual."
+    },
+    {
+      "pl": "Wszyscy przyszli na spotkanie, z wyjątkiem Marka.",
+      "en": "Everyone came to the meeting, except Marek."
+    }
   ]
 }

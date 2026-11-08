@@ -3575,5 +3575,32 @@
         ]
       }
     ]
+  },
+  {
+    "card": "wyjątek",
+    "nouns": [
+      {
+        "lemma": "wyjątek",
+        "gender": "m",
+        "singular": [
+          "wyjątek",
+          "wyjątku",
+          "wyjątkowi",
+          "wyjątek",
+          "wyjątkiem",
+          "wyjątku",
+          "wyjątku"
+        ],
+        "plural": [
+          "wyjątki",
+          "wyjątków",
+          "wyjątkom",
+          "wyjątki",
+          "wyjątkami",
+          "wyjątkach",
+          "wyjątki"
+        ]
+      }
+    ]
   }
 ]
