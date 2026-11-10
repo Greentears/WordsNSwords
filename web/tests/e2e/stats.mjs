@@ -1,0 +1,47 @@
+// Stats screen on a phone: points come from levels, spending shows effects, the first reset is free, saved across reloads.
+import { chromium, devices } from "playwright";
+import { serve } from "../../tools/serve.mjs";
+
+const server = await serve(4199);
+const browser = await chromium.launch();
+const ctx = await browser.newContext({ ...devices["Pixel 7"], serviceWorkers: "block" });
+const page = await ctx.newPage();
+const errors = [];
+page.on("pageerror", (e) => errors.push(e.message));
+page.on("console", (m) => m.type() === "error" && errors.push(m.text()));
+const ok = (c, msg) => { if (!c) { console.error("FAIL:", msg); process.exitCode = 1; } else console.log("ok  ", msg); };
+const scr = ".dg:not([hidden])";
+
+await page.goto("http://localhost:4199/");
+await page.waitForSelector(".welcome input");
+await page.fill(".welcome input", "Devoriah"); await page.tap(".welcome .btn.primary");
+await page.waitForSelector(".card");
+await page.evaluate(() => { const p = window.__app.game.player; p.level = 5; p.stat_points = 8; window.__app.game.save(); });
+await page.tap(".tab:has-text('Dungeon')");
+if (await page.$(".hero-pick")) await page.tap(".hero-pick >> nth=1");
+await page.waitForSelector(`${scr} .hero-panel`);
+ok((await page.textContent(`${scr} .points-hint`)).includes("8 stat points"), "the map announces unspent points");
+await page.tap(`${scr} .btn:has-text('Stats (8)')`);
+await page.waitForSelector(`${scr} .stat-row`);
+ok((await page.locator(`${scr} .stat-row`).count()) === 6, "six stats are listed");
+await page.tap(`${scr} [aria-label='Add 1 point to Strength']`);
+ok((await page.textContent(`${scr} .stat-row`)).includes("Strength: 1") && (await page.textContent(`${scr} .stat-row`)).includes("+2.5% damage"), "a point shows its effect");
+await page.tap(`${scr} [aria-label='Add 5 points to Dexterity']`);
+ok((await page.textContent(`${scr}`)).includes("Dexterity: 5"), "+5 spends five points");
+ok((await page.textContent(`${scr} .panel`)).includes("2 points to spend"), "remaining points are shown");
+await page.evaluate(() => window.__app.pending);
+await page.reload();
+await page.waitForSelector(".card");
+ok(await page.evaluate(() => window.__app.game.player.stats.dexterity === 5 && window.__app.game.player.stat_points === 2), "points are saved");
+await page.tap(".tab:has-text('Dungeon')");
+if (await page.$(".hero-pick")) await page.tap(".hero-pick >> nth=1");
+await page.waitForSelector(`${scr} .hero-panel`);
+await page.tap(`${scr} .btn:has-text('Stats')`);
+await page.tap(`${scr} .btn:has-text('Reset points')`);
+await page.tap(".sheet.open .btn.primary");
+await page.waitForSelector(`${scr} .warn:has-text('Points reset')`);
+ok(await page.evaluate(() => window.__app.game.player.stat_points === 8 && window.__app.game.player.stats.dexterity === 0), "the first reset is free and returns every point");
+await page.waitForSelector(`${scr} .btn:has-text('Reset points')`);
+ok((await page.textContent(`${scr} .btn.ghost`)).includes("Reset points"), "reset button stays");
+ok(errors.length === 0, "no page errors " + errors.join("|"));
+await browser.close(); server.close();

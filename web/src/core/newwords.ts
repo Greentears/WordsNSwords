@@ -15,6 +15,13 @@ export interface Counts { words: number; skipped: number; verbs: number; nouns: 
 
 const ASPECTS = ["imperfective", "perfective"];
 const GENDERS = ["m", "f", "n", "pl", "num"];
+// French (language "fr"): tenses are tables of 6 persons, nouns and adjectives are plain strings.
+const FR_TENSES = ["present", "passe_compose", "imparfait", "futur", "conditionnel"];
+const FR_GENDERS = ["m", "f"];
+const FR_ADJ_FORMS = ["ms", "fs", "mp", "fp"];
+/** "fr" for French decks ("fr-en"), "pl" (the original table format) for everything else. */
+export const languageOf = (deck: string): string => (deck.split("-")[0] === "fr" ? "fr" : "pl");
+
 const PARTS = ["words", "verbs", "nouns", "adjectives", "examples", "sentences"];
 
 const isObj = (v: unknown): v is Json => typeof v === "object" && v !== null && !Array.isArray(v);
@@ -22,7 +29,8 @@ const isText = (v: unknown): v is string => typeof v === "string" && v.trim() !=
 const forms = (v: unknown, count: number, allowNull = false) =>
   Array.isArray(v) && v.length === count && v.every((x) => isText(x) || (allowNull && x === null));
 
-export function validate(data: unknown, existingCards: Iterable<string> = []): string[] {
+export function validate(data: unknown, existingCards: Iterable<string> = [], language = "pl"): string[] {
+  const french = language === "fr";
   if (!isObj(data)) return ["The answer must be one JSON object with the keys words, verbs, nouns, adjectives, examples, sentences."];
   const errors: string[] = [];
   const known = new Set(existingCards);
@@ -49,7 +57,19 @@ export function validate(data: unknown, existingCards: Iterable<string> = []): s
       if (!known.has(e.card.trim())) errors.push(`${where}: card "${e.card}" is not in words (spell it exactly like the card).`);
       for (const item of e[part] as unknown[]) {
         if (!isObj(item)) errors.push(`${where}: every item must be an object.`);
-        else if (part === "verbs") {
+        else if (part === "verbs" && french) {
+          if (!isText(item.infinitive)) errors.push(`${where}: needs an "infinitive".`);
+          const tenses = item.tenses;
+          if (!isObj(tenses)) errors.push(`${where}: needs "tenses" with ${FR_TENSES.join(", ")} (6 forms each: je, tu, il/elle, nous, vous, ils/elles).`);
+          else for (const t of FR_TENSES) if (!forms(tenses[t], 6)) errors.push(`${where}: "tenses.${t}" must be 6 forms (je, tu, il/elle, nous, vous, ils/elles).`);
+        } else if (part === "nouns" && french) {
+          if (!isText(item.lemma) || !FR_GENDERS.includes(item.gender as string) || !isText(item.singular) || !(item.plural === null || isText(item.plural))) {
+            errors.push(`${where}: needs "lemma", "gender" (m or f), "singular" (with its article, e.g. "l'enjeu") and "plural" (or null).`);
+          }
+        } else if (part === "adjectives" && french) {
+          const f = item.forms;
+          if (!isText(item.lemma) || !isObj(f) || !FR_ADJ_FORMS.every((k) => isText(f[k]))) errors.push(`${where}: needs "lemma" and "forms" with ms, fs, mp, fp (one text each).`);
+        } else if (part === "verbs") {
           if (!isText(item.infinitive) || !ASPECTS.includes(item.aspect as string)) errors.push(`${where}: needs "infinitive" and "aspect" (${ASPECTS.join(" or ")}).`);
           if (!forms(item.forms, 6)) errors.push(`${where}: "forms" must be 6 forms (ja, ty, on/ona/ono, my, wy, oni/one).`);
           if ("past" in item && !forms(item.past, 5)) errors.push(`${where}: "past" must be 5 forms (m, f, n, men plural, other plural).`);
@@ -141,10 +161,10 @@ export function parseAnswer(text: string): { data?: Json; error?: string } {
 }
 
 /** Parse, validate and merge in one go. */
-export function checkAndMerge(deck: DeckData, text: string): { errors: string[]; deck?: DeckData; counts?: Counts; data?: Json } {
+export function checkAndMerge(deck: DeckData, text: string, language = "pl"): { errors: string[]; deck?: DeckData; counts?: Counts; data?: Json } {
   const parsed = parseAnswer(text);
   if (parsed.error || !parsed.data) return { errors: [parsed.error ?? "Empty answer."] };
-  const errors = validate(parsed.data, deck.words.map((w) => w.word as string));
+  const errors = validate(parsed.data, deck.words.map((w) => w.word as string), language);
   if (errors.length) return { errors };
   const r = merge(deck, parsed.data as Json);
   return { errors: [], deck: r.deck, counts: r.counts, data: parsed.data };

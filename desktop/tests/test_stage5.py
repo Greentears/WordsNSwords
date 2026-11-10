@@ -83,7 +83,7 @@ def deck():
                                sentence_translation=f"Sentence {i}.", level=1) for i in range(12)])
 
 
-def battle(monster="slime", player=None, seed=1, **flags):
+def battle(monster="book_mimic", player=None, seed=1, **flags):
     rng = random.Random(seed)
     b = Battle(player or Player(), Monster.spawn(config.MONSTERS[monster]),
                VocabularySelector(deck(), rng=rng), rng)
@@ -107,7 +107,7 @@ class MechanicsTests(unittest.TestCase):
             del config.MONSTERS["t"]
 
     def test_forward_only_when_chance_zero(self):
-        b = battle("slime")
+        b = battle("book_mimic")
         for _ in range(10):
             q = b.next_question()
             self.assertFalse(q.reverse)
@@ -116,8 +116,8 @@ class MechanicsTests(unittest.TestCase):
                 break
 
     def test_armor_reduces_player_damage(self):
-        a = battle("slime", seed=3)
-        b = battle("dark_knight", seed=3)
+        a = battle("book_mimic", seed=3)
+        b = battle("forgotten_scribe", seed=3)
         da = db = 0
         a.next_question(); da = a.submit(a.question.answer).damage_dealt
         q = b.next_question(); db = b.submit(q.answer).damage_dealt
@@ -134,8 +134,8 @@ class MechanicsTests(unittest.TestCase):
         self.assertIn("regenerates", r.message)
 
     def test_enrage_hits_harder_when_low(self):
-        calm = battle("boss")
-        low = battle("boss")
+        calm = battle("dust_moth")
+        low = battle("dust_moth")
         low.monster.hp = 10
         self.assertGreater(low._monster_damage("wrong"), calm._monster_damage("wrong"))
 
@@ -170,16 +170,16 @@ class MechanicsTests(unittest.TestCase):
     def test_time_bonus(self):
         b = battle("witch", time_bonus=8)
         self.assertEqual(b.next_question().time_limit, 33)
-        self.assertEqual(battle("slime").next_question().time_limit, 0)
+        self.assertEqual(battle("book_mimic").next_question().time_limit, 0)
 
     def test_gear_reduction_and_floor(self):
         p = Player(); p.gear_reduction = 100
-        b = battle("boss", player=p)
+        b = battle("dust_moth", player=p)
         b.next_question()
         self.assertEqual(b.submit("x").damage_taken, 1)
 
     def test_ward_absorbs_once(self):
-        b = battle("goblin", ward=True)
+        b = battle("ink_raven", ward=True)
         b.next_question()
         r = b.submit("x")
         self.assertEqual(r.damage_taken, 0)
@@ -189,7 +189,7 @@ class MechanicsTests(unittest.TestCase):
 
     def test_phoenix_revives_once(self):
         p = Player(hp=1, max_hp=100)
-        b = battle("goblin", player=p, phoenix=True)
+        b = battle("ink_raven", player=p, phoenix=True)
         b.next_question()
         r = b.submit("x")
         self.assertEqual(b.state, ACTIVE)
@@ -229,7 +229,7 @@ class MechanicsTests(unittest.TestCase):
         self.assertEqual(b.player.hp, b.player.max_hp)
 
     def test_ability_descriptions(self):
-        self.assertEqual(config.MONSTERS["slime"].abilities, [])
+        self.assertEqual(config.MONSTERS["book_mimic"].abilities, [])
         self.assertTrue(config.MONSTERS["dragon"].abilities)
 
 
@@ -446,7 +446,7 @@ class ItemUseTests(Base):
         self.assertTrue(gm.use_item("golden_idol").ok)
         while gm.battle.state == ACTIVE:
             gm.answer(gm.battle.question.answer); gm.next_question()
-        spec = config.MONSTERS["slime"]
+        spec = config.MONSTERS["book_mimic"]
         self.assertEqual(gm.outcome.reward.xp, spec.xp * 2)
         self.assertEqual(gm.outcome.reward.coins, (spec.coins + config.ROOM_CLEAR_COINS) * 2)
         self.assertEqual(base.outcome.reward.xp, spec.xp)
@@ -457,7 +457,7 @@ class ItemUseTests(Base):
         self.fight(gm)
         while gm.battle.state == ACTIVE:
             gm.answer(gm.battle.question.answer); gm.next_question()
-        self.assertEqual(gm.outcome.reward.xp, round(config.MONSTERS["slime"].xp * 1.25))
+        self.assertEqual(gm.outcome.reward.xp, round(config.MONSTERS["book_mimic"].xp * 1.25))
 
     def test_timeout_via_manager(self):
         gm = self.gm(state={"player": {"level": 8}})
@@ -528,7 +528,10 @@ class DungeonUnlockTests(Base):
                 else:
                     last = gm.enter_room()
             self.assertTrue(last.dungeon_completed, key)
-            self.assertIn(f"+{round(d.complete_xp * d.reward_scale)} XP", last.final_reward.messages)
+            if d.complete_xp:         # the Review Guru pays everything with its own victory
+                self.assertIn(f"+{round(d.complete_xp * d.reward_scale)} XP", last.final_reward.messages)
+            else:
+                self.assertNotIn("XP", " ".join(last.final_reward.messages))
 
     def test_old_version1_save_loads(self):
         old = {"version": 1,

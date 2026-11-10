@@ -23,12 +23,16 @@ class SpriteTests(unittest.TestCase):
                     self.assertTrue(c is None or (c.startswith("#") and len(c) == 7), key)
 
     def test_all_game_entities_have_sprites(self):
-        needed = {"hero", "treasure", "rest", *config.MONSTERS}
-        self.assertTrue(needed <= set(SPRITE_KEYS))
+        from art import art_file
+        # a monster needs a drawing or a picture (assets/art/monsters)
+        drawn = lambda key: key in SPRITE_KEYS or art_file("monsters", key)
+        self.assertTrue({"hero", "treasure", "rest"} <= set(SPRITE_KEYS))
+        for key in config.MONSTERS:
+            self.assertTrue(drawn(key), key)
         for d in DUNGEONS.values():
             for r in d.rooms:
                 if r.is_fight:
-                    self.assertIn(r.monster, SPRITE_KEYS)
+                    self.assertTrue(drawn(r.monster), r.monster)
 
 
 if __name__ == "__main__":

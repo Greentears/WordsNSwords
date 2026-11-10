@@ -12,11 +12,14 @@ from . import config
 from .items import TOWER_BUNDLES, TOWER_LOOT
 from .models import BOSS, MONSTER, REST, Room
 
-MONSTER_ORDER = ("slime", "goblin", "bat", "skeleton", "wolf", "dark_knight", "treant", "witch",
+MONSTER_ORDER = ("book_mimic", "ink_raven", "bat", "quill_stalker", "wolf", "forgotten_scribe", "treant", "witch",
                  "golem", "wraith", "warlord")
-BOSS_ORDER = ("boss", "guardian", "dragon")
+BOSS_ORDER = ("dust_moth", "guardian", "dragon")
 HP_GROWTH, DAMAGE_GROWTH = 0.07, 0.045
 XP_GROWTH, COIN_GROWTH = 0.02, 0.05      # rewards grow slower than monsters, or levels would run away
+ABILITY_FROM_FLOOR = 15    # special abilities (see `special_abilities`) start here
+SECOND_ABILITY_FROM_FLOOR = 45
+ABILITY_ROTATION = ("unavoidable", "pierce", "percent_damage", "poison", "curse", "silence", "streak", "thief")
 CLOZE_FROM_FLOOR = 15      # sentence questions start appearing here
 ENRAGE_FROM_FLOOR = 20     # all monsters enrage below half HP from here on
 
@@ -31,6 +34,34 @@ def loot_for(floor: int) -> tuple[str, int]:
     if n <= len(TOWER_LOOT):
         return TOWER_LOOT[n - 1], 1
     return TOWER_BUNDLES[(n - len(TOWER_LOOT) - 1) % len(TOWER_BUNDLES)]
+
+
+def special_abilities(floor: int, base: config.MonsterSpec) -> dict:
+    """Extra abilities of a Tower monster: one rotating ability from floor 15 (two from floor 45); bosses
+    always crush. Values grow with the floor. Only abilities the monster does not have yet are added."""
+    extra: dict = {}
+    keys: list[str] = []
+    if is_boss_floor(floor):
+        keys = ["percent_damage", "unavoidable" if (floor // 10) % 2 else "curse"]
+    elif floor >= ABILITY_FROM_FLOOR:
+        n = floor // 5
+        keys = [ABILITY_ROTATION[n % len(ABILITY_ROTATION)]]
+        if floor >= SECOND_ABILITY_FROM_FLOOR:
+            keys.append(ABILITY_ROTATION[(n + 3) % len(ABILITY_ROTATION)])
+    for key in keys:
+        if getattr(base, key):
+            continue
+        if key == "percent_damage":
+            extra[key] = min(0.12, 0.05 + 0.002 * floor + (0.02 if is_boss_floor(floor) else 0))
+        elif key == "poison":
+            extra[key] = max(2, round(base.damage * (1 + DAMAGE_GROWTH * (floor - 1)) * 0.3))
+        elif key == "streak":
+            extra[key] = 3 if floor >= 60 else 2
+        elif key == "thief":
+            extra[key] = 5 + floor // 2
+        else:
+            extra[key] = True
+    return extra
 
 
 def monster_for(floor: int) -> config.MonsterSpec:
@@ -52,6 +83,7 @@ def monster_for(floor: int) -> config.MonsterSpec:
         extra["enrage"] = True
     if floor >= 2 * ENRAGE_FROM_FLOOR:
         extra["armor"] = base.armor + 2
+    extra.update(special_abilities(floor, base))
     return replace(
         base,
         max_hp=round(base.max_hp * (1 + HP_GROWTH * depth) * boost),

@@ -2,7 +2,7 @@
 import { h, clear } from "./h";
 import { ARCHIVED, LEVELS } from "../core/deck";
 import { makeBackup, mergeWords, parseImport, type MergeStrategy } from "../core/backup";
-import { DEFAULT_SETTINGS, type Settings } from "../state";
+import { DEFAULT_SETTINGS, deckLabel, type Settings } from "../state";
 import { kvClearAll } from "../store";
 import type { Shell } from "./shell";
 import { seg, toggleRow } from "./shell";
@@ -43,7 +43,7 @@ export function moreScreen(shell: Shell): HTMLElement {
         close();
         if (strategy === "everything") {
           app.replaceWords(parsed.words);
-          if (parsed.settings) { app.settings = { ...DEFAULT_SETTINGS, ...(parsed.settings as Partial<Settings>), user: app.settings.user }; app.saveSettings(); }
+          if (parsed.settings) { app.settings = { ...DEFAULT_SETTINGS, ...(parsed.settings as Partial<Settings>), user: app.settings.user, deck: app.settings.deck }; app.saveSettings(); }
           if (parsed.stats) app.setStats(parsed.stats);
           if (parsed.dungeon) app.resetGame(parsed.dungeon);
           shell.toast(`Restored ${parsed.words.length} cards.`);
@@ -100,6 +100,11 @@ export function moreScreen(shell: Shell): HTMLElement {
       h("div", { class: "group" },
         h("div", { class: "row" }, h("span", { style: { flex: "1" } }, `Name: ${app.settings.user}`),
           h("button", { class: "btn small", type: "button", onclick: async () => { if (await shell.confirm("Change name?", "You go back to the start screen. Your progress for this name stays on this phone.", "Change")) { app.settings.user = ""; app.saveSettings(); await app.pending; location.reload(); } } }, "Change")),
+        h("div", { class: "row" }, h("span", { style: { flex: "1" } }, `Language: ${deckLabel(app.deckId)}`),
+          app.availableDecks.length > 1 && h("button", { class: "btn small", type: "button", onclick: () => {
+            const close = shell.sheet(h("div", { class: "sheet-body" }, h("h2", null, "Language"),
+              h("div", { class: "list" }, app.availableDecks.map((d) => h("button", { class: "list-btn", onclick: async () => { close(); if (d === app.deckId) return; app.settings.deck = d; app.saveSettings(); await app.pending; location.reload(); } }, deckLabel(d) + (d === app.deckId ? "  ✓" : ""))))));
+          } }, "Change")),
         h("div", { class: "row" }, h("button", { class: "btn", style: { flex: "1" }, onclick: async (e: Event) => {
           const b = e.currentTarget as HTMLButtonElement; b.disabled = true;
           const r = await app.updateWords(); b.disabled = false;

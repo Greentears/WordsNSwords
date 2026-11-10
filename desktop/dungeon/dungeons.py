@@ -9,14 +9,14 @@ CELLAR = Dungeon(
     name="The Cellar of Words",
     description="Eight rooms under the old library. Something big guards the last one.",
     rooms=(
-        Room(MONSTER, "Damp Corridor", monster="slime"),
-        Room(MONSTER, "Mossy Hall", monster="slime"),
-        Room(MONSTER, "Goblin Den", monster="goblin"),
+        Room(MONSTER, "Damp Corridor", monster="book_mimic"),
+        Room(MONSTER, "Mossy Hall", monster="book_mimic"),
+        Room(MONSTER, "Goblin Den", monster="ink_raven"),
         Room(REST, "Quiet Alcove", heal_fraction=0.5),
         Room(TREASURE, "Forgotten Chest", coins=20, xp=15),
-        Room(MONSTER, "Bone Crypt", monster="skeleton"),
-        Room(MONSTER, "Knight's Gate", monster="dark_knight"),
-        Room(BOSS, "Throne of Words", monster="boss"),
+        Room(MONSTER, "Bone Crypt", monster="quill_stalker"),
+        Room(MONSTER, "Knight's Gate", monster="forgotten_scribe"),
+        Room(BOSS, "Throne of Words", monster="dust_moth"),
     ),
 )
 
@@ -78,6 +78,27 @@ LIBRARY = Dungeon(
     ),
 )
 
+CATHEDRAL = Dungeon(
+    key="cathedral",
+    name="The Sunken Cathedral",
+    description="A drowned cathedral: sirens, knights and a bishop in the deep. "
+                "Every monster here has nasty abilities: read them before you fight.",
+    min_level=12,
+    complete_xp=500,
+    complete_coins=400,
+    rooms=(
+        Room(MONSTER, "Flooded Nave", monster="drowned_acolyte"),
+        Room(MONSTER, "Barnacle Crypt", monster="barnacle_crawler"),
+        Room(REST, "Dry Chapel", heal_fraction=0.4),
+        Room(TREASURE, "Sunken Reliquary", coins=250, xp=120),
+        Room(MONSTER, "Siren's Pool", monster="siren"),
+        Room(MONSTER, "Drowned Cloister", monster="drowned_acolyte"),
+        Room(REST, "Air Pocket", heal_fraction=0.5),
+        Room(MONSTER, "Knights' Hall", monster="drowned_knight"),
+        Room(BOSS, "The Drowned Altar", monster="abyssal_bishop"),
+    ),
+)
+
 REVIEW = Dungeon(
     key="review",
     name="The Review Guru",
@@ -85,8 +106,8 @@ REVIEW = Dungeon(
                 "It lasts about as many words as you have missed (5 to 10). Answer a missed word "
                 "correctly twice in a row to clear it. At the end you see every word you failed.",
     kind="review",
-    complete_xp=40,
-    complete_coins=25,
+    complete_xp=0,           # the Guru's own reward is the whole payout: shown once
+    complete_coins=0,
     reward_scale=0.75,       # replayable as often as you like, for a bit less
     rooms=(
         Room(MONSTER, "The Guru's Study", monster="review_guru"),
@@ -105,4 +126,4 @@ TOWER = Dungeon(
 )
 
 # Order on the map screen.
-DUNGEONS: dict[str, Dungeon] = {d.key: d for d in (CELLAR, FOREST, LIBRARY, CITADEL, REVIEW, TOWER)}
+DUNGEONS: dict[str, Dungeon] = {d.key: d for d in (CELLAR, FOREST, LIBRARY, CITADEL, CATHEDRAL, REVIEW, TOWER)}

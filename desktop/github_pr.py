@@ -104,7 +104,7 @@ def send_for_review(token: str, slug: str, deck: str, additions: list[dict], rep
             words_before = len(original["words"])
             for addition in additions:
                 known = {w["word"] for w in json.loads((work / "words.json").read_text(encoding="utf-8"))}
-                errors = newwords.validate(addition, known)
+                errors = newwords.validate(addition, known, newwords.language_of(deck))
                 if errors:
                     return {"ok": False, "error": f"An addition is no longer valid against the repository: {errors[0]}"}
                 newwords.merge(work, addition)

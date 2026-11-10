@@ -3,15 +3,27 @@ import { FlashcardDeck, parseWords, wordToJson } from "./core/deck";
 import { updateSession, type Stats } from "./core/stats";
 import {
   knownForms, loadAdjectives, loadConjugations, loadDeclensions, loadExamples, loadSentences,
-  type Adjective, type Example, type Noun, type SentenceItem, type Verb,
+  loadFrAdjectives, loadFrNouns, loadFrVerbs, frKnownForms, type FrAdjective, type FrNoun, type FrVerb, type Adjective, type Example, type Noun, type SentenceItem, type Verb,
 } from "./core/tables";
 import { GameManager, type Repository } from "./dungeon";
 import { kvGet, kvSet } from "./store";
+import { isHeroGender, type HeroGender } from "./art";
 import { mergeWords } from "./core/backup";
-import { checkAndMerge, emptyDeck, merge as mergeNewWords, type Counts, type DeckData, type Json } from "./core/newwords";
+import { checkAndMerge, emptyDeck, languageOf, merge as mergeNewWords, type Counts, type DeckData, type Json } from "./core/newwords";
 
-export interface Settings { theme: "system" | "light" | "dark"; englishFirst: boolean; showExamples: boolean; showGrammar: boolean; user: string }
-export const DEFAULT_SETTINGS: Settings = { theme: "system", englishFirst: false, showExamples: true, showGrammar: true, user: "" };
+export interface Settings { theme: "system" | "light" | "dark"; englishFirst: boolean; showExamples: boolean; showGrammar: boolean; user: string; deck: string }
+export const DEFAULT_SETTINGS: Settings = { theme: "system", englishFirst: false, showExamples: true, showGrammar: true, user: "", deck: "" };
+
+export const DEFAULT_DECK = "pl-en";
+const DECK_NAMES: Record<string, string> = { "pl-en": "Polish → English", "fr-en": "French → English" };
+/** The language you learn in a deck: its name, its code and the special letters for the answer box. */
+export function languageInfo(deckId: string): { name: string; code: string; letters: string[] } {
+  const code = deckId.split("-")[0];
+  if (code === "fr") return { name: "French", code: "fr", letters: ["é", "è", "ê", "à", "â", "ç", "î", "ï", "ô", "ù", "û", "ë", "œ"] };
+  return { name: "Polish", code: "pl", letters: ["ą", "ć", "ę", "ł", "ń", "ó", "ś", "ź", "ż"] };
+}
+/** Readable name of a deck id such as "fr-en". */
+export const deckLabel = (id: string): string => DECK_NAMES[id] ?? id;
 export interface Meta { lastBackup: number | null; changes: number }
 
 /** The folder name for a name: lower case, no accents, letters / digits / - only (same rule as the PC app). */
@@ -28,16 +40,24 @@ export class App {
   conj: Record<string, Verb[]> = {};
   decl: Record<string, Noun[]> = {};
   adj: Record<string, Adjective[]> = {};
+  /** French decks: tenses / nouns / adjectives in their own shape. */
+  frConj: Record<string, FrVerb[]> = {};
+  frDecl: Record<string, FrNoun[]> = {};
+  frAdj: Record<string, FrAdjective[]> = {};
   examples: Record<string, Example[]> = {};
   sentences: SentenceItem[] = [];
   forms: Record<string, string[]> = {};
   /** Resolves when the last write has reached storage (used by tests). */
   pending: Promise<void> = Promise.resolve();
   listeners = new Set<() => void>();
-  deckId = "pl-en";
+  deckId = DEFAULT_DECK;
+  /** The decks (languages) this name has in the repository. */
+  availableDecks: string[] = [DEFAULT_DECK];
   userSlug = "";
   /** Folder (on the site) the word tables come from. */
   source = "";
+  /** Which hero (female/male) this name chose the first time in the dungeon; final. */
+  hero: HeroGender | null = null;
   /** The dungeon save (same schema as the desktop dungeon_progress.json); stays on this phone. */
   dungeonSave: unknown = null;
   /** Answers added with "Add words" on this phone (checked and merged); replayed over the repo tables. */
@@ -69,6 +89,15 @@ export class App {
   }
 
   /** Storage key for the current name and language (each language has its own cards, progress and hero). */
+  /** The first choice stays: a hero can't be changed afterwards. */
+  chooseHero(gender: HeroGender): void {
+    if (this.hero) return;
+    this.hero = gender;
+    const key = `u/${this.userSlug}/hero`;
+    this.chain(() => kvSet(key, gender));
+    this.emit();
+  }
+
   ns(key: string): string { return `u/${this.userSlug}/${this.deckId}/${key}`; }
 
   static async load(): Promise<App> {
@@ -83,7 +112,9 @@ export class App {
   }
 
   private async loadTables(base: string): Promise<void> {
-    const [verbs, nouns, adjs, ex, sents] = await Promise.all(["verbs", "nouns", "adjectives", "examples", "sentences"].map((n) => this.fetchJson(`${base}/${n}.json`)));
+    // Grammar tables exist for Polish and French; other languages show cards, examples and sentences only.
+    const grammar = this.deckId === DEFAULT_DECK || languageOf(this.deckId) === "fr";
+    const [verbs, nouns, adjs, ex, sents] = await Promise.all(["verbs", "nouns", "adjectives", "examples", "sentences"].map((n) => (!grammar && ["verbs", "nouns", "adjectives"].includes(n) ? null : this.fetchJson(`${base}/${n}.json`))));
     const list = (v: unknown) => (Array.isArray(v) ? (v as Json[]) : []);
     this.repoTables = {
       words: [], verbs: list(verbs), nouns: list(nouns), adjectives: list(adjs),
@@ -105,12 +136,16 @@ export class App {
   private applyTables(): void {
     let t = this.repoTables;
     for (const a of this.additions) t = mergeNewWords(t, a).deck;
-    this.conj = loadConjugations(t.verbs.length ? t.verbs : null);
-    this.decl = loadDeclensions(t.nouns.length ? t.nouns : null);
-    this.adj = loadAdjectives(t.adjectives.length ? t.adjectives : null);
+    const french = languageOf(this.deckId) === "fr";
+    this.conj = french ? {} : loadConjugations(t.verbs.length ? t.verbs : null);
+    this.decl = french ? {} : loadDeclensions(t.nouns.length ? t.nouns : null);
+    this.adj = french ? {} : loadAdjectives(t.adjectives.length ? t.adjectives : null);
+    this.frConj = french ? loadFrVerbs(t.verbs) : {};
+    this.frDecl = french ? loadFrNouns(t.nouns) : {};
+    this.frAdj = french ? loadFrAdjectives(t.adjectives) : {};
     this.examples = loadExamples(t.examples);
     try { this.sentences = loadSentences(t.sentences); } catch { this.sentences = []; }
-    this.forms = knownForms(this.conj, this.decl, this.adj);
+    this.forms = french ? frKnownForms(this.frConj, this.frDecl, this.frAdj) : knownForms(this.conj, this.decl, this.adj);
     this.gameInstance = null;
   }
 
@@ -119,7 +154,7 @@ export class App {
     const current: DeckData = { ...this.repoTables, words: this.deck.words.map((w) => wordToJson(w)) };
     let t = current;
     for (const a of this.additions) t = mergeNewWords(t, a).deck;
-    const r = checkAndMerge({ ...t, words: current.words }, text);
+    const r = checkAndMerge({ ...t, words: current.words }, text, languageOf(this.deckId));
     if (r.errors.length || !r.data || !r.counts) return { errors: r.errors };
     const have = new Set(this.deck.words.map((w) => w.word));
     const freshJson = r.deck!.words.filter((w) => !have.has(w.word as string));
@@ -136,15 +171,29 @@ export class App {
    * Load this name's cards and progress. "missing": the repo has no folder for this name (call again with
    * useStarter to begin with the starter deck); "offline": nothing stored yet and the site could not be reached.
    */
-  async openUser(name: string, useStarter: boolean): Promise<"ok" | "missing" | "offline"> {
+  async openUser(name: string, useStarter: boolean, deck?: string): Promise<"ok" | "missing" | "offline" | "choose"> {
     const slug = userSlug(name);
     if (!slug) return "missing";
     this.userSlug = slug;
+    // which languages does the repository have for this name? (users/index.json is written when the site is built)
+    const index = await this.fetchJson("users/index.json");
+    const listed: string[] | null = index && Array.isArray(index[slug]) ? (index[slug] as string[]) : null;
+    if (listed && listed.length) {
+      this.availableDecks = listed;
+      const wanted = deck ?? this.settings.deck;
+      if (listed.includes(wanted)) this.deckId = wanted;
+      else if (listed.length === 1) this.deckId = listed[0];
+      else return "choose";
+    } else {
+      this.deckId = deck || this.settings.deck || DEFAULT_DECK;
+      this.availableDecks = [this.deckId];
+    }
+    this.settings.deck = this.deckId;
     let stored = await kvGet<Record<string, unknown>[]>(this.ns("words"));
     let base = (await kvGet<string>(this.ns("source"))) ?? `users/${slug}/${this.deckId}`;
     if (!stored) {
       const legacy = await kvGet<Record<string, unknown>[]>("words");          // data from before names existed
-      if (legacy && !(await kvGet("legacy-claimed"))) {
+      if (legacy && this.deckId === DEFAULT_DECK && !(await kvGet("legacy-claimed"))) {
         stored = legacy;
         await kvSet(this.ns("words"), legacy);
         for (const k of ["stats", "meta", "dungeon"]) { const v = await kvGet(k); if (v !== undefined) await kvSet(this.ns(k), v); }
@@ -171,6 +220,8 @@ export class App {
     this.stats = (await kvGet<Stats>(this.ns("stats"))) ?? {};
     this.meta = { ...this.meta, ...((await kvGet<Meta>(this.ns("meta"))) ?? {}) };
     this.dungeonSave = (await kvGet<unknown>(this.ns("dungeon"))) ?? null;
+    const hero = await kvGet<unknown>(`u/${slug}/hero`);
+    this.hero = isHeroGender(hero) ? hero : null;
     this.additions = (await kvGet<Json[]>(this.ns("additions"))) ?? [];
     this.unsent = (await kvGet<Json[]>(this.ns("pending"))) ?? [];
     await this.loadTables(base);

@@ -1,10 +1,10 @@
 """Plain data classes: Player, Monster, Room, Dungeon."""
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Any, Callable
 
-from . import config
+from . import config, stats as stat_rules
 
 
 def _int(value: Any, default: int, low: int = 0, high: int = 10**9) -> int:
@@ -25,6 +25,10 @@ class Player:
     gear_hp: int = 0        # part of max_hp that comes from equipment
     gear_attack: int = 0    # set from equipment (not saved)
     gear_reduction: int = 0  # set from equipment (not saved)
+    stat_hp: int = 0         # part of max_hp that comes from Constitution
+    stats: dict[str, int] = field(default_factory=lambda: stat_rules.clean_stats(None))
+    stat_points: int = 0     # points not spent yet
+    respecs: int = 0         # how many times the points were reset
 
     @property
     def xp_needed(self) -> int:
@@ -35,9 +39,14 @@ class Player:
         return self.hp > 0
 
     @property
+    def effects(self) -> stat_rules.Effects:
+        return stat_rules.effects(self.stats)
+
+    @property
     def attack_power(self) -> int:
-        return (config.BASE_PLAYER_DAMAGE + config.PLAYER_DAMAGE_PER_LEVEL * (self.level - 1)
-                + self.gear_attack)
+        raw = (config.BASE_PLAYER_DAMAGE + config.PLAYER_DAMAGE_PER_LEVEL * (self.level - 1)
+               + self.gear_attack)
+        return round(raw * (100 + self.effects.attack_pct) / 100)
 
     def take_damage(self, amount: int) -> int:
         """Lose up to `amount` HP; returns the HP actually lost."""
@@ -58,6 +67,7 @@ class Player:
         while self.xp >= self.xp_needed:
             self.xp -= self.xp_needed
             self.level += 1
+            self.stat_points += stat_rules.POINTS_PER_LEVEL
             self.max_hp += config.LEVEL_HP_GAIN
             self.heal(round(self.max_hp * config.LEVEL_UP_HEAL_FRACTION))
             gained += 1
@@ -67,7 +77,8 @@ class Player:
         return {
             "name": self.name, "level": self.level, "xp": self.xp,
             "hp": self.hp, "max_hp": self.max_hp, "coins": self.coins,
-            "gear_hp": self.gear_hp,
+            "gear_hp": self.gear_hp, "stat_hp": self.stat_hp,
+            "stats": dict(self.stats), "stat_points": self.stat_points, "respecs": self.respecs,
         }
 
     @classmethod
@@ -84,7 +95,14 @@ class Player:
             max_hp=max_hp,
             coins=_int(data.get("coins"), 0),
             gear_hp=_int(data.get("gear_hp"), 0, high=max(0, max_hp - 1)),
+            stat_hp=_int(data.get("stat_hp"), 0, high=max(0, max_hp - 1)),
+            stats=stat_rules.clean_stats(data.get("stats")),
+            respecs=_int(data.get("respecs"), 0),
         )
+        if "stat_points" in data:
+            player.stat_points = _int(data.get("stat_points"), 0)
+        else:   # a save from before stats: every level already reached gives its points
+            player.stat_points = stat_rules.POINTS_PER_LEVEL * (player.level - 1)
         player.xp = min(player.xp, player.xp_needed - 1)
         return player
 

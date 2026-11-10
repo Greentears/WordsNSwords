@@ -153,7 +153,8 @@ class Runner:
                 "xp_mult": b.xp_mult, "coin_mult": b.coin_mult, "consecutive_wrong": b.consecutive_wrong,
                 "questions_asked": b.questions_asked, "question": jsonable(b.question),
                 "companion": b.companion, "heal_on_correct": b.heal_on_correct,
-                "bonus_damage": b.bonus_damage, "dodge_pct": b.dodge_pct}
+                "bonus_damage": b.bonus_damage, "dodge_pct": b.dodge_pct,
+                "correct_count": b.correct_count, "hard_correct": b.hard_correct}
         return out
 
     def snap_full(self):
@@ -173,7 +174,7 @@ class Runner:
         try:
             if op == "shop":
                 res = [{"key": e.item.key, "count": e.count, "owned": e.owned, "equipped": e.equipped,
-                        "problem": e.problem} for e in m.shop()]
+                        "problem": e.problem, "price": e.price} for e in m.shop()]
             elif op == "sellable":
                 res = [{"key": e.item.key, "count": e.count, "value": e.value, "equipped": e.equipped}
                        for e in m.sellable()]
@@ -181,6 +182,8 @@ class Runner:
                 res = [[i.key, n] for i, n in m.usable_items()]
             elif op == "dungeons":
                 res = jsonable(m.dungeons())
+            elif op == "respec_cost":
+                res = m.respec_cost
             elif op == "current_room":
                 res = jsonable(m.current_room())
             else:
@@ -378,6 +381,69 @@ def scenarios():
     r.step("shop"); r.step("sellable")
     out.append(r.finish())
 
+    # S9d: deep Tower climb with abilities (floors 15-50), items used, thief coins, poison, silence
+    st = player_state(40, 120, inventory={"items": {"small_potion": 40, "big_potion": 20, "passage_scroll": 9},
+                                          "owned": ["tower_blade", "tower_mail", "tower_crown"],
+                                          "equipped": {"weapon": "tower_blade", "armor": "tower_mail", "charm": "tower_crown"}})
+    st["dungeons"] = {"tower": {"room": 13, "best": 13}}
+    r = Runner("tower_abilities", st, 131, level_scheme=5)
+    run_dungeon(r, random.Random(131), "tower", floors=40, p_correct=0.75, p_item=0.15, max_defeats=6)
+    out.append(r.finish())
+
+    # S9e: library dungeon: shields, poison, silence, curse, thief
+    st = player_state(30, 200, inventory={"items": {"small_potion": 30, "big_potion": 10}, "owned": [], "equipped": {}})
+    r = Runner("library_abilities", st, 132, level_scheme=2)
+    run_dungeon(r, random.Random(132), "library", p_correct=0.7, p_item=0.2, max_defeats=6)
+    out.append(r.finish())
+
+    # S9f: the Sunken Cathedral (many abilities per monster, cloze mixed with word questions)
+    st = player_state(26, 300, inventory={"items": {"small_potion": 40, "big_potion": 15}, "owned": ["dragon_fang", "dragon_scale", "time_amulet"],
+                                           "equipped": {"weapon": "dragon_fang", "armor": "dragon_scale", "charm": "time_amulet"}})
+    r = Runner("cathedral", st, 133, level_scheme=2)
+    run_dungeon(r, random.Random(133), "cathedral", p_correct=0.8, p_item=0.15, max_defeats=6)
+    out.append(r.finish())
+
+    # S11: a hero who put points into every stat, in the Forest (timed questions, armor) with items
+    stats = {"strength": 12, "constitution": 9, "dexterity": 30, "intelligence": 14, "charisma": 20, "wisdom": 25}
+    st = player_state(9, 400, inventory={"items": {"small_potion": 5, "fire_bomb": 5, "lightning": 3, "wisdom_tome": 1},
+                                         "owned": ["iron_sword", "shadow_cat"], "equipped": {"weapon": "iron_sword", "companion": "shadow_cat"}})
+    st["player"].update({"stats": stats, "stat_points": 0, "stat_hp": 45, "max_hp": 30 + 80 + 45, "hp": 30 + 80 + 45, "respecs": 0})
+    r = Runner("stats_build_forest", st, 111, level_scheme=1)
+    run_dungeon(r, random.Random(121), "forest", p_correct=0.7, p_item=0.3)
+    r.step("shop"); r.step("sellable")
+    for key in ("iron_sword", "chainmail", "lucky_clover", "small_potion", "meteor"):
+        r.step("buy", key)
+    r.step("sell", "iron_sword")
+    out.append(r.finish())
+
+    # S12: spending points (with every error), a respec, and stat-built fights in the Review and Cellar
+    words = json.loads(WORDS.read_text(encoding="utf-8"))
+    st = player_state(7, 30, missed={w["word"]: 0 for w in words[:8]})     # a save from before stats: 12 points are granted
+    r = Runner("stats_spend_respec", st, 112, level_scheme=2)
+    for stat, n in (("strength", 3), ("constitution", 4), ("wisdom", 2), ("luck", 1), ("charisma", 0), ("charisma", 99), ("dexterity", 3)):
+        r.step("spend_point", stat, n)
+    r.step("respec_cost")
+    r.step("respec")                                       # free the first time
+    r.step("respec")                                       # nothing to take back
+    r.step("spend_point", "constitution", 6); r.step("spend_point", "charisma", 6)
+    r.step("respec")                                       # no coins for the second one
+    r.step("shop")
+    pol = random.Random(122)
+    run_dungeon(r, pol, "review", p_correct=0.75)
+    r.step("select_dungeon", "cellar", False); r.step("enter_room")
+    r.step("spend_point", "strength", 1)                   # not during a fight
+    r.step("respec")
+    fight(r, pol, p_correct=0.8)
+    r.step("respec_cost")
+    out.append(r.finish())
+
+    # S13: a pure Dexterity hero who is often wrong: dodges, and the dodged words are still missed words
+    st = player_state(10, 0)
+    st["player"].update({"stats": {"dexterity": 80}, "stat_points": 0})
+    r = Runner("stats_dodge", st, 113, level_scheme=3)
+    run_dungeon(r, random.Random(123), "cellar", p_correct=0.3, p_item=0.0, max_defeats=6)
+    out.append(r.finish())
+
     # S10: damaged or odd save files
     odd = {
         "garbage_types": {"version": "x", "player": {"name": 5, "level": "9", "xp": -4, "hp": 99999, "max_hp": "big", "coins": True},
@@ -386,6 +452,8 @@ def scenarios():
                           "inventory": {"items": {"small_potion": 500, "nope": 3, "ward_scroll": -2}, "owned": ["iron_sword", "ghost", "scholars_monocle"],
                                         "equipped": {"weapon": "iron_sword", "armor": "iron_sword", "bogus": "x"}},
                           "fight": "nothing"},
+        "garbage_stats": player_state(6, 0, hp=50) | {"player": {"level": 6, "max_hp": 80, "hp": 80, "stats": {"strength": -3, "wisdom": "x", "dexterity": 2.5, "charisma": 4},
+                                                                  "stat_points": "many", "stat_hp": 9999, "respecs": -1}},
         "dead_player_saved_fight": player_state(3, 10, hp=0, fight={"dungeon": "cellar", "room": 1, "monster_hp": 7}),
         "resume_saved_fight": player_state(3, 10, fight={"dungeon": "cellar", "room": 2, "monster_hp": 5},
                                            dungeons={"cellar": {"room": 2, "completed": False, "times": 0, "best": 0}}),

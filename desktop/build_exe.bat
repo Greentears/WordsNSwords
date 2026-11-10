@@ -10,6 +10,7 @@ if not exist ".venv\Scripts\python.exe" (
 
 if not exist dist\Flashcards\assets mkdir dist\Flashcards\assets
 copy /Y assets\hero.png dist\Flashcards\assets\hero.png >nul
+xcopy /E /I /Y assets\art dist\Flashcards\assets\art >nul
 echo.
 echo Done. Run dist\Flashcards\Flashcards.exe. Keep it inside the WordsNSwords folder (it finds the users\ folder above it).
 pause

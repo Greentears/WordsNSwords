@@ -1,10 +1,13 @@
 // All balance numbers and monster stats, loaded from data.json (made by tools/export_dungeon_data.py).
 import data from "./data.json";
+import { pyRound } from "./util";
 
 export interface MonsterSpec {
   key: string; name: string; max_hp: number; damage: number; xp: number; coins: number; boss: boolean;
   reverse_chance: number; armor: number; regen: number; enrage: boolean; lifesteal: boolean; combo: boolean;
   time_limit: number; cloze_chance: number;
+  unavoidable: boolean; pierce: boolean; percent_damage: number; poison: number; curse: boolean; silence: boolean;
+  streak: number; thief: number;
 }
 
 const k = data.constants;
@@ -15,6 +18,7 @@ export const MAX_HIT_FRACTION = k.MAX_HIT_FRACTION, SKIP_DAMAGE_FACTOR = k.SKIP_
 export const MISSED_WEIGHT_BONUS = k.MISSED_WEIGHT_BONUS, RECENT_WINDOW = k.RECENT_WINDOW, MISSED_CLEAR_STREAK = k.MISSED_CLEAR_STREAK;
 export const ROOM_CLEAR_COINS = k.ROOM_CLEAR_COINS, DUNGEON_COMPLETE_XP = k.DUNGEON_COMPLETE_XP, DUNGEON_COMPLETE_COINS = k.DUNGEON_COMPLETE_COINS;
 export const ENRAGE_HP_FRACTION = k.ENRAGE_HP_FRACTION, ENRAGE_FACTOR = k.ENRAGE_FACTOR, COMBO_STEP = k.COMBO_STEP, COMBO_MAX_STACKS = k.COMBO_MAX_STACKS;
+export const POISON_TURNS = k.POISON_TURNS, POISON_MIN_HP = k.POISON_MIN_HP, CURSE_HEAL_FACTOR = k.CURSE_HEAL_FACTOR;
 export const LIFESTEAL_FRACTION = k.LIFESTEAL_FRACTION, PHOENIX_REVIVE_FRACTION = k.PHOENIX_REVIVE_FRACTION;
 export const SELL_FRACTION = k.SELL_FRACTION, MAX_ITEM_STACK = k.MAX_ITEM_STACK;
 export const REVIEW_MIN_WORDS = k.REVIEW_MIN_WORDS, REVIEW_MAX_WORDS = k.REVIEW_MAX_WORDS;
@@ -24,7 +28,7 @@ export const LEVEL_WEIGHTS: Weights = new Map(data.level_weights as unknown as [
 export const BOSS_LEVEL_WEIGHTS: Weights = new Map(data.boss_level_weights as unknown as [number | null, number][]);
 
 /** XP needed to go from `level` to `level + 1`. */
-export const xpToNext = (level: number): number => 40 + 20 * (Math.max(1, level) - 1);
+export const xpToNext = (level: number): number => 150 + 100 * (Math.max(1, level) - 1);
 
 export const MONSTERS: Record<string, MonsterSpec> = Object.fromEntries((data.monsters as MonsterSpec[]).map((m) => [m.key, m]));
 
@@ -39,5 +43,13 @@ export function abilities(s: MonsterSpec): string[] {
   if (s.combo) out.push("Hits harder after repeated mistakes");
   if (s.time_limit) out.push(`Impatient: ${s.time_limit}s per word`);
   if (s.cloze_chance) out.push("Speaks in sentences: fill in the blank");
+  if (s.unavoidable) out.push("Unavoidable: its hits can't be dodged");
+  if (s.pierce) out.push("Piercing: ignores your damage reduction");
+  if (s.percent_damage) out.push(`Crushing: hits for ${pyRound(s.percent_damage * 100)}% of your max HP extra`);
+  if (s.poison) out.push(`Poison: ${s.poison} HP after each of the next ${POISON_TURNS} answers`);
+  if (s.curse) out.push("Curse: your healing is halved");
+  if (s.silence) out.push("Silence: no items in this fight");
+  if (s.streak) out.push(`Shielded: only ${s.streak} correct answers in a row break through`);
+  if (s.thief) out.push(`Thief: steals ${s.thief} coins per mistake (returned if you win)`);
   return out;
 }

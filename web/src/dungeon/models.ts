@@ -2,6 +2,7 @@
 import * as config from "./config";
 import type { MonsterSpec } from "./config";
 import { clampInt, isDict, pyRound } from "./util";
+import * as statRules from "./stats";
 
 export class Player {
   name = config.DEFAULT_PLAYER_NAME;
@@ -13,11 +14,17 @@ export class Player {
   gear_hp = 0;               // part of max_hp that comes from equipment
   gear_attack = 0;           // set from equipment (not saved)
   gear_reduction = 0;
+  stat_hp = 0;               // part of max_hp that comes from Constitution
+  stats: statRules.Stats = statRules.emptyStats();
+  stat_points = 0;           // points not spent yet
+  respecs = 0;               // how many times the points were reset
 
   get xp_needed(): number { return config.xpToNext(this.level); }
   get is_alive(): boolean { return this.hp > 0; }
+  get effects(): statRules.Effects { return statRules.effects(this.stats); }
   get attack_power(): number {
-    return config.BASE_PLAYER_DAMAGE + config.PLAYER_DAMAGE_PER_LEVEL * (this.level - 1) + this.gear_attack;
+    const raw = config.BASE_PLAYER_DAMAGE + config.PLAYER_DAMAGE_PER_LEVEL * (this.level - 1) + this.gear_attack;
+    return pyRound((raw * (100 + this.effects.attack_pct)) / 100);
   }
 
   /** Lose up to `amount` HP; returns the HP actually lost. */
@@ -40,6 +47,7 @@ export class Player {
     while (this.xp >= this.xp_needed) {
       this.xp -= this.xp_needed;
       this.level += 1;
+      this.stat_points += statRules.POINTS_PER_LEVEL;
       this.max_hp += config.LEVEL_HP_GAIN;
       this.heal(pyRound(this.max_hp * config.LEVEL_UP_HEAL_FRACTION));
       gained += 1;
@@ -48,7 +56,7 @@ export class Player {
   }
 
   to_dict() {
-    return { name: this.name, level: this.level, xp: this.xp, hp: this.hp, max_hp: this.max_hp, coins: this.coins, gear_hp: this.gear_hp };
+    return { name: this.name, level: this.level, xp: this.xp, hp: this.hp, max_hp: this.max_hp, coins: this.coins, gear_hp: this.gear_hp, stat_hp: this.stat_hp, stats: { ...this.stats }, stat_points: this.stat_points, respecs: this.respecs };
   }
 
   /** Build a player from saved data; bad or missing values fall back to defaults. */
@@ -63,6 +71,11 @@ export class Player {
     p.max_hp = max_hp;
     p.coins = clampInt(d.coins, 0);
     p.gear_hp = clampInt(d.gear_hp, 0, 0, Math.max(0, max_hp - 1));
+    p.stat_hp = clampInt(d.stat_hp, 0, 0, Math.max(0, max_hp - 1));
+    p.stats = statRules.cleanStats(d.stats);
+    p.respecs = clampInt(d.respecs, 0);
+    // a save from before stats: every level already reached gives its points
+    p.stat_points = "stat_points" in d ? clampInt(d.stat_points, 0) : statRules.POINTS_PER_LEVEL * (p.level - 1);
     p.xp = Math.min(p.xp, p.xp_needed - 1);
     return p;
   }

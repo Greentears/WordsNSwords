@@ -29,6 +29,7 @@ await page.waitForSelector(".card");
 ok((await ev(page, () => window.__app.deck.words.length)) === 15, "starter deck has 15 cards");
 ok((await ev(page, () => window.__app.game.player.name)) === "Zed Quux", "hero carries the name");
 await page.tap(".tab:has-text('Dungeon')");
+if (await page.$(".hero-pick")) await page.tap(".hero-pick >> nth=1");
 await page.tap(".screen:not([hidden]) .btn:has-text('Gear')");
 await page.waitForSelector(".doll");
 ok((await page.textContent(".dg")).includes("Zed Quux"), "inventory shows the hero's name");

@@ -5,7 +5,10 @@ import {
   abilities, dungeonEndless, isEquipment, isFight, outcomeMessages, spritePixels, SIZE,
   type AnswerResult, type DungeonStatus, type Item, type Question, type RoomOutcome,
 } from "../dungeon";
+import { STAT_KEYS, STAT_NAMES, DESCRIPTIONS as STAT_DESCRIPTIONS, effectText } from "../dungeon/stats";
+import { artUrl, hasArt, heroArt, heroChoiceAvailable, sceneKey } from "../art";
 import { accentRow, answerInput } from "./quiz";
+import { languageInfo } from "../state";
 import { clear, h } from "./h";
 import { seg, type Shell } from "./shell";
 
@@ -15,7 +18,12 @@ const ITEM_ICONS: Record<string, string> = {
 };
 const SLOT_ICONS: Record<string, string> = { weapon: "🗡️", armor: "🧥", charm: "📿", companion: "🐾" };
 const SLOT_NAMES: Record<string, string> = { weapon: "Weapon", armor: "Armor", charm: "Charm", companion: "Companion" };
-const itemIcon = (i: Item) => (isEquipment(i) ? i.icon || SLOT_ICONS[i.slot ?? ""] : ITEM_ICONS[i.key] ?? i.icon ?? "✦");
+const itemEmoji = (i: Item) => (isEquipment(i) ? i.icon || SLOT_ICONS[i.slot ?? ""] : ITEM_ICONS[i.key] ?? i.icon ?? "✦");
+/** The picture of an item or companion if it has one, else its emoji. */
+function itemIcon(i: Item): Node {
+  const kind = i.slot === COMPANION ? "companions" : "items";
+  return hasArt(kind, i.key) ? h("img", { class: "item-img", src: artUrl(kind, i.key), alt: i.name, draggable: false }) : document.createTextNode(itemEmoji(i));
+}
 
 type Pixels = (string | null)[][];
 function sprite(pixels: Pixels, cls = ""): HTMLCanvasElement {
@@ -24,9 +32,9 @@ function sprite(pixels: Pixels, cls = ""): HTMLCanvasElement {
   if (ctx) pixels.forEach((row, y) => row.forEach((col, x) => { if (col) { ctx.fillStyle = col; ctx.fillRect(x, y, 1, 1); } }));
   return c;
 }
-/** The hero picture (hero.png, shipped with the app). */
-const heroImg = (cls = "") => h("img", { class: "hero-img " + cls, src: "hero.png", alt: "Your hero", draggable: false });
-const monsterSprite = (key: string, cls = "") => sprite(spritePixels(SPRITE_KEYS.includes(key) ? key : "slime"), cls);
+const monsterSprite = (key: string, cls = ""): HTMLElement =>
+  hasArt("monsters", key) ? h("img", { class: "sprite-img " + cls, src: artUrl("monsters", key), alt: key, draggable: false })
+    : sprite(spritePixels(SPRITE_KEYS.includes(key) ? key : "slime"), cls);
 
 function bar(value: number, max: number, cls: string, label?: string): HTMLElement {
   const pct = max > 0 ? Math.max(0, Math.min(100, (value / max) * 100)) : 0;
@@ -37,7 +45,8 @@ function bar(value: number, max: number, cls: string, label?: string): HTMLEleme
 export function dungeonScreen(shell: Shell) {
   const { app } = shell;
   const root = h("section", { class: "screen dg" });
-  let view: "map" | "fight" | "message" | "shop" | "gear" = "map";
+  let view: "map" | "fight" | "message" | "shop" | "gear" | "stats" = "map";
+  const needsHero = () => !app.hero && heroChoiceAvailable();
   let selected: string | null = null;
   let shopMode: "buy" | "sell" = "buy";
   let message: { outcome: RoomOutcome | null; defeat: boolean } | null = null;
@@ -46,6 +55,12 @@ export function dungeonScreen(shell: Shell) {
   let timer: number | null = null;
 
   const gm = () => app.game;
+  /** The hero picture for his gender and the weapon and armor he wears (hero.png before there was art). */
+  const heroImg = (cls = "") => {
+    const worn = gm().inventory.equipped;
+    const src = heroArt(app.hero, !!worn[WEAPON], !!worn[ARMOR]) ?? "hero.png";
+    return h("img", { class: "hero-img " + cls, src, alt: "Your hero", draggable: false });
+  };
   const fail = (e: unknown) => { shell.toast(e instanceof GameError || e instanceof Error ? e.message : "Something went wrong."); };
 
   // ------------------------------------------------------------------ timer
@@ -75,16 +90,40 @@ export function dungeonScreen(shell: Shell) {
     render();
   }
   function pause() { stopTimer(); }
+  /** The dungeon's scenery behind its map, fights and messages, under a dark layer that keeps the text readable. */
+  function applyBackdrop() {
+    const key = gm().dungeon?.key;
+    const o = view === "message" ? message?.outcome : null;     // a rest or treasure room has its own picture
+    const scene = o && (o.kind === "treasure" || o.kind === "rest") ? sceneKey(o.kind, key) : null;
+    const pic = scene ?? key;
+    const on = !!pic && (view === "map" || view === "fight" || view === "message") && hasArt("backgrounds", pic);
+    root.style.background = on ? `linear-gradient(rgba(8,6,14,.68), rgba(8,6,14,.68)), url(${artUrl("backgrounds", pic!)}) center / cover fixed` : "";
+  }
+
   function render() {
     stopTimer();
+    applyBackdrop();
+    if (needsHero()) { shell.fullscreen(false); return renderHeroChoice(); }
     shell.fullscreen(view === "fight");
     if (view === "map") return renderMap();
     if (view === "fight") return renderFight();
     if (view === "message") return renderMessage();
     if (view === "shop") return renderShop();
+    if (view === "stats") return renderStats();
     return renderGear();
   }
   function go(v: typeof view) { view = v; render(); }
+
+  // ------------------------------------------------------------------ first visit: choose the hero
+  function renderHeroChoice() {
+    clear(root);
+    const pick = (g: "f" | "m") => h("button", { class: "hero-pick", type: "button", "aria-label": g === "f" ? "Play as the heroine" : "Play as the hero",
+      onclick: () => { app.chooseHero(g); render(); } },
+      h("img", { src: heroArt(g, false, false) ?? "", alt: "", draggable: false }), h("b", null, g === "f" ? "Heroine" : "Hero"));
+    root.append(h("div", { class: "hero-choice" }, h("h2", null, "Choose your hero"),
+      h("p", { class: "muted" }, "Tap the hero you want to play. You can't change this later."),
+      h("div", { class: "hero-picks" }, pick("f"), pick("m"))));
+  }
 
   // ------------------------------------------------------------------ map
   function defaultKey(list: DungeonStatus[]): string {
@@ -101,7 +140,8 @@ export function dungeonScreen(shell: Shell) {
         h("div", { class: "hero-name" }, `${p.name} · Lv ${p.level}`),
         bar(p.hp, p.max_hp, "hp", `HP ${p.hp} / ${p.max_hp}`),
         bar(p.xp, p.xp_needed, "xp", `XP ${p.xp} / ${p.xp_needed}`),
-        h("div", { class: "coins" }, `🪙 ${p.coins}`)));
+        h("div", { class: "coins" }, `🪙 ${p.coins}`),
+        p.stat_points ? h("div", { class: "points-hint" }, `✨ ${p.stat_points} stat point${p.stat_points > 1 ? "s" : ""} to spend`) : null));
   }
 
   function renderMap() {
@@ -140,6 +180,7 @@ export function dungeonScreen(shell: Shell) {
         playerPanel(),
         h("div", { class: "btn-row", style: { marginTop: "0" } },
           h("button", { class: "btn", type: "button", onclick: () => go("gear") }, "🎒 Gear"),
+          h("button", { class: "btn" + (gm().player.stat_points ? " primary" : ""), type: "button", onclick: () => go("stats") }, `📈 Stats${gm().player.stat_points ? ` (${gm().player.stat_points})` : ""}`),
           h("button", { class: "btn", type: "button", onclick: () => go("shop") }, "🛒 Shop")),
         chips,
         h("div", { class: "panel" }, h("h2", null, cur.name), h("p", { class: "muted" }, cur.description),
@@ -214,7 +255,7 @@ export function dungeonScreen(shell: Shell) {
 
     const prompt = h("div", { class: "panel prompt-card" });
     if (q) {
-      const what = (q.kind === "cloze") ? "Fill in the blank" : q.reverse ? "Type it in Polish" : "Translate to English";
+      const what = (q.kind === "cloze") ? "Fill in the blank" : q.reverse ? `Type it in ${languageInfo(app.deckId).name}` : "Translate to English";
       prompt.append(h("div", { class: "muted" }, what), h("div", { class: "prompt" + ((q.kind === "cloze") ? " cloze" : "") }, q.prompt));
       if ((q.kind === "cloze") && q.gloss) prompt.append(h("div", { class: "muted" }, `Meaning: ${q.gloss}`));
       if (q.time_limit) prompt.append(h("div", { class: "timer" }, `⏱ ${Math.max(0, fs.remaining || q.time_limit)}s`));
@@ -247,10 +288,10 @@ export function dungeonScreen(shell: Shell) {
     } else if (!q) {
       bottom.append(h("button", { class: "btn primary wide", type: "button", onclick: () => { newQuestion(); view === "fight" ? renderFight() : render(); } }, "Next word"));
     } else {
-      const input = answerInput(q.reverse ? "Type it in Polish…" : "Type it in English…");
+      const input = answerInput(q.reverse ? `Type it in ${languageInfo(app.deckId).name}…` : "Type it in English…", languageInfo(app.deckId).code);
       const submit = () => { const t = input.value.trim(); if (t) apply(() => gm().answer(t)); };
       input.addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); submit(); } });
-      bottom.append(...(q.reverse ? [accentRow(input)] : []), input,
+      bottom.append(...(q.reverse ? [accentRow(input, app.deckId)] : []), input,
         h("div", { class: "actions" },
           h("button", { class: "btn", type: "button", onclick: () => apply(() => gm().skip()) }, "Skip"),
           h("button", { class: "btn primary", type: "button", onclick: submit }, "⚔ Attack")));
@@ -288,12 +329,13 @@ export function dungeonScreen(shell: Shell) {
     } else {
       const o = m.outcome!;
       const key = o.kind === "treasure" ? "treasure" : o.kind === "rest" ? "rest" : g.battle?.monster.spec.key ?? "slime";
-      body.append(o.kind === "treasure" || o.kind === "rest" ? sprite(spritePixels(key), "big") : monsterSprite(key, "big dead"),
+      const place = (o.kind === "treasure" || o.kind === "rest") && sceneKey(o.kind, g.dungeon?.key);   // the room's picture is the backdrop
+      body.append(place ? h("span") : o.kind === "treasure" || o.kind === "rest" ? sprite(spritePixels(key), "big") : monsterSprite(key, "big dead"),
         h("h2", null, o.dungeon_completed ? "Dungeon complete!" : o.kind === "treasure" ? "Treasure!" : o.kind === "rest" ? "A moment of rest" : "Victory!"),
         h("p", { class: "muted" }, o.title),
         ...outcomeMessages(o).map((t) => h("p", { class: "outcome-line" }, t)));
       body.append(...failedBlock());
-      if (o.dungeon_completed) body.append(h("p", { class: "muted" }, `This run: ${o.run.monsters ?? 0} monsters · ${o.run.correct ?? 0} right, ${o.run.wrong ?? 0} wrong · ${o.run.xp ?? 0} XP · ${o.run.coins ?? 0} coins`));
+      if (o.dungeon_completed) body.append(h("p", { class: "muted" }, `This run: ${o.run.monsters ?? 0} monsters · ${o.run.correct ?? 0} right, ${o.run.wrong ?? 0} wrong ${g.dungeon?.kind === "review" ? "" : `· ${o.run.xp ?? 0} XP · ${o.run.coins ?? 0} coins`}`.trim()));
       const next = g.dungeon && !o.dungeon_completed ? (dungeonEndless(g.dungeon) ? "Next floor" : "Next room") : null;
       if (next) btns.append(h("button", { class: "btn primary wide", type: "button", onclick: () => begin(g.dungeon!.key) }, next));
       btns.append(h("button", { class: "btn wide" + (next ? "" : " primary"), type: "button", onclick: () => { g.leave(); go("map"); } }, "Back to the map"),
@@ -352,6 +394,40 @@ export function dungeonScreen(shell: Shell) {
     body.scrollTop = old;
   }
 
+  // ------------------------------------------------------------------ stats
+  function renderStats(note = "") {
+    const g = gm();
+    const p = g.player;
+    const old = root.querySelector(".scroll-body")?.scrollTop ?? 0;
+    clear(root);
+    const spend = (stat: string, n: number) => {
+      try { g.spend_point(stat, Math.min(n, p.stat_points)); renderStats(); } catch (e) { if (e instanceof GameError) renderStats(e.message); else throw e; }
+    };
+    const row = (key: (typeof STAT_KEYS)[number]) => h("div", { class: "shop-item stat-row" },
+      h("div", { class: "si-text" },
+        h("b", null, `${STAT_NAMES[key]}: ${p.stats[key]}`),
+        h("span", { class: "muted" }, STAT_DESCRIPTIONS[key]),
+        h("span", { class: "stat-now" }, effectText(key, p.stats, SELL_FRACTION))),
+      h("div", { class: "stat-btns" },
+        h("button", { class: "btn small", type: "button", disabled: p.stat_points < 1, "aria-label": `Add 1 point to ${STAT_NAMES[key]}`, onclick: () => spend(key, 1) }, "+1"),
+        p.stat_points > 5 ? h("button", { class: "btn small", type: "button", "aria-label": `Add 5 points to ${STAT_NAMES[key]}`, onclick: () => spend(key, 5) }, "+5") : null));
+    const cost = g.respec_cost;
+    const spent = STAT_KEYS.reduce((a, k) => a + p.stats[k], 0);
+    const respec = async () => {
+      if (!(await shell.confirm("Reset your points?", cost ? `This costs ${cost} coins and gives all ${spent} spent points back.` : `The first reset is free. All ${spent} spent points come back.`, cost ? `Pay ${cost}` : "Reset"))) return;
+      try { g.respec(); renderStats("Points reset. Spend them again."); } catch (e) { if (e instanceof GameError) renderStats(e.message); else throw e; }
+    };
+    const body = h("div", { class: "scroll-body stack" },
+      h("header", { class: "top row-top" }, h("button", { class: "btn small", type: "button", onclick: () => go("map") }, "‹ Map"), h("h1", null, "Stats"), h("span", { class: "coins" }, `🪙 ${p.coins}`)),
+      h("div", { class: "panel" }, h("b", null, `${p.name} · Level ${p.level}`),
+        h("p", { class: p.stat_points ? "points-hint" : "muted" }, p.stat_points ? `✨ ${p.stat_points} point${p.stat_points > 1 ? "s" : ""} to spend` : "No points to spend. You get 2 per level."),
+        note ? h("p", { class: "warn" }, note) : null),
+      STAT_KEYS.map(row),
+      h("button", { class: "btn ghost", type: "button", disabled: spent === 0, onclick: respec }, cost ? `Reset points (${cost} coins)` : "Reset points (first one is free)"));
+    root.append(body);
+    body.scrollTop = old;
+  }
+
   // ------------------------------------------------------------------ gear / inventory
   function renderGear() {
     const g = gm();
@@ -374,7 +450,7 @@ export function dungeonScreen(shell: Shell) {
     const stash = [...inv.owned].map((k) => ITEMS[k]).filter((it) => !inv.is_equipped(it.key));
     root.append(h("div", { class: "scroll-body stack" },
       h("header", { class: "top row-top" }, h("button", { class: "btn small", type: "button", onclick: () => go("map") }, "‹ Map"), h("h1", null, "Gear"), h("span", { class: "coins" }, `🪙 ${p.coins}`)),
-      h("div", { class: "doll" }, slot("weapon"), h("div", { class: "doll-mid" }, slot("companion"), slot("armor")), slot("charm"),
+      h("div", { class: "doll" + (hasArt("ui", "panel") ? " framed" : "") }, slot("weapon"), h("div", { class: "doll-mid" }, slot("companion"), slot("armor")), slot("charm"),
         h("div", { class: "doll-hero" }, heroImg("hero-big"))),
       h("div", { class: "panel" }, h("b", null, `${p.name} · Level ${p.level}`),
         h("p", { class: "muted" }, `HP ${p.max_hp} · Attack ${p.attack_power}`), h("p", { class: "muted" }, bonus.length ? bonus.join(" · ") : "No equipment bonuses yet.")),

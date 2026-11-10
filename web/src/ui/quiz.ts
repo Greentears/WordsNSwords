@@ -5,14 +5,15 @@ import { QuizSession, clozeAllowed, quizCardIds, type Feedback } from "../core/q
 import { BLANK } from "../core/cloze";
 import { MIX_WEIGHTS } from "../core/deck";
 import type { Shell } from "./shell";
+import { languageInfo } from "../state";
 import { seg, toggleRow, type ReviewHost, type ReviewMode } from "./shell";
 
-export const ACCENT_LETTERS = ["ą", "ć", "ę", "ł", "ń", "ó", "ś", "ź", "ż"];
 
-/** Row of Polish letters above the keyboard; keeps the keyboard open and inserts at the caret. */
-export function accentRow(input: HTMLInputElement): HTMLElement {
-  const row = h("div", { class: "accents", role: "group", "aria-label": "Polish letters" });
-  for (const ch of ACCENT_LETTERS) {
+/** Row of the language's special letters above the keyboard; keeps the keyboard open and inserts at the caret. */
+export function accentRow(input: HTMLInputElement, deckId: string): HTMLElement {
+  const lang = languageInfo(deckId);
+  const row = h("div", { class: "accents", role: "group", "aria-label": `${lang.name} letters` });
+  for (const ch of lang.letters) {
     const b = h("button", { type: "button", tabindex: "-1", "aria-label": ch }, ch);
     b.addEventListener("pointerdown", (e) => e.preventDefault()); // don't steal focus from the input
     b.addEventListener("mousedown", (e) => e.preventDefault());
@@ -27,10 +28,10 @@ export function accentRow(input: HTMLInputElement): HTMLElement {
   return row;
 }
 
-export function answerInput(placeholder: string): HTMLInputElement {
+export function answerInput(placeholder: string, code = "pl"): HTMLInputElement {
   return h("input", {
     class: "text-in", type: "text", autocapitalize: "off", autocomplete: "off", autocorrect: "off", spellcheck: false,
-    enterKeyHint: "done", placeholder, lang: "pl", "aria-label": "Your answer",
+    enterKeyHint: "done", placeholder, lang: code, "aria-label": "Your answer",
   }) as HTMLInputElement;
 }
 
@@ -66,7 +67,7 @@ export function quizScreen(shell: Shell, host: ReviewHost): HTMLElement {
       h("header", { class: "top" }, h("h1", null, "Review")),
       seg<ReviewMode>([["typed", "Type"], ["cloze", "Blank"], ["sentences", "Sentences"]], opts.kind, (v) => { if (v === "sentences") host.setMode(v); else { opts.kind = v; setup(); } }),
     );
-    if (opts.kind === "cloze") body.append(h("p", { class: "muted" }, "A Polish sentence with one word missing. The meaning is shown next to the blank; type the word in the right form."));
+    if (opts.kind === "cloze") body.append(h("p", { class: "muted" }, `A ${languageInfo(app.deckId).name} sentence with one word missing. The meaning is shown next to the blank; type the word in the right form.`));
 
     const levelsBox = h("div", { class: "group" });
     const mixRow = toggleRow("Smart mix", "A bit of everything, mostly “Almost there” (45 / 35 / 20%). Known and New are left out.", opts.mix, (v) => {
@@ -95,9 +96,9 @@ export function quizScreen(shell: Shell, host: ReviewHost): HTMLElement {
       h("label", { class: "row check-row" }, h("span", { class: "row-text" }, h("span", { class: "row-title" }, "All of them")), allBox)));
 
     if (opts.kind === "typed") {
-      body.append(seg<"en" | "pl">([["en", "English → Polish"], ["pl", "Polish → English"]], opts.english ? "en" : "pl", (v) => { opts.english = v === "en"; }));
+      body.append(seg<"en" | "pl">([["en", `English → ${languageInfo(app.deckId).name}`], ["pl", `${languageInfo(app.deckId).name} → English`]], opts.english ? "en" : "pl", (v) => { opts.english = v === "en"; }));
     }
-    body.append(h("div", { class: "group" }, toggleRow("Accept answers without Polish accents", "ą ę ł … are optional", opts.accents, (v) => { opts.accents = v; })));
+    body.append(h("div", { class: "group" }, toggleRow(`Accept answers without ${languageInfo(app.deckId).name} accents`, `${languageInfo(app.deckId).letters.slice(0, 3).join(" ")} … are optional`, opts.accents, (v) => { opts.accents = v; })));
     body.append(startBtn);
     root.append(body);
     refresh();
@@ -115,7 +116,7 @@ export function quizScreen(shell: Shell, host: ReviewHost): HTMLElement {
     shell.fullscreen(true);
     clear(root);
     const cloze = !!session.cloze;
-    const input = answerInput(cloze ? "Type the missing word…" : session.englishPrompt ? "Type the Polish word…" : "Type the English word…");
+    const input = answerInput(cloze ? "Type the missing word…" : session.englishPrompt ? `Type the ${languageInfo(app.deckId).name} word…` : "Type the English word…", languageInfo(app.deckId).code);
     const bar = h("div", { style: { width: "0%" } });
     const counter = h("span", { class: "counter" });
     const body = h("div", { class: "run-body" });
@@ -145,7 +146,7 @@ export function quizScreen(shell: Shell, host: ReviewHost): HTMLElement {
       input.value = ""; input.readOnly = false;
       const hintBtn = h("button", { class: "btn", onclick: () => { document.getElementById("hint")!.textContent = session.hint(); (hintBtn as HTMLButtonElement).disabled = true; } }, "💡 Hint");
       answerbar.replaceChildren(
-        input, accentRow(input),
+        input, accentRow(input, app.deckId),
         h("div", { class: "actions" },
           h("button", { class: "btn", onclick: () => reveal(session.dontKnow()) }, "I don't know"),
           cloze && hintBtn,

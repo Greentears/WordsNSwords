@@ -48,6 +48,11 @@ class Workspace:
         return self.root / "local" / slug(self.user) / self.deck
 
     @property
+    def hero_path(self) -> Path:
+        """Which hero (female or male) this player chose: one choice per player, for every deck."""
+        return self.root / "local" / slug(self.user) / "hero.json"
+
+    @property
     def progress_path(self) -> Path:
         return self.local_dir / "progress.json"
 
@@ -91,3 +96,36 @@ def save_user(root: Path, name: str) -> None:
     path = root / "local" / "user.txt"
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(name.strip(), encoding="utf-8")
+
+
+def decks_of(root: Path, name: str) -> list[str]:
+    """The languages (deck folders with a words.json) this name has in the repository."""
+    folder = root / "users" / slug(name)
+    try:
+        return sorted(d.name for d in folder.iterdir() if (d / "words.json").is_file())
+    except OSError:
+        return []
+
+
+def saved_deck(root: Path) -> str:
+    try:
+        return (root / "local" / "deck.txt").read_text(encoding="utf-8").strip()
+    except OSError:
+        return ""
+
+
+def save_deck(root: Path, deck: str) -> None:
+    path = root / "local" / "deck.txt"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(deck.strip(), encoding="utf-8")
+
+
+def choose_deck(root: Path, name: str, preferred: str = "") -> str | None:
+    """The deck to open: the preferred one if it exists, the only one, or None when the user must choose
+    (several decks) / DEFAULT_DECK when the name has none yet (a new name starts from the starter deck)."""
+    decks = decks_of(root, name)
+    if not decks:
+        return DEFAULT_DECK
+    if preferred in decks:
+        return preferred
+    return decks[0] if len(decks) == 1 else None

@@ -23,7 +23,7 @@ def snapshot(deck):
     return [(w.word, w.translation, w.level, w.fails) for w in deck.words]
 
 
-def new_battle(deck=None, monster="slime", seed=1, player=None):
+def new_battle(deck=None, monster="book_mimic", seed=1, player=None):
     deck = deck or make_deck()
     rng = random.Random(seed)
     sel = VocabularySelector(deck, rng=rng)
@@ -178,7 +178,7 @@ class BattleTests(unittest.TestCase):
         self.assertIsNone(b.next_question())
 
     def test_defeat_and_hp_never_negative(self):
-        b = new_battle(monster="boss", player=Player(hp=5, max_hp=30))
+        b = new_battle(monster="dust_moth", player=Player(hp=5, max_hp=30))
         for _ in range(10):
             if b.next_question() is None:
                 break
@@ -188,17 +188,17 @@ class BattleTests(unittest.TestCase):
         self.assertEqual(b.monster.hp, b.monster.max_hp)
 
     def test_monster_hit_is_capped(self):
-        b = new_battle(monster="boss", player=Player())
+        b = new_battle(monster="dust_moth", player=Player())
         cap = int(b.player.max_hp * config.MAX_HIT_FRACTION)
         for seed in range(50):
-            b = new_battle(monster="boss", seed=seed)
+            b = new_battle(monster="dust_moth", seed=seed)
             b.next_question()
             self.assertLessEqual(b.submit("x").damage_taken, cap)
 
     def test_skip_counts_as_wrong_with_half_damage_and_reveals(self):
         full, half = [], []
         for seed in range(40):
-            b = new_battle(monster="skeleton", seed=seed)
+            b = new_battle(monster="quill_stalker", seed=seed)
             b.next_question()
             r = b.skip()
             half.append(r.damage_taken)
@@ -206,14 +206,14 @@ class BattleTests(unittest.TestCase):
             self.assertFalse(r.correct)
             self.assertEqual(r.damage_dealt, 0)
             self.assertIn(r.expected, r.message)
-            b = new_battle(monster="skeleton", seed=seed)
+            b = new_battle(monster="quill_stalker", seed=seed)
             b.next_question()
             full.append(b.submit("x").damage_taken)
         self.assertLess(sum(half), sum(full))
 
     def test_missed_word_tracked_and_cleared(self):
         deck = FlashcardDeck([Word("a", "x", level=1)])
-        b = new_battle(deck, monster="boss")
+        b = new_battle(deck, monster="dust_moth")
         b.next_question()
         b.submit("wrong")
         self.assertEqual(len(b.missed), 1)
@@ -245,7 +245,7 @@ class BattleTests(unittest.TestCase):
     def test_battle_never_changes_the_deck(self):
         deck = make_deck()
         before = copy.deepcopy(snapshot(deck))
-        b = new_battle(deck, monster="boss", seed=9)
+        b = new_battle(deck, monster="dust_moth", seed=9)
         for i in range(40):
             q = b.next_question()
             if q is None:

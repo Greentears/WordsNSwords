@@ -1,0 +1,56 @@
+[
+ {
+  "stats": {
+   "strength": 0,
+   "constitution": 0,
+   "dexterity": 0,
+   "intelligence": 0,
+   "charisma": 0,
+   "wisdom": 0
+  },
+  "text": {
+   "strength": "+0% damage",
+   "constitution": "+0 max HP · 0% HP back after a win",
+   "dexterity": "0% dodge · +0s on timed words",
+   "intelligence": "+0% item power",
+   "charisma": "+0% coins · -0% shop prices · sells for 60%",
+   "wisdom": "+0% XP on words you are still learning"
+  }
+ },
+ {
+  "stats": {
+   "strength": 10,
+   "constitution": 7,
+   "dexterity": 30,
+   "intelligence": 4,
+   "charisma": 20,
+   "wisdom": 25
+  },
+  "text": {
+   "strength": "+25% damage · ignores 2 armor",
+   "constitution": "+35 max HP · 7% HP back after a win",
+   "dexterity": "16.2% dodge · +10s on timed words",
+   "intelligence": "+12% item power",
+   "charisma": "+30% coins · -11.1% shop prices · sells for 68.9%",
+   "wisdom": "+29.8% XP on words you are still learning"
+  }
+ },
+ {
+  "stats": {
+   "strength": 3,
+   "constitution": 0,
+   "dexterity": 2,
+   "intelligence": 0,
+   "charisma": 1,
+   "wisdom": 1
+  },
+  "text": {
+   "strength": "+7.5% damage",
+   "constitution": "+0 max HP · 0% HP back after a win",
+   "dexterity": "1.9% dodge · +0s on timed words",
+   "intelligence": "+0% item power",
+   "charisma": "+1.5% coins · -1% shop prices · sells for 60.8%",
+   "wisdom": "+2.8% XP on words you are still learning"
+  }
+ }
+]

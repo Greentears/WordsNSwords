@@ -4,7 +4,8 @@ from pathlib import Path
 from PySide6.QtWidgets import QApplication, QInputDialog, QMessageBox
 
 from ui import FlashcardWindow
-from workspace import DEFAULT_DECK, Workspace, find_root, save_user, saved_user, slug
+from workspace import (DEFAULT_DECK, Workspace, choose_deck, decks_of, find_root, save_deck, save_user, saved_deck,
+                       saved_user, slug)
 
 
 def _ask_name(root: Path, current: str = "") -> str | None:
@@ -22,11 +23,18 @@ def _workspace(root: Path) -> Workspace | None:
     name = saved_user(root) or _ask_name(root)
     if not name:
         return None
-    ws = Workspace(root, name, DEFAULT_DECK)
+    deck = choose_deck(root, name, saved_deck(root))
+    if deck is None:       # several languages and none chosen yet
+        choices = decks_of(root, name)
+        deck, ok = QInputDialog.getItem(None, "WordsNSwords", "Which language?", choices, 0, False)
+        if not ok:
+            return None
+    save_deck(root, deck)
+    ws = Workspace(root, name, deck)
     if not ws.exists:
         answer = QMessageBox.question(
             None, "No word list found",
-            f"There is no word list for \"{name}\" in the repository (users/{slug(name)}/{DEFAULT_DECK}).\n\n"
+            f"There is no word list for \"{name}\" in the repository (users/{slug(name)}/{deck}).\n\n"
             "Create it from the starter deck? You can then add your own words to it.",
         )
         if answer != QMessageBox.StandardButton.Yes or not ws.create_from_template():

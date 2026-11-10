@@ -13,6 +13,7 @@ import { SCHEMA_VERSION, mergeState, type Repository } from "./repository";
 import { RUN_KEYS, STAT_KEYS, RewardManager, cleanCounters, type Reward } from "./rewards";
 import { MissedWords, VocabularySelector, type DeckLike } from "./selector";
 import type { Example } from "../core/tables";
+import * as statRules from "./stats";
 import { GameError, isDict, isInt, pyRound, type Rng } from "./util";
 
 export interface DungeonStatus {
@@ -37,7 +38,7 @@ export function outcomeMessages(o: RoomOutcome): string[] {
   return msgs;
 }
 
-export interface ShopEntry { item: Item; count: number; owned: boolean; equipped: boolean; problem: string | null }
+export interface ShopEntry { item: Item; count: number; owned: boolean; equipped: boolean; problem: string | null; price: number }
 export interface SellEntry { item: Item; count: number; value: number; equipped: boolean }
 export interface ItemUse { ok: boolean; message: string; state: string; hint: string | null; result: AnswerResult | null }
 const itemUse = (ok: boolean, message: string): ItemUse => ({ ok, message, state: ACTIVE, hint: null, result: null });
@@ -109,6 +110,11 @@ export class GameManager {
     p.hp = Math.min(p.hp, p.max_hp);
     p.gear_attack = t.attack;
     p.gear_reduction = t.reduction;
+    const extra = p.effects.hp - p.stat_hp;      // Constitution works like gear HP
+    p.max_hp = Math.max(1, p.max_hp + extra);
+    p.stat_hp = p.effects.hp;
+    if (extra > 0 && p.is_alive) p.hp += extra;
+    p.hp = Math.min(p.hp, p.max_hp);
   }
 
   // -- queries ----------------------------------------------------------------------------------
@@ -200,7 +206,7 @@ export class GameManager {
     const battle = new Battle(this.player, Monster.spawn(spec, hp), this.selector, this.rng);
     const gear = this.inventory.totals();
     battle.phoenix = gear.phoenix;
-    battle.time_bonus = gear.time;
+    battle.time_bonus = gear.time + this.player.effects.time_bonus;
     battle.cloze_source = (id) => this.cloze.call(id);
     battle.ward = gear.start_ward;
     battle.companion = gear.companion;
@@ -259,11 +265,23 @@ export class GameManager {
     if (this.battle === null || this.battle.state !== VICTORY || this.outcome !== null) return;
     const gear = this.inventory.totals();
     const d = this.dungeon!;
+    const fx = this.player.effects;
+    const b = this.battle;
+    let wisdom = 0.0;       // extra XP for answers on words you are still learning (not in the replayable review)
+    if (d.kind !== "review" && b.correct_count) wisdom = (fx.wisdom_xp_pct * b.hard_correct) / b.correct_count;
     const reward = this.rewards.monster_defeated(
-      this.battle.monster.spec,
-      (1 + gear.xp_pct / 100) * this.battle.xp_mult * d.reward_scale,
-      (1 + gear.coin_pct / 100) * this.battle.coin_mult * d.reward_scale,
+      b.monster.spec,
+      (1 + (gear.xp_pct + wisdom) / 100) * b.xp_mult * d.reward_scale,
+      (1 + (gear.coin_pct + fx.coin_pct) / 100) * b.coin_mult * d.reward_scale,
     );
+    if (b.stolen) {
+      this.player.coins += b.stolen;
+      reward.messages.push(`You take back the ${b.stolen} stolen coins.`);
+    }
+    if (fx.victory_heal_pct) {
+      const healed = this.player.heal(pyRound((this.player.max_hp * fx.victory_heal_pct) / 100));
+      if (healed) reward.messages.push(`You recover ${healed} HP.`);
+    }
     this.outcome = this.roomCleared(this.current_room()!, reward);
   }
 
@@ -292,7 +310,7 @@ export class GameManager {
   private giveLoot(room: Room): string {
     const item = ITEMS[room.drop as string];
     if (isEquipment(item) && this.inventory.has(item.key)) {
-      const coins = this.inventory.sell_value(item);
+      const coins = this.inventory.sell_value(item, this.sell_fraction);
       this.rewards.bonus_coins(coins);
       return `Loot: ${item.name} (you already own it: sold for ${coins} coins)`;
     }
@@ -330,6 +348,7 @@ export class GameManager {
     if (!item || isEquipment(item)) return itemUse(false, "That can't be used.");
     if (battle === null || battle.state !== ACTIVE) return itemUse(false, "You can only use items during a fight.");
     if (this.inventory.count(key) <= 0) return itemUse(false, `You have no ${item.name}.`);
+    if (battle.monster.spec.silence) return itemUse(false, `The ${battle.monster.name} silences you: no items in this fight.`);
     const q = battle.question;
     const eff = item.effect;
     const use = itemUse(true, "");
@@ -337,10 +356,10 @@ export class GameManager {
     if (eff === items.HEAL || eff === items.HEAL_FULL) {
       const p = this.player;
       if (p.hp >= p.max_hp) return itemUse(false, "You are already at full health.");
-      const amount = eff === items.HEAL_FULL ? p.max_hp : pyRound(p.max_hp * item.value);
-      use.message = `You drink the ${item.name} and recover ${p.heal(amount)} HP.`;
+      const amount = eff === items.HEAL_FULL ? p.max_hp : pyRound((p.max_hp * item.value * (100 + p.effects.item_pct)) / 100);
+      use.message = `You drink the ${item.name} and recover ${battle.heal_player(amount)} HP.`;
     } else if (eff === items.DAMAGE) {
-      const dealt = battle.monster.take_damage(Math.trunc(item.value));
+      const dealt = battle.monster.take_damage(Math.trunc((item.value * (100 + this.player.effects.item_pct)) / 100));
       use.message = `The ${item.name} hits the ${battle.monster.name} for ${dealt} damage!`;
       if (!battle.monster.is_alive) use.message += ` The ${battle.monster.name} is defeated!`;
     } else if (eff === items.FIRST_LETTER || eff === items.LETTER_COUNT || eff === items.FULL_HINT) {
@@ -382,20 +401,27 @@ export class GameManager {
     for (const item of ITEM_LIST) {
       if (!item.shop && !this.inventory.has(item.key)) continue;   // loot-only gear appears once you have found it
       out.push({ item, count: this.inventory.count(item.key), owned: this.inventory.has(item.key),
-        equipped: isEquipment(item) && this.inventory.is_equipped(item.key), problem: this.inventory.buy_problem(item, this.player) });
+        equipped: isEquipment(item) && this.inventory.is_equipped(item.key), problem: this.inventory.buy_problem(item, this.player, this.price(item)), price: this.price(item) });
     }
     return out;
   }
 
+  /** What `item` costs this hero: Charisma gives a discount. */
+  price(item: Item): number { return Math.max(1, pyRound((item.price * (100 - this.player.effects.discount_pct)) / 100)); }
+
+  /** The share of an item's price you get when selling it (Charisma raises it). */
+  get sell_fraction(): number { return config.SELL_FRACTION + this.player.effects.sell_bonus_pct / 100; }
+
   /** Buy an item; throws a GameError (with the reason) if that isn't possible. */
   buy(key: string): string {
     const item = ITEMS[key];
-    this.inventory.buy(item, this.player);
+    const price = this.price(item);
+    this.inventory.buy(item, this.player, price);
     this.stats.items_bought += 1;
-    this.stats.coins_spent += item.price;
+    this.stats.coins_spent += price;
     this.applyGear();
     this.save();
-    return `Bought ${item.name} for ${item.price} coins.`;
+    return `Bought ${item.name} for ${price} coins.`;
   }
 
   /** [weapon, armor, charm] item keys the hero is wearing, for drawing him. */
@@ -409,7 +435,7 @@ export class GameManager {
     const out: SellEntry[] = [];
     for (const item of ITEM_LIST) {
       if (this.inventory.sell_problem(item) === null) {
-        out.push({ item, count: this.inventory.count(item.key), value: this.inventory.sell_value(item),
+        out.push({ item, count: this.inventory.count(item.key), value: this.inventory.sell_value(item, this.sell_fraction),
           equipped: isEquipment(item) && this.inventory.is_equipped(item.key) });
       }
     }
@@ -419,7 +445,7 @@ export class GameManager {
   /** Sell one item (equipment is unequipped); throws a GameError if not possible. */
   sell(key: string): string {
     const item = ITEMS[key];
-    const coins = this.inventory.sell(item, this.player);
+    const coins = this.inventory.sell(item, this.player, this.sell_fraction);
     this.stats.items_sold += 1;
     this.applyGear();
     this.save();
@@ -428,6 +454,40 @@ export class GameManager {
 
   equip(key: string): void { this.inventory.equip(key); this.applyGear(); this.save(); }
   unequip(slot: string): void { this.inventory.unequip(slot); this.applyGear(); this.save(); }
+
+  // -- stats ------------------------------------------------------------------------------------
+  private checkCanChangeStats(): void {
+    if (this.battle !== null && this.battle.state === ACTIVE) throw new GameError("You can't change your stats during a fight.");
+  }
+
+  /** Put `count` unspent points into `stat`; throws a GameError if that isn't possible. */
+  spend_point(stat: string, count = 1): void {
+    this.checkCanChangeStats();
+    if (!(statRules.STAT_KEYS as readonly string[]).includes(stat)) throw new GameError("Unknown stat.");
+    if (count < 1 || count > this.player.stat_points) throw new GameError("You don't have that many points.");
+    this.player.stat_points -= count;
+    this.player.stats[stat as statRules.StatKey] += count;
+    this.applyGear();
+    this.save();
+  }
+
+  get respec_cost(): number { return statRules.respecCost(this.player.level, this.player.respecs); }
+
+  /** Take every point back (the first time free, then for coins). Returns the coins paid. */
+  respec(): number {
+    this.checkCanChangeStats();
+    const cost = this.respec_cost;
+    if (cost > this.player.coins) throw new GameError(`A respec costs ${cost} coins.`);
+    const spent = Object.values(this.player.stats).reduce((a, b) => a + b, 0);
+    if (spent === 0) throw new GameError("You have no points to take back.");
+    this.player.coins -= cost;
+    this.player.stat_points += spent;
+    this.player.stats = statRules.emptyStats();
+    this.player.respecs += 1;
+    this.applyGear();
+    this.save();
+    return cost;
+  }
 
   // -- persistence ------------------------------------------------------------------------------
   save(): void {

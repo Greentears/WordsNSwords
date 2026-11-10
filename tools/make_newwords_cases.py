@@ -7,7 +7,8 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "desktop"))
 import newwords  # noqa: E402
 
-FIX = ROOT / "tests" / "fixtures" / "pl-en"
+FIXES = {deck: ROOT / "tests" / "fixtures" / deck for deck in ("pl-en", "fr-en")}
+FIX = FIXES["pl-en"]
 PARTS = ("words", "verbs", "nouns", "adjectives", "examples", "sentences")
 Q7 = ["a", "b", "c", "d", "e", "f", "g"]
 good = {
@@ -41,15 +42,37 @@ cases = {
     "bad types": json.dumps({"verbs": "x", "examples": [], "sentences": {}}),
     "verb extras": json.dumps({"words": [{"word": "q", "translation": "q"}], "verbs": [{"card": "q", "verbs": [{"infinitive": "q", "aspect": "perfective", "forms": list("123456"), "past": ["1"], "imperative": ["1"]}]}]}),
 }
+T6 = lambda: ["je x", "tu x", "il/elle x", "nous x", "vous x", "ils/elles x"]
+fr_good = {
+    "words": [{"word": "grand", "translation": "big"}],
+    "verbs": [{"card": "manger", "verbs": [{"infinitive": "manger", "tenses": {t: T6() for t in ("present", "passe_compose", "imparfait", "futur", "conditionnel")}}]}],
+    "nouns": [{"card": "maison", "nouns": [{"lemma": "maison", "gender": "f", "singular": "la maison", "plural": "les maisons"}]}],
+    "adjectives": [{"card": "grand", "adjectives": [{"lemma": "grand", "forms": {"ms": "grand", "fs": "grande", "mp": "grands", "fp": "grandes"}}]}],
+    "examples": {"manger": [{"pl": "Je mange.", "en": "I eat."}]},
+    "sentences": [{"pl": "Je mange à la maison.", "en": "I eat at home.", "words": ["manger", "maison"]}],
+}
+import copy
+fr_bad = copy.deepcopy(fr_good)
+del fr_bad["verbs"][0]["verbs"][0]["tenses"]["futur"]
+fr_bad["verbs"][0]["verbs"][0]["tenses"]["imparfait"] = ["a"]
+fr_bad["nouns"][0]["nouns"][0]["gender"] = "n"
+fr_bad["adjectives"][0]["adjectives"][0]["forms"].pop("fp")
+fr_cases = {
+    "fr good": json.dumps(fr_good, ensure_ascii=False),
+    "fr polish format": json.dumps({"verbs": [{"card": "manger", "verbs": [{"infinitive": "manger", "aspect": "imperfective", "forms": list("123456")}]}]}),
+    "fr bad tables": json.dumps(fr_bad, ensure_ascii=False),
+    "fr null plural": json.dumps({"nouns": [{"card": "maison", "nouns": [{"lemma": "maison", "gender": "f", "singular": "la maison", "plural": None}]}]}),
+    "fr existing skipped": json.dumps({"words": [{"word": "manger", "translation": "x"}]}),
+}
 out = []
-for name, text in cases.items():
+for name, text, deck in [*[(n, t, "pl-en") for n, t in cases.items()], *[(n, t, "fr-en") for n, t in fr_cases.items()]]:
     tmp = Path(tempfile.mkdtemp())
-    folder = tmp / "d"
-    shutil.copytree(FIX, folder)
+    folder = tmp / deck
+    shutil.copytree(FIXES[deck], folder)
     errors, counts = newwords.check_and_merge(folder, text)
     result = {p: json.loads((folder / f"{p}.json").read_text(encoding="utf-8")) if (folder / f"{p}.json").exists() else ([] if p not in ("examples",) else {}) for p in PARTS}
-    out.append({"name": name, "text": text, "errors": errors, "counts": counts, "result": result})
+    out.append({"name": name, "deck": deck, "text": text, "errors": errors, "counts": counts, "result": result})
     shutil.rmtree(tmp)
-base = {p: json.loads((FIX / f"{p}.json").read_text(encoding="utf-8")) if (FIX / f"{p}.json").exists() else ([] if p != "examples" else {}) for p in PARTS}
-(ROOT / "web" / "tests" / "newwords_cases.json").write_text(json.dumps({"base": base, "cases": out}, ensure_ascii=False), encoding="utf-8")
+bases = {deck: {p: json.loads((f / f"{p}.json").read_text(encoding="utf-8")) if (f / f"{p}.json").exists() else ([] if p != "examples" else {}) for p in PARTS} for deck, f in FIXES.items()}
+(ROOT / "web" / "tests" / "newwords_cases.json").write_text(json.dumps({"bases": bases, "cases": out}, ensure_ascii=False), encoding="utf-8")
 print(len(out), "cases;", sum(1 for c in out if not c["errors"]), "valid")

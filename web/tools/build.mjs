@@ -16,7 +16,16 @@ const css = readFileSync(join(root, "src/styles.css"), "utf8");
 writeFileSync(join(dist, "styles.css"), (await transform(css, { loader: "css", minify: true })).code);
 cpSync(join(root, "public"), dist, { recursive: true });
 const users = join(root, "..", "users");
-if (existsSync(users)) cpSync(users, join(dist, "users"), { recursive: true });
+if (existsSync(users)) {
+  cpSync(users, join(dist, "users"), { recursive: true });
+  // users/index.json: which languages (deck folders) each name has, so the app can pick the right one
+  const index = {};
+  for (const name of readdirSync(users)) {
+    if (name.startsWith("_") || !statSync(join(users, name)).isDirectory()) continue;
+    index[name] = readdirSync(join(users, name)).filter((d) => existsSync(join(users, name, d, "words.json"))).sort();
+  }
+  writeFileSync(join(dist, "users", "index.json"), JSON.stringify(index));
+}
 const languages = join(root, "..", "languages");
 if (existsSync(languages)) cpSync(languages, join(dist, "languages"), { recursive: true });
 await makeIcons(join(dist, "icons"));

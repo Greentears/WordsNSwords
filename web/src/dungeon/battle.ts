@@ -1,4 +1,5 @@
 // One fight: the player translates words, the monster hits back on mistakes. Port of dungeon/battle.py.
+import * as statRules from "./stats";
 import * as config from "./config";
 import { check, primary } from "./answers";
 import { Monster, type Player } from "./models";
@@ -6,6 +7,7 @@ import type { MissedWords, VocabularySelector } from "./selector";
 import { GameError, choiceIndex, pyInt, pyRound, uniform, type Rng } from "./util";
 
 export const ACTIVE = "active", VICTORY = "victory", DEFEAT = "defeat";
+export const HARD_LEVELS = [0, 1, 2];   // To verify, Learning, Almost there: the words that earn the Wisdom bonus
 
 export interface Question {
   word_id: number;
@@ -38,6 +40,9 @@ export class Battle {
   question: Question | null = null;
   questions_asked = 0;
   consecutive_wrong = 0;
+  consecutive_correct = 0;
+  poison_turns = 0;           // answers left that cost poison damage
+  stolen = 0;                 // coins a thief took (returned on victory)
   // set by the manager from equipment / items
   ward = false;               // the next monster hit is absorbed
   phoenix = false;            // survive one lethal hit
@@ -49,6 +54,9 @@ export class Battle {
   heal_on_correct = 0;
   bonus_damage = 0;
   dodge_pct = 0;
+  // for the Wisdom bonus: correct answers on words you are still learning
+  correct_count = 0;
+  hard_correct = 0;
   rng: Rng;
 
   constructor(public player: Player, public monster: Monster, public selector: VocabularySelector, rng?: Rng) {
@@ -164,20 +172,43 @@ export class Battle {
     return gained;
   }
 
+  /** Heal the player; a cursed fight halves it. Returns the HP restored. */
+  heal_player(amount: number): number {
+    if (this.monster.spec.curse) amount = pyRound(amount * config.CURSE_HEAL_FACTOR);
+    return this.player.heal(amount);
+  }
+
+  /** Poison from an earlier hit costs HP now (never the last HP). Returns a note or "". */
+  private poisonTick(): string {
+    if (this.poison_turns <= 0) return "";
+    this.poison_turns -= 1;
+    const lost = this.player.take_damage(Math.max(0, Math.min(this.monster.spec.poison, this.player.hp - config.POISON_MIN_HP)));
+    return lost ? `The poison burns you for ${lost} HP.` : "";
+  }
+
   private playerHits(q: Question, exact: boolean): AnswerResult {
+    const poisonNote = this.poisonTick();
+    const spec = this.monster.spec;
+    this.consecutive_correct += 1;
     const base = this.player.attack_power;
-    const amount = Math.max(1, this.vary(base) - this.monster.spec.armor) + this.bonus_damage;
-    const dealt = this.monster.take_damage(amount);
+    const armor = Math.max(0, spec.armor - this.player.effects.armor_ignore);
+    const amount = Math.max(1, this.vary(base) - armor) + this.bonus_damage;
+    const shielded = !!spec.streak && this.consecutive_correct < spec.streak;
+    const dealt = shielded ? 0 : this.monster.take_damage(amount);
     const word = this.selector.deck.words[q.word_id].word;
     const cleared = this.missed.correct(word);
+    this.correct_count += 1;
+    if (HARD_LEVELS.includes(this.selector.deck.words[q.word_id].level as number)) this.hard_correct += 1;
     this.consecutive_wrong = 0;
     this.question = null;
-    let message = `Correct! You dealt ${dealt} damage.`;
+    let message = shielded ? `Correct! The ${this.monster.name}'s shield holds (${this.consecutive_correct}/${spec.streak} in a row).`
+      : `Correct! You dealt ${dealt} damage.`;
     if (!exact) message += ` (Spelling: "${primary(q.answer, q.reverse)}")`;
     if (this.heal_on_correct) {
-      const healed = this.player.heal(this.heal_on_correct);
+      const healed = this.heal_player(this.heal_on_correct);
       if (healed) message += ` ${this.companion} heals you for ${healed} HP.`;
     }
+    if (poisonNote) message += " " + poisonNote;
     if (!this.monster.is_alive) message += ` The ${this.monster.name} is defeated!`;
     return result({ correct: true, skipped: false, expected: q.answer, exact, damage_dealt: dealt, damage_taken: 0, message,
       state: this.state, word, cleared_from_missed: cleared });
@@ -197,24 +228,40 @@ export class Battle {
 
   private monsterHits(q: Question, mode: string, given = ""): AnswerResult {
     const spec = this.monster.spec;
+    const notes: string[] = [];
+    const poisonNote = this.poisonTick();
+    if (poisonNote) notes.push(poisonNote);
+    this.consecutive_correct = 0;
     const base = this.monsterDamage(mode);
     const hit = base >= 3 ? [-1, 0, 1][choiceIndex(this.rng, 3)] : 0;
     const cap = Math.max(1, pyInt(this.player.max_hp * config.MAX_HIT_FRACTION));
-    let amount = Math.max(1, Math.min(cap, Math.max(1, pyRound(base) + hit) - this.player.gear_reduction));
-    const notes: string[] = [];
+    const reduction = spec.pierce ? 0 : this.player.gear_reduction;
+    const crush = pyRound(this.player.max_hp * spec.percent_damage);
+    let amount = Math.max(1, Math.min(cap, Math.max(1, pyRound(base) + hit) - reduction + crush));
+    const dodge = Math.min(statRules.DODGE_TOTAL_LIMIT, this.dodge_pct + this.player.effects.dodge_pct);
     if (this.ward) {
       this.ward = false;
       amount = 0;
       notes.push("Your ward absorbs the blow!");
-    } else if (this.dodge_pct && this.rng() * 100 < this.dodge_pct) {
+    } else if (!spec.unavoidable && dodge && this.rng() * 100 < dodge) {
       amount = 0;
-      notes.push(`${this.companion} helps you dodge!`);
+      notes.push(this.dodge_pct ? `${this.companion} helps you dodge!` : "You dodge the blow!");
     }
     const taken = this.player.take_damage(amount);
     if (!this.player.is_alive && this.phoenix) {
       this.phoenix = false;
       this.player.hp = Math.max(1, pyRound(this.player.max_hp * config.PHOENIX_REVIVE_FRACTION));
       notes.push("The Phoenix Feather burns and you rise again!");
+    }
+    if (spec.poison && taken > 0) {
+      this.poison_turns = config.POISON_TURNS;
+      notes.push("You are poisoned!");
+    }
+    if (spec.thief && this.player.coins > 0) {
+      const took = Math.min(spec.thief, this.player.coins);
+      this.player.coins -= took;
+      this.stolen += took;
+      notes.push(`The ${this.monster.name} steals ${took} coins!`);
     }
     if (spec.lifesteal && taken > 0) {
       const healed = this.healMonster(pyRound(taken * config.LIFESTEAL_FRACTION));

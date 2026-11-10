@@ -133,11 +133,11 @@ class BossAndGearTests(unittest.TestCase):
                 hard += q.answer.startswith("x") or q.prompt.startswith("x")
                 sel._recent.clear()
             return hard / 400
-        self.assertGreater(share_hard("boss"), share_hard("slime") + 0.2)
+        self.assertGreater(share_hard("dust_moth"), share_hard("book_mimic") + 0.2)
 
     def test_bosses_have_more_hp(self):
         from dungeon import config
-        self.assertGreaterEqual(config.MONSTERS["boss"].max_hp, 150)
+        self.assertGreaterEqual(config.MONSTERS["dust_moth"].max_hp, 150)
 
     def test_no_permanent_item_reveals_letters(self):
         for item in ITEMS.values():
@@ -213,7 +213,7 @@ class ReviewAndAnswerTests(unittest.TestCase):
         from dungeon.selector import VocabularySelector
         from dungeon import config
         rng = r.Random(2)
-        b = Battle(Player(), Monster.spawn(config.MONSTERS["slime"]),
+        b = Battle(Player(), Monster.spawn(config.MONSTERS["book_mimic"]),
                    VocabularySelector(deck(), rng=rng), rng)
         b.next_question()
         self.assertIn('You answered "blah blah".', b.submit("blah blah").message)
@@ -276,5 +276,5 @@ class ReviewAndAnswerTests(unittest.TestCase):
         d = deck()
         for card in d.words:
             card.level = 3          # only known cards: nothing the boss wants
-        b = Battle(Player(), Monster.spawn(config.MONSTERS["boss"]), VocabularySelector(d, rng=rng), rng)
+        b = Battle(Player(), Monster.spawn(config.MONSTERS["dust_moth"]), VocabularySelector(d, rng=rng), rng)
         self.assertIsNotNone(b.next_question())

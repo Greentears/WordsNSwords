@@ -20,7 +20,21 @@ await page.waitForSelector(".welcome input, .card");
 if (await page.isVisible(".welcome")) { await page.fill(".welcome input", "Devoriah"); await page.tap(".welcome .btn.primary"); }
 await page.waitForSelector(".card");
 await page.tap(".tab:has-text('Dungeon')");
+// ---- first visit: choose the hero (two pictures), final afterwards
+await page.waitForSelector(`${scr} .hero-pick`);
+ok((await page.$$(`${scr} .hero-pick`)).length === 2, "two heroes to choose from");
+await page.tap(`${scr} .hero-pick >> nth=0`);
 await page.waitForSelector(`${scr} .hero-panel`);
+ok((await ev(() => window.__app.hero)) === "f", "the heroine is chosen");
+ok((await page.getAttribute(`${scr} .hero-panel .hero-img`, "src")).includes("art/heroes/f"), "her picture is shown");
+await page.waitForTimeout(150);
+await page.reload();
+await page.waitForSelector(".card");
+await page.tap(".tab:has-text('Dungeon')");
+await page.waitForSelector(`${scr} .hero-panel`);
+ok(await page.isHidden(`${scr} .hero-pick`), "the choice is remembered after a reload");
+await ev(() => window.__app.chooseHero("m"));
+ok((await ev(() => window.__app.hero)) === "f", "the choice can't be changed");
 await snap("20-map");
 ok(await page.isVisible(`${scr} .btn:has-text('Begin')`), "map shows Begin");
 
@@ -64,6 +78,7 @@ await page.waitForTimeout(300);
 await page.reload();
 await page.waitForSelector(".card");
 await page.tap(".tab:has-text('Dungeon')");
+if (await page.$(".hero-pick")) await page.tap(".hero-pick >> nth=1");
 await page.waitForSelector(`${scr} .hero-panel`);
 ok((await ev(() => window.__app.game.player.coins)) === lvl, "progress survives a reload");
 ok(await page.isVisible(`${scr} .btn:has-text('Continue')`), "map offers Continue");
@@ -95,6 +110,7 @@ ok(JSON.parse(backup).d && JSON.parse(backup).d.player.coins > 0, "dungeon save 
 await ev(() => { const g = window.__app.game; g.leave?.(); g.player.hp = g.player.max_hp; g.save(); for (const w of window.__app.deck.words.slice(0, 6)) g.missed.miss(w.word); });
 await page.tap(".tab:has-text('Study')");
 await page.tap(".tab:has-text('Dungeon')");
+if (await page.$(".hero-pick")) await page.tap(".hero-pick >> nth=1");
 await page.waitForSelector(`${scr} .hero-panel`);
 ok(await page.isVisible(`${scr} .hero-img`), "hero picture shown on the map");
 await page.tap(`${scr} .chip:has-text('Review Guru')`);

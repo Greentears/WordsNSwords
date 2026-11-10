@@ -5,24 +5,8 @@
       {
         "lemma": "enjeu",
         "gender": "m",
-        "singular": [
-          "enjeu",
-          "d'enjeu",
-          "à l'enjeu",
-          "enjeu",
-          "avec enjeu",
-          "sur enjeu",
-          "enjeu"
-        ],
-        "plural": [
-          "enjeux",
-          "d'enjeux",
-          "aux enjeux",
-          "enjeux",
-          "avec enjeux",
-          "sur enjeux",
-          "enjeux"
-        ]
+        "singular": "l'enjeu",
+        "plural": "les enjeux"
       }
     ]
   },
@@ -32,24 +16,8 @@
       {
         "lemma": "aboutissement",
         "gender": "m",
-        "singular": [
-          "aboutissement",
-          "d'aboutissement",
-          "à l'aboutissement",
-          "aboutissement",
-          "avec aboutissement",
-          "sur aboutissement",
-          "aboutissement"
-        ],
-        "plural": [
-          "aboutissements",
-          "d'aboutissements",
-          "aux aboutissements",
-          "aboutissements",
-          "avec aboutissements",
-          "sur aboutissements",
-          "aboutissements"
-        ]
+        "singular": "l'aboutissement",
+        "plural": "les aboutissements"
       }
     ]
   },
@@ -59,24 +27,8 @@
       {
         "lemma": "méfiance",
         "gender": "f",
-        "singular": [
-          "méfiance",
-          "de méfiance",
-          "à la méfiance",
-          "méfiance",
-          "avec méfiance",
-          "sur la méfiance",
-          "méfiance"
-        ],
-        "plural": [
-          "méfiances",
-          "de méfiances",
-          "aux méfiances",
-          "méfiances",
-          "avec méfiances",
-          "sur les méfiances",
-          "méfiances"
-        ]
+        "singular": "la méfiance",
+        "plural": "les méfiances"
       }
     ]
   },
@@ -86,24 +38,8 @@
       {
         "lemma": "ampleur",
         "gender": "f",
-        "singular": [
-          "ampleur",
-          "d'ampleur",
-          "à l'ampleur",
-          "ampleur",
-          "avec ampleur",
-          "sur l'ampleur",
-          "ampleur"
-        ],
-        "plural": [
-          "ampleurs",
-          "d'ampleurs",
-          "aux ampleurs",
-          "ampleurs",
-          "avec ampleurs",
-          "sur les ampleurs",
-          "ampleurs"
-        ]
+        "singular": "l'ampleur",
+        "plural": "les ampleurs"
       }
     ]
   },
@@ -113,24 +49,8 @@
       {
         "lemma": "conscience",
         "gender": "f",
-        "singular": [
-          "conscience",
-          "de conscience",
-          "à la conscience",
-          "conscience",
-          "avec conscience",
-          "sur la conscience",
-          "conscience"
-        ],
-        "plural": [
-          "consciences",
-          "de consciences",
-          "aux consciences",
-          "consciences",
-          "avec consciences",
-          "sur les consciences",
-          "consciences"
-        ]
+        "singular": "la conscience",
+        "plural": "les consciences"
       }
     ]
   }

@@ -62,7 +62,7 @@ class PlayerTests(unittest.TestCase):
 
 class MonsterConfigTests(unittest.TestCase):
     def test_required_monsters_and_fields(self):
-        for key in ("slime", "goblin", "skeleton", "dark_knight", "boss"):
+        for key in ("book_mimic", "ink_raven", "quill_stalker", "forgotten_scribe", "dust_moth"):
             spec = config.MONSTERS[key]
             self.assertTrue(spec.name)
             self.assertGreater(spec.max_hp, 0)
@@ -71,12 +71,12 @@ class MonsterConfigTests(unittest.TestCase):
             self.assertGreaterEqual(spec.coins, 0)
 
     def test_difficulty_increases(self):
-        order = [config.MONSTERS[k] for k in ("slime", "goblin", "skeleton", "dark_knight", "boss")]
+        order = [config.MONSTERS[k] for k in ("book_mimic", "ink_raven", "quill_stalker", "forgotten_scribe", "dust_moth")]
         self.assertEqual([m.max_hp for m in order], sorted(m.max_hp for m in order))
-        self.assertTrue(config.MONSTERS["boss"].boss)
+        self.assertTrue(config.MONSTERS["dust_moth"].boss)
 
     def test_spawn_and_damage(self):
-        m = Monster.spawn(config.MONSTERS["slime"])
+        m = Monster.spawn(config.MONSTERS["book_mimic"])
         self.assertEqual(m.hp, m.max_hp)
         m.take_damage(5)
         self.assertEqual(m.hp, m.max_hp - 5)

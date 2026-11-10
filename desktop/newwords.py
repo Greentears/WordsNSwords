@@ -19,6 +19,15 @@ from pathlib import Path
 from typing import Any
 
 ASPECTS = ("imperfective", "perfective")
+# French (language "fr"): tenses are tables of 6 persons, nouns and adjectives are plain strings.
+FR_TENSES = ("present", "passe_compose", "imparfait", "futur", "conditionnel")
+FR_GENDERS = ("m", "f")
+FR_ADJ_FORMS = ("ms", "fs", "mp", "fp")
+
+
+def language_of(deck: str) -> str:
+    """"fr" for French decks ("fr-en"), "pl" (the original table format) for everything else."""
+    return "fr" if str(deck).split("-")[0] == "fr" else "pl"
 GENDERS = ("m", "f", "n", "pl", "num")
 PARTS = ("words", "verbs", "nouns", "adjectives", "examples", "sentences")
 
@@ -32,8 +41,9 @@ def _forms(value: Any, count: int, allow_none: bool = False) -> bool:
             and all(_is_text(v) or (allow_none and v is None) for v in value))
 
 
-def validate(data: Any, existing_cards: set[str] | None = None) -> list[str]:
-    """Every problem found in `data`; an empty list means it can be merged."""
+def validate(data: Any, existing_cards: set[str] | None = None, language: str = "pl") -> list[str]:
+    """Every problem found in `data`; an empty list means it can be merged. `language` picks the table format."""
+    french = language == "fr"
     if not isinstance(data, dict):
         return ["The answer must be one JSON object with the keys words, verbs, nouns, adjectives, examples, sentences."]
     errors: list[str] = []
@@ -67,6 +77,25 @@ def validate(data: Any, existing_cards: set[str] | None = None) -> list[str]:
             for item in e[part]:
                 if not isinstance(item, dict):
                     errors.append(f'{where}: every item must be an object.')
+                elif part == "verbs" and french:
+                    if not _is_text(item.get("infinitive")):
+                        errors.append(f'{where}: needs an "infinitive".')
+                    tenses = item.get("tenses")
+                    if not isinstance(tenses, dict):
+                        errors.append(f'{where}: needs "tenses" with {", ".join(FR_TENSES)} (6 forms each: je, tu, il/elle, nous, vous, ils/elles).')
+                    else:
+                        for tense in FR_TENSES:
+                            if not _forms(tenses.get(tense), 6):
+                                errors.append(f'{where}: "tenses.{tense}" must be 6 forms (je, tu, il/elle, nous, vous, ils/elles).')
+                elif part == "nouns" and french:
+                    if not _is_text(item.get("lemma")) or item.get("gender") not in FR_GENDERS \
+                            or not _is_text(item.get("singular")) or not (item.get("plural") is None or _is_text(item.get("plural"))):
+                        errors.append(f'{where}: needs "lemma", "gender" (m or f), "singular" (with its article, e.g. "l\'enjeu") and "plural" (or null).')
+                elif part == "adjectives" and french:
+                    forms = item.get("forms")
+                    if not _is_text(item.get("lemma")) or not isinstance(forms, dict) \
+                            or not all(_is_text(forms.get(k)) for k in FR_ADJ_FORMS):
+                        errors.append(f'{where}: needs "lemma" and "forms" with ms, fs, mp, fp (one text each).')
                 elif part == "verbs":
                     if not _is_text(item.get("infinitive")) or item.get("aspect") not in ASPECTS:
                         errors.append(f'{where}: needs "infinitive" and "aspect" ({" or ".join(ASPECTS)}).')
@@ -196,5 +225,5 @@ def check_and_merge(folder: str | Path, text: str) -> tuple[list[str], dict[str,
     if error:
         return [error], {}
     existing = {w["word"] for w in _read(Path(folder) / "words.json", [])}
-    errors = validate(data, existing)
+    errors = validate(data, existing, language_of(Path(folder).name))
     return (errors, {}) if errors else ([], merge(folder, data))

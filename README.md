@@ -14,8 +14,8 @@ local/                   your progress on THIS computer (levels, dungeon save). 
 * **Names.** Both apps ask for a name on first start. It is your hero's name and picks the folder `users/<name>`
   (lower case, no accents or spaces: "Devoriah" -> `users/devoriah`). A name without a folder can start from the
   starter deck.
-* **Decks.** Today there is one: `pl-en` (Polish -> English). A deck is a folder, so `fr-en` is a new folder
-  next to it.
+* **Decks.** `pl-en` (Polish -> English) and `fr-en` (French -> English). A deck is a folder; a name with several
+  decks is asked which language to open (More -> Language to switch).
 * **Progress stays local.** Levels, fail counts, statistics and the dungeon save (each deck has its own hero) live
   on each device. To move them between phone and PC: *More -> Export backup* on one, then
   *More -> Import* (phone) or *File -> Import backup* (PC) on the other. The two use the same file format.
@@ -41,7 +41,8 @@ on GitHub with your new cards and tables, so you can look at them and merge. Any
 
 The cards, the sentences and the grammar tables are JSON files in `users/<name>/<deck>/`. An AI chat (any
 assistant) can write them for you if you give it the format. The **tables depend on the language**: Polish has
-conjugation and seven-case declension tables; French needs other tables, which the apps don't show yet.
+conjugation (present, past, imperative) and seven-case declension tables; French has five tenses (présent, passé
+composé, imparfait, futur simple, conditionnel) and plain noun / adjective forms. The apps show both.
 
 1. Copy the prompt below into the AI chat and replace the word list at the end.
 2. Save the AI's answer (only the JSON) as a text file, for example `answer.json`.
@@ -109,9 +110,9 @@ WORDS:
 
 ### Prompt for a French -> English deck (`fr-en`)
 
-French has no tables in the apps yet, so ask only for cards, examples and practice sentences. The keys of
-`examples` and `sentences` are still called `pl` and `en` (they mean "the language you learn" and "English");
-that will be renamed when French is added to the apps.
+French has its own tables (five tenses, noun and adjective forms). The keys of
+`examples` and `sentences` are called `pl` and `en` in every language (they mean "the language you learn" and
+"English"), so that all decks share one format.
 
 <!-- prompt:fr-en -->
 ````text
@@ -120,14 +121,33 @@ and nothing else: no explanation, no markdown fence.
 
 "words": [{"word": "<French card text>", "translation": "<short English meaning>",
            "sentence": "<one natural French sentence, level A2-B1>", "sentence_translation": "<English>"}]
-  - Nouns with their article: "la maison", "le chat", "l'ami / l'amie". Verbs in the infinitive.
+  - Nouns with their article: "la maison", "le chat", "l'ami / l'amie". Verbs in the infinitive
+    (reflexive verbs with se: "se méfier").
   - translation: concise; alternatives separated by " / "; verbs start with "to ".
+"verbs": for every verb in "words":
+  [{"card": "<card text exactly>", "verbs": [{"infinitive": "<infinitive>",
+     "tenses": {"present": [6 forms], "passe_compose": [6 forms], "imparfait": [6 forms],
+                "futur": [6 forms], "conditionnel": [6 forms]}}]}]
+  - Each tense has exactly 6 forms with their pronoun, in this order: je, tu, il/elle, nous, vous, ils/elles.
+    Write "j'" before a vowel: "j'ai mangé". Reflexive verbs keep their pronoun: "je me méfie", "tu t'es méfié(e)".
+  - passe_compose = auxiliary + past participle. With être (and reflexive verbs) show the agreement as
+    "(e)" / "(e)s" / "(e)(s)": "il/elle est parti(e)", "nous sommes parti(e)s", "vous êtes parti(e)(s)".
+  - futur = futur simple. conditionnel = conditionnel présent.
+"nouns": for every noun in "words":
+  [{"card": "<card text exactly>", "nouns": [{"lemma": "<noun without article>", "gender": "m" or "f",
+     "singular": "<with article: l'enjeu>", "plural": "<with article: les enjeux>" or null if it has no plural}]}]
+"adjectives": for every adjective in "words":
+  [{"card": "<card text exactly>", "adjectives": [{"lemma": "<masculine singular>",
+     "forms": {"ms": "<masculine singular>", "fs": "<feminine singular>", "mp": "<masculine plural>", "fp": "<feminine plural>"}}]}]
 "examples": {"<card text exactly>": [two more sentences {"pl": "<French>", "en": "<English>"}]}
+  (the key is called "pl" for every language; it holds the French sentence)
 "sentences": 5 to 10 short practice sentences combining several of the words:
   [{"pl": "<French>", "en": "<English>", "words": ["<card text of each word used>"]}]
 
 Rules: valid JSON (double quotes, no trailing commas, no comments, accents as normal UTF-8 text). Every "card"
 and every item in a "words" list must be written exactly like the "word" of an entry in "words".
+Words that are not verbs, nouns or adjectives (adverbs, phrases) need no table. Do not invent forms; if unsure,
+give the most standard form.
 
 WORDS:
 - la maison
@@ -157,3 +177,22 @@ In the old app: *More -> Export backup*. In the new app: type your name, then *M
   then `npm test` (the TypeScript port must give the same results).
 
 See `desktop/README.md` and `web/README.md` for the details of each app.
+
+## Artwork
+
+Pictures are optional: anything without one keeps its drawn pixel sprite or emoji.
+To add or change art, put your original PNGs in any folder (names like `ice_golem_1024.png`, the
+size/version at the end is ignored) and run
+
+    python3 tools/import_art.py <folder>
+
+It removes stray dots, resizes, and writes `desktop/assets/art/` (PC, PNG) and `web/public/art/` (phone,
+WebP) plus `web/src/art.json`. Your originals are never changed. Hero looks: `main_character` (male),
+`Character_F_1024` (female), plus `_sword`, `_armour`, `_armour_sword` variants. The hero is chosen once,
+the first time a player enters the dungeon, and can't be changed.
+
+## Hearing words
+
+Study cards have a 🔊 button (PC: "Hear", key H) that reads the word being learned aloud with the
+device's own voice. On the phone it uses the browser's voices (Android: Settings → Text-to-speech);
+on the PC the Windows voices (Settings → Time & language → Speech: add Polish or French if missing).

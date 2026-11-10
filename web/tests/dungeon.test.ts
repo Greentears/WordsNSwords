@@ -45,7 +45,7 @@ function snapMini(m: GameManager) {
       monster_key: b.monster.spec.key, monster_hp: b.monster.hp, spec: plain(b.monster.spec), state: b.state, ward: b.ward,
       phoenix: b.phoenix, time_bonus: b.time_bonus, xp_mult: b.xp_mult, coin_mult: b.coin_mult,
       consecutive_wrong: b.consecutive_wrong, questions_asked: b.questions_asked, question: plain(b.question),
-      companion: b.companion, heal_on_correct: b.heal_on_correct, bonus_damage: b.bonus_damage, dodge_pct: b.dodge_pct,
+      companion: b.companion, heal_on_correct: b.heal_on_correct, bonus_damage: b.bonus_damage, dodge_pct: b.dodge_pct, correct_count: b.correct_count, hard_correct: b.hard_correct,
     },
   };
 }
@@ -60,9 +60,10 @@ function snapFull(m: GameManager, repo: MemoryRepository) {
 function perform(m: GameManager, op: string, args: unknown[]): unknown {
   try {
     switch (op) {
-      case "shop": return m.shop().map((e) => ({ key: e.item.key, count: e.count, owned: e.owned, equipped: e.equipped, problem: e.problem }));
+      case "shop": return m.shop().map((e) => ({ key: e.item.key, count: e.count, owned: e.owned, equipped: e.equipped, problem: e.problem, price: e.price }));
       case "sellable": return m.sellable().map((e) => ({ key: e.item.key, count: e.count, value: e.value, equipped: e.equipped }));
       case "usable_items": return m.usable_items().map(([i, n]) => [i.key, n]);
+      case "respec_cost": return m.respec_cost;
       default: return plain((m as unknown as Record<string, (...a: unknown[]) => unknown>)[op](...args));
     }
   } catch (e) {

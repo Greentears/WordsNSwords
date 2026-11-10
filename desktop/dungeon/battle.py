@@ -9,12 +9,13 @@ import random
 from dataclasses import dataclass
 from typing import Callable
 
-from . import config
+from . import config, stats as stat_rules
 from .answers import check, primary
 from .models import Monster, Player
 from .selector import MissedWords, VocabularySelector
 
 ACTIVE, VICTORY, DEFEAT = "active", "victory", "defeat"
+HARD_LEVELS = (0, 1, 2)   # To verify, Learning, Almost there: the words that earn the Wisdom bonus
 
 
 @dataclass
@@ -65,6 +66,9 @@ class Battle:
         self.question: Question | None = None
         self.questions_asked = 0
         self.consecutive_wrong = 0
+        self.consecutive_correct = 0
+        self.poison_turns = 0        # answers left that cost poison damage
+        self.stolen = 0              # coins a thief took (returned on victory)
         # Set by the manager from equipment / items:
         self.ward = False            # the next monster hit is absorbed
         self.phoenix = False         # survive one lethal hit
@@ -77,6 +81,9 @@ class Battle:
         self.heal_on_correct = 0
         self.bonus_damage = 0
         self.dodge_pct = 0
+        # for the Wisdom bonus: correct answers on words you are still learning
+        self.correct_count = 0
+        self.hard_correct = 0
 
     @property
     def state(self) -> str:
@@ -207,21 +214,46 @@ class Battle:
         self.monster.hp += gained
         return gained
 
+    def heal_player(self, amount: int) -> int:
+        """Heal the player; a cursed fight halves it. Returns the HP restored."""
+        if self.monster.spec.curse:
+            amount = round(amount * config.CURSE_HEAL_FACTOR)
+        return self.player.heal(amount)
+
+    def _poison_tick(self) -> str:
+        """Poison from an earlier hit costs HP now (never the last HP). Returns a note or ''."""
+        if self.poison_turns <= 0:
+            return ""
+        self.poison_turns -= 1
+        lost = self.player.take_damage(max(0, min(self.monster.spec.poison, self.player.hp - config.POISON_MIN_HP)))
+        return f"The poison burns you for {lost} HP." if lost else ""
+
     def _player_hits(self, q: Question, exact: bool) -> AnswerResult:
+        poison_note = self._poison_tick()
+        spec = self.monster.spec
+        self.consecutive_correct += 1
         base = self.player.attack_power
-        amount = max(1, self._vary(base) - self.monster.spec.armor) + self.bonus_damage
-        dealt = self.monster.take_damage(amount)
+        armor = max(0, spec.armor - self.player.effects.armor_ignore)
+        amount = max(1, self._vary(base) - armor) + self.bonus_damage
+        shielded = bool(spec.streak) and self.consecutive_correct < spec.streak
+        dealt = 0 if shielded else self.monster.take_damage(amount)
         word = self.selector.deck.words[q.word_id].word
         cleared = self.missed.correct(word)
+        self.correct_count += 1
+        if self.selector.deck.words[q.word_id].level in HARD_LEVELS:
+            self.hard_correct += 1
         self.consecutive_wrong = 0
         self.question = None
-        message = f"Correct! You dealt {dealt} damage."
+        message = (f"Correct! The {self.monster.name}'s shield holds ({self.consecutive_correct}/{spec.streak} in a row)."
+                   if shielded else f"Correct! You dealt {dealt} damage.")
         if not exact:
             message += f' (Spelling: "{primary(q.answer, q.reverse)}")'
         if self.heal_on_correct:
-            healed = self.player.heal(self.heal_on_correct)
+            healed = self.heal_player(self.heal_on_correct)
             if healed:
                 message += f" {self.companion} heals you for {healed} HP."
+        if poison_note:
+            message += " " + poison_note
         if not self.monster.is_alive:
             message += f" The {self.monster.name} is defeated!"
         return AnswerResult(True, False, q.answer, exact, dealt, 0, message,
@@ -241,23 +273,38 @@ class Battle:
 
     def _monster_hits(self, q: Question, mode: str, given: str = "") -> AnswerResult:
         spec = self.monster.spec
+        notes: list[str] = []
+        poison_note = self._poison_tick()
+        if poison_note:
+            notes.append(poison_note)
+        self.consecutive_correct = 0
         base = self._monster_damage(mode)
         hit = self.rng.choice((-1, 0, 1)) if base >= 3 else 0
         cap = max(1, int(self.player.max_hp * config.MAX_HIT_FRACTION))
-        amount = max(1, min(cap, max(1, round(base) + hit) - self.player.gear_reduction))
-        notes: list[str] = []
+        reduction = 0 if spec.pierce else self.player.gear_reduction
+        crush = round(self.player.max_hp * spec.percent_damage)
+        amount = max(1, min(cap, max(1, round(base) + hit) - reduction + crush))
         if self.ward:
             self.ward = False
             amount = 0
             notes.append("Your ward absorbs the blow!")
-        elif self.dodge_pct and self.rng.random() * 100 < self.dodge_pct:
+        elif not spec.unavoidable and (dodge := min(stat_rules.DODGE_TOTAL_LIMIT, self.dodge_pct + self.player.effects.dodge_pct)) \
+                and self.rng.random() * 100 < dodge:
             amount = 0
-            notes.append(f"{self.companion} helps you dodge!")
+            notes.append(f"{self.companion} helps you dodge!" if self.dodge_pct else "You dodge the blow!")
         taken = self.player.take_damage(amount)
         if not self.player.is_alive and self.phoenix:
             self.phoenix = False
             self.player.hp = max(1, round(self.player.max_hp * config.PHOENIX_REVIVE_FRACTION))
             notes.append("The Phoenix Feather burns and you rise again!")
+        if spec.poison and taken > 0:
+            self.poison_turns = config.POISON_TURNS
+            notes.append("You are poisoned!")
+        if spec.thief and self.player.coins > 0:
+            took = min(spec.thief, self.player.coins)
+            self.player.coins -= took
+            self.stolen += took
+            notes.append(f"The {self.monster.name} steals {took} coins!")
         if spec.lifesteal and taken > 0:
             healed = self._heal_monster(round(taken * config.LIFESTEAL_FRACTION))
             if healed:

@@ -70,10 +70,11 @@ class TowerLayoutTests(unittest.TestCase):
         self.assertTrue(tower.monster_for(25).enrage)
 
     def test_every_floor_monster_is_drawable_and_valid(self):
+        from art import art_file
         from dungeon.sprites import SPRITE_KEYS
         for floor in range(1, 150):
             spec = tower.monster_for(floor)
-            self.assertIn(spec.key, SPRITE_KEYS)
+            self.assertTrue(spec.key in SPRITE_KEYS or art_file("monsters", spec.key), spec.key)
             self.assertGreater(spec.max_hp, 0)
 
     def test_loot_order_then_bundles(self):
@@ -214,15 +215,15 @@ class CompanionTests(Base):
     def test_hawk_adds_flat_damage(self):
         rng = random.Random(3)
         sel = VocabularySelector(deck(), rng=rng)
-        a = Battle(Player(), Monster.spawn(config.MONSTERS["boss"]), sel, random.Random(9))
-        b = Battle(Player(), Monster.spawn(config.MONSTERS["boss"]), sel, random.Random(9))
+        a = Battle(Player(), Monster.spawn(config.MONSTERS["dust_moth"]), sel, random.Random(9))
+        b = Battle(Player(), Monster.spawn(config.MONSTERS["dust_moth"]), sel, random.Random(9))
         b.bonus_damage = 5
         a.next_question(); b.next_question()
         self.assertEqual(b.submit(b.question.answer).damage_dealt - a.submit(a.question.answer).damage_dealt, 5)
 
     def test_shadow_cat_dodges(self):
         sel = VocabularySelector(deck(), rng=random.Random(1))
-        b = Battle(Player(), Monster.spawn(config.MONSTERS["boss"]), sel, random.Random(1))
+        b = Battle(Player(), Monster.spawn(config.MONSTERS["dust_moth"]), sel, random.Random(1))
         b.dodge_pct = 100; b.companion = "Shadow Cat"
         b.next_question()
         r = b.submit("zzz")
@@ -383,7 +384,7 @@ class SentenceBattleTests(Base):
 
     def test_only_cloze_monsters_ask_sentences(self):
         sel = VocabularySelector(deck(), rng=random.Random(1))
-        b = Battle(Player(), Monster.spawn(config.MONSTERS["slime"]), sel, random.Random(1))
+        b = Battle(Player(), Monster.spawn(config.MONSTERS["book_mimic"]), sel, random.Random(1))
         b.cloze_source = ClozeSource(deck())
         for _ in range(10):
             self.assertEqual(b.next_question().kind, "word")

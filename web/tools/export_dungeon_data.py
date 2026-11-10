@@ -34,6 +34,8 @@ def build():
             "monster_order": list(tower.MONSTER_ORDER), "boss_order": list(tower.BOSS_ORDER),
             "hp_growth": tower.HP_GROWTH, "damage_growth": tower.DAMAGE_GROWTH,
             "xp_growth": tower.XP_GROWTH, "coin_growth": tower.COIN_GROWTH,
+            "ability_from_floor": tower.ABILITY_FROM_FLOOR, "second_ability_from_floor": tower.SECOND_ABILITY_FROM_FLOOR,
+            "ability_rotation": list(tower.ABILITY_ROTATION),
             "cloze_from_floor": tower.CLOZE_FROM_FLOOR, "enrage_from_floor": tower.ENRAGE_FROM_FLOOR,
             "loot": list(items.TOWER_LOOT), "bundles": [list(b) for b in items.TOWER_BUNDLES],
         },

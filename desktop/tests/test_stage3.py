@@ -78,7 +78,7 @@ class ProgressionTests(Base):
         gm.select_dungeon(KEY)
         gm.enter_room()
         out = self.win_fight(gm)
-        spec = config.MONSTERS["slime"]
+        spec = config.MONSTERS["book_mimic"]
         self.assertEqual(out.reward.xp, spec.xp)
         self.assertEqual(out.reward.coins, spec.coins + config.ROOM_CLEAR_COINS)
         self.assertEqual(gm.player.coins, out.reward.coins)
@@ -90,7 +90,7 @@ class ProgressionTests(Base):
     def test_level_up_through_fights(self):
         gm = self.manager()
         gm.select_dungeon(KEY)
-        for _ in range(3):
+        for _ in range(8):            # levels are slow on purpose: 150 XP for the first one
             self.play_room(gm)
         self.assertGreaterEqual(gm.player.level, 2)
 
@@ -274,7 +274,7 @@ class PersistenceTests(Base):
         self.path.write_text(json.dumps({
             "player": {"level": "x", "hp": -5}, "stats": {"deaths": -3, "skips": "a"},
             "dungeons": {KEY: {"room": 999, "times": -1, "completed": "yes"}},
-            "missed": ["a"], "fight": "boss", "run": 7,
+            "missed": ["a"], "fight": "dust_moth", "run": 7,
         }), encoding="utf-8")
         gm = self.manager()
         self.assertEqual(gm.stats["deaths"], 0)

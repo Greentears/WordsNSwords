@@ -10,7 +10,7 @@ from dataclasses import dataclass, field, replace
 from pathlib import Path
 from typing import Any
 
-from . import config, items
+from . import config, items, stats as stat_rules
 from .battle import ACTIVE, DEFEAT, VICTORY, AnswerResult, Battle, Question
 from .cloze import ClozeSource
 from .dungeons import DUNGEONS
@@ -76,6 +76,7 @@ class ShopEntry:
     owned: bool          # equipment bought
     equipped: bool
     problem: str | None  # why it can't be bought right now
+    price: int = 0       # what it costs this hero (Charisma lowers it)
 
 
 @dataclass
@@ -159,6 +160,12 @@ class GameManager:
         p.hp = min(p.hp, p.max_hp)
         p.gear_attack = t.attack
         p.gear_reduction = t.reduction
+        extra = p.effects.hp - p.stat_hp          # Constitution works like gear HP
+        p.max_hp = max(1, p.max_hp + extra)
+        p.stat_hp = p.effects.hp
+        if extra > 0 and p.is_alive:
+            p.hp += extra
+        p.hp = min(p.hp, p.max_hp)
 
     # -- queries ------------------------------------------------------------
     @property
@@ -267,7 +274,7 @@ class GameManager:
         battle = Battle(self.player, Monster.spawn(spec, hp), self.selector, self.rng)
         gear = self.inventory.totals()
         battle.phoenix = gear.phoenix
-        battle.time_bonus = gear.time
+        battle.time_bonus = gear.time + self.player.effects.time_bonus
         battle.cloze_source = self.cloze
         battle.ward = gear.start_ward
         battle.companion = gear.companion
@@ -329,11 +336,23 @@ class GameManager:
         if self.battle is None or self.battle.state != VICTORY or self.outcome is not None:
             return
         gear = self.inventory.totals()
+        fx = self.player.effects
+        b = self.battle
+        wisdom = 0.0       # extra XP for answers on words you are still learning (not in the replayable review)
+        if self.dungeon.kind != "review" and b.correct_count:
+            wisdom = fx.wisdom_xp_pct * b.hard_correct / b.correct_count
         reward = self.rewards.monster_defeated(
-            self.battle.monster.spec,
-            xp_mult=(1 + gear.xp_pct / 100) * self.battle.xp_mult * self.dungeon.reward_scale,
-            coin_mult=(1 + gear.coin_pct / 100) * self.battle.coin_mult * self.dungeon.reward_scale,
+            b.monster.spec,
+            xp_mult=(1 + (gear.xp_pct + wisdom) / 100) * b.xp_mult * self.dungeon.reward_scale,
+            coin_mult=(1 + (gear.coin_pct + fx.coin_pct) / 100) * b.coin_mult * self.dungeon.reward_scale,
         )
+        if b.stolen:
+            self.player.coins += b.stolen
+            reward.messages.append(f"You take back the {b.stolen} stolen coins.")
+        if fx.victory_heal_pct:
+            healed = self.player.heal(round(self.player.max_hp * fx.victory_heal_pct / 100))
+            if healed:
+                reward.messages.append(f"You recover {healed} HP.")
         self.outcome = self._room_cleared(self.current_room(), reward)
 
     def _room_cleared(self, room: Room, reward: Reward) -> RoomOutcome:
@@ -363,7 +382,7 @@ class GameManager:
         """Hand over a boss drop. Gear you already own is sold at the normal sell price."""
         item = ITEMS[room.drop]
         if item.is_equipment and self.inventory.has(item.key):
-            coins = self.inventory.sell_value(item)
+            coins = self.inventory.sell_value(item, self.sell_fraction)
             self.rewards.bonus_coins(coins)
             return f"Loot: {item.name} (you already own it: sold for {coins} coins)"
         self.inventory.give(item.key, room.drop_count)
@@ -402,6 +421,8 @@ class GameManager:
             return ItemUse(False, "You can only use items during a fight.")
         if self.inventory.count(key) <= 0:
             return ItemUse(False, f"You have no {item.name}.")
+        if battle.monster.spec.silence:
+            return ItemUse(False, f"The {battle.monster.name} silences you: no items in this fight.")
         q = battle.question
         eff = item.effect
         use = ItemUse(True, "")
@@ -410,10 +431,10 @@ class GameManager:
             p = self.player
             if p.hp >= p.max_hp:
                 return ItemUse(False, "You are already at full health.")
-            amount = p.max_hp if eff == items.HEAL_FULL else round(p.max_hp * item.value)
-            use.message = f"You drink the {item.name} and recover {p.heal(amount)} HP."
+            amount = p.max_hp if eff == items.HEAL_FULL else round(p.max_hp * item.value * (100 + self.player.effects.item_pct) / 100)
+            use.message = f"You drink the {item.name} and recover {battle.heal_player(amount)} HP."
         elif eff == items.DAMAGE:
-            dealt = battle.monster.take_damage(int(item.value))
+            dealt = battle.monster.take_damage(int(item.value * (100 + self.player.effects.item_pct) / 100))
             use.message = f"The {item.name} hits the {battle.monster.name} for {dealt} damage!"
             if not battle.monster.is_alive:
                 use.message += f" The {battle.monster.name} is defeated!"
@@ -465,18 +486,28 @@ class GameManager:
             out.append(ShopEntry(
                 item, self.inventory.count(item.key), self.inventory.has(item.key),
                 item.is_equipment and self.inventory.is_equipped(item.key),
-                self.inventory.buy_problem(item, self.player)))
+                self.inventory.buy_problem(item, self.player, self.price(item)), self.price(item)))
         return out
+
+    def price(self, item: Item) -> int:
+        """What `item` costs this hero: Charisma gives a discount."""
+        return max(1, round(item.price * (100 - self.player.effects.discount_pct) / 100))
+
+    @property
+    def sell_fraction(self) -> float:
+        """The share of an item's price you get when selling it (Charisma raises it)."""
+        return config.SELL_FRACTION + self.player.effects.sell_bonus_pct / 100
 
     def buy(self, key: str) -> str:
         """Buy an item; raises ValueError (with the reason) if that isn't possible."""
         item = ITEMS[key]
-        self.inventory.buy(item, self.player)
+        price = self.price(item)
+        self.inventory.buy(item, self.player, price)
         self.stats["items_bought"] += 1
-        self.stats["coins_spent"] += item.price
+        self.stats["coins_spent"] += price
         self._apply_gear()
         self.save()
-        return f"Bought {item.name} for {item.price} coins."
+        return f"Bought {item.name} for {price} coins."
 
     def hero_look(self) -> tuple[str | None, str | None, str | None]:
         """(weapon, armor, charm) item keys the hero is wearing, for drawing him."""
@@ -489,14 +520,14 @@ class GameManager:
         for item in ITEMS.values():
             if self.inventory.sell_problem(item) is None:
                 out.append(SellEntry(
-                    item, self.inventory.count(item.key), self.inventory.sell_value(item),
+                    item, self.inventory.count(item.key), self.inventory.sell_value(item, self.sell_fraction),
                     item.is_equipment and self.inventory.is_equipped(item.key)))
         return out
 
     def sell(self, key: str) -> str:
         """Sell one item (equipment is unequipped); raises ValueError if not possible."""
         item = ITEMS[key]
-        coins = self.inventory.sell(item, self.player)
+        coins = self.inventory.sell(item, self.player, self.sell_fraction)
         self.stats["items_sold"] += 1
         self._apply_gear()
         self.save()
@@ -511,6 +542,44 @@ class GameManager:
         self.inventory.unequip(slot)
         self._apply_gear()
         self.save()
+
+    # -- stats ----------------------------------------------------------------
+    def _check_can_change_stats(self) -> None:
+        if self.battle is not None and self.battle.state == ACTIVE:
+            raise ValueError("You can't change your stats during a fight.")
+
+    def spend_point(self, stat: str, count: int = 1) -> None:
+        """Put `count` unspent points into `stat`; raises ValueError if that isn't possible."""
+        self._check_can_change_stats()
+        if stat not in stat_rules.STAT_KEYS:
+            raise ValueError("Unknown stat.")
+        if count < 1 or count > self.player.stat_points:
+            raise ValueError("You don't have that many points.")
+        self.player.stat_points -= count
+        self.player.stats[stat] += count
+        self._apply_gear()
+        self.save()
+
+    @property
+    def respec_cost(self) -> int:
+        return stat_rules.respec_cost(self.player.level, self.player.respecs)
+
+    def respec(self) -> int:
+        """Take every point back (the first time free, then for coins). Returns the coins paid."""
+        self._check_can_change_stats()
+        cost = self.respec_cost
+        if cost > self.player.coins:
+            raise ValueError(f"A respec costs {cost} coins.")
+        spent = sum(self.player.stats.values())
+        if spent == 0:
+            raise ValueError("You have no points to take back.")
+        self.player.coins -= cost
+        self.player.stat_points += spent
+        self.player.stats = stat_rules.clean_stats(None)
+        self.player.respecs += 1
+        self._apply_gear()
+        self.save()
+        return cost
 
     # -- persistence --------------------------------------------------------
     def save(self) -> None:

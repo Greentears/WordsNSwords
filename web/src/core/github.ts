@@ -3,7 +3,7 @@
  * The token is only ever passed in from the device's own storage; nothing here stores or logs it.
  * Same steps as desktop/github_pr.py (both are tested against a fake GitHub).
  */
-import { merge, validate, type DeckData, type Json } from "./newwords";
+import { languageOf, merge, validate, type DeckData, type Json } from "./newwords";
 
 export const GITHUB_REPO = "Greentears/WordsNSwords";
 const API = "https://api.github.com";
@@ -80,7 +80,7 @@ export async function sendForReview(o: SendOptions): Promise<SendResult> {
     // 2. add what was added here (cards that are already there are skipped)
     let cur = deck;
     for (const a of o.additions) {
-      const errors = validate(a, cur.words.map((w) => w.word as string));
+      const errors = validate(a, cur.words.map((w) => w.word as string), languageOf(o.deck));
       if (errors.length) return { ok: false, error: `An addition is no longer valid against the repository: ${errors[0]}` };
       cur = merge(cur, a).deck;
     }

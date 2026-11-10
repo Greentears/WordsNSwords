@@ -40,6 +40,9 @@ from adjectives import adjective_html, load_adjectives
 from examples import examples_html, load_examples
 from nouns import declension_html, load_declensions
 from verbs import conjugation_html, load_conjugations
+import french
+import language
+from speech import Speaker, language_code
 from quiz import ClozeDialog, QuizDialog, QuizSetupDialog
 from sentences import (
     SentenceDialog,
@@ -89,6 +92,7 @@ class FlashcardWindow(QMainWindow):
         self.english_first = self.settings.value("english_first", False, type=bool)
         self.show_examples = self.settings.value("show_examples", True, type=bool)
         self.show_grammar = self.settings.value("show_grammar", True, type=bool)
+        self.french = False             # True for a French deck: its grammar tables have another shape
         self.conjugations: dict[str, list[dict]] = {}
         self.declensions: dict[str, list[dict]] = {}
         self.adjectives: dict[str, list[dict]] = {}
@@ -272,6 +276,12 @@ class FlashcardWindow(QMainWindow):
         self.prev_button.setObjectName("secondary")
         self.prev_button.clicked.connect(self.previous_card)
 
+        self.speaker = Speaker()
+        self.hear_button = QPushButton("🔊  Hear  •  H")
+        self.hear_button.setObjectName("secondary")
+        self.hear_button.setToolTip("Read the word aloud with this computer's voice")
+        self.hear_button.clicked.connect(self.hear_word)
+
         self.reveal_button = QPushButton("Reveal  •  Space")
         self.reveal_button.setObjectName("reveal")
         self.reveal_button.clicked.connect(self.toggle_reveal)
@@ -281,6 +291,7 @@ class FlashcardWindow(QMainWindow):
         self.next_button.clicked.connect(self.next_card)
 
         reveal_row.addWidget(self.prev_button)
+        reveal_row.addWidget(self.hear_button)
         reveal_row.addStretch()
         reveal_row.addWidget(self.reveal_button)
         reveal_row.addStretch()
@@ -325,6 +336,10 @@ class FlashcardWindow(QMainWindow):
         add_words_action = QAction("&Add words…", self)
         add_words_action.triggered.connect(self.add_words)
         file_menu.addAction(add_words_action)
+
+        language_action = QAction("Change &language…", self)
+        language_action.triggered.connect(self.change_language)
+        file_menu.addAction(language_action)
 
         reload_action = QAction("&Reload words", self)
         reload_action.setShortcut(QKeySequence("F5"))
@@ -435,12 +450,17 @@ class FlashcardWindow(QMainWindow):
 
         study_menu.addSeparator()
 
-        self.direction_action = QAction("Show &English first (reveal shows Polish)", self)
+        self.direction_action = QAction("Show &English first (reveal shows the foreign language)", self)
         self.direction_action.setShortcut(QKeySequence("E"))
         self.direction_action.setCheckable(True)
         self.direction_action.setChecked(self.english_first)
         self.direction_action.toggled.connect(self.set_english_first)
         study_menu.addAction(self.direction_action)
+
+        self.hear_action = QAction("&Hear the word", self)
+        self.hear_action.setShortcut(QKeySequence("H"))
+        self.hear_action.triggered.connect(self.hear_word)
+        study_menu.addAction(self.hear_action)
 
         study_menu.addSeparator()
 
@@ -505,9 +525,16 @@ class FlashcardWindow(QMainWindow):
         try:
             ws = self.workspace
             self.deck = FlashcardDeck.from_json(path, ws.progress_path if ws and path == ws.words_path else None)
-            self.conjugations = load_conjugations(path.with_name("verbs.json"))
-            self.declensions = load_declensions(path.with_name("nouns.json"))
-            self.adjectives = load_adjectives(path.with_name("adjectives.json"))
+            # Grammar tables have a shape per language (Polish: cases, French: tenses); other languages show none.
+            self.french = bool(ws) and ws.deck.split("-")[0] == "fr"
+            language.set_deck(ws.deck if ws else "pl-en")
+            self.direction_action.setText(f"Show &English first (reveal shows {language.name()})")
+            grammar = not ws or ws.deck == "pl-en" or self.french
+            verbs, nouns, adjs = (french.load_verbs, french.load_nouns, french.load_adjectives) if self.french \
+                else (load_conjugations, load_declensions, load_adjectives)
+            self.conjugations = verbs(path.with_name("verbs.json")) if grammar else {}
+            self.declensions = nouns(path.with_name("nouns.json")) if grammar else {}
+            self.adjectives = adjs(path.with_name("adjectives.json")) if grammar else {}
             self.examples = load_examples(path.with_name("examples.json"))
             self.filter_actions[FlashcardDeck.ALL].setChecked(True)
             self.json_path = path
@@ -586,6 +613,20 @@ class FlashcardWindow(QMainWindow):
             f"{result['updated']} cards updated, {result['unchanged']} unchanged, "
             f"{result['skipped']} not in your word list.{note}")
 
+    def change_language(self):
+        if not self.workspace:
+            return
+        from PySide6.QtWidgets import QInputDialog
+        from workspace import decks_of, save_deck
+        decks = decks_of(self.workspace.root, self.workspace.user)
+        if len(decks) < 2:
+            QMessageBox.information(self, "Language", f"Only one language found for {self.workspace.user}: {', '.join(decks) or 'none'}.")
+            return
+        deck, ok = QInputDialog.getItem(self, "Language", "Which language?", decks, max(0, decks.index(self.workspace.deck)), False)
+        if ok and deck != self.workspace.deck:
+            save_deck(self.workspace.root, deck)
+            QMessageBox.information(self, "Language", "Language changed. Close and reopen the app to switch.")
+
     def add_words(self):
         if not self.workspace:
             QMessageBox.information(self, "Add words", "Adding words needs the WordsNSwords folder (users/<name>/…).")
@@ -654,7 +695,7 @@ class FlashcardWindow(QMainWindow):
         if self.english_first:
             front, back, lang = card.translation, card.word, "ENGLISH"
         else:
-            front, back, lang = card.word, card.translation, "POLISH"
+            front, back, lang = card.word, card.translation, language.name().upper()
         self.word_label.setText(front)
         self.translation_label.setText(back)
         self.word_label.setStyleSheet(f"font-size: {self._font_px(front, 64, 48, 36)}px;")
@@ -708,6 +749,15 @@ class FlashcardWindow(QMainWindow):
         self.archive_button.setEnabled(enabled)
         if hasattr(self, "archive_action"):  # the menu is built after the widgets
             self.archive_action.setEnabled(enabled)
+
+    def hear_word(self):
+        """Read the word being learned aloud (never the English side), whichever side is showing."""
+        if not self.deck or not self.deck.total or self.session_finished:
+            return
+        ws = self.workspace
+        problem = self.speaker.speak(self.deck.current.word, language_code(ws.deck if ws else "pl-en"))
+        if problem:
+            self.statusBar().showMessage(problem, 8000)
 
     def toggle_reveal(self):
         if not self.deck or not self.deck.total or self.session_finished:
@@ -845,11 +895,11 @@ class FlashcardWindow(QMainWindow):
         tables = []
         if self.show_grammar:
             if self.conjugations.get(word):
-                tables.append(conjugation_html(self.conjugations[word], muted))
+                tables.append((french.verb_html if self.french else conjugation_html)(self.conjugations[word], muted))
             if self.declensions.get(word):
-                tables.append(declension_html(self.declensions[word], muted))
+                tables.append((french.noun_html if self.french else declension_html)(self.declensions[word], muted))
             if self.adjectives.get(word):
-                tables.append(adjective_html(self.adjectives[word], muted))
+                tables.append((french.adjective_html if self.french else adjective_html)(self.adjectives[word], muted))
         examples = self.examples.get(word) if self.show_examples else None
         if not show or not (tables or examples):
             self.extras_box.hide()
@@ -884,6 +934,8 @@ class FlashcardWindow(QMainWindow):
 
     def _known_forms(self) -> dict[str, list[str]]:
         """Every inflected form from verbs.json / nouns.json, per card word."""
+        if self.french:
+            return french.known_forms(self.conjugations, self.declensions, self.adjectives)
         forms: dict[str, list[str]] = {}
         for word, verbs in self.conjugations.items():
             forms.setdefault(word, []).extend(f for v in verbs for f in v["forms"] + v.get("past", []) + v.get("imperative", []) if f)
@@ -950,8 +1002,18 @@ class FlashcardWindow(QMainWindow):
         # The game only reads the deck; it saves to its own dungeon_progress.json.
         ws = self.workspace
         if ws:
+            from art import hero_choice_available, load_hero, save_hero
+            from dungeon_ui import HeroChoice
+
+            gender = load_hero(ws.hero_path)
+            if gender is None and hero_choice_available():   # first time: pick the hero, for good
+                pick = HeroChoice(self)
+                if not pick.exec() or not pick.choice:
+                    return
+                gender = pick.choice
+                save_hero(ws.hero_path, gender)
             DungeonWindow(self.deck, ws.dungeon_path, self, hero_name=ws.user,
-                          examples_path=ws.content_dir / "examples.json").exec()
+                          examples_path=ws.content_dir / "examples.json", hero_gender=gender).exec()
         else:
             DungeonWindow(self.deck, save_path_for(self.json_path), self).exec()
         self._update_ui()
@@ -1046,7 +1108,8 @@ class FlashcardWindow(QMainWindow):
             "Ctrl+D  Dark mode on / off\n"
             "Ctrl+P  Sentence practice\n"
             "F       Show cards failed in a quiz\n"
-            "E       Switch English-first / Polish-first\n"
+            "E       Switch English-first / foreign-language-first\n"
+            "H       Hear the word read aloud\n"
             "Ctrl+O  Open JSON\n"
             "Ctrl+Q  Quit",
         )

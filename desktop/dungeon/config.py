@@ -18,7 +18,7 @@ DAMAGE_SPREAD = 0.15        # +-15 % random variation on every hit
 
 def xp_to_next(level: int) -> int:
     """XP needed to go from `level` to `level + 1`."""
-    return 40 + 20 * (max(1, level) - 1)
+    return 150 + 100 * (max(1, level) - 1)
 
 
 # --- Combat -----------------------------------------------------------------
@@ -64,6 +64,9 @@ ENRAGE_HP_FRACTION = 0.5    # enraged monsters hit harder below this share of th
 ENRAGE_FACTOR = 1.5
 COMBO_STEP = 0.3            # extra damage per wrong answer in a row ...
 COMBO_MAX_STACKS = 3        # ... up to this many
+POISON_TURNS = 3            # answers after a poisoned hit that cost HP ...
+POISON_MIN_HP = 1           # ... but poison never kills: it leaves at least this much
+CURSE_HEAL_FACTOR = 0.5     # healing while cursed
 LIFESTEAL_FRACTION = 0.5    # share of the damage dealt that the monster heals
 PHOENIX_REVIVE_FRACTION = 0.3
 
@@ -91,6 +94,15 @@ class MonsterSpec:
     combo: bool = False          # hits harder after several wrong answers in a row
     time_limit: int = 0          # seconds per question (0 = no limit)
     cloze_chance: float = 0.0    # chance of a fill-in-the-blank sentence question
+    # abilities that counter hero stats and gear
+    unavoidable: bool = False    # its hits can't be dodged (a ward still absorbs them)
+    pierce: bool = False         # ignores your armor's damage reduction
+    percent_damage: float = 0.0  # extra damage per hit as a share of your max HP
+    poison: int = 0              # HP lost after each of the next POISON_TURNS answers
+    curse: bool = False          # healing is halved during the fight
+    silence: bool = False        # no items during the fight
+    streak: int = 0              # only hurt by the Nth correct answer in a row (and later ones)
+    thief: int = 0               # coins stolen per mistake (given back when you win)
 
     @property
     def abilities(self) -> list[str]:
@@ -112,6 +124,22 @@ class MonsterSpec:
             out.append(f"Impatient: {self.time_limit}s per word")
         if self.cloze_chance:
             out.append("Speaks in sentences: fill in the blank")
+        if self.unavoidable:
+            out.append("Unavoidable: its hits can't be dodged")
+        if self.pierce:
+            out.append("Piercing: ignores your damage reduction")
+        if self.percent_damage:
+            out.append(f"Crushing: hits for {round(self.percent_damage * 100)}% of your max HP extra")
+        if self.poison:
+            out.append(f"Poison: {self.poison} HP after each of the next {POISON_TURNS} answers")
+        if self.curse:
+            out.append("Curse: your healing is halved")
+        if self.silence:
+            out.append("Silence: no items in this fight")
+        if self.streak:
+            out.append(f"Shielded: only {self.streak} correct answers in a row break through")
+        if self.thief:
+            out.append(f"Thief: steals {self.thief} coins per mistake (returned if you win)")
         return out
 
 
@@ -119,13 +147,13 @@ MONSTERS: dict[str, MonsterSpec] = {
     spec.key: spec
     for spec in (
         # The Cellar of Words
-        MonsterSpec("slime", "Slime", max_hp=20, damage=3, xp=10, coins=3),
-        MonsterSpec("goblin", "Goblin", max_hp=35, damage=5, xp=20, coins=6),
-        MonsterSpec("skeleton", "Skeleton", max_hp=50, damage=7, xp=30, coins=10,
+        MonsterSpec("book_mimic", "Book Mimic", max_hp=20, damage=3, xp=10, coins=3),
+        MonsterSpec("ink_raven", "Ink Raven", max_hp=35, damage=5, xp=20, coins=6),
+        MonsterSpec("quill_stalker", "Quill Stalker", max_hp=50, damage=7, xp=30, coins=10,
                     reverse_chance=0.25),
-        MonsterSpec("dark_knight", "Dark Knight", max_hp=70, damage=9, xp=50, coins=18,
+        MonsterSpec("forgotten_scribe", "Forgotten Scribe", max_hp=70, damage=9, xp=50, coins=18,
                     reverse_chance=0.4, armor=2),
-        MonsterSpec("boss", "Dungeon Boss", max_hp=150, damage=12, xp=120, coins=60, boss=True,
+        MonsterSpec("dust_moth", "Dust Moth", max_hp=150, damage=12, xp=120, coins=60, boss=True,
                     reverse_chance=0.4, enrage=True),
         # The Whispering Forest
         MonsterSpec("bat", "Vampire Bat", max_hp=40, damage=6, xp=25, coins=10,
@@ -135,33 +163,45 @@ MONSTERS: dict[str, MonsterSpec] = {
         MonsterSpec("treant", "Treant", max_hp=90, damage=9, xp=55, coins=25,
                     reverse_chance=0.3, armor=2, regen=6),
         MonsterSpec("witch", "Hedge Witch", max_hp=75, damage=11, xp=60, coins=30,
-                    reverse_chance=0.5, time_limit=25),
+                    reverse_chance=0.5, time_limit=25, curse=True),
         MonsterSpec("guardian", "Forest Guardian", max_hp=210, damage=13, xp=200, coins=100,
                     boss=True, reverse_chance=0.5, armor=1, regen=5, enrage=True),
         # The Frozen Citadel
         MonsterSpec("golem", "Ice Golem", max_hp=120, damage=12, xp=70, coins=35,
-                    reverse_chance=0.4, armor=4),
+                    reverse_chance=0.4, armor=4, streak=2),
         MonsterSpec("wraith", "Frost Wraith", max_hp=95, damage=13, xp=80, coins=40,
-                    reverse_chance=0.5, lifesteal=True, time_limit=20),
+                    reverse_chance=0.5, lifesteal=True, time_limit=20, unavoidable=True),
         MonsterSpec("warlord", "Warlord", max_hp=160, damage=15, xp=110, coins=55,
-                    reverse_chance=0.6, enrage=True, combo=True),
+                    reverse_chance=0.6, enrage=True, combo=True, pierce=True),
         MonsterSpec("dragon", "Elder Dragon", max_hp=320, damage=17, xp=300, coins=160,
                     boss=True, reverse_chance=0.6, armor=2, regen=6, enrage=True,
-                    time_limit=30),
+                    time_limit=30, percent_damage=0.08),
         # The Review Guru (its HP is set when the fight starts, see GameManager._review_hp)
-        MonsterSpec("review_guru", "Review Guru", max_hp=100, damage=6, xp=60, coins=30,
+        MonsterSpec("review_guru", "Review Guru", max_hp=100, damage=6, xp=100, coins=55,
                     reverse_chance=0.3),
         # The Library of Sentences (fill-in-the-blank)
         MonsterSpec("ink_slime", "Ink Slime", max_hp=60, damage=7, xp=40, coins=14,
                     cloze_chance=1.0),
         MonsterSpec("paper_goblin", "Paper Goblin", max_hp=80, damage=9, xp=55, coins=20,
-                    cloze_chance=1.0),
+                    cloze_chance=1.0, thief=8),
         MonsterSpec("page_wraith", "Page Wraith", max_hp=100, damage=11, xp=70, coins=28,
-                    cloze_chance=0.8, reverse_chance=0.2, lifesteal=True),
+                    cloze_chance=0.8, reverse_chance=0.2, lifesteal=True, poison=3),
         MonsterSpec("tome_knight", "Tome Knight", max_hp=130, damage=13, xp=90, coins=36,
-                    cloze_chance=0.8, reverse_chance=0.2, armor=3),
+                    cloze_chance=0.8, reverse_chance=0.2, armor=3, silence=True),
         MonsterSpec("librarian", "Grand Librarian", max_hp=270, damage=15, xp=240, coins=130,
                     boss=True, cloze_chance=0.8, reverse_chance=0.2, regen=5, enrage=True,
-                    time_limit=35),
+                    time_limit=35, curse=True, silence=True),
+        # The Sunken Cathedral
+        MonsterSpec("drowned_acolyte", "Drowned Acolyte", max_hp=140, damage=14, xp=90, coins=45,
+                    reverse_chance=0.5, thief=10),
+        MonsterSpec("barnacle_crawler", "Barnacle Crawler", max_hp=170, damage=14, xp=100, coins=50,
+                    reverse_chance=0.4, armor=4, regen=5, streak=2),
+        MonsterSpec("siren", "Siren", max_hp=165, damage=15, xp=120, coins=60,
+                    reverse_chance=0.6, lifesteal=True, silence=True),
+        MonsterSpec("drowned_knight", "Drowned Knight", max_hp=200, damage=18, xp=150, coins=75,
+                    reverse_chance=0.6, armor=3, combo=True, pierce=True),
+        MonsterSpec("abyssal_bishop", "Abyssal Bishop", max_hp=400, damage=20, xp=400, coins=220,
+                    boss=True, reverse_chance=0.6, cloze_chance=0.4, armor=2, regen=6, enrage=True,
+                    time_limit=30, percent_damage=0.08, curse=True),
     )
 }

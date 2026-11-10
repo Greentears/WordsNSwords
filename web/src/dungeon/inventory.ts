@@ -61,26 +61,27 @@ export class Inventory {
   }
 
   /** Why the player cannot buy `item` right now (null = they can). */
-  buy_problem(item: Item, player: Player): string | null {
+  buy_problem(item: Item, player: Player, price: number = item.price): string | null {
     if (isEquipment(item) && this.owned.has(item.key)) return "Already owned";
     if (!item.shop) return "Not for sale";
     if (!isEquipment(item) && this.count(item.key) >= config.MAX_ITEM_STACK) return "You can't carry more";
     if (player.level < item.level) return `Requires level ${item.level}`;
-    if (player.coins < item.price) return "Not enough coins";
+    if (player.coins < price) return "Not enough coins";
     return null;
   }
 
-  buy(item: Item, player: Player): void {
-    const problem = this.buy_problem(item, player);
+  /** Buy `item` for `price` coins (default: its list price). */
+  buy(item: Item, player: Player, price: number = item.price): void {
+    const problem = this.buy_problem(item, player, price);
     if (problem) throw new GameError(problem);
-    player.coins -= item.price;
+    player.coins -= price;
     if (isEquipment(item)) {
       this.owned.add(item.key);
       if (!(item.slot! in this.equipped)) this.equipped[item.slot!] = item.key;   // first piece in a slot is worn at once
     } else this.counts[item.key] = this.count(item.key) + 1;
   }
 
-  sell_value(item: Item): number { return Math.trunc(item.price * config.SELL_FRACTION); }
+  sell_value(item: Item, fraction: number = config.SELL_FRACTION): number { return Math.trunc(item.price * fraction); }
 
   sell_problem(item: Item): string | null {
     if (isEquipment(item)) return this.owned.has(item.key) ? null : "You don't own that";
@@ -88,14 +89,14 @@ export class Inventory {
   }
 
   /** Sell one item for SELL_FRACTION of its price; returns the coins received. */
-  sell(item: Item, player: Player): number {
+  sell(item: Item, player: Player, fraction: number = config.SELL_FRACTION): number {
     const problem = this.sell_problem(item);
     if (problem) throw new GameError(problem);
     if (isEquipment(item)) {
       this.owned.delete(item.key);
       if (this.equipped[item.slot!] === item.key) delete this.equipped[item.slot!];
     } else this.consume(item.key);
-    const coins = this.sell_value(item);
+    const coins = this.sell_value(item, fraction);
     player.coins += coins;
     return coins;
   }

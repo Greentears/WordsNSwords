@@ -1,7 +1,8 @@
 // Grammar tables and extra examples shown under a revealed card (collapsible, scrollable).
 import { h } from "./h";
 import type { App } from "../state";
-import type { Adjective, Noun, Verb } from "../core/tables";
+import { FR_ADJ_LABELS, FR_TENSES, FR_TENSE_LABELS, type Adjective, type FrAdjective, type FrNoun, type FrVerb, type Noun, type Verb } from "../core/tables";
+import { languageOf } from "../core/newwords";
 
 const CASES: [string, string][] = [
   ["Mianownik", "kto? co?"], ["Dopełniacz", "kogo? czego?"], ["Celownik", "komu? czemu?"], ["Biernik", "kogo? co?"],
@@ -51,11 +52,38 @@ function adjTable(a: Adjective): HTMLElement {
   return h("div", null, h("div", { class: "cap" }, `${a.lemma ?? ""} · adjective`), scroll(h("table", { class: "grid" }, head, rows)));
 }
 
+// ---- French
+const FR_GENDERS: Record<string, string> = { m: "masculine", f: "feminine" };
+
+function frVerbTable(v: FrVerb): HTMLElement {
+  const tenses = FR_TENSES.filter((t) => Array.isArray(v.tenses[t]) && v.tenses[t].length === 6);
+  const head = h("tr", null, tenses.map((t) => h("th", null, FR_TENSE_LABELS[t])));
+  const rows = [0, 1, 2, 3, 4, 5].map((i) => h("tr", null, tenses.map((t) => h("td", null, v.tenses[t][i]))));
+  return h("div", null, h("div", { class: "cap" }, v.infinitive ?? ""), scroll(h("table", { class: "grid" }, head, rows)));
+}
+
+function frNounTable(n: FrNoun): HTMLElement {
+  const g = FR_GENDERS[n.gender ?? ""] ?? "";
+  const cols: [string, string][] = [["singular", n.singular], ...(n.plural ? [["plural", n.plural] as [string, string]] : [])];
+  return h("div", null, h("div", { class: "cap" }, `${n.lemma ?? ""} · noun${g ? ", " + g : ""}`),
+    scroll(h("table", { class: "grid center" }, h("tr", null, cols.map(([l, v]) => h("td", null, h("span", { class: "lbl" }, l), h("b", null, v)))))));
+}
+
+function frAdjTable(a: FrAdjective): HTMLElement {
+  return h("div", null, h("div", { class: "cap" }, `${a.lemma ?? ""} · adjective`),
+    scroll(h("table", { class: "grid center" }, h("tr", null, FR_ADJ_LABELS.map(([k, l]) => h("td", null, h("span", { class: "lbl" }, l), h("b", null, a.forms[k])))))));
+}
+
 /** Everything that appears under a revealed card; null when there is nothing to show. */
 export function extras(app: App, word: string): HTMLElement | null {
   const parts: HTMLElement[] = [];
   const s = app.settings;
-  if (s.showGrammar) {
+  if (s.showGrammar && languageOf(app.deckId) === "fr") {
+    const v = app.frConj[word], n = app.frDecl[word], a = app.frAdj[word];
+    if (v) parts.push(details("Verb forms", v.map((x) => x.infinitive).filter(Boolean).join(", "), h("div", null, v.map(frVerbTable))));
+    if (n) parts.push(details("Noun forms", n.map((x) => x.lemma).filter(Boolean).join(", "), h("div", null, n.map(frNounTable))));
+    if (a) parts.push(details("Adjective forms", a.map((x) => x.lemma).filter(Boolean).join(", "), h("div", null, a.map(frAdjTable))));
+  } else if (s.showGrammar) {
     const v = app.conj[word], n = app.decl[word], a = app.adj[word];
     if (v) parts.push(details("Verb forms", v.map((x) => x.infinitive).filter(Boolean).join(", "), h("div", null, v.map(verbTable))));
     if (n) parts.push(details(n.every((x) => x.gender === "num") ? "Numeral forms" : "Noun cases", n.map((x) => x.lemma).filter(Boolean).join(", "), h("div", null, n.map(nounTable))));

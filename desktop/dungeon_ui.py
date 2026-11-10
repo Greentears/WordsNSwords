@@ -2,12 +2,13 @@
 this file only shows the state of `GameManager` and forwards the player's actions."""
 from __future__ import annotations
 
+import language
 import sys
 from html import escape
 from pathlib import Path
 
 from PySide6.QtCore import Qt, QTimer
-from PySide6.QtGui import QColor, QImage, QPixmap
+from PySide6.QtGui import QColor, QImage, QPainter, QPixmap
 from PySide6.QtWidgets import (
     QDialog,
     QFrame,
@@ -30,12 +31,14 @@ from dungeon import config
 from dungeon.items import ARMOR, CHARM, COMPANION, ITEMS, WEAPON
 from dungeon.manager import GameManager, RoomOutcome
 from dungeon.models import BOSS, REST, TREASURE
-from dungeon.sprites import SIZE, hero_pixels, sprite_pixels
+from art import HEROES, OUTDOOR_DUNGEONS, art_file, background_file, hero_file, scene_file, ui_file
+from dungeon.sprites import SIZE, SPRITE_KEYS, hero_pixels, sprite_pixels
 
 MAP, COMBAT, MESSAGE, SHOP, INVENTORY = 0, 1, 2, 3, 4
 
 STYLE = """
 QDialog, QWidget#page { background: #14121f; }
+QWidget#pageart { background: transparent; }
 QLabel { color: #e8e3ff; font-size: 14px; }
 QLabel#title { color: #f2c14e; font-size: 24px; font-weight: bold; }
 QLabel#subtitle { color: #a9a0cf; font-size: 13px; }
@@ -93,19 +96,61 @@ def _asset_dir() -> Path:
     return base / "assets"
 
 
-def hero_pixmap(scale: int = 8) -> QPixmap:
-    """The hero picture (assets/hero.png), `scale * 36` pixels tall; falls back to the pixel sprite."""
-    path = _asset_dir() / "hero.png"
+def hero_pixmap(scale: int = 8, gender: str | None = None, weapon: bool = False,
+                armor: bool = False) -> QPixmap:
+    """The hero picture for his gender and gear, `scale * 36` pixels tall. Without the new art it
+    falls back to assets/hero.png, then to the pixel sprite."""
+    path = hero_file(gender, weapon, armor) if gender else None
+    if path is None:
+        path = _asset_dir() / "hero.png"
     image = QPixmap(str(path))
     if image.isNull():
         return sprite_pixmap("hero", scale, hero_pixels(None, None, None), _fallback=True)
     return image.scaledToHeight(scale * 36, Qt.TransformationMode.SmoothTransformation)
 
 
+_PIXMAPS: dict[tuple[str, str, int], QPixmap] = {}
+
+
+def art_pixmap(kind: str, key: str, size: int) -> QPixmap | None:
+    """A picture from assets/art, fitted into size x size (None when there is none)."""
+    cached = _PIXMAPS.get((kind, key, size))
+    if cached is not None:
+        return cached
+    path = art_file(kind, key)
+    image = QPixmap(str(path)) if path else QPixmap()
+    if image.isNull():
+        return None
+    image = image.scaled(size, size, Qt.AspectRatioMode.KeepAspectRatio,
+                         Qt.TransformationMode.SmoothTransformation)
+    _PIXMAPS[(kind, key, size)] = image
+    return image
+
+
+def item_pixmap(item, size: int) -> QPixmap | None:
+    """The picture of an item or companion, if it has one."""
+    return art_pixmap("companions" if item.slot == COMPANION else "items", item.key, size)
+
+
+def item_icon_html(item, size: int = 22) -> str:
+    """The icon for rich text: the picture if there is one, else the emoji."""
+    path = art_file("companions" if item.slot == COMPANION else "items", item.key)
+    if path:
+        return f"<img src='{path.as_uri()}' width='{size}' height='{size}'> "
+    return f"{item.icon} " if item.icon else ""
+
+
 def sprite_pixmap(key: str, scale: int = 8, pixels=None, _fallback: bool = False) -> QPixmap:
-    """A sprite from `dungeon.sprites`, drawn pixel by pixel and enlarged without smoothing."""
+    """A monster, companion or scene sprite: its picture if there is one, else the pixel sprite."""
     if key == "hero" and not _fallback:
         return hero_pixmap(scale)
+    if pixels is None:
+        for kind, factor in (("monsters", 1.3), ("companions", 1.0)):
+            art = art_pixmap(kind, key, round(SIZE * scale * factor))
+            if art:
+                return art
+        if key not in SPRITE_KEYS:      # a monster that has no picture and no drawing yet
+            key = "slime"
     image = QImage(SIZE, SIZE, QImage.Format.Format_ARGB32)
     image.fill(QColor(0, 0, 0, 0))
     for y, row in enumerate(pixels if pixels is not None else sprite_pixels(key)):
@@ -172,9 +217,100 @@ def _clear(layout) -> None:
             _clear(item.layout())
 
 
-class DungeonWindow(QDialog):
-    def __init__(self, deck, save_path, parent=None, hero_name=None, examples_path=None):
+class ArtPanel(QFrame):
+    """A frame with a picture behind its contents (the stone panel behind the hero and the slots)."""
+
+    def __init__(self, picture: Path | None, dim: int = 90):
+        super().__init__()
+        self._picture = QPixmap(str(picture)) if picture else QPixmap()
+        self._dim = dim
+        if not self._picture.isNull():     # the picture is drawn first; the frame draws no fill over it
+            self.setStyleSheet("QFrame#board { background: transparent; border: 2px solid #5a4a2e; "
+                               "border-radius: 6px; }")
+
+    def paintEvent(self, event) -> None:
+        if self._picture.isNull():
+            return super().paintEvent(event)
+        painter = QPainter(self)
+        painter.drawPixmap(self.rect(), self._picture)
+        painter.fillRect(self.rect(), QColor(8, 6, 14, self._dim))     # keeps text readable
+        painter.end()
+        super().paintEvent(event)
+
+
+def _slot_frame_style(width: int, height: int) -> str:
+    """Stylesheet that draws the slot's picture frame (tall slots use the taller frames)."""
+    ratio = height / max(1, width)
+    name = "slot_weapon" if ratio > 2.5 else "slot_armor" if ratio > 1.5 else "slot_square"
+    path = ui_file(name)
+    if not path:
+        return ""
+    return (f"QFrame#slot {{ border-image: url('{path.as_posix()}') 26 26 26 26 stretch stretch; "
+            f"border-width: 13px; border-style: solid; background: #0d0b13; }}")
+
+
+class HeroChoice(QDialog):
+    """Shown the first time a player enters the dungeon: click the hero you want. It is final."""
+
+    def __init__(self, parent=None):
         super().__init__(parent)
+        self.setWindowTitle("Choose your hero")
+        self.setStyleSheet(STYLE)
+        self.choice: str | None = None
+        layout = QVBoxLayout(self)
+        layout.setContentsMargins(28, 22, 28, 22)
+        title = _label("Choose your hero", "title")
+        title.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        layout.addWidget(title)
+        note = _label("Click the hero you want to play. You can't change this later.", "caption")
+        note.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        layout.addWidget(note)
+        row = QHBoxLayout()
+        for gender, name in (("f", "Heroine"), ("m", "Hero")):
+            button = QPushButton()
+            button.setFlat(True)
+            button.setCursor(Qt.CursorShape.PointingHandCursor)
+            button.setIcon(hero_pixmap(11, gender))
+            button.setIconSize(hero_pixmap(11, gender).size())
+            button.setToolTip(f"Play as the {name.lower()}")
+            button.clicked.connect(lambda _=False, g=gender: self._pick(g))
+            column = QVBoxLayout()
+            column.addWidget(button, 0, Qt.AlignmentFlag.AlignCenter)
+            caption = _label(name, "name")
+            caption.setAlignment(Qt.AlignmentFlag.AlignCenter)
+            column.addWidget(caption)
+            row.addLayout(column)
+        layout.addLayout(row)
+
+    def _pick(self, gender: str) -> None:
+        self.choice = gender
+        self.accept()
+
+
+class DungeonWindow(QDialog):
+    def paintEvent(self, event) -> None:
+        super().paintEvent(event)
+        dungeon = getattr(self.gm, "dungeon", None)
+        if dungeon is None or self.stack.currentIndex() not in (MAP, COMBAT, MESSAGE):
+            return
+        key = self._scene if (self._scene and self.stack.currentIndex() == MESSAGE) else dungeon.key
+        if key not in self._backdrops:
+            path = background_file(key)
+            self._backdrops[key] = QPixmap(str(path)) if path else QPixmap()
+        picture = self._backdrops[key]
+        if picture.isNull():
+            return
+        painter = QPainter(self)
+        scaled = picture.scaled(self.size(), Qt.AspectRatioMode.KeepAspectRatioByExpanding,
+                                Qt.TransformationMode.SmoothTransformation)
+        painter.drawPixmap((self.width() - scaled.width()) // 2, (self.height() - scaled.height()) // 2, scaled)
+        painter.fillRect(self.rect(), QColor(8, 6, 14, 165))       # dark layer so the text stays readable
+        painter.end()
+
+    def __init__(self, deck, save_path, parent=None, hero_name=None, examples_path=None,
+                 hero_gender=None):
+        super().__init__(parent)
+        self.hero_gender = hero_gender
         self.setWindowTitle("Vocabulary Dungeon")
         self.setStyleSheet(STYLE)
         self.resize(900, 800)
@@ -189,11 +325,16 @@ class DungeonWindow(QDialog):
         self.clock.timeout.connect(self._tick)
 
         self.stack = QStackedWidget()
+        self._backdrops: dict[str, QPixmap] = {}
+        self._scene: str | None = None        # rest / treasure picture for the room just cleared
         self.stack.addWidget(self._build_map())
         self.stack.addWidget(self._build_combat())
         self.stack.addWidget(self._build_message())
+        for index in (MAP, COMBAT, MESSAGE):               # let the dungeon scenery show through
+            self.stack.widget(index).setObjectName("pageart")
         self.stack.addWidget(self._build_shop())
         self.stack.addWidget(self._build_inventory())
+        self.stack.currentChanged.connect(lambda _index: self.update())
         layout = QVBoxLayout(self)
         layout.setContentsMargins(0, 0, 0, 0)
         layout.addWidget(self.stack)
@@ -242,7 +383,7 @@ class DungeonWindow(QDialog):
         widgets["name"].setText(f"{p.name}  Lv {p.level}")
         _set_bar(widgets["hp"], p.hp, p.max_hp)
         _set_bar(widgets["xp"], p.xp, p.xp_needed)
-        widgets["coins"].setText(f"🪙 {p.coins}")
+        widgets["coins"].setText(f"🪙 {p.coins}" + (f"     ✨ {p.stat_points} stat point(s) to spend" if p.stat_points else ""))
 
     # -- map
     def _build_map(self) -> QWidget:
@@ -274,6 +415,8 @@ class DungeonWindow(QDialog):
         self.enter_button = _button("Begin", self._enter_dungeon, primary=True)
         buttons.addWidget(self.enter_button)
         buttons.addWidget(_button("Inventory", self._show_inventory))
+        self.stats_button = _button("Stats", self._open_stats)
+        buttons.addWidget(self.stats_button)
         buttons.addWidget(_button("Shop", self._open_shop))
         buttons.addStretch()
         buttons.addWidget(_button("Leave dungeon", self.reject))
@@ -287,6 +430,7 @@ class DungeonWindow(QDialog):
     def _show_map(self) -> None:
         self.clock.stop()
         gm = self.gm
+        self.stats_button.setText(f"Stats ({gm.player.stat_points})" if gm.player.stat_points else "Stats")
         statuses = {s.key: s for s in gm.dungeons()}
         status = statuses[self.dungeon_key]
         dungeon = DUNGEONS[self.dungeon_key]
@@ -419,6 +563,11 @@ class DungeonWindow(QDialog):
         layout.addWidget(_button("Back to map", self._show_map, primary=True))
         return page
 
+    def _open_stats(self) -> None:
+        from stats_ui import StatsDialog
+        StatsDialog(self.gm, self).exec()
+        self._show_map()
+
     def _open_shop(self) -> None:
         self.shop_mode = "buy"
         self._show_shop()
@@ -467,7 +616,7 @@ class DungeonWindow(QDialog):
         extra = f"  ·  you have {entry.count}" if entry.count else ""
         price = (f"<span style='color:#f2c14e'>{item.price} coins</span>  ·  level {item.level}"
                  if item.shop else "<span style='color:#f2c14e'>Tower trophy</span>")
-        icon = f"{item.icon} " if item.icon else ""
+        icon = item_icon_html(item)
         text = _label(f"<b>{icon}{escape(item.name)}</b> — {escape(item.description)}<br>"
                       f"{price}{extra}", wrap=True)
         text.setTextFormat(Qt.TextFormat.RichText)
@@ -497,7 +646,7 @@ class DungeonWindow(QDialog):
             row.setObjectName("shoprow")
             layout = QHBoxLayout(row)
             layout.setContentsMargins(10, 6, 10, 6)
-            icon = f"{item.icon} " if item.icon else ""
+            icon = item_icon_html(item)
             extra = (f"  ·  you have {entry.count}" if not item.is_equipment
                      else "  ·  equipped" if entry.equipped else "")
             text = _label(f"<b>{icon}{escape(item.name)}</b> — {escape(item.description)}<br>"
@@ -544,12 +693,18 @@ class DungeonWindow(QDialog):
         slot.setObjectName("slot")
         slot.setProperty("empty", "false" if item else "true")
         slot.setFixedSize(width, height)
+        frame = _slot_frame_style(width, height)
+        if frame:
+            slot.setStyleSheet(frame)
         box = QVBoxLayout(slot)
-        box.setContentsMargins(4, 4, 4, 4)
+        box.setContentsMargins(*(((16, 16, 16, 14) if frame else (4, 4, 4, 4))))
         box.setSpacing(0)
-        icon = _label("" if item and item.slot == COMPANION else (item_icon(item) if item else ""),
+        art = item_pixmap(item, max(32, min(width, height) - 30)) if item else None
+        icon = _label("" if item and (item.slot == COMPANION or art) else (item_icon(item) if item else ""),
                       "slot_icon")
-        if item and item.slot == COMPANION:
+        if art:
+            icon.setPixmap(art)
+        elif item and item.slot == COMPANION:
             icon.setPixmap(sprite_pixmap(item.key, 2))
         icon.setAlignment(Qt.AlignmentFlag.AlignCenter)
         box.addWidget(icon, 1)
@@ -572,7 +727,7 @@ class DungeonWindow(QDialog):
         main = QHBoxLayout()
         main.setSpacing(14)
         # left: the hero, drawn with his gear
-        hero_box = QFrame()
+        hero_box = ArtPanel(ui_file("panel"))
         hero_box.setObjectName("board")
         hero_col = QVBoxLayout(hero_box)
         hero_col.setContentsMargins(14, 12, 14, 12)
@@ -586,7 +741,7 @@ class DungeonWindow(QDialog):
         hero_col.addStretch()
         main.addWidget(hero_box, 2)
         # right: the Path of Exile style doll
-        board = QFrame()
+        board = ArtPanel(ui_file("panel"))
         board.setObjectName("board")
         self.inv_grid = QGridLayout(board)
         self.inv_grid.setContentsMargins(14, 12, 14, 12)
@@ -672,7 +827,7 @@ class DungeonWindow(QDialog):
             self.inv_layout.addWidget(_label("Nothing else. Buy or find more gear!", "caption"))
         for item in spare:
             row = QHBoxLayout()
-            label = _label(f"{item_icon(item)} <b>{escape(item.name)}</b> — {escape(item.description)}",
+            label = _label(f"{item_icon_html(item, 28) or item_icon(item) + ' '}<b>{escape(item.name)}</b> — {escape(item.description)}",
                            wrap=True)
             label.setTextFormat(Qt.TextFormat.RichText)
             row.addWidget(label, 1)
@@ -710,7 +865,7 @@ class DungeonWindow(QDialog):
         arena_row = QHBoxLayout(arena)
         arena_row.setContentsMargins(20, 10, 20, 10)
         self.hero_sprite = QLabel()
-        self.hero_sprite.setPixmap(self._hero_pixmap(6))
+        self.hero_sprite.setPixmap(self._hero_pixmap(7))
         self.hero_sprite.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.monster_sprite = QLabel()
         self.monster_sprite.setAlignment(Qt.AlignmentFlag.AlignCenter)
@@ -728,8 +883,13 @@ class DungeonWindow(QDialog):
         self.companion_icon.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.companion_label = _label(name="ability")
         self.companion_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        hero_col = QVBoxLayout()
+        self.hero_name = _label(name="name")
+        self.hero_name.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.hero_hp = _bar("hp")
+        hero_col = QVBoxLayout()     # same layout as the monster's: name, picture, health bar
+        hero_col.addWidget(self.hero_name)
         hero_col.addWidget(self.hero_sprite)
+        hero_col.addWidget(self.hero_hp)
         hero_col.addWidget(self.companion_icon)
         hero_col.addWidget(self.companion_label)
         arena_row.addLayout(hero_col, 1)
@@ -771,11 +931,12 @@ class DungeonWindow(QDialog):
         return page
 
     def _hero_pixmap(self, scale: int) -> QPixmap:
-        """The hero drawn with the weapon, armor and charm he currently wears."""
-        return hero_pixmap(scale)
+        """The hero as he looks with the weapon and armor he currently wears."""
+        worn = self.gm.inventory.equipped
+        return hero_pixmap(scale, self.hero_gender, bool(worn.get(WEAPON)), bool(worn.get(ARMOR)))
 
     def _start_fight(self) -> None:
-        self.hero_sprite.setPixmap(self._hero_pixmap(6))
+        self.hero_sprite.setPixmap(self._hero_pixmap(7))
         spec = self.gm.battle.monster.spec
         self.monster_sprite.setPixmap(sprite_pixmap(spec.key, 6))
         self.monster_name.setText(spec.name + ("  (boss)" if spec.boss else ""))
@@ -794,6 +955,9 @@ class DungeonWindow(QDialog):
     def _refresh_fight(self) -> None:
         battle = self.gm.battle
         self._refresh_player(self.fight_player)
+        p = self.gm.player
+        self.hero_name.setText(f"{p.name}  Lv {p.level}")
+        _set_bar(self.hero_hp, p.hp, p.max_hp)
         _set_bar(self.monster_hp, battle.monster.hp, battle.monster.max_hp)
         self._refresh_items()
 
@@ -820,7 +984,7 @@ class DungeonWindow(QDialog):
         lang = question.target_language
         if question.is_cloze:
             self.prompt_caption.setText(f"Fill in the blank (meaning of the missing word: {question.gloss})")
-            self.answer_edit.setPlaceholderText("Type the missing Polish word and press Enter")
+            self.answer_edit.setPlaceholderText(f"Type the missing {language.name()} word and press Enter")
             self.prompt.setStyleSheet("font-size: 22px;")
         else:
             self.prompt_caption.setText(f"Translate into {lang}:")
@@ -939,6 +1103,7 @@ class DungeonWindow(QDialog):
     def _message(self, title: str, body: str, sprite: str | None, button: str = "Continue",
                  on_primary=None, secondary: str | None = None, on_secondary=None) -> None:
         self.clock.stop()
+        self._scene = None
         if sprite:
             self.msg_sprite.setPixmap(sprite_pixmap(sprite, 8))
             self.msg_sprite.show()
@@ -976,12 +1141,18 @@ class DungeonWindow(QDialog):
         titles = {TREASURE: "Treasure!", REST: "A moment of rest"}
         sprite = {TREASURE: "treasure", REST: "rest"}.get(outcome.kind)
         title = titles.get(outcome.kind, "Victory!")
-        if sprite is None:
+        scene = None
+        if sprite is not None and scene_file(sprite, self.gm.dungeon.key):   # a picture of the place
+            scene = f"{sprite}_" + ("outdoor" if self.gm.dungeon.key in OUTDOOR_DUNGEONS else "indoor")
+            sprite = None
+        elif sprite is None:
             sprite = self.gm.battle.monster.spec.key if self.gm.battle else None
         self._message(title, self._html([lead, *outcome.messages]), sprite,
                       button="Next floor" if self.gm.dungeon.endless else "Next room",
                       on_primary=self._enter_room,
                       secondary="Back to map", on_secondary=self._to_map)
+        self._scene = scene
+        self.update()
 
     def _to_map(self) -> None:
         self.gm.leave()
@@ -1001,12 +1172,13 @@ class DungeonWindow(QDialog):
     def _completion(self, outcome: RoomOutcome) -> None:
         run = outcome.run
         p = self.gm.player
+        review = self.gm.dungeon is not None and self.gm.dungeon.kind == "review"   # its reward is already listed once above
         lines = [
             *outcome.messages, "",
             f"Monsters defeated: {run.get('monsters', 0)}",
             *([f"Missed words cleared: {run['cleared']}"] if run.get("cleared") else []),
             f"Correct answers: {run.get('correct', 0)}   Wrong answers: {run.get('wrong', 0)}",
-            f"XP earned: {run.get('xp', 0)}   Coins earned: {run.get('coins', 0)}",
+            *([] if review else [f"XP earned: {run.get('xp', 0)}   Coins earned: {run.get('coins', 0)}"]),
             f"You are now level {p.level} with {p.coins} coins.",
             f"Words to practise: {self.gm.missed_count}",
             *self._failed_lines(),

@@ -1,6 +1,7 @@
 """Typed-answer quiz: setup dialog + quiz dialog."""
 from __future__ import annotations
 
+import language
 import random
 
 from PySide6.QtCore import Qt
@@ -101,9 +102,9 @@ class QuizSetupDialog(QDialog):
         layout.addLayout(count_row)
 
         layout.addSpacing(6)
-        self.radio_en = QRadioButton("Show English  →  type the Polish word")
+        self.radio_en = QRadioButton(f"Show English  →  type the {language.name()} word")
         self.radio_en.setChecked(True)
-        self.radio_pl = QRadioButton("Show Polish  →  type the English word")
+        self.radio_pl = QRadioButton(f"Show {language.name()}  →  type the English word")
         if cloze:
             note = QLabel(
                 "You get a Polish sentence with one word missing (its dictionary form "
@@ -117,7 +118,7 @@ class QuizSetupDialog(QDialog):
             layout.addWidget(self.radio_pl)
         layout.addSpacing(6)
 
-        self.accents_check = QCheckBox("Accept answers without Polish accents (ą ę ł …)")
+        self.accents_check = QCheckBox(f"Accept answers without {language.name()} accents ({language.accents()})")
         self.accents_check.setChecked(True)
         layout.addWidget(self.accents_check)
 
@@ -335,7 +336,7 @@ class QuizDialog(QDialog):
         self.input.clear()
         self.input.setReadOnly(False)
         self.input.setPlaceholderText(
-            "Type the Polish word…" if self.english_prompt else "Type the English word…"
+            f"Type the {language.name()} word…" if self.english_prompt else "Type the English word…"
         )
         self.submit_button.show()
         self.idk_button.show()

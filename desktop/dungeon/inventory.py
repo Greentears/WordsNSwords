@@ -83,7 +83,7 @@ class Inventory:
         return t
 
     # -- shopping -----------------------------------------------------------
-    def buy_problem(self, item: Item, player: Player) -> str | None:
+    def buy_problem(self, item: Item, player: Player, price: int | None = None) -> str | None:
         """Why the player cannot buy `item` right now (None = they can)."""
         if item.is_equipment and item.key in self.owned:
             return "Already owned"
@@ -93,30 +93,31 @@ class Inventory:
             return "You can't carry more"
         if player.level < item.level:
             return f"Requires level {item.level}"
-        if player.coins < item.price:
+        if player.coins < (item.price if price is None else price):
             return "Not enough coins"
         return None
 
-    def buy(self, item: Item, player: Player) -> None:
-        problem = self.buy_problem(item, player)
+    def buy(self, item: Item, player: Player, price: int | None = None) -> None:
+        """Buy `item` for `price` coins (default: its list price)."""
+        problem = self.buy_problem(item, player, price)
         if problem:
             raise ValueError(problem)
-        player.coins -= item.price
+        player.coins -= item.price if price is None else price
         if item.is_equipment:
             self.owned.add(item.key)
             self.equipped.setdefault(item.slot, item.key)  # first piece in a slot is worn at once
         else:
             self.counts[item.key] = self.count(item.key) + 1
 
-    def sell_value(self, item: Item) -> int:
-        return int(item.price * config.SELL_FRACTION)
+    def sell_value(self, item: Item, fraction: float | None = None) -> int:
+        return int(item.price * (config.SELL_FRACTION if fraction is None else fraction))
 
     def sell_problem(self, item: Item) -> str | None:
         if item.is_equipment:
             return None if item.key in self.owned else "You don't own that"
         return None if self.count(item.key) > 0 else "You have none left"
 
-    def sell(self, item: Item, player: Player) -> int:
+    def sell(self, item: Item, player: Player, fraction: float | None = None) -> int:
         """Sell one item for SELL_FRACTION of its price; returns the coins received."""
         problem = self.sell_problem(item)
         if problem:
@@ -127,7 +128,7 @@ class Inventory:
                 del self.equipped[item.slot]
         else:
             self.consume(item.key)
-        coins = self.sell_value(item)
+        coins = self.sell_value(item, fraction)
         player.coins += coins
         return coins
 

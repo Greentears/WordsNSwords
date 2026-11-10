@@ -3,14 +3,33 @@ and nothing else: no explanation, no markdown fence.
 
 "words": [{"word": "<French card text>", "translation": "<short English meaning>",
            "sentence": "<one natural French sentence, level A2-B1>", "sentence_translation": "<English>"}]
-  - Nouns with their article: "la maison", "le chat", "l'ami / l'amie". Verbs in the infinitive.
+  - Nouns with their article: "la maison", "le chat", "l'ami / l'amie". Verbs in the infinitive
+    (reflexive verbs with se: "se méfier").
   - translation: concise; alternatives separated by " / "; verbs start with "to ".
+"verbs": for every verb in "words":
+  [{"card": "<card text exactly>", "verbs": [{"infinitive": "<infinitive>",
+     "tenses": {"present": [6 forms], "passe_compose": [6 forms], "imparfait": [6 forms],
+                "futur": [6 forms], "conditionnel": [6 forms]}}]}]
+  - Each tense has exactly 6 forms with their pronoun, in this order: je, tu, il/elle, nous, vous, ils/elles.
+    Write "j'" before a vowel: "j'ai mangé". Reflexive verbs keep their pronoun: "je me méfie", "tu t'es méfié(e)".
+  - passe_compose = auxiliary + past participle. With être (and reflexive verbs) show the agreement as
+    "(e)" / "(e)s" / "(e)(s)": "il/elle est parti(e)", "nous sommes parti(e)s", "vous êtes parti(e)(s)".
+  - futur = futur simple. conditionnel = conditionnel présent.
+"nouns": for every noun in "words":
+  [{"card": "<card text exactly>", "nouns": [{"lemma": "<noun without article>", "gender": "m" or "f",
+     "singular": "<with article: l'enjeu>", "plural": "<with article: les enjeux>" or null if it has no plural}]}]
+"adjectives": for every adjective in "words":
+  [{"card": "<card text exactly>", "adjectives": [{"lemma": "<masculine singular>",
+     "forms": {"ms": "<masculine singular>", "fs": "<feminine singular>", "mp": "<masculine plural>", "fp": "<feminine plural>"}}]}]
 "examples": {"<card text exactly>": [two more sentences {"pl": "<French>", "en": "<English>"}]}
+  (the key is called "pl" for every language; it holds the French sentence)
 "sentences": 5 to 10 short practice sentences combining several of the words:
   [{"pl": "<French>", "en": "<English>", "words": ["<card text of each word used>"]}]
 
 Rules: valid JSON (double quotes, no trailing commas, no comments, accents as normal UTF-8 text). Every "card"
 and every item in a "words" list must be written exactly like the "word" of an entry in "words".
+Words that are not verbs, nouns or adjectives (adverbs, phrases) need no table. Do not invent forms; if unsure,
+give the most standard form.
 
 WORDS:
 {WORDS}

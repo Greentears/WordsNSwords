@@ -1,3 +1,4 @@
+import { speak, speechSupported } from "../core/speech";
 import { h, clear } from "./h";
 import { ARCHIVED, LEVELS, TOP_LEVEL, levelIcon, levelName, type Mode } from "../core/deck";
 import type { Shell } from "./shell";
@@ -128,7 +129,7 @@ export function studyScreen(shell: Shell): HTMLElement {
       h("button", { class: "tool", onclick: () => { deck.shuffle(); finished = false; resetCard(); render(); } }, "⤮ Shuffle"),
       h("button", { class: "tool", onclick: () => restart() }, "↺ Restart"),
       h("button", { class: "tool", onclick: quickSheet }, "⚡ Quick 10"),
-      h("button", { class: "tool", "aria-pressed": String(eng), onclick: () => { app.settings.englishFirst = !eng; app.saveSettings(); resetCard(); render(); } }, eng ? "EN → PL" : "PL → EN")));
+      h("button", { class: "tool", "aria-pressed": String(eng), onclick: () => { app.settings.englishFirst = !eng; app.saveSettings(); resetCard(); render(); } }, (() => { const l = app.deckId.split("-")[0].toUpperCase(); return eng ? `EN → ${l}` : `${l} → EN`; })())));
 
     // card
     const area = h("div", { class: "card-area" });
@@ -139,7 +140,10 @@ export function studyScreen(shell: Shell): HTMLElement {
       const front = eng ? w.translation : w.word;
       const back = eng ? w.word : w.translation;
       const card = h("div", { class: "card" + (revealed ? " revealed" : ""), role: "button", tabindex: "0", "aria-label": revealed ? "Card, tap to hide the answer" : "Card, tap to reveal the answer" },
-        h("div", { class: "card-meta" }, h("span", { class: `pill lv-${w.level ?? "n"}` }, `${levelIcon(w.level)} ${levelName(w.level)}`), w.fails > 0 && h("span", { class: "fails" }, `failed ${w.fails}×`)),
+        h("div", { class: "card-meta" }, h("span", { class: `pill lv-${w.level ?? "n"}` }, `${levelIcon(w.level)} ${levelName(w.level)}`), w.fails > 0 && h("span", { class: "fails" }, `failed ${w.fails}×`),
+          speechSupported() && h("button", { class: "speak", type: "button", "aria-label": `Hear "${w.word}"`,
+            onpointerdown: (e: Event) => e.stopPropagation(), onpointerup: (e: Event) => e.stopPropagation(), onkeydown: (e: Event) => e.stopPropagation(),
+            onclick: async (e: Event) => { e.stopPropagation(); const problem = await speak(w.word, app.deckId); if (problem) shell.toast(problem); } }, "🔊")),
         h("div", { class: `front ${fontClass(front)}` }, front),
         revealed ? h("div", { class: `back ${fontClass(back)}` }, back) : h("div", { class: "tap-hint" }, "Tap to flip"),
         revealed && w.sentence && h("p", { class: "sentence" }, w.sentence),

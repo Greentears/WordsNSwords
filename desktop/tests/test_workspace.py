@@ -114,3 +114,38 @@ class WorkspaceTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class DeckChoiceTests(unittest.TestCase):
+    def make(self, decks):
+        import tempfile
+        from pathlib import Path
+        d = tempfile.mkdtemp()
+        root = Path(d)
+        for deck in decks:
+            (root / "users" / "pacixii" / deck).mkdir(parents=True)
+            (root / "users" / "pacixii" / deck / "words.json").write_text("[]", encoding="utf-8")
+        return root
+
+    def test_decks_of_lists_folders_with_words(self):
+        from workspace import decks_of
+        root = self.make(["fr-en", "pl-en"])
+        (root / "users" / "pacixii" / "empty").mkdir()
+        self.assertEqual(decks_of(root, "Pacixii"), ["fr-en", "pl-en"])
+        self.assertEqual(decks_of(root, "nobody"), [])
+
+    def test_choose_deck(self):
+        from workspace import choose_deck, DEFAULT_DECK
+        self.assertEqual(choose_deck(self.make(["fr-en"]), "Pacixii"), "fr-en")                  # the only one
+        two = self.make(["fr-en", "pl-en"])
+        self.assertIsNone(choose_deck(two, "Pacixii"))                                            # must ask
+        self.assertEqual(choose_deck(two, "Pacixii", "pl-en"), "pl-en")                           # remembered
+        self.assertEqual(choose_deck(two, "Pacixii", "de-en"), None)                              # remembered but gone
+        self.assertEqual(choose_deck(self.make([]), "Pacixii"), DEFAULT_DECK)                     # new name: starter
+
+    def test_saved_deck_round_trip(self):
+        from workspace import save_deck, saved_deck
+        root = self.make([])
+        self.assertEqual(saved_deck(root), "")
+        save_deck(root, " fr-en ")
+        self.assertEqual(saved_deck(root), "fr-en")
