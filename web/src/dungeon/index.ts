@@ -12,3 +12,4 @@ export * as tower from "./tower";
 export * from "./util";
 export * as answers from "./answers";
 export * from "./sprites";
+export * as daily from "./daily";

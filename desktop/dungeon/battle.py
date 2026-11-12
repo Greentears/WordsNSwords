@@ -63,6 +63,7 @@ class Battle:
         self.monster = monster
         self.selector = selector
         self.rng = rng or selector.rng
+        self.language = "Polish"      # the language being learned (named in messages; set by the manager)
         self.question: Question | None = None
         self.questions_asked = 0
         self.consecutive_wrong = 0
@@ -322,7 +323,7 @@ class Battle:
         if q.is_cloze:
             meaning = f'The missing word was "{q.answer}".'
         elif q.reverse:
-            meaning = f'"{q.prompt}" in Polish is "{q.answer}".'
+            meaning = f'"{q.prompt}" in {self.language} is "{q.answer}".'
         else:
             meaning = f'"{q.prompt}" means "{q.answer}".'
         message = f'{lead} {meaning} '

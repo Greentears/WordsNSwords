@@ -5,6 +5,7 @@ import * as config from "./config";
 import * as items from "./items";
 import { ACTIVE, DEFEAT, VICTORY, Battle, type AnswerResult, type Question } from "./battle";
 import { ClozeSource } from "./cloze";
+import { DAILY_KEY, DAILY_MAX_TIER, buildDaily, streakBonus, tierFor, yesterday } from "./daily";
 import { DUNGEONS } from "./dungeons";
 import { Inventory } from "./inventory";
 import { ITEMS, ITEM_LIST, isEquipment, type Item } from "./items";
@@ -23,6 +24,7 @@ export interface DungeonStatus {
   min_level: number; locked: boolean; kind: string; endless: boolean;
   best: number;             // tower: highest floor cleared
   unavailable: string | null;  // why it can't be entered right now (null = open)
+  note: string;                // daily challenge: your streak
 }
 
 export interface RoomOutcome {
@@ -43,7 +45,10 @@ export interface SellEntry { item: Item; count: number; value: number; equipped:
 export interface ItemUse { ok: boolean; message: string; state: string; hint: string | null; result: AnswerResult | null }
 const itemUse = (ok: boolean, message: string): ItemUse => ({ ok, message, state: ACTIVE, hint: null, result: null });
 
-interface Progress { room: number; completed: boolean; times: number; best: number }
+interface Progress {
+  room: number; completed: boolean; times: number; best: number;
+  date?: string; last_done?: string; tier?: number; streak?: number; best_streak?: number;    // daily challenge only
+}
 interface SavedFight { dungeon: unknown; room: unknown; monster_hp: unknown }
 
 export class GameManager {
@@ -56,6 +61,11 @@ export class GameManager {
   cloze: ClozeSource;
   rewards: RewardManager;
   progress: Record<string, Progress> = {};
+  /** The dungeons of today (the daily one changes with the date). */
+  defs: Record<string, Dungeon> = {};
+  /** The language being learned, for texts (the interface sets it). */
+  language = "Polish";
+  private today: () => string;
   dungeon: Dungeon | null = null;
   battle: Battle | null = null;
   outcome: RoomOutcome | null = null;
@@ -63,7 +73,9 @@ export class GameManager {
   /** Review fight: card word -> meaning, in order of the first miss. */
   review_failed = new Map<string, string>();
 
-  constructor(public deck: DeckLike, examples: Record<string, Example[]>, public repo: Repository, public rng: Rng) {
+  constructor(public deck: DeckLike, examples: Record<string, Example[]>, public repo: Repository, public rng: Rng,
+    today?: () => string) {
+    this.today = today ?? (() => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; });
     const state = mergeState(repo.load()) as unknown as Record<string, unknown>;
     this.player = Player.from_dict(state.player);
     this.inventory = new Inventory(state.inventory);
@@ -77,10 +89,12 @@ export class GameManager {
       this.player.coins += this.inventory.refund;
       this.inventory.refund = 0;
     }
+    this.progress[DAILY_KEY] = GameManager.cleanProgress(state.dungeons, DAILY_KEY, 6);
     for (const [key, dungeon] of Object.entries(DUNGEONS)) {
       this.progress[key] = GameManager.cleanProgress(state.dungeons, key, dungeonRoomCount(dungeon));
     }
     this.saved_fight = isDict(state.fight) ? (state.fight as unknown as SavedFight) : null;
+    this.refreshDaily();
     this.applyGear();
     if (!this.player.is_alive) {          // saved while dead: come back healthy, fight restarts
       this.player.hp = this.player.max_hp;
@@ -95,8 +109,53 @@ export class GameManager {
       const v = entry[name];
       return isInt(v) ? Math.max(0, Math.min(high, v)) : 0;
     };
-    return { room: count("room", rooms === null ? 1e6 : rooms), completed: entry.completed === true,
+    const out: Progress = { room: count("room", rooms === null ? 1e6 : rooms), completed: entry.completed === true,
       times: count("times", 1e6), best: count("best", 1e6) };
+    if (key === DAILY_KEY) {
+      const day = (name: string): string => {
+        const v = entry[name];
+        return typeof v === "string" && /^\d{4}-\d{2}-\d{2}$/.test(v) && !Number.isNaN(Date.parse(v)) ? v : "";
+      };
+      Object.assign(out, { date: day("date"), last_done: day("last_done"), tier: count("tier", DAILY_MAX_TIER),
+        streak: count("streak", 1e6), best_streak: count("best_streak", 1e6) });
+    }
+    return out;
+  }
+
+  /** Make the daily challenge the one of today's date (a new day starts a fresh run). */
+  private refreshDaily(): void {
+    const today = this.today();
+    const p = this.progress[DAILY_KEY];
+    if (p.date !== today) {
+      Object.assign(p, { date: today, room: 0, completed: false, tier: 0 });
+      if (this.saved_fight && this.saved_fight.dungeon === DAILY_KEY) this.saved_fight = null;
+    }
+    if ((p.room === 0 && !p.completed) || !p.tier) p.tier = tierFor(this.player.level);   // the strength is fixed once the run starts
+    const built = buildDaily(today, p.tier as number);
+    this.defs = { [DAILY_KEY]: built, ...DUNGEONS };
+    if (this.dungeon && this.dungeon.key === DAILY_KEY) this.dungeon = built;
+  }
+
+  /** Days in a row the challenge was finished, counting up to yesterday or today (0 once it is broken). */
+  dailyStreak(): number {
+    const p = this.progress[DAILY_KEY];
+    const today = this.today();
+    return p.last_done === today || p.last_done === yesterday(today) ? (p.streak as number) : 0;
+  }
+
+  private dailyNote(): string {
+    const streak = this.dailyStreak();
+    const bonus = !this.progress[DAILY_KEY].completed ? pyRound(streakBonus(streak + 1) * 100) : 0;
+    return `Streak: ${streak} day${streak !== 1 ? "s" : ""}` + (bonus ? ` (today's reward +${bonus}%)` : "");
+  }
+
+  /** Count today's win in the streak; returns the streak's extra share of the reward. */
+  private finishDaily(p: Progress): number {
+    const today = this.today();
+    p.streak = p.last_done === yesterday(today) ? (p.streak as number) + 1 : 1;
+    p.best_streak = Math.max(p.best_streak as number, p.streak);
+    p.last_done = today;
+    return streakBonus(p.streak);
   }
 
   /** Bring the player's stats in line with what is equipped. */
@@ -123,22 +182,26 @@ export class GameManager {
 
   /** Why a dungeon can't be entered right now (null = it can). */
   unavailable_reason(key: string): string | null {
-    const d = DUNGEONS[key];
+    this.refreshDaily();
+    const d = this.defs[key];
     if (this.player.level < d.min_level) return `Requires level ${d.min_level}`;
     const p = this.progress[key];
+    if (d.kind === "daily" && p.completed) return "Done today. Come back tomorrow!";
     const inProgress = 0 < p.room && p.room < (dungeonRoomCount(d) ?? 0);
     if (d.kind === "review" && !this.missed.size && !inProgress) return "No missed words to review";
     return null;
   }
 
   dungeons(): DungeonStatus[] {
-    return Object.entries(DUNGEONS).map(([key, d]) => {
+    this.refreshDaily();
+    return Object.entries(this.defs).map(([key, d]) => {
       const p = this.progress[key];
       const count = dungeonRoomCount(d);
       const started = p.room > 0 && (count === null || p.room < count);
       return { key, name: d.name, description: d.description, room: p.room, total_rooms: count ?? 0, completed: p.completed,
         times: p.times, in_progress: started, min_level: d.min_level, locked: this.player.level < d.min_level, kind: d.kind,
-        endless: dungeonEndless(d), best: p.best, unavailable: this.unavailable_reason(key) };
+        endless: dungeonEndless(d), best: p.best, unavailable: this.unavailable_reason(key),
+        note: d.kind === "daily" ? this.dailyNote() : "" };
     });
   }
 
@@ -152,8 +215,8 @@ export class GameManager {
   // -- dungeon selection ------------------------------------------------------------------------
   /** Choose a dungeon. A finished dungeon (or `restart`) starts again from room 1. */
   select_dungeon(key: string, restart = false): void {
-    const dungeon = DUNGEONS[key];
     const reason = this.unavailable_reason(key);
+    const dungeon = this.defs[key];
     if (reason) throw new GameError(`${dungeon.name}: ${reason}`);
     const p = this.progress[key];
     const count = dungeonRoomCount(dungeon);
@@ -204,6 +267,7 @@ export class GameManager {
     }
     if (!fresh && fight && fight.dungeon === d.key && fight.room === this.room_index && isInt(fight.monster_hp)) hp = fight.monster_hp;
     const battle = new Battle(this.player, Monster.spawn(spec, hp), this.selector, this.rng);
+    battle.language = this.language;
     const gear = this.inventory.totals();
     battle.phoenix = gear.phoenix;
     battle.time_bonus = gear.time + this.player.effects.time_bonus;
@@ -299,7 +363,12 @@ export class GameManager {
       p.completed = true;
       p.times += 1;
       outcome.dungeon_completed = true;
-      outcome.final_reward = this.rewards.dungeon_completed(pyRound(d.complete_xp * d.reward_scale), pyRound(d.complete_coins * d.reward_scale));
+      const share = d.kind === "daily" ? 1 + this.finishDaily(p) : 1;
+      outcome.final_reward = this.rewards.dungeon_completed(pyRound(d.complete_xp * d.reward_scale * share), pyRound(d.complete_coins * d.reward_scale * share));
+      if (d.kind === "daily") {
+        const streak = p.streak as number;
+        outcome.final_reward.messages.push(`Daily streak: ${streak} day${streak !== 1 ? "s" : ""}` + (share > 1 ? ` (+${pyRound((share - 1) * 100)}% reward)` : ""));
+      }
       outcome.run = { ...this.run };
     }
     this.save();

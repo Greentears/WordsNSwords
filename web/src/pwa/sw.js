@@ -1,6 +1,6 @@
 // Service worker: precache everything (the app is tiny), cache-first, works offline.
 const VERSION = "__VERSION__";
-const CACHE = "fiszki-" + VERSION;
+const CACHE = "wordsnswords-" + VERSION;
 const FILES = __FILES__;
 
 self.addEventListener("install", (e) => {
@@ -8,7 +8,7 @@ self.addEventListener("install", (e) => {
 });
 self.addEventListener("activate", (e) => {
   e.waitUntil(
-    caches.keys().then((keys) => Promise.all(keys.filter((k) => k.startsWith("fiszki-") && k !== CACHE).map((k) => caches.delete(k))))
+    caches.keys().then((keys) => Promise.all(keys.filter((k) => (k.startsWith("fiszki-") || k.startsWith("wordsnswords-")) && k !== CACHE).map((k) => caches.delete(k))))
       .then(() => self.clients.claim()),
   );
 });

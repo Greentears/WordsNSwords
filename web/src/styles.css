@@ -1,4 +1,4 @@
-/* Fiszki: phone-first flashcards. Colours are CSS variables; dark mode follows the system unless forced. */
+/* WordsNSwords: phone-first flashcards. Colours are CSS variables; dark mode follows the system unless forced. */
 :root {
   --bg: #f6f4ef; --surface: #fffdf9; --surface-2: #efece4; --text: #1d2125; --muted: #6a6f76; --line: #ddd8cc;
   --accent: #2f6f6a; --accent-ink: #ffffff; --accent-soft: #d9ebe7;
@@ -348,3 +348,12 @@ textarea.field { width: 100%; min-height: 96px; padding: 10px 12px; border-radiu
 .btn[hidden] { display: none; }
 .doll.framed .slot:not(.filled) .slot-ico { display: none; }
 .doll.framed .slot.s-armor:not(.filled), .doll.framed .slot.s-companion:not(.filled) { background-size: auto 58%; background-position: center 30%; }
+.streak { color: #f4c95d; font-weight: 600; margin: 4px 0; }
+.dg .answerbar.over { background: transparent; border-top: 0; }
+.doll .doll-hero { gap: 4px; align-items: flex-end; }
+.doll-pet { display: inline-flex; align-items: flex-end; } .doll-pet .item-img { width: 52px; height: 52px; } .doll-pet { font-size: 34px; }
+.companion .item-img { width: 56px; height: 56px; }
+/* the hero is a stack of same-sized pictures (T-shirt hero, armour, head, weapon) */
+.hero-stack { position: relative; display: inline-block; flex: none; }
+.hero-stack img { height: 100%; width: auto; display: block; pointer-events: none; user-select: none; }
+.hero-stack img.layer { position: absolute; left: 0; top: 0; }

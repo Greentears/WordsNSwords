@@ -36,12 +36,13 @@ def loot_for(floor: int) -> tuple[str, int]:
     return TOWER_BUNDLES[(n - len(TOWER_LOOT) - 1) % len(TOWER_BUNDLES)]
 
 
-def special_abilities(floor: int, base: config.MonsterSpec) -> dict:
+def special_abilities(floor: int, base: config.MonsterSpec, boss: bool | None = None) -> dict:
     """Extra abilities of a Tower monster: one rotating ability from floor 15 (two from floor 45); bosses
     always crush. Values grow with the floor. Only abilities the monster does not have yet are added."""
     extra: dict = {}
     keys: list[str] = []
-    if is_boss_floor(floor):
+    boss = is_boss_floor(floor) if boss is None else boss
+    if boss:
         keys = ["percent_damage", "unavoidable" if (floor // 10) % 2 else "curse"]
     elif floor >= ABILITY_FROM_FLOOR:
         n = floor // 5
@@ -52,7 +53,7 @@ def special_abilities(floor: int, base: config.MonsterSpec) -> dict:
         if getattr(base, key):
             continue
         if key == "percent_damage":
-            extra[key] = min(0.12, 0.05 + 0.002 * floor + (0.02 if is_boss_floor(floor) else 0))
+            extra[key] = min(0.12, 0.05 + 0.002 * floor + (0.02 if boss else 0))
         elif key == "poison":
             extra[key] = max(2, round(base.damage * (1 + DAMAGE_GROWTH * (floor - 1)) * 0.3))
         elif key == "streak":
@@ -64,6 +65,31 @@ def special_abilities(floor: int, base: config.MonsterSpec) -> dict:
     return extra
 
 
+def scale_monster(base: config.MonsterSpec, floor: int, boss: bool | None = None,
+                  cycle: int = 0) -> config.MonsterSpec:
+    """`base` as it appears on `floor`: tougher with depth, with the abilities of that depth.
+    (The daily challenge uses this too, with the floor its tier stands for.)"""
+    boss = is_boss_floor(floor) if boss is None else boss
+    depth = floor - 1
+    boost = 1 + 0.4 * cycle     # a repeated boss comes back stronger
+    extra = {}
+    if floor >= CLOZE_FROM_FLOOR and not base.cloze_chance:
+        extra["cloze_chance"] = 0.3
+    if floor >= ENRAGE_FROM_FLOOR:
+        extra["enrage"] = True
+    if floor >= 2 * ENRAGE_FROM_FLOOR:
+        extra["armor"] = base.armor + 2
+    extra.update(special_abilities(floor, base, boss))
+    return replace(
+        base,
+        max_hp=round(base.max_hp * (1 + HP_GROWTH * depth) * boost),
+        damage=round(base.damage * (1 + DAMAGE_GROWTH * depth) * boost),
+        xp=round(base.xp * (1 + XP_GROWTH * depth)),
+        coins=round(base.coins * (1 + COIN_GROWTH * depth)),
+        **extra,
+    )
+
+
 def monster_for(floor: int) -> config.MonsterSpec:
     """The monster of a floor, scaled to its depth."""
     if is_boss_floor(floor):
@@ -73,25 +99,8 @@ def monster_for(floor: int) -> config.MonsterSpec:
         if index >= len(MONSTER_ORDER):  # past the roster: keep rotating the strongest ones
             index = len(MONSTER_ORDER) - 5 + floor % 5
         base = config.MONSTERS[MONSTER_ORDER[index]]
-    depth = floor - 1
     cycle = (floor // 10 - 1) // len(BOSS_ORDER) if is_boss_floor(floor) else 0
-    boost = 1 + 0.4 * cycle     # a repeated boss comes back stronger
-    extra = {}
-    if floor >= CLOZE_FROM_FLOOR and not base.cloze_chance:
-        extra["cloze_chance"] = 0.3
-    if floor >= ENRAGE_FROM_FLOOR:
-        extra["enrage"] = True
-    if floor >= 2 * ENRAGE_FROM_FLOOR:
-        extra["armor"] = base.armor + 2
-    extra.update(special_abilities(floor, base))
-    return replace(
-        base,
-        max_hp=round(base.max_hp * (1 + HP_GROWTH * depth) * boost),
-        damage=round(base.damage * (1 + DAMAGE_GROWTH * depth) * boost),
-        xp=round(base.xp * (1 + XP_GROWTH * depth)),
-        coins=round(base.coins * (1 + COIN_GROWTH * depth)),
-        **extra,
-    )
+    return scale_monster(base, floor, is_boss_floor(floor), cycle)
 
 
 def floor_room(index: int) -> Room:

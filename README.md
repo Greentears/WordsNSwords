@@ -196,3 +196,24 @@ the first time a player enters the dungeon, and can't be changed.
 Study cards have a 🔊 button (PC: "Hear", key H) that reads the word being learned aloud with the
 device's own voice. On the phone it uses the browser's voices (Android: Settings → Text-to-speech);
 on the PC the Windows voices (Settings → Time & language → Speech: add Polish or French if missing).
+
+## Daily Challenge
+
+A short dungeon (fight, fight, rest, fight, fight, boss) that is the same for everyone on a given date: the date
+seeds which monsters appear and "today's twist" (glass cannons, iron hides, fury, mirror day, sentence day, feast
+day). The monsters' strength follows your level when you start the day's run. You can finish it once a day; finishing
+it on consecutive days builds a streak that adds up to +50% to the completion reward. Rules: `desktop/dungeon/daily.py`
+(copied exactly in `web/src/dungeon/daily.ts`, checked by the golden test).
+
+## Grammar quiz
+
+Study → Grammar quiz… (Ctrl+G) on the PC, Review → Grammar on the phone. Fill-in-the-blank questions made from your own
+`verbs.json`, `nouns.json` and `adjectives.json`: Polish tenses, imperatives, cases and adjective forms; French tenses,
+plurals and adjective agreement. Missing accents are accepted with a note; a reflexive "się" may be left out; French subject
+pronouns may be typed or not. Rules: `desktop/grammar.py` (copied in `web/src/core/grammar.ts`, checked by `web/tests/grammar_golden.json`).
+
+## Hero pictures
+
+Each hero (`m`, `f`) has four full pictures: bare, `_sword`, `_armour`, `_armour_sword`; the game shows the one
+that matches the gear worn. Armour and weapon pictures (`items/`) are only used for inventory icons.
+Import with `python3 tools/import_art.py <folder>`.

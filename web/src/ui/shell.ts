@@ -2,8 +2,9 @@ import { h, clear } from "./h";
 import type { App } from "../state";
 
 export type Tab = "study" | "review" | "dungeon" | "search" | "more";
-export type ReviewMode = "typed" | "cloze" | "sentences";
-/** The Review tab hosts three practice modes; each mode panel asks the host to switch. */
+export type ReviewMode = "typed" | "cloze" | "sentences" | "grammar";
+export const REVIEW_TABS: [ReviewMode, string][] = [["typed", "Type"], ["cloze", "Blank"], ["sentences", "Sentences"], ["grammar", "Grammar"]];
+/** The Review tab hosts four practice modes; each mode panel asks the host to switch. */
 export interface ReviewHost { mode(): ReviewMode; setMode(m: ReviewMode): void; }
 
 export interface Shell {

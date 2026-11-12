@@ -77,6 +77,7 @@ export class App {
     if (!this.gameInstance) {
       this.gameInstance = new GameManager(this.deck, this.examples, this.dungeonRepo, Math.random);
       if (this.settings.user.trim()) this.gameInstance.player.name = this.settings.user.trim();   // the hero has your name
+      this.gameInstance.language = languageInfo(this.deckId).name;
     }
     return this.gameInstance;
   }

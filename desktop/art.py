@@ -25,6 +25,7 @@ def art_file(kind: str, key: str) -> Path | None:
 
 def background_file(key: str) -> Path | None:
     """The scenery behind a dungeon's map and fights (assets/art/backgrounds/<dungeon>.jpg)."""
+    key = {"daily": "library"}.get(key, key)           # the daily challenge plays among the shelves
     path = art_dir() / "backgrounds" / f"{key}.jpg"
     return path if path.is_file() else None
 

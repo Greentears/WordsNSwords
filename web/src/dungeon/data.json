@@ -1657,6 +1657,60 @@
    ]
   ]
  },
+ "daily": {
+  "min_level": 3,
+  "tier_bonus": 2,
+  "max_tier": 80,
+  "streak_step": 0.1,
+  "streak_max": 0.5,
+  "twists": [
+   [
+    "glass",
+    "Glass cannons",
+    "Monsters have 30% less HP but hit 35% harder."
+   ],
+   [
+    "iron",
+    "Iron hides",
+    "Every monster is armored: your hits do 2 less."
+   ],
+   [
+    "fury",
+    "Fury",
+    "Every monster enrages below half HP."
+   ],
+   [
+    "mirror",
+    "Mirror day",
+    "Monsters often ask for the foreign word."
+   ],
+   [
+    "sentences",
+    "Sentence day",
+    "Monsters often speak in sentences: fill in the blank."
+   ],
+   [
+    "feast",
+    "Feast day",
+    "Rewards are 50% bigger. The monsters are the usual ones."
+   ]
+  ],
+  "room_names": [
+   "Torn Archive",
+   "Whispering Stacks",
+   "Ink-stained Hall",
+   "Dusty Reading Room",
+   "Forgotten Annex",
+   "Candlelit Stair",
+   "Cracked Lectern",
+   "Paper Maze"
+  ],
+  "boss_names": [
+   "The Daily Guardian",
+   "The Day's Warden",
+   "The Keeper of Today"
+  ]
+ },
  "dungeons": [
   {
    "key": "cellar",
@@ -1756,7 +1810,7 @@
   {
    "key": "forest",
    "name": "The Whispering Forest",
-   "description": "Bats, wolves and a witch who hates waiting. Monsters here may ask for the Polish word.",
+   "description": "Bats, wolves and a witch who hates waiting. Monsters here may ask for the word in the language you are learning.",
    "rooms": [
     {
      "kind": "monster",

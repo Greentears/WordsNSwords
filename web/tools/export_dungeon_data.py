@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parent.parent
 PY = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT.parent / "desktop"
 sys.path.insert(0, str(PY))
 
-from dungeon import config, dungeons, items, tower  # noqa: E402
+from dungeon import config, daily, dungeons, items, tower  # noqa: E402
 
 
 def room(r):
@@ -38,6 +38,12 @@ def build():
             "ability_rotation": list(tower.ABILITY_ROTATION),
             "cloze_from_floor": tower.CLOZE_FROM_FLOOR, "enrage_from_floor": tower.ENRAGE_FROM_FLOOR,
             "loot": list(items.TOWER_LOOT), "bundles": [list(b) for b in items.TOWER_BUNDLES],
+        },
+        "daily": {
+            "min_level": daily.MIN_LEVEL, "tier_bonus": daily.TIER_BONUS, "max_tier": daily.MAX_TIER,
+            "streak_step": daily.STREAK_STEP, "streak_max": daily.STREAK_MAX,
+            "twists": [list(t) for t in daily.TWISTS], "room_names": list(daily.ROOM_NAMES),
+            "boss_names": list(daily.BOSS_NAMES),
         },
         "dungeons": [{
             "key": d.key, "name": d.name, "description": d.description, "rooms": [room(r) for r in d.rooms],

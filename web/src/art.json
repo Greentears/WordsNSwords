@@ -36,7 +36,10 @@
  ],
  "items": [
   "big_potion",
+  "chainmail",
   "count_rune",
+  "dragon_fang",
+  "dragon_scale",
   "fire_bomb",
   "golden_idol",
   "iron_sword",
@@ -48,11 +51,15 @@
   "oracle_eye",
   "passage_scroll",
   "phoenix_feather",
+  "plate_armor",
+  "runed_blade",
   "sages_ring",
   "small_potion",
+  "steel_blade",
   "time_amulet",
   "ward_scroll",
-  "wisdom_tome"
+  "wisdom_tome",
+  "wooden_sword"
  ],
  "heroes": [
   "f",

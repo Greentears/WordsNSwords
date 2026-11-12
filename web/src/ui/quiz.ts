@@ -6,7 +6,7 @@ import { BLANK } from "../core/cloze";
 import { MIX_WEIGHTS } from "../core/deck";
 import type { Shell } from "./shell";
 import { languageInfo } from "../state";
-import { seg, toggleRow, type ReviewHost, type ReviewMode } from "./shell";
+import { REVIEW_TABS, seg, toggleRow, type ReviewHost, type ReviewMode } from "./shell";
 
 
 /** Row of the language's special letters above the keyboard; keeps the keyboard open and inserts at the caret. */
@@ -65,7 +65,7 @@ export function quizScreen(shell: Shell, host: ReviewHost): HTMLElement {
 
     body.append(
       h("header", { class: "top" }, h("h1", null, "Review")),
-      seg<ReviewMode>([["typed", "Type"], ["cloze", "Blank"], ["sentences", "Sentences"]], opts.kind, (v) => { if (v === "sentences") host.setMode(v); else { opts.kind = v; setup(); } }),
+      seg<ReviewMode>(REVIEW_TABS, opts.kind, (v) => { if (v === "sentences" || v === "grammar") host.setMode(v); else { opts.kind = v; setup(); } }),
     );
     if (opts.kind === "cloze") body.append(h("p", { class: "muted" }, `A ${languageInfo(app.deckId).name} sentence with one word missing. The meaning is shown next to the blank; type the word in the right form.`));
 

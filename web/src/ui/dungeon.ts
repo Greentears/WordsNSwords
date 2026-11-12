@@ -1,7 +1,7 @@
 // The Vocabulary Dungeon tab: map, fight, result messages, shop and gear.
 // All rules live in src/dungeon (a port of the desktop game); this file is only the touch interface.
 import {
-  ACTIVE, ARMOR, CHARM, COMPANION, DEFEAT, DUNGEONS, GameError, ITEMS, SELL_FRACTION, SPRITE_KEYS, VICTORY, WEAPON,
+  ACTIVE, ARMOR, CHARM, COMPANION, DEFEAT, GameError, ITEMS, SELL_FRACTION, SPRITE_KEYS, VICTORY, WEAPON,
   abilities, dungeonEndless, isEquipment, isFight, outcomeMessages, spritePixels, SIZE,
   type AnswerResult, type DungeonStatus, type Item, type Question, type RoomOutcome,
 } from "../dungeon";
@@ -95,9 +95,12 @@ export function dungeonScreen(shell: Shell) {
     const key = view === "map" ? mapKey : gm().dungeon?.key;      // on the map: the dungeon whose page you are looking at
     const o = view === "message" ? message?.outcome : null;     // a rest or treasure room has its own picture
     const scene = o && (o.kind === "treasure" || o.kind === "rest") ? sceneKey(o.kind, key) : null;
-    const pic = scene ?? key;
+    const pic = scene ?? (key === "daily" ? "library" : key);      // the daily challenge plays among the shelves
     const on = !!pic && (view === "map" || view === "fight" || view === "message") && hasArt("backgrounds", pic);
-    root.style.background = on ? `linear-gradient(rgba(8,6,14,.68), rgba(8,6,14,.68)), url(${artUrl("backgrounds", pic!)}) center / cover fixed` : "";
+    const shade = scene ? "linear-gradient(rgba(8,6,14,.8), rgba(8,6,14,.06) 55%)"      // rest / treasure: bright below the text
+      : "linear-gradient(rgba(8,6,14,.68), rgba(8,6,14,.68))";
+    const fit = "center / cover fixed";
+    root.style.background = on ? `${shade}, url(${artUrl("backgrounds", pic!)}) ${fit}` : "";
   }
 
   function render() {
@@ -150,12 +153,12 @@ export function dungeonScreen(shell: Shell) {
     if (!selected || !list.some((d) => d.key === selected)) selected = defaultKey(list);
     const cur = list.find((d) => d.key === selected)!;
     applyBackdrop(selected);
-    const d = DUNGEONS[cur.key];
+    const d = g.defs[cur.key];
     clear(root);
 
     const chips = h("div", { class: "chips" }, list.map((s) =>
       h("button", { class: "chip" + (s.key === selected ? " on" : ""), type: "button", onclick: () => { selected = s.key; renderMap(); } },
-        s.locked ? "🔒" : s.completed ? "✔" : "", s.name, s.endless && s.best ? h("b", null, `${s.best}`) : null)));
+        s.locked ? "🔒" : s.kind === "daily" ? (s.completed ? "✔" : "📅") : s.completed ? "✔" : "", s.name, s.endless && s.best ? h("b", null, `${s.best}`) : null)));
 
     const rooms = h("div", { class: "rooms" });
     if (dungeonEndless(d)) {
@@ -171,6 +174,7 @@ export function dungeonScreen(shell: Shell) {
     }
 
     const label = dungeonEndless(d) ? (cur.room > 0 ? `Continue: floor ${cur.room + 1}` : "Climb the tower")
+      : cur.kind === "daily" ? (cur.completed ? "Done today" : cur.in_progress ? "Continue" : "Begin today's challenge")
       : cur.completed && cur.room >= d.rooms.length ? "Play again" : cur.in_progress ? "Continue" : "Begin";
     const go1 = h("button", { class: "btn primary wide sticky", type: "button", disabled: !!cur.unavailable || !g.has_words, onclick: () => begin(cur.key) }, label);
     const stats = g.stats;
@@ -185,11 +189,12 @@ export function dungeonScreen(shell: Shell) {
           h("button", { class: "btn", type: "button", onclick: () => go("shop") }, "🛒 Shop")),
         chips,
         h("div", { class: "panel" }, h("h2", null, cur.name), h("p", { class: "muted" }, cur.description),
+          cur.note ? h("p", { class: "streak" }, `🔥 ${cur.note}`) : null,
           cur.min_level > 1 ? h("p", { class: "muted" }, `Requires level ${cur.min_level}`) : null,
           cur.unavailable ? h("p", { class: "warn" }, cur.unavailable) : null,
           !g.has_words ? h("p", { class: "warn" }, "No cards to fight with yet. Add some words first.") : null),
         rooms, go1,
-        cur.in_progress && !dungeonEndless(d) ? h("button", { class: "btn ghost", type: "button", onclick: async () => { if (await shell.confirm("Restart this dungeon?", "You go back to room 1. Your level, coins and gear stay.", "Restart")) begin(cur.key, true); } }, "Restart from room 1") : null,
+        cur.in_progress && !dungeonEndless(d) && cur.kind !== "daily" ? h("button", { class: "btn ghost", type: "button", onclick: async () => { if (await shell.confirm("Restart this dungeon?", "You go back to room 1. Your level, coins and gear stay.", "Restart")) begin(cur.key, true); } }, "Restart from room 1") : null,
         h("p", { class: "muted small-note" }, `Missed words to review: ${g.missed_count} · Monsters defeated: ${stats.monsters_defeated ?? 0} · Right ${stats.correct_answers ?? 0} / wrong ${stats.wrong_answers ?? 0} · Dungeons cleared: ${stats.dungeons_completed ?? 0}`)));
   }
 
@@ -271,7 +276,7 @@ export function dungeonScreen(shell: Shell) {
         bar(p.hp, p.max_hp, "hp", `${p.hp}/${p.max_hp}`)),
       h("div", { class: "vs" }, "VS"),
       h("div", { class: "side" }, monsterSprite(spec.key, "monster" + (fs.flash === "m" ? " flash" : "")), bar(b.monster.hp, b.monster.max_hp, "mhp", `${b.monster.name} ${b.monster.hp}/${b.monster.max_hp}`)));
-    const abil = abilities(spec);
+    const abil = abilities(spec, languageInfo(app.deckId).name);
 
     const items = g.usable_items();
     const itemBar = items.length === 0 ? null : h("div", { class: "itembar" },
@@ -342,7 +347,7 @@ export function dungeonScreen(shell: Shell) {
       btns.append(h("button", { class: "btn wide" + (next ? "" : " primary"), type: "button", onclick: () => { g.leave(); go("map"); } }, "Back to the map"),
         h("button", { class: "btn wide ghost", type: "button", onclick: () => go("shop") }, "Visit the shop"));
     }
-    root.append(body, h("div", { class: "answerbar" }, btns));
+    root.append(body, h("div", { class: "answerbar" + (m.outcome && (m.outcome.kind === "rest" || m.outcome.kind === "treasure") ? " over" : "") }, btns));
   }
 
   // ------------------------------------------------------------------ shop
@@ -471,7 +476,8 @@ export function dungeonScreen(shell: Shell) {
     root.append(h("div", { class: "scroll-body stack" },
       h("header", { class: "top row-top" }, h("button", { class: "btn small", type: "button", onclick: () => go("map") }, "‹ Map"), h("h1", null, "Gear"), h("span", { class: "coins" }, `🪙 ${p.coins}`)),
       h("div", { class: "doll" + (hasArt("ui", "panel") ? " framed" : "") }, slot("weapon"), h("div", { class: "doll-mid" }, slot("companion"), slot("armor")), slot("charm"),
-        h("div", { class: "doll-hero" }, heroImg("hero-big"))),
+        h("div", { class: "doll-hero" }, heroImg("hero-big"),
+          inv.equipped.companion ? h("span", { class: "doll-pet" }, itemIcon(ITEMS[inv.equipped.companion])) : null)),
       h("div", { class: "panel" }, h("b", null, `${p.name} · Level ${p.level}`),
         h("p", { class: "muted" }, `HP ${p.max_hp} · Attack ${p.attack_power}`), h("p", { class: "muted" }, bonus.length ? bonus.join(" · ") : "No equipment bonuses yet.")),
       h("h2", null, "Belt"), bag.length ? h("div", { class: "belt" }, bag.map(([it, n]) =>

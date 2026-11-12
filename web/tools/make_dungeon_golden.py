@@ -14,10 +14,11 @@ PY = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT.parent / "desktop"
 sys.path.insert(0, str(PY))
 
 import flashcards as fc  # noqa: E402
-from dungeon import answers, config, items, tower  # noqa: E402
+from dungeon import answers, config, daily, items, tower  # noqa: E402
 from dungeon.battle import ACTIVE, DEFEAT, VICTORY  # noqa: E402
 from dungeon.manager import GameManager  # noqa: E402
 
+TODAY = "2026-01-15"      # the date every scripted game "runs" on (the daily challenge depends on it)
 FIX = ROOT.parent / "tests" / "fixtures" / "pl-en"
 WORDS = FIX / "words.json"
 EXAMPLES = FIX / "examples.json"
@@ -123,6 +124,25 @@ def tower_golden():
 
 
 # ---------------------------------------------------------------------------
+# 2b. daily challenge
+# ---------------------------------------------------------------------------
+def daily_golden():
+    builds = []
+    for day in ("2026-01-15", "2026-02-28", "2026-03-01", "2026-11-11", "2026-11-12", "2027-07-04", "2028-02-29"):
+        for tier in (2, 5, 13, 22, 47, 80):
+            d = daily.build(day, tier)
+            builds.append({"day": day, "tier": tier, "twist": list(daily.twist_for(day)),
+                           "dungeon": {"name": d.name, "description": d.description, "kind": d.kind,
+                                       "min_level": d.min_level, "complete_xp": d.complete_xp,
+                                       "complete_coins": d.complete_coins, "reward_scale": d.reward_scale,
+                                       "rooms": jsonable(d.rooms)}})
+    rng = [daily.Rng(daily.hash32(t)).next() for t in ("x", "rooms:2026-11-11", "twist:2026-11-11", "")]
+    return {"builds": builds, "hashes": {t: daily.hash32(t) for t in ("x", "rooms:2026-11-11", "")}, "rng": rng,
+            "streak": [daily.streak_bonus(n) for n in range(0, 12)], "tiers": [daily.tier_for(n) for n in range(1, 90)],
+            "yesterday": {d: daily.yesterday(d) for d in ("2026-03-01", "2026-01-01", "2028-03-01")}}
+
+
+# ---------------------------------------------------------------------------
 # 3. playthroughs
 # ---------------------------------------------------------------------------
 class Runner:
@@ -138,7 +158,7 @@ class Runner:
         for w, lv in zip(self.deck.words, self.levels):
             w.level = lv
         self.rng = RecRandom(seed)
-        self.m = GameManager(self.deck, self.tmp / "dungeon_progress.json", rng=self.rng)
+        self.m = GameManager(self.deck, self.tmp / "dungeon_progress.json", rng=self.rng, today=lambda: TODAY)
         self.steps = []
         self.init = {"snap": self.snap_mini(), "full": self.snap_full(), "draws": len(self.rng.log)}
 
@@ -475,7 +495,7 @@ def scenarios():
 
 
 if __name__ == "__main__":
-    golden = {"answers": answers_golden(), "tower": tower_golden(), "scenarios": scenarios()}
+    golden = {"answers": answers_golden(), "tower": tower_golden(), "daily": daily_golden(), "scenarios": scenarios()}
     out = ROOT / "tests" / "dungeon_golden.json"
     out.write_text(json.dumps(golden, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     size = out.stat().st_size / 1e6

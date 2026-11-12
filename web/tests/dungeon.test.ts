@@ -6,7 +6,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { parseWords } from "../src/core/deck";
 import { loadExamples } from "../src/core/tables";
-import { GameManager, MemoryRepository, GameError, MONSTERS, abilities, answers, tower, xpToNext } from "../src/dungeon";
+import { ACTIVE, GameManager, MemoryRepository, GameError, MONSTERS, abilities, answers, daily, outcomeMessages, tower, xpToNext } from "../src/dungeon";
 
 const read = (p: string) => JSON.parse(readFileSync(new URL(p, import.meta.url), "utf8"));
 const golden = read("./dungeon_golden.json");
@@ -35,6 +35,22 @@ test("tower floors, monster abilities and the XP table agree with Python", () =>
   }
   for (const m of golden.tower.monsters) assert.deepEqual(abilities(MONSTERS[m.key]), m.abilities, m.key);
   golden.tower.xp_table.forEach((x: number, n: number) => assert.equal(xpToNext(n), x, `xp_to_next(${n})`));
+});
+
+test("the daily challenge agrees with Python: random numbers, rooms, twists, streaks", () => {
+  const g = golden.daily;
+  for (const [text, h] of Object.entries(g.hashes)) assert.equal(daily.hash32(text), h, `hash32(${text})`);
+  ["x", "rooms:2026-11-11", "twist:2026-11-11", ""].forEach((t, i) => assert.equal(new daily.DailyRng(daily.hash32(t)).next(), g.rng[i], `rng ${t}`));
+  g.streak.forEach((x: number, n: number) => assert.equal(daily.streakBonus(n), x, `streak ${n}`));
+  g.tiers.forEach((x: number, i: number) => assert.equal(daily.tierFor(i + 1), x, `tier for level ${i + 1}`));
+  for (const [day, before] of Object.entries(g.yesterday)) assert.equal(daily.yesterday(day), before);
+  for (const b of g.builds) {
+    const d = daily.buildDaily(b.day, b.tier);
+    assert.deepEqual(daily.twistFor(b.day), b.twist);
+    const { rooms, ...rest } = b.dungeon;
+    assert.deepEqual(plain(d.rooms), rooms, `${b.day} tier ${b.tier} rooms`);
+    for (const k of Object.keys(rest)) assert.deepEqual((d as unknown as Record<string, unknown>)[k], rest[k], `${b.day} tier ${b.tier} ${k}`);
+  }
 });
 
 function snapMini(m: GameManager) {
@@ -79,7 +95,7 @@ for (const sc of golden.scenarios) {
     let used = 0;
     const rng = () => { assert.ok(used < sc.rng.length, "the game drew more random numbers than Python did"); return sc.rng[used++]; };
     const repo = new MemoryRepository(sc.initial_state ? JSON.parse(JSON.stringify(sc.initial_state)) : null);
-    const m = new GameManager({ words }, examples, repo, rng);
+    const m = new GameManager({ words }, examples, repo, rng, () => "2026-01-15");
     assert.deepEqual(snapMini(m), sc.init.snap, "initial state");
     assert.deepEqual(plain(snapFull(m, repo)), { ...sc.init.full, state: plain(sc.init.full.state) }, "initial full state");
     assert.equal(used, sc.init.draws);
@@ -135,4 +151,57 @@ test("bosses ask Learning and Almost there words, never new ones, and fall back 
   m.enter_room();
   assert.ok(m.battle!.monster.spec.boss);
   assert.ok(m.next_question() !== null);
+});
+
+// ---- Daily challenge (same rules as desktop/tests/test_daily.py)
+function dailyGame(day: { v: string }, repo = new MemoryRepository({ player: { level: 12, max_hp: 2000, hp: 2000, coins: 0 } })) {
+  const words = parseWords(wordsJson);
+  return { repo, m: new GameManager({ words }, examples, repo, Math.random, () => day.v) };
+}
+function playDaily(m: GameManager) {
+  m.select_dungeon("daily");
+  let last = null as ReturnType<GameManager["enter_room"]>;
+  while (m.current_room() !== null) {
+    last = m.enter_room();
+    if (m.battle) { while (m.battle.state === ACTIVE) m.answer(m.next_question()!.answer); last = m.outcome; }
+    m.player.hp = m.player.max_hp;
+  }
+  return last!;
+}
+const dailyStatus = (m: GameManager) => m.dungeons().find((s) => s.key === "daily")!;
+
+test("daily challenge: one run a day, then locked until tomorrow", () => {
+  const day = { v: "2026-11-11" };
+  const { m } = dailyGame(day);
+  const out = playDaily(m);
+  assert.ok(out.dungeon_completed);
+  assert.equal(dailyStatus(m).unavailable, "Done today. Come back tomorrow!");
+  assert.throws(() => m.select_dungeon("daily"), GameError);
+});
+
+test("daily challenge: a new day reopens it, streaks grow and a missed day breaks them", () => {
+  const day = { v: "2026-11-11" };
+  const { repo, m } = dailyGame(day);
+  assert.match(outcomeMessages(playDaily(m)).slice(-1)[0], /Daily streak: 1 day$/);
+  day.v = "2026-11-12";
+  const m2 = new GameManager({ words: parseWords(wordsJson) }, examples, repo, Math.random, () => day.v);
+  assert.equal(dailyStatus(m2).unavailable, null);
+  assert.match(outcomeMessages(playDaily(m2)).slice(-1)[0], /Daily streak: 2 days \(\+10% reward\)/);
+  assert.equal(m2.dailyStreak(), 2);
+  day.v = "2026-11-15";
+  const m3 = new GameManager({ words: parseWords(wordsJson) }, examples, repo, Math.random, () => day.v);
+  assert.equal(m3.dailyStreak(), 0);
+  assert.match(outcomeMessages(playDaily(m3)).slice(-1)[0], /Daily streak: 1 day$/);
+});
+
+test("daily challenge: needs level 3, the strength is fixed once the run starts", () => {
+  const day = { v: "2026-11-11" };
+  const low = dailyGame(day, new MemoryRepository({ player: { level: 1 } }));
+  assert.equal(dailyStatus(low.m).unavailable, "Requires level 3");
+  const { m } = dailyGame(day);
+  m.select_dungeon("daily"); m.enter_room();
+  while (m.battle!.state === ACTIVE) m.answer(m.next_question()!.answer);
+  const tier = m.progress.daily.tier;
+  m.player.level += 5; m.dungeons();
+  assert.equal(m.progress.daily.tier, tier);
 });

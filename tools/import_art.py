@@ -59,6 +59,10 @@ NAMES: dict[str, tuple[str, str]] = {
     "ward_scroll": ("items", "ward_scroll"),
     # equipment: one sword and one armour picture for now (more can be added by key)
     "sword": ("items", "iron_sword"), "armour": ("items", "leather_vest"),
+    "chainmail": ("items", "chainmail"), "plate_armour": ("items", "plate_armor"),
+    "dragon_scale_mail": ("items", "dragon_scale"), "wooden_sword": ("items", "wooden_sword"),
+    "iron_sword": ("items", "iron_sword"), "steel_blade": ("items", "steel_blade"),
+    "runed_blade": ("items", "runed_blade"), "dragon_fang": ("items", "dragon_fang"),
 }
 # the hero, by file name: (gender, look). Files are not resized individually: all looks of one
 # hero share one canvas, so he doesn't jump when he puts on a sword.

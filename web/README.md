@@ -1,4 +1,4 @@
-# Fiszki: Polish ↔ English flashcards (phone web app)
+# WordsNSwords: flashcards and dungeon (phone web app)
 
 Installable offline web app (PWA). Part of the WordsNSwords repository: the word lists come from `../users/<name>/<deck>/` (published next to the app and fetched by name), the tests use `../tests/fixtures/pl-en/`.
 Phase 1 = everything except the Vocabulary Dungeon.

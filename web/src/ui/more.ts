@@ -19,11 +19,11 @@ export function moreScreen(shell: Shell): HTMLElement {
   // ----------------------------------------------------------------- backup
   async function exportBackup() {
     const data = makeBackup(app.deck.words, { ...app.settings }, app.stats, new Date(), app.dungeonSave);
-    const name = `fiszki-backup-${new Date().toISOString().slice(0, 10)}.json`;
+    const name = `wordsnswords-backup-${new Date().toISOString().slice(0, 10)}.json`;
     const file = new File([JSON.stringify(data, null, 2)], name, { type: "application/json" });
     let done = false;
     try {
-      if (navigator.canShare?.({ files: [file] })) { await navigator.share({ files: [file], title: "Fiszki backup" }); done = true; }
+      if (navigator.canShare?.({ files: [file] })) { await navigator.share({ files: [file], title: "WordsNSwords backup" }); done = true; }
     } catch (e) { if ((e as Error).name === "AbortError") return; }
     if (!done) {
       const a = h("a", { href: URL.createObjectURL(file), download: name });
@@ -140,7 +140,7 @@ export function moreScreen(shell: Shell): HTMLElement {
         h("div", { class: "row" }, h("button", { class: "btn", style: { flex: "1" }, onclick: async () => { if (await shell.confirm("Start the dungeon over?", "Your adventurer, gear, coins and dungeon progress are deleted. Your cards are not touched.", "Start over", true)) { app.resetGame(); shell.toast("Dungeon reset."); } } }, "Reset dungeon progress")),
         h("div", { class: "row" }, h("button", { class: "btn danger", style: { flex: "1" }, onclick: async () => { if (await shell.confirm("Erase all data?", "Cards, progress, settings and statistics on this device are deleted and the original word list is loaded again. Export a backup first.", "Erase", true)) { await app.pending; await kvClearAll(); location.reload(); } } }, "Erase all data"))),
       h("p", { class: "section-title" }, "About"),
-      h("p", { class: "muted", style: { fontSize: "13px", padding: "0 4px 24px" } }, `Fiszki · ${d.overallTotal} cards · works offline. Add it to your home screen: Android Chrome → menu → Install app; iPhone Safari → Share → Add to Home Screen.`));
+      h("p", { class: "muted", style: { fontSize: "13px", padding: "0 4px 24px" } }, `WordsNSwords · ${d.overallTotal} cards · works offline. Add it to your home screen: Android Chrome → menu → Install app; iPhone Safari → Share → Add to Home Screen.`));
   }
 
   const fileIn = h("input", { type: "file", accept: ".json,application/json", hidden: true }) as HTMLInputElement;

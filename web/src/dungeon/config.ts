@@ -33,9 +33,9 @@ export const xpToNext = (level: number): number => 150 + 100 * (Math.max(1, leve
 export const MONSTERS: Record<string, MonsterSpec> = Object.fromEntries((data.monsters as MonsterSpec[]).map((m) => [m.key, m]));
 
 /** Short texts under a monster describing its abilities. */
-export function abilities(s: MonsterSpec): string[] {
+export function abilities(s: MonsterSpec, language = "Polish"): string[] {
   const out: string[] = [];
-  if (s.reverse_chance) out.push(s.reverse_chance < 0.5 ? "Sometimes asks for the Polish word" : "Often asks for the Polish word");
+  if (s.reverse_chance) out.push(s.reverse_chance < 0.5 ? `Sometimes asks for the ${language} word` : `Often asks for the ${language} word`);
   if (s.armor) out.push(`Armored: your hits do ${s.armor} less`);
   if (s.regen) out.push(`Regenerates ${s.regen} HP when you err`);
   if (s.enrage) out.push("Enrages below half HP");

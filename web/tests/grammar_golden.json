@@ -1,0 +1,9561 @@
+{
+ "pl": {
+  "verbs": [
+   {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "ja ___",
+    "label": "bać się · present",
+    "hint": "",
+    "answers": [
+     "boję się",
+     "boję"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "ty ___",
+    "label": "bać się · present",
+    "hint": "",
+    "answers": [
+     "boisz się",
+     "boisz"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "on / ona / ono ___",
+    "label": "bać się · present",
+    "hint": "",
+    "answers": [
+     "boi się",
+     "boi"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "my ___",
+    "label": "bać się · present",
+    "hint": "",
+    "answers": [
+     "boimy się",
+     "boimy"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "wy ___",
+    "label": "bać się · present",
+    "hint": "",
+    "answers": [
+     "boicie się",
+     "boicie"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "oni / one ___",
+    "label": "bać się · present",
+    "hint": "",
+    "answers": [
+     "boją się",
+     "boją"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "on ___",
+    "label": "bać się · past tense",
+    "hint": "",
+    "answers": [
+     "bał się",
+     "bał"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "ona ___",
+    "label": "bać się · past tense",
+    "hint": "",
+    "answers": [
+     "bała się",
+     "bała"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "ono ___",
+    "label": "bać się · past tense",
+    "hint": "",
+    "answers": [
+     "bało się",
+     "bało"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "oni ___",
+    "label": "bać się · past tense",
+    "hint": "",
+    "answers": [
+     "bali się",
+     "bali"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "one ___",
+    "label": "bać się · past tense",
+    "hint": "",
+    "answers": [
+     "bały się",
+     "bały"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "ty ___",
+    "label": "bać się · imperative",
+    "hint": "",
+    "answers": [
+     "bój się",
+     "bój"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "my ___",
+    "label": "bać się · imperative",
+    "hint": "",
+    "answers": [
+     "bójmy się",
+     "bójmy"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "wy ___",
+    "label": "bać się · imperative",
+    "hint": "",
+    "answers": [
+     "bójcie się",
+     "bójcie"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "denerwować się",
+    "stem": "ja ___",
+    "label": "denerwować się · present",
+    "hint": "",
+    "answers": [
+     "denerwuję się",
+     "denerwuję"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "denerwować się",
+    "stem": "ty ___",
+    "label": "denerwować się · present",
+    "hint": "",
+    "answers": [
+     "denerwujesz się",
+     "denerwujesz"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "denerwować się",
+    "stem": "on / ona / ono ___",
+    "label": "denerwować się · present",
+    "hint": "",
+    "answers": [
+     "denerwuje się",
+     "denerwuje"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "denerwować się",
+    "stem": "my ___",
+    "label": "denerwować się · present",
+    "hint": "",
+    "answers": [
+     "denerwujemy się",
+     "denerwujemy"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "denerwować się",
+    "stem": "wy ___",
+    "label": "denerwować się · present",
+    "hint": "",
+    "answers": [
+     "denerwujecie się",
+     "denerwujecie"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "denerwować się",
+    "stem": "oni / one ___",
+    "label": "denerwować się · present",
+    "hint": "",
+    "answers": [
+     "denerwują się",
+     "denerwują"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "denerwować się",
+    "stem": "on ___",
+    "label": "denerwować się · past tense",
+    "hint": "",
+    "answers": [
+     "denerwował się",
+     "denerwował"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "denerwować się",
+    "stem": "ona ___",
+    "label": "denerwować się · past tense",
+    "hint": "",
+    "answers": [
+     "denerwowała się",
+     "denerwowała"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "denerwować się",
+    "stem": "ono ___",
+    "label": "denerwować się · past tense",
+    "hint": "",
+    "answers": [
+     "denerwowało się",
+     "denerwowało"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "denerwować się",
+    "stem": "oni ___",
+    "label": "denerwować się · past tense",
+    "hint": "",
+    "answers": [
+     "denerwowali się",
+     "denerwowali"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "denerwować się",
+    "stem": "one ___",
+    "label": "denerwować się · past tense",
+    "hint": "",
+    "answers": [
+     "denerwowały się",
+     "denerwowały"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "denerwować się",
+    "stem": "ty ___",
+    "label": "denerwować się · imperative",
+    "hint": "",
+    "answers": [
+     "denerwuj się",
+     "denerwuj"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "denerwować się",
+    "stem": "my ___",
+    "label": "denerwować się · imperative",
+    "hint": "",
+    "answers": [
+     "denerwujmy się",
+     "denerwujmy"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "denerwować się",
+    "stem": "wy ___",
+    "label": "denerwować się · imperative",
+    "hint": "",
+    "answers": [
+     "denerwujcie się",
+     "denerwujcie"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "gotować",
+    "stem": "ja ___",
+    "label": "gotować · present",
+    "hint": "",
+    "answers": [
+     "gotuję"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "gotować",
+    "stem": "ty ___",
+    "label": "gotować · present",
+    "hint": "",
+    "answers": [
+     "gotujesz"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "gotować",
+    "stem": "on / ona / ono ___",
+    "label": "gotować · present",
+    "hint": "",
+    "answers": [
+     "gotuje"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "gotować",
+    "stem": "my ___",
+    "label": "gotować · present",
+    "hint": "",
+    "answers": [
+     "gotujemy"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "gotować",
+    "stem": "wy ___",
+    "label": "gotować · present",
+    "hint": "",
+    "answers": [
+     "gotujecie"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "gotować",
+    "stem": "oni / one ___",
+    "label": "gotować · present",
+    "hint": "",
+    "answers": [
+     "gotują"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "gotować",
+    "stem": "on ___",
+    "label": "gotować · past tense",
+    "hint": "",
+    "answers": [
+     "gotował"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "gotować",
+    "stem": "ona ___",
+    "label": "gotować · past tense",
+    "hint": "",
+    "answers": [
+     "gotowała"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "gotować",
+    "stem": "ono ___",
+    "label": "gotować · past tense",
+    "hint": "",
+    "answers": [
+     "gotowało"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "gotować",
+    "stem": "oni ___",
+    "label": "gotować · past tense",
+    "hint": "",
+    "answers": [
+     "gotowali"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "gotować",
+    "stem": "one ___",
+    "label": "gotować · past tense",
+    "hint": "",
+    "answers": [
+     "gotowały"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "gotować",
+    "stem": "ty ___",
+    "label": "gotować · imperative",
+    "hint": "",
+    "answers": [
+     "gotuj"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "gotować",
+    "stem": "my ___",
+    "label": "gotować · imperative",
+    "hint": "",
+    "answers": [
+     "gotujmy"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "gotować",
+    "stem": "wy ___",
+    "label": "gotować · imperative",
+    "hint": "",
+    "answers": [
+     "gotujcie"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "robić",
+    "stem": "ja ___",
+    "label": "robić · present",
+    "hint": "",
+    "answers": [
+     "robię"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "robić",
+    "stem": "ty ___",
+    "label": "robić · present",
+    "hint": "",
+    "answers": [
+     "robisz"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "robić",
+    "stem": "on / ona / ono ___",
+    "label": "robić · present",
+    "hint": "",
+    "answers": [
+     "robi"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "robić",
+    "stem": "my ___",
+    "label": "robić · present",
+    "hint": "",
+    "answers": [
+     "robimy"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "robić",
+    "stem": "wy ___",
+    "label": "robić · present",
+    "hint": "",
+    "answers": [
+     "robicie"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "robić",
+    "stem": "oni / one ___",
+    "label": "robić · present",
+    "hint": "",
+    "answers": [
+     "robią"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "robić",
+    "stem": "on ___",
+    "label": "robić · past tense",
+    "hint": "",
+    "answers": [
+     "robił"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "robić",
+    "stem": "ona ___",
+    "label": "robić · past tense",
+    "hint": "",
+    "answers": [
+     "robiła"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "robić",
+    "stem": "ono ___",
+    "label": "robić · past tense",
+    "hint": "",
+    "answers": [
+     "robiło"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "robić",
+    "stem": "oni ___",
+    "label": "robić · past tense",
+    "hint": "",
+    "answers": [
+     "robili"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "robić",
+    "stem": "one ___",
+    "label": "robić · past tense",
+    "hint": "",
+    "answers": [
+     "robiły"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "robić",
+    "stem": "ty ___",
+    "label": "robić · imperative",
+    "hint": "",
+    "answers": [
+     "rób"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "robić",
+    "stem": "my ___",
+    "label": "robić · imperative",
+    "hint": "",
+    "answers": [
+     "róbmy"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "robić",
+    "stem": "wy ___",
+    "label": "robić · imperative",
+    "hint": "",
+    "answers": [
+     "róbcie"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "pachnieć",
+    "stem": "ja ___",
+    "label": "pachnieć · present",
+    "hint": "",
+    "answers": [
+     "pachnę"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "pachnieć",
+    "stem": "ty ___",
+    "label": "pachnieć · present",
+    "hint": "",
+    "answers": [
+     "pachniesz"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "pachnieć",
+    "stem": "on / ona / ono ___",
+    "label": "pachnieć · present",
+    "hint": "",
+    "answers": [
+     "pachnie"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "pachnieć",
+    "stem": "my ___",
+    "label": "pachnieć · present",
+    "hint": "",
+    "answers": [
+     "pachniemy"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "pachnieć",
+    "stem": "wy ___",
+    "label": "pachnieć · present",
+    "hint": "",
+    "answers": [
+     "pachniecie"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "pachnieć",
+    "stem": "oni / one ___",
+    "label": "pachnieć · present",
+    "hint": "",
+    "answers": [
+     "pachną"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "pachnieć",
+    "stem": "on ___",
+    "label": "pachnieć · past tense",
+    "hint": "",
+    "answers": [
+     "pachniał"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "pachnieć",
+    "stem": "ona ___",
+    "label": "pachnieć · past tense",
+    "hint": "",
+    "answers": [
+     "pachniała"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "pachnieć",
+    "stem": "ono ___",
+    "label": "pachnieć · past tense",
+    "hint": "",
+    "answers": [
+     "pachniało"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "pachnieć",
+    "stem": "oni ___",
+    "label": "pachnieć · past tense",
+    "hint": "",
+    "answers": [
+     "pachnieli"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "pachnieć",
+    "stem": "one ___",
+    "label": "pachnieć · past tense",
+    "hint": "",
+    "answers": [
+     "pachniały"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "pachnieć",
+    "stem": "ty ___",
+    "label": "pachnieć · imperative",
+    "hint": "",
+    "answers": [
+     "pachnij"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "pachnieć",
+    "stem": "my ___",
+    "label": "pachnieć · imperative",
+    "hint": "",
+    "answers": [
+     "pachnijmy"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "pachnieć",
+    "stem": "wy ___",
+    "label": "pachnieć · imperative",
+    "hint": "",
+    "answers": [
+     "pachnijcie"
+    ]
+   }
+  ],
+  "nouns": [
+   {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "genitive singular",
+    "hint": "kogo? czego?",
+    "answers": [
+     "biletomatu"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "dative singular",
+    "hint": "komu? czemu?",
+    "answers": [
+     "biletomatowi"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "accusative singular",
+    "hint": "kogo? co?",
+    "answers": [
+     "biletomat"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "instrumental singular",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "biletomatem"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "locative singular",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "biletomacie"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "vocative singular",
+    "hint": "o!",
+    "answers": [
+     "biletomacie"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "nominative plural",
+    "hint": "kto? co?",
+    "answers": [
+     "biletomaty"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "genitive plural",
+    "hint": "kogo? czego?",
+    "answers": [
+     "biletomatów"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "dative plural",
+    "hint": "komu? czemu?",
+    "answers": [
+     "biletomatom"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "accusative plural",
+    "hint": "kogo? co?",
+    "answers": [
+     "biletomaty"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "instrumental plural",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "biletomatami"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "locative plural",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "biletomatach"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "vocative plural",
+    "hint": "o!",
+    "answers": [
+     "biletomaty"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "chodnik",
+    "stem": "chodnik → ___",
+    "label": "genitive singular",
+    "hint": "kogo? czego?",
+    "answers": [
+     "chodnika"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "chodnik",
+    "stem": "chodnik → ___",
+    "label": "dative singular",
+    "hint": "komu? czemu?",
+    "answers": [
+     "chodnikowi"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "chodnik",
+    "stem": "chodnik → ___",
+    "label": "accusative singular",
+    "hint": "kogo? co?",
+    "answers": [
+     "chodnik"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "chodnik",
+    "stem": "chodnik → ___",
+    "label": "instrumental singular",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "chodnikiem"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "chodnik",
+    "stem": "chodnik → ___",
+    "label": "locative singular",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "chodniku"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "chodnik",
+    "stem": "chodnik → ___",
+    "label": "vocative singular",
+    "hint": "o!",
+    "answers": [
+     "chodniku"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "chodnik",
+    "stem": "chodnik → ___",
+    "label": "nominative plural",
+    "hint": "kto? co?",
+    "answers": [
+     "chodniki"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "chodnik",
+    "stem": "chodnik → ___",
+    "label": "genitive plural",
+    "hint": "kogo? czego?",
+    "answers": [
+     "chodników"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "chodnik",
+    "stem": "chodnik → ___",
+    "label": "dative plural",
+    "hint": "komu? czemu?",
+    "answers": [
+     "chodnikom"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "chodnik",
+    "stem": "chodnik → ___",
+    "label": "accusative plural",
+    "hint": "kogo? co?",
+    "answers": [
+     "chodniki"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "chodnik",
+    "stem": "chodnik → ___",
+    "label": "instrumental plural",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "chodnikami"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "chodnik",
+    "stem": "chodnik → ___",
+    "label": "locative plural",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "chodnikach"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "chodnik",
+    "stem": "chodnik → ___",
+    "label": "vocative plural",
+    "hint": "o!",
+    "answers": [
+     "chodniki"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "deska do krojenia",
+    "stem": "deska do krojenia → ___",
+    "label": "genitive singular",
+    "hint": "kogo? czego?",
+    "answers": [
+     "deski do krojenia"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "deska do krojenia",
+    "stem": "deska do krojenia → ___",
+    "label": "dative singular",
+    "hint": "komu? czemu?",
+    "answers": [
+     "desce do krojenia"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "deska do krojenia",
+    "stem": "deska do krojenia → ___",
+    "label": "accusative singular",
+    "hint": "kogo? co?",
+    "answers": [
+     "deskę do krojenia"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "deska do krojenia",
+    "stem": "deska do krojenia → ___",
+    "label": "instrumental singular",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "deską do krojenia"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "deska do krojenia",
+    "stem": "deska do krojenia → ___",
+    "label": "locative singular",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "desce do krojenia"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "deska do krojenia",
+    "stem": "deska do krojenia → ___",
+    "label": "vocative singular",
+    "hint": "o!",
+    "answers": [
+     "deska do krojenia"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "deska do krojenia",
+    "stem": "deska do krojenia → ___",
+    "label": "nominative plural",
+    "hint": "kto? co?",
+    "answers": [
+     "deski do krojenia"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "deska do krojenia",
+    "stem": "deska do krojenia → ___",
+    "label": "genitive plural",
+    "hint": "kogo? czego?",
+    "answers": [
+     "desek do krojenia"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "deska do krojenia",
+    "stem": "deska do krojenia → ___",
+    "label": "dative plural",
+    "hint": "komu? czemu?",
+    "answers": [
+     "deskom do krojenia"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "deska do krojenia",
+    "stem": "deska do krojenia → ___",
+    "label": "accusative plural",
+    "hint": "kogo? co?",
+    "answers": [
+     "deski do krojenia"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "deska do krojenia",
+    "stem": "deska do krojenia → ___",
+    "label": "instrumental plural",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "deskami do krojenia"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "deska do krojenia",
+    "stem": "deska do krojenia → ___",
+    "label": "locative plural",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "deskach do krojenia"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "deska do krojenia",
+    "stem": "deska do krojenia → ___",
+    "label": "vocative plural",
+    "hint": "o!",
+    "answers": [
+     "deski do krojenia"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "kolejka",
+    "stem": "kolejka → ___",
+    "label": "genitive singular",
+    "hint": "kogo? czego?",
+    "answers": [
+     "kolejki"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "kolejka",
+    "stem": "kolejka → ___",
+    "label": "dative singular",
+    "hint": "komu? czemu?",
+    "answers": [
+     "kolejce"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "kolejka",
+    "stem": "kolejka → ___",
+    "label": "accusative singular",
+    "hint": "kogo? co?",
+    "answers": [
+     "kolejkę"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "kolejka",
+    "stem": "kolejka → ___",
+    "label": "instrumental singular",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "kolejką"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "kolejka",
+    "stem": "kolejka → ___",
+    "label": "locative singular",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "kolejce"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "kolejka",
+    "stem": "kolejka → ___",
+    "label": "vocative singular",
+    "hint": "o!",
+    "answers": [
+     "kolejko"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "kolejka",
+    "stem": "kolejka → ___",
+    "label": "nominative plural",
+    "hint": "kto? co?",
+    "answers": [
+     "kolejki"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "kolejka",
+    "stem": "kolejka → ___",
+    "label": "genitive plural",
+    "hint": "kogo? czego?",
+    "answers": [
+     "kolejek"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "kolejka",
+    "stem": "kolejka → ___",
+    "label": "dative plural",
+    "hint": "komu? czemu?",
+    "answers": [
+     "kolejkom"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "kolejka",
+    "stem": "kolejka → ___",
+    "label": "accusative plural",
+    "hint": "kogo? co?",
+    "answers": [
+     "kolejki"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "kolejka",
+    "stem": "kolejka → ___",
+    "label": "instrumental plural",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "kolejkami"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "kolejka",
+    "stem": "kolejka → ___",
+    "label": "locative plural",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "kolejkach"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "kolejka",
+    "stem": "kolejka → ___",
+    "label": "vocative plural",
+    "hint": "o!",
+    "answers": [
+     "kolejki"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "podróż poślubna",
+    "stem": "podróż poślubna → ___",
+    "label": "genitive singular",
+    "hint": "kogo? czego?",
+    "answers": [
+     "podróży poślubnej"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "podróż poślubna",
+    "stem": "podróż poślubna → ___",
+    "label": "dative singular",
+    "hint": "komu? czemu?",
+    "answers": [
+     "podróży poślubnej"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "podróż poślubna",
+    "stem": "podróż poślubna → ___",
+    "label": "accusative singular",
+    "hint": "kogo? co?",
+    "answers": [
+     "podróż poślubną"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "podróż poślubna",
+    "stem": "podróż poślubna → ___",
+    "label": "instrumental singular",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "podróżą poślubną"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "podróż poślubna",
+    "stem": "podróż poślubna → ___",
+    "label": "locative singular",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "podróży poślubnej"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "podróż poślubna",
+    "stem": "podróż poślubna → ___",
+    "label": "vocative singular",
+    "hint": "o!",
+    "answers": [
+     "podróży poślubna"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "podróż poślubna",
+    "stem": "podróż poślubna → ___",
+    "label": "nominative plural",
+    "hint": "kto? co?",
+    "answers": [
+     "podróże poślubne"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "podróż poślubna",
+    "stem": "podróż poślubna → ___",
+    "label": "genitive plural",
+    "hint": "kogo? czego?",
+    "answers": [
+     "podróży poślubnych"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "podróż poślubna",
+    "stem": "podróż poślubna → ___",
+    "label": "dative plural",
+    "hint": "komu? czemu?",
+    "answers": [
+     "podróżom poślubnym"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "podróż poślubna",
+    "stem": "podróż poślubna → ___",
+    "label": "accusative plural",
+    "hint": "kogo? co?",
+    "answers": [
+     "podróże poślubne"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "podróż poślubna",
+    "stem": "podróż poślubna → ___",
+    "label": "instrumental plural",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "podróżami poślubnymi"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "podróż poślubna",
+    "stem": "podróż poślubna → ___",
+    "label": "locative plural",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "podróżach poślubnych"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "podróż poślubna",
+    "stem": "podróż poślubna → ___",
+    "label": "vocative plural",
+    "hint": "o!",
+    "answers": [
+     "podróże poślubne"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "reklamówka",
+    "stem": "reklamówka → ___",
+    "label": "genitive singular",
+    "hint": "kogo? czego?",
+    "answers": [
+     "reklamówki"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "reklamówka",
+    "stem": "reklamówka → ___",
+    "label": "dative singular",
+    "hint": "komu? czemu?",
+    "answers": [
+     "reklamówce"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "reklamówka",
+    "stem": "reklamówka → ___",
+    "label": "accusative singular",
+    "hint": "kogo? co?",
+    "answers": [
+     "reklamówkę"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "reklamówka",
+    "stem": "reklamówka → ___",
+    "label": "instrumental singular",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "reklamówką"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "reklamówka",
+    "stem": "reklamówka → ___",
+    "label": "locative singular",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "reklamówce"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "reklamówka",
+    "stem": "reklamówka → ___",
+    "label": "vocative singular",
+    "hint": "o!",
+    "answers": [
+     "reklamówko"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "reklamówka",
+    "stem": "reklamówka → ___",
+    "label": "nominative plural",
+    "hint": "kto? co?",
+    "answers": [
+     "reklamówki"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "reklamówka",
+    "stem": "reklamówka → ___",
+    "label": "genitive plural",
+    "hint": "kogo? czego?",
+    "answers": [
+     "reklamówek"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "reklamówka",
+    "stem": "reklamówka → ___",
+    "label": "dative plural",
+    "hint": "komu? czemu?",
+    "answers": [
+     "reklamówkom"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "reklamówka",
+    "stem": "reklamówka → ___",
+    "label": "accusative plural",
+    "hint": "kogo? co?",
+    "answers": [
+     "reklamówki"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "reklamówka",
+    "stem": "reklamówka → ___",
+    "label": "instrumental plural",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "reklamówkami"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "reklamówka",
+    "stem": "reklamówka → ___",
+    "label": "locative plural",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "reklamówkach"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "reklamówka",
+    "stem": "reklamówka → ___",
+    "label": "vocative plural",
+    "hint": "o!",
+    "answers": [
+     "reklamówki"
+    ]
+   }
+  ],
+  "adjectives": [
+   {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "masculine genitive",
+    "hint": "kogo? czego?",
+    "answers": [
+     "ostrego"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "masculine dative",
+    "hint": "komu? czemu?",
+    "answers": [
+     "ostremu"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "masculine accusative",
+    "hint": "kogo? co?",
+    "answers": [
+     "ostry",
+     "ostrego"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "masculine instrumental",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "ostrym"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "masculine locative",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "ostrym"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "feminine nominative",
+    "hint": "kto? co?",
+    "answers": [
+     "ostra"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "feminine genitive",
+    "hint": "kogo? czego?",
+    "answers": [
+     "ostrej"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "feminine dative",
+    "hint": "komu? czemu?",
+    "answers": [
+     "ostrej"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "feminine accusative",
+    "hint": "kogo? co?",
+    "answers": [
+     "ostrą"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "feminine instrumental",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "ostrą"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "feminine locative",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "ostrej"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "neuter nominative",
+    "hint": "kto? co?",
+    "answers": [
+     "ostre"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "neuter genitive",
+    "hint": "kogo? czego?",
+    "answers": [
+     "ostrego"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "neuter dative",
+    "hint": "komu? czemu?",
+    "answers": [
+     "ostremu"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "neuter accusative",
+    "hint": "kogo? co?",
+    "answers": [
+     "ostre"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "neuter instrumental",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "ostrym"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "neuter locative",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "ostrym"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "plural nominative",
+    "hint": "kto? co?",
+    "answers": [
+     "ostrzy",
+     "ostre"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "plural genitive",
+    "hint": "kogo? czego?",
+    "answers": [
+     "ostrych"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "plural dative",
+    "hint": "komu? czemu?",
+    "answers": [
+     "ostrym"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "plural accusative",
+    "hint": "kogo? co?",
+    "answers": [
+     "ostrych",
+     "ostre"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "plural instrumental",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "ostrymi"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "plural locative",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "ostrych"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "pikantny / pikantnie",
+    "stem": "pikantny → ___",
+    "label": "masculine genitive",
+    "hint": "kogo? czego?",
+    "answers": [
+     "pikantnego"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "pikantny / pikantnie",
+    "stem": "pikantny → ___",
+    "label": "masculine dative",
+    "hint": "komu? czemu?",
+    "answers": [
+     "pikantnemu"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "pikantny / pikantnie",
+    "stem": "pikantny → ___",
+    "label": "masculine accusative",
+    "hint": "kogo? co?",
+    "answers": [
+     "pikantny",
+     "pikantnego"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "pikantny / pikantnie",
+    "stem": "pikantny → ___",
+    "label": "masculine instrumental",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "pikantnym"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "pikantny / pikantnie",
+    "stem": "pikantny → ___",
+    "label": "masculine locative",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "pikantnym"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "pikantny / pikantnie",
+    "stem": "pikantny → ___",
+    "label": "feminine nominative",
+    "hint": "kto? co?",
+    "answers": [
+     "pikantna"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "pikantny / pikantnie",
+    "stem": "pikantny → ___",
+    "label": "feminine genitive",
+    "hint": "kogo? czego?",
+    "answers": [
+     "pikantnej"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "pikantny / pikantnie",
+    "stem": "pikantny → ___",
+    "label": "feminine dative",
+    "hint": "komu? czemu?",
+    "answers": [
+     "pikantnej"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "pikantny / pikantnie",
+    "stem": "pikantny → ___",
+    "label": "feminine accusative",
+    "hint": "kogo? co?",
+    "answers": [
+     "pikantną"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "pikantny / pikantnie",
+    "stem": "pikantny → ___",
+    "label": "feminine instrumental",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "pikantną"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "pikantny / pikantnie",
+    "stem": "pikantny → ___",
+    "label": "feminine locative",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "pikantnej"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "pikantny / pikantnie",
+    "stem": "pikantny → ___",
+    "label": "neuter nominative",
+    "hint": "kto? co?",
+    "answers": [
+     "pikantne"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "pikantny / pikantnie",
+    "stem": "pikantny → ___",
+    "label": "neuter genitive",
+    "hint": "kogo? czego?",
+    "answers": [
+     "pikantnego"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "pikantny / pikantnie",
+    "stem": "pikantny → ___",
+    "label": "neuter dative",
+    "hint": "komu? czemu?",
+    "answers": [
+     "pikantnemu"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "pikantny / pikantnie",
+    "stem": "pikantny → ___",
+    "label": "neuter accusative",
+    "hint": "kogo? co?",
+    "answers": [
+     "pikantne"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "pikantny / pikantnie",
+    "stem": "pikantny → ___",
+    "label": "neuter instrumental",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "pikantnym"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "pikantny / pikantnie",
+    "stem": "pikantny → ___",
+    "label": "neuter locative",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "pikantnym"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "pikantny / pikantnie",
+    "stem": "pikantny → ___",
+    "label": "plural nominative",
+    "hint": "kto? co?",
+    "answers": [
+     "pikantni",
+     "pikantne"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "pikantny / pikantnie",
+    "stem": "pikantny → ___",
+    "label": "plural genitive",
+    "hint": "kogo? czego?",
+    "answers": [
+     "pikantnych"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "pikantny / pikantnie",
+    "stem": "pikantny → ___",
+    "label": "plural dative",
+    "hint": "komu? czemu?",
+    "answers": [
+     "pikantnym"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "pikantny / pikantnie",
+    "stem": "pikantny → ___",
+    "label": "plural accusative",
+    "hint": "kogo? co?",
+    "answers": [
+     "pikantnych",
+     "pikantne"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "pikantny / pikantnie",
+    "stem": "pikantny → ___",
+    "label": "plural instrumental",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "pikantnymi"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "pikantny / pikantnie",
+    "stem": "pikantny → ___",
+    "label": "plural locative",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "pikantnych"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "słodki / słodko",
+    "stem": "słodki → ___",
+    "label": "masculine genitive",
+    "hint": "kogo? czego?",
+    "answers": [
+     "słodkiego"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "słodki / słodko",
+    "stem": "słodki → ___",
+    "label": "masculine dative",
+    "hint": "komu? czemu?",
+    "answers": [
+     "słodkiemu"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "słodki / słodko",
+    "stem": "słodki → ___",
+    "label": "masculine accusative",
+    "hint": "kogo? co?",
+    "answers": [
+     "słodki",
+     "słodkiego"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "słodki / słodko",
+    "stem": "słodki → ___",
+    "label": "masculine instrumental",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "słodkim"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "słodki / słodko",
+    "stem": "słodki → ___",
+    "label": "masculine locative",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "słodkim"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "słodki / słodko",
+    "stem": "słodki → ___",
+    "label": "feminine nominative",
+    "hint": "kto? co?",
+    "answers": [
+     "słodka"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "słodki / słodko",
+    "stem": "słodki → ___",
+    "label": "feminine genitive",
+    "hint": "kogo? czego?",
+    "answers": [
+     "słodkiej"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "słodki / słodko",
+    "stem": "słodki → ___",
+    "label": "feminine dative",
+    "hint": "komu? czemu?",
+    "answers": [
+     "słodkiej"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "słodki / słodko",
+    "stem": "słodki → ___",
+    "label": "feminine accusative",
+    "hint": "kogo? co?",
+    "answers": [
+     "słodką"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "słodki / słodko",
+    "stem": "słodki → ___",
+    "label": "feminine instrumental",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "słodką"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "słodki / słodko",
+    "stem": "słodki → ___",
+    "label": "feminine locative",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "słodkiej"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "słodki / słodko",
+    "stem": "słodki → ___",
+    "label": "neuter nominative",
+    "hint": "kto? co?",
+    "answers": [
+     "słodkie"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "słodki / słodko",
+    "stem": "słodki → ___",
+    "label": "neuter genitive",
+    "hint": "kogo? czego?",
+    "answers": [
+     "słodkiego"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "słodki / słodko",
+    "stem": "słodki → ___",
+    "label": "neuter dative",
+    "hint": "komu? czemu?",
+    "answers": [
+     "słodkiemu"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "słodki / słodko",
+    "stem": "słodki → ___",
+    "label": "neuter accusative",
+    "hint": "kogo? co?",
+    "answers": [
+     "słodkie"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "słodki / słodko",
+    "stem": "słodki → ___",
+    "label": "neuter instrumental",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "słodkim"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "słodki / słodko",
+    "stem": "słodki → ___",
+    "label": "neuter locative",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "słodkim"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "słodki / słodko",
+    "stem": "słodki → ___",
+    "label": "plural nominative",
+    "hint": "kto? co?",
+    "answers": [
+     "słodcy",
+     "słodkie"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "słodki / słodko",
+    "stem": "słodki → ___",
+    "label": "plural genitive",
+    "hint": "kogo? czego?",
+    "answers": [
+     "słodkich"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "słodki / słodko",
+    "stem": "słodki → ___",
+    "label": "plural dative",
+    "hint": "komu? czemu?",
+    "answers": [
+     "słodkim"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "słodki / słodko",
+    "stem": "słodki → ___",
+    "label": "plural accusative",
+    "hint": "kogo? co?",
+    "answers": [
+     "słodkich",
+     "słodkie"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "słodki / słodko",
+    "stem": "słodki → ___",
+    "label": "plural instrumental",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "słodkimi"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "słodki / słodko",
+    "stem": "słodki → ___",
+    "label": "plural locative",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "słodkich"
+    ]
+   }
+  ]
+ },
+ "fr": {
+  "verbs": [
+   {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "je ___",
+    "label": "s'apercevoir · Présent",
+    "hint": "",
+    "answers": [
+     "m'aperçois"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "tu ___",
+    "label": "s'apercevoir · Présent",
+    "hint": "",
+    "answers": [
+     "t'aperçois"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "il/elle ___",
+    "label": "s'apercevoir · Présent",
+    "hint": "",
+    "answers": [
+     "s'aperçoit"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "nous ___",
+    "label": "s'apercevoir · Présent",
+    "hint": "",
+    "answers": [
+     "nous apercevons"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "vous ___",
+    "label": "s'apercevoir · Présent",
+    "hint": "",
+    "answers": [
+     "vous apercevez"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "ils/elles ___",
+    "label": "s'apercevoir · Présent",
+    "hint": "",
+    "answers": [
+     "s'aperçoivent"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "je ___",
+    "label": "s'apercevoir · Passé composé",
+    "hint": "",
+    "answers": [
+     "me suis aperçu",
+     "me suis aperçue"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "tu ___",
+    "label": "s'apercevoir · Passé composé",
+    "hint": "",
+    "answers": [
+     "t'es aperçu",
+     "t'es aperçue"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "il/elle ___",
+    "label": "s'apercevoir · Passé composé",
+    "hint": "",
+    "answers": [
+     "s'est aperçu",
+     "s'est aperçue"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "nous ___",
+    "label": "s'apercevoir · Passé composé",
+    "hint": "",
+    "answers": [
+     "nous sommes aperçus",
+     "nous sommes aperçues"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "vous ___",
+    "label": "s'apercevoir · Passé composé",
+    "hint": "",
+    "answers": [
+     "vous êtes aperçu",
+     "vous êtes aperçus",
+     "vous êtes aperçue",
+     "vous êtes aperçues"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "ils/elles ___",
+    "label": "s'apercevoir · Passé composé",
+    "hint": "",
+    "answers": [
+     "se sont aperçus",
+     "se sont aperçues"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "je ___",
+    "label": "s'apercevoir · Imparfait",
+    "hint": "",
+    "answers": [
+     "m'apercevais"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "tu ___",
+    "label": "s'apercevoir · Imparfait",
+    "hint": "",
+    "answers": [
+     "t'apercevais"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "il/elle ___",
+    "label": "s'apercevoir · Imparfait",
+    "hint": "",
+    "answers": [
+     "s'apercevait"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "nous ___",
+    "label": "s'apercevoir · Imparfait",
+    "hint": "",
+    "answers": [
+     "nous apercevions"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "vous ___",
+    "label": "s'apercevoir · Imparfait",
+    "hint": "",
+    "answers": [
+     "vous aperceviez"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "ils/elles ___",
+    "label": "s'apercevoir · Imparfait",
+    "hint": "",
+    "answers": [
+     "s'apercevaient"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "je ___",
+    "label": "s'apercevoir · Futur simple",
+    "hint": "",
+    "answers": [
+     "m'apercevrai"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "tu ___",
+    "label": "s'apercevoir · Futur simple",
+    "hint": "",
+    "answers": [
+     "t'apercevras"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "il/elle ___",
+    "label": "s'apercevoir · Futur simple",
+    "hint": "",
+    "answers": [
+     "s'apercevra"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "nous ___",
+    "label": "s'apercevoir · Futur simple",
+    "hint": "",
+    "answers": [
+     "nous apercevrons"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "vous ___",
+    "label": "s'apercevoir · Futur simple",
+    "hint": "",
+    "answers": [
+     "vous apercevrez"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "ils/elles ___",
+    "label": "s'apercevoir · Futur simple",
+    "hint": "",
+    "answers": [
+     "s'apercevront"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "je ___",
+    "label": "s'apercevoir · Conditionnel",
+    "hint": "",
+    "answers": [
+     "m'apercevrais"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "tu ___",
+    "label": "s'apercevoir · Conditionnel",
+    "hint": "",
+    "answers": [
+     "t'apercevrais"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "il/elle ___",
+    "label": "s'apercevoir · Conditionnel",
+    "hint": "",
+    "answers": [
+     "s'apercevrait"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "nous ___",
+    "label": "s'apercevoir · Conditionnel",
+    "hint": "",
+    "answers": [
+     "nous apercevrions"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "vous ___",
+    "label": "s'apercevoir · Conditionnel",
+    "hint": "",
+    "answers": [
+     "vous apercevriez"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "ils/elles ___",
+    "label": "s'apercevoir · Conditionnel",
+    "hint": "",
+    "answers": [
+     "s'apercevraient"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "négliger",
+    "stem": "je ___",
+    "label": "négliger · Présent",
+    "hint": "",
+    "answers": [
+     "néglige"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "négliger",
+    "stem": "tu ___",
+    "label": "négliger · Présent",
+    "hint": "",
+    "answers": [
+     "négliges"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "négliger",
+    "stem": "il/elle ___",
+    "label": "négliger · Présent",
+    "hint": "",
+    "answers": [
+     "néglige"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "négliger",
+    "stem": "nous ___",
+    "label": "négliger · Présent",
+    "hint": "",
+    "answers": [
+     "négligeons"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "négliger",
+    "stem": "vous ___",
+    "label": "négliger · Présent",
+    "hint": "",
+    "answers": [
+     "négligez"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "négliger",
+    "stem": "ils/elles ___",
+    "label": "négliger · Présent",
+    "hint": "",
+    "answers": [
+     "négligent"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "négliger",
+    "stem": "j'___",
+    "label": "négliger · Passé composé",
+    "hint": "",
+    "answers": [
+     "ai négligé"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "négliger",
+    "stem": "tu ___",
+    "label": "négliger · Passé composé",
+    "hint": "",
+    "answers": [
+     "as négligé"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "négliger",
+    "stem": "il/elle ___",
+    "label": "négliger · Passé composé",
+    "hint": "",
+    "answers": [
+     "a négligé"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "négliger",
+    "stem": "nous ___",
+    "label": "négliger · Passé composé",
+    "hint": "",
+    "answers": [
+     "avons négligé"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "négliger",
+    "stem": "vous ___",
+    "label": "négliger · Passé composé",
+    "hint": "",
+    "answers": [
+     "avez négligé"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "négliger",
+    "stem": "ils/elles ___",
+    "label": "négliger · Passé composé",
+    "hint": "",
+    "answers": [
+     "ont négligé"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "négliger",
+    "stem": "je ___",
+    "label": "négliger · Imparfait",
+    "hint": "",
+    "answers": [
+     "négligeais"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "négliger",
+    "stem": "tu ___",
+    "label": "négliger · Imparfait",
+    "hint": "",
+    "answers": [
+     "négligeais"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "négliger",
+    "stem": "il/elle ___",
+    "label": "négliger · Imparfait",
+    "hint": "",
+    "answers": [
+     "négligeait"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "négliger",
+    "stem": "nous ___",
+    "label": "négliger · Imparfait",
+    "hint": "",
+    "answers": [
+     "négligions"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "négliger",
+    "stem": "vous ___",
+    "label": "négliger · Imparfait",
+    "hint": "",
+    "answers": [
+     "négligiez"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "négliger",
+    "stem": "ils/elles ___",
+    "label": "négliger · Imparfait",
+    "hint": "",
+    "answers": [
+     "négligeaient"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "négliger",
+    "stem": "je ___",
+    "label": "négliger · Futur simple",
+    "hint": "",
+    "answers": [
+     "négligerai"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "négliger",
+    "stem": "tu ___",
+    "label": "négliger · Futur simple",
+    "hint": "",
+    "answers": [
+     "négligeras"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "négliger",
+    "stem": "il/elle ___",
+    "label": "négliger · Futur simple",
+    "hint": "",
+    "answers": [
+     "négligera"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "négliger",
+    "stem": "nous ___",
+    "label": "négliger · Futur simple",
+    "hint": "",
+    "answers": [
+     "négligerons"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "négliger",
+    "stem": "vous ___",
+    "label": "négliger · Futur simple",
+    "hint": "",
+    "answers": [
+     "négligerez"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "négliger",
+    "stem": "ils/elles ___",
+    "label": "négliger · Futur simple",
+    "hint": "",
+    "answers": [
+     "négligeront"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "négliger",
+    "stem": "je ___",
+    "label": "négliger · Conditionnel",
+    "hint": "",
+    "answers": [
+     "négligerais"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "négliger",
+    "stem": "tu ___",
+    "label": "négliger · Conditionnel",
+    "hint": "",
+    "answers": [
+     "négligerais"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "négliger",
+    "stem": "il/elle ___",
+    "label": "négliger · Conditionnel",
+    "hint": "",
+    "answers": [
+     "négligerait"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "négliger",
+    "stem": "nous ___",
+    "label": "négliger · Conditionnel",
+    "hint": "",
+    "answers": [
+     "négligerions"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "négliger",
+    "stem": "vous ___",
+    "label": "négliger · Conditionnel",
+    "hint": "",
+    "answers": [
+     "négligeriez"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "négliger",
+    "stem": "ils/elles ___",
+    "label": "négliger · Conditionnel",
+    "hint": "",
+    "answers": [
+     "négligeraient"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bouleverser",
+    "stem": "je ___",
+    "label": "bouleverser · Présent",
+    "hint": "",
+    "answers": [
+     "bouleverse"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bouleverser",
+    "stem": "tu ___",
+    "label": "bouleverser · Présent",
+    "hint": "",
+    "answers": [
+     "bouleverses"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bouleverser",
+    "stem": "il/elle ___",
+    "label": "bouleverser · Présent",
+    "hint": "",
+    "answers": [
+     "bouleverse"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bouleverser",
+    "stem": "nous ___",
+    "label": "bouleverser · Présent",
+    "hint": "",
+    "answers": [
+     "bouleversons"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bouleverser",
+    "stem": "vous ___",
+    "label": "bouleverser · Présent",
+    "hint": "",
+    "answers": [
+     "bouleversez"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bouleverser",
+    "stem": "ils/elles ___",
+    "label": "bouleverser · Présent",
+    "hint": "",
+    "answers": [
+     "bouleversent"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bouleverser",
+    "stem": "j'___",
+    "label": "bouleverser · Passé composé",
+    "hint": "",
+    "answers": [
+     "ai bouleversé"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bouleverser",
+    "stem": "tu ___",
+    "label": "bouleverser · Passé composé",
+    "hint": "",
+    "answers": [
+     "as bouleversé"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bouleverser",
+    "stem": "il/elle ___",
+    "label": "bouleverser · Passé composé",
+    "hint": "",
+    "answers": [
+     "a bouleversé"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bouleverser",
+    "stem": "nous ___",
+    "label": "bouleverser · Passé composé",
+    "hint": "",
+    "answers": [
+     "avons bouleversé"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bouleverser",
+    "stem": "vous ___",
+    "label": "bouleverser · Passé composé",
+    "hint": "",
+    "answers": [
+     "avez bouleversé"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bouleverser",
+    "stem": "ils/elles ___",
+    "label": "bouleverser · Passé composé",
+    "hint": "",
+    "answers": [
+     "ont bouleversé"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bouleverser",
+    "stem": "je ___",
+    "label": "bouleverser · Imparfait",
+    "hint": "",
+    "answers": [
+     "bouleversais"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bouleverser",
+    "stem": "tu ___",
+    "label": "bouleverser · Imparfait",
+    "hint": "",
+    "answers": [
+     "bouleversais"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bouleverser",
+    "stem": "il/elle ___",
+    "label": "bouleverser · Imparfait",
+    "hint": "",
+    "answers": [
+     "bouleversait"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bouleverser",
+    "stem": "nous ___",
+    "label": "bouleverser · Imparfait",
+    "hint": "",
+    "answers": [
+     "bouleversions"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bouleverser",
+    "stem": "vous ___",
+    "label": "bouleverser · Imparfait",
+    "hint": "",
+    "answers": [
+     "bouleversiez"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bouleverser",
+    "stem": "ils/elles ___",
+    "label": "bouleverser · Imparfait",
+    "hint": "",
+    "answers": [
+     "bouleversaient"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bouleverser",
+    "stem": "je ___",
+    "label": "bouleverser · Futur simple",
+    "hint": "",
+    "answers": [
+     "bouleverserai"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bouleverser",
+    "stem": "tu ___",
+    "label": "bouleverser · Futur simple",
+    "hint": "",
+    "answers": [
+     "bouleverseras"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bouleverser",
+    "stem": "il/elle ___",
+    "label": "bouleverser · Futur simple",
+    "hint": "",
+    "answers": [
+     "bouleversera"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bouleverser",
+    "stem": "nous ___",
+    "label": "bouleverser · Futur simple",
+    "hint": "",
+    "answers": [
+     "bouleverserons"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bouleverser",
+    "stem": "vous ___",
+    "label": "bouleverser · Futur simple",
+    "hint": "",
+    "answers": [
+     "bouleverserez"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bouleverser",
+    "stem": "ils/elles ___",
+    "label": "bouleverser · Futur simple",
+    "hint": "",
+    "answers": [
+     "bouleverseront"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bouleverser",
+    "stem": "je ___",
+    "label": "bouleverser · Conditionnel",
+    "hint": "",
+    "answers": [
+     "bouleverserais"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bouleverser",
+    "stem": "tu ___",
+    "label": "bouleverser · Conditionnel",
+    "hint": "",
+    "answers": [
+     "bouleverserais"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bouleverser",
+    "stem": "il/elle ___",
+    "label": "bouleverser · Conditionnel",
+    "hint": "",
+    "answers": [
+     "bouleverserait"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bouleverser",
+    "stem": "nous ___",
+    "label": "bouleverser · Conditionnel",
+    "hint": "",
+    "answers": [
+     "bouleverserions"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bouleverser",
+    "stem": "vous ___",
+    "label": "bouleverser · Conditionnel",
+    "hint": "",
+    "answers": [
+     "bouleverseriez"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "bouleverser",
+    "stem": "ils/elles ___",
+    "label": "bouleverser · Conditionnel",
+    "hint": "",
+    "answers": [
+     "bouleverseraient"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "entreprendre",
+    "stem": "j'___",
+    "label": "entreprendre · Présent",
+    "hint": "",
+    "answers": [
+     "entreprends"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "entreprendre",
+    "stem": "tu ___",
+    "label": "entreprendre · Présent",
+    "hint": "",
+    "answers": [
+     "entreprends"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "entreprendre",
+    "stem": "il/elle ___",
+    "label": "entreprendre · Présent",
+    "hint": "",
+    "answers": [
+     "entreprend"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "entreprendre",
+    "stem": "nous ___",
+    "label": "entreprendre · Présent",
+    "hint": "",
+    "answers": [
+     "entreprenons"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "entreprendre",
+    "stem": "vous ___",
+    "label": "entreprendre · Présent",
+    "hint": "",
+    "answers": [
+     "entreprenez"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "entreprendre",
+    "stem": "ils/elles ___",
+    "label": "entreprendre · Présent",
+    "hint": "",
+    "answers": [
+     "entreprennent"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "entreprendre",
+    "stem": "j'___",
+    "label": "entreprendre · Passé composé",
+    "hint": "",
+    "answers": [
+     "ai entrepris"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "entreprendre",
+    "stem": "tu ___",
+    "label": "entreprendre · Passé composé",
+    "hint": "",
+    "answers": [
+     "as entrepris"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "entreprendre",
+    "stem": "il/elle ___",
+    "label": "entreprendre · Passé composé",
+    "hint": "",
+    "answers": [
+     "a entrepris"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "entreprendre",
+    "stem": "nous ___",
+    "label": "entreprendre · Passé composé",
+    "hint": "",
+    "answers": [
+     "avons entrepris"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "entreprendre",
+    "stem": "vous ___",
+    "label": "entreprendre · Passé composé",
+    "hint": "",
+    "answers": [
+     "avez entrepris"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "entreprendre",
+    "stem": "ils/elles ___",
+    "label": "entreprendre · Passé composé",
+    "hint": "",
+    "answers": [
+     "ont entrepris"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "entreprendre",
+    "stem": "j'___",
+    "label": "entreprendre · Imparfait",
+    "hint": "",
+    "answers": [
+     "entreprenais"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "entreprendre",
+    "stem": "tu ___",
+    "label": "entreprendre · Imparfait",
+    "hint": "",
+    "answers": [
+     "entreprenais"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "entreprendre",
+    "stem": "il/elle ___",
+    "label": "entreprendre · Imparfait",
+    "hint": "",
+    "answers": [
+     "entreprenait"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "entreprendre",
+    "stem": "nous ___",
+    "label": "entreprendre · Imparfait",
+    "hint": "",
+    "answers": [
+     "entreprenions"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "entreprendre",
+    "stem": "vous ___",
+    "label": "entreprendre · Imparfait",
+    "hint": "",
+    "answers": [
+     "entrepreniez"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "entreprendre",
+    "stem": "ils/elles ___",
+    "label": "entreprendre · Imparfait",
+    "hint": "",
+    "answers": [
+     "entreprenaient"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "entreprendre",
+    "stem": "j'___",
+    "label": "entreprendre · Futur simple",
+    "hint": "",
+    "answers": [
+     "entreprendrai"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "entreprendre",
+    "stem": "tu ___",
+    "label": "entreprendre · Futur simple",
+    "hint": "",
+    "answers": [
+     "entreprendras"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "entreprendre",
+    "stem": "il/elle ___",
+    "label": "entreprendre · Futur simple",
+    "hint": "",
+    "answers": [
+     "entreprendra"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "entreprendre",
+    "stem": "nous ___",
+    "label": "entreprendre · Futur simple",
+    "hint": "",
+    "answers": [
+     "entreprendrons"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "entreprendre",
+    "stem": "vous ___",
+    "label": "entreprendre · Futur simple",
+    "hint": "",
+    "answers": [
+     "entreprendrez"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "entreprendre",
+    "stem": "ils/elles ___",
+    "label": "entreprendre · Futur simple",
+    "hint": "",
+    "answers": [
+     "entreprendront"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "entreprendre",
+    "stem": "j'___",
+    "label": "entreprendre · Conditionnel",
+    "hint": "",
+    "answers": [
+     "entreprendrais"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "entreprendre",
+    "stem": "tu ___",
+    "label": "entreprendre · Conditionnel",
+    "hint": "",
+    "answers": [
+     "entreprendrais"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "entreprendre",
+    "stem": "il/elle ___",
+    "label": "entreprendre · Conditionnel",
+    "hint": "",
+    "answers": [
+     "entreprendrait"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "entreprendre",
+    "stem": "nous ___",
+    "label": "entreprendre · Conditionnel",
+    "hint": "",
+    "answers": [
+     "entreprendrions"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "entreprendre",
+    "stem": "vous ___",
+    "label": "entreprendre · Conditionnel",
+    "hint": "",
+    "answers": [
+     "entreprendriez"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "entreprendre",
+    "stem": "ils/elles ___",
+    "label": "entreprendre · Conditionnel",
+    "hint": "",
+    "answers": [
+     "entreprendraient"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "se méfier",
+    "stem": "je ___",
+    "label": "se méfier · Présent",
+    "hint": "",
+    "answers": [
+     "me méfie"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "se méfier",
+    "stem": "tu ___",
+    "label": "se méfier · Présent",
+    "hint": "",
+    "answers": [
+     "te méfies"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "se méfier",
+    "stem": "il/elle ___",
+    "label": "se méfier · Présent",
+    "hint": "",
+    "answers": [
+     "se méfie"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "se méfier",
+    "stem": "nous ___",
+    "label": "se méfier · Présent",
+    "hint": "",
+    "answers": [
+     "nous méfions"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "se méfier",
+    "stem": "vous ___",
+    "label": "se méfier · Présent",
+    "hint": "",
+    "answers": [
+     "vous méfiez"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "se méfier",
+    "stem": "ils/elles ___",
+    "label": "se méfier · Présent",
+    "hint": "",
+    "answers": [
+     "se méfient"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "se méfier",
+    "stem": "je ___",
+    "label": "se méfier · Passé composé",
+    "hint": "",
+    "answers": [
+     "me suis méfié",
+     "me suis méfiée"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "se méfier",
+    "stem": "tu ___",
+    "label": "se méfier · Passé composé",
+    "hint": "",
+    "answers": [
+     "t'es méfié",
+     "t'es méfiée"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "se méfier",
+    "stem": "il/elle ___",
+    "label": "se méfier · Passé composé",
+    "hint": "",
+    "answers": [
+     "s'est méfié",
+     "s'est méfiée"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "se méfier",
+    "stem": "nous ___",
+    "label": "se méfier · Passé composé",
+    "hint": "",
+    "answers": [
+     "nous sommes méfiés",
+     "nous sommes méfiées"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "se méfier",
+    "stem": "vous ___",
+    "label": "se méfier · Passé composé",
+    "hint": "",
+    "answers": [
+     "vous êtes méfié",
+     "vous êtes méfiés",
+     "vous êtes méfiée",
+     "vous êtes méfiées"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "se méfier",
+    "stem": "ils/elles ___",
+    "label": "se méfier · Passé composé",
+    "hint": "",
+    "answers": [
+     "se sont méfiés",
+     "se sont méfiées"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "se méfier",
+    "stem": "je ___",
+    "label": "se méfier · Imparfait",
+    "hint": "",
+    "answers": [
+     "me méfiais"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "se méfier",
+    "stem": "tu ___",
+    "label": "se méfier · Imparfait",
+    "hint": "",
+    "answers": [
+     "te méfiais"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "se méfier",
+    "stem": "il/elle ___",
+    "label": "se méfier · Imparfait",
+    "hint": "",
+    "answers": [
+     "se méfiait"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "se méfier",
+    "stem": "nous ___",
+    "label": "se méfier · Imparfait",
+    "hint": "",
+    "answers": [
+     "nous méfiions"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "se méfier",
+    "stem": "vous ___",
+    "label": "se méfier · Imparfait",
+    "hint": "",
+    "answers": [
+     "vous méfiiez"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "se méfier",
+    "stem": "ils/elles ___",
+    "label": "se méfier · Imparfait",
+    "hint": "",
+    "answers": [
+     "se méfiaient"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "se méfier",
+    "stem": "je ___",
+    "label": "se méfier · Futur simple",
+    "hint": "",
+    "answers": [
+     "me méfierai"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "se méfier",
+    "stem": "tu ___",
+    "label": "se méfier · Futur simple",
+    "hint": "",
+    "answers": [
+     "te méfieras"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "se méfier",
+    "stem": "il/elle ___",
+    "label": "se méfier · Futur simple",
+    "hint": "",
+    "answers": [
+     "se méfiera"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "se méfier",
+    "stem": "nous ___",
+    "label": "se méfier · Futur simple",
+    "hint": "",
+    "answers": [
+     "nous méfierons"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "se méfier",
+    "stem": "vous ___",
+    "label": "se méfier · Futur simple",
+    "hint": "",
+    "answers": [
+     "vous méfierez"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "se méfier",
+    "stem": "ils/elles ___",
+    "label": "se méfier · Futur simple",
+    "hint": "",
+    "answers": [
+     "se méfieront"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "se méfier",
+    "stem": "je ___",
+    "label": "se méfier · Conditionnel",
+    "hint": "",
+    "answers": [
+     "me méfierais"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "se méfier",
+    "stem": "tu ___",
+    "label": "se méfier · Conditionnel",
+    "hint": "",
+    "answers": [
+     "te méfierais"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "se méfier",
+    "stem": "il/elle ___",
+    "label": "se méfier · Conditionnel",
+    "hint": "",
+    "answers": [
+     "se méfierait"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "se méfier",
+    "stem": "nous ___",
+    "label": "se méfier · Conditionnel",
+    "hint": "",
+    "answers": [
+     "nous méfierions"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "se méfier",
+    "stem": "vous ___",
+    "label": "se méfier · Conditionnel",
+    "hint": "",
+    "answers": [
+     "vous méfieriez"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "se méfier",
+    "stem": "ils/elles ___",
+    "label": "se méfier · Conditionnel",
+    "hint": "",
+    "answers": [
+     "se méfieraient"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "parvenir à",
+    "stem": "je ___",
+    "label": "parvenir à · Présent",
+    "hint": "",
+    "answers": [
+     "parviens à"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "parvenir à",
+    "stem": "tu ___",
+    "label": "parvenir à · Présent",
+    "hint": "",
+    "answers": [
+     "parviens à"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "parvenir à",
+    "stem": "il/elle ___",
+    "label": "parvenir à · Présent",
+    "hint": "",
+    "answers": [
+     "parvient à"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "parvenir à",
+    "stem": "nous ___",
+    "label": "parvenir à · Présent",
+    "hint": "",
+    "answers": [
+     "parvenons à"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "parvenir à",
+    "stem": "vous ___",
+    "label": "parvenir à · Présent",
+    "hint": "",
+    "answers": [
+     "parvenez à"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "parvenir à",
+    "stem": "ils/elles ___",
+    "label": "parvenir à · Présent",
+    "hint": "",
+    "answers": [
+     "parviennent à"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "parvenir à",
+    "stem": "je ___",
+    "label": "parvenir à · Passé composé",
+    "hint": "",
+    "answers": [
+     "suis parvenu à",
+     "suis parvenue à"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "parvenir à",
+    "stem": "tu ___",
+    "label": "parvenir à · Passé composé",
+    "hint": "",
+    "answers": [
+     "es parvenu à",
+     "es parvenue à"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "parvenir à",
+    "stem": "il/elle ___",
+    "label": "parvenir à · Passé composé",
+    "hint": "",
+    "answers": [
+     "est parvenu à",
+     "est parvenue à"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "parvenir à",
+    "stem": "nous ___",
+    "label": "parvenir à · Passé composé",
+    "hint": "",
+    "answers": [
+     "sommes parvenus à",
+     "sommes parvenues à"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "parvenir à",
+    "stem": "vous ___",
+    "label": "parvenir à · Passé composé",
+    "hint": "",
+    "answers": [
+     "êtes parvenu à",
+     "êtes parvenus à",
+     "êtes parvenue à",
+     "êtes parvenues à"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "parvenir à",
+    "stem": "ils/elles ___",
+    "label": "parvenir à · Passé composé",
+    "hint": "",
+    "answers": [
+     "sont parvenus à",
+     "sont parvenues à"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "parvenir à",
+    "stem": "je ___",
+    "label": "parvenir à · Imparfait",
+    "hint": "",
+    "answers": [
+     "parvenais à"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "parvenir à",
+    "stem": "tu ___",
+    "label": "parvenir à · Imparfait",
+    "hint": "",
+    "answers": [
+     "parvenais à"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "parvenir à",
+    "stem": "il/elle ___",
+    "label": "parvenir à · Imparfait",
+    "hint": "",
+    "answers": [
+     "parvenait à"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "parvenir à",
+    "stem": "nous ___",
+    "label": "parvenir à · Imparfait",
+    "hint": "",
+    "answers": [
+     "parvenions à"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "parvenir à",
+    "stem": "vous ___",
+    "label": "parvenir à · Imparfait",
+    "hint": "",
+    "answers": [
+     "parveniez à"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "parvenir à",
+    "stem": "ils/elles ___",
+    "label": "parvenir à · Imparfait",
+    "hint": "",
+    "answers": [
+     "parvenaient à"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "parvenir à",
+    "stem": "je ___",
+    "label": "parvenir à · Futur simple",
+    "hint": "",
+    "answers": [
+     "parviendrai à"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "parvenir à",
+    "stem": "tu ___",
+    "label": "parvenir à · Futur simple",
+    "hint": "",
+    "answers": [
+     "parviendras à"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "parvenir à",
+    "stem": "il/elle ___",
+    "label": "parvenir à · Futur simple",
+    "hint": "",
+    "answers": [
+     "parviendra à"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "parvenir à",
+    "stem": "nous ___",
+    "label": "parvenir à · Futur simple",
+    "hint": "",
+    "answers": [
+     "parviendrons à"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "parvenir à",
+    "stem": "vous ___",
+    "label": "parvenir à · Futur simple",
+    "hint": "",
+    "answers": [
+     "parviendrez à"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "parvenir à",
+    "stem": "ils/elles ___",
+    "label": "parvenir à · Futur simple",
+    "hint": "",
+    "answers": [
+     "parviendront à"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "parvenir à",
+    "stem": "je ___",
+    "label": "parvenir à · Conditionnel",
+    "hint": "",
+    "answers": [
+     "parviendrais à"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "parvenir à",
+    "stem": "tu ___",
+    "label": "parvenir à · Conditionnel",
+    "hint": "",
+    "answers": [
+     "parviendrais à"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "parvenir à",
+    "stem": "il/elle ___",
+    "label": "parvenir à · Conditionnel",
+    "hint": "",
+    "answers": [
+     "parviendrait à"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "parvenir à",
+    "stem": "nous ___",
+    "label": "parvenir à · Conditionnel",
+    "hint": "",
+    "answers": [
+     "parviendrions à"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "parvenir à",
+    "stem": "vous ___",
+    "label": "parvenir à · Conditionnel",
+    "hint": "",
+    "answers": [
+     "parviendriez à"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "parvenir à",
+    "stem": "ils/elles ___",
+    "label": "parvenir à · Conditionnel",
+    "hint": "",
+    "answers": [
+     "parviendraient à"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "remettre en question",
+    "stem": "je ___",
+    "label": "remettre en question · Présent",
+    "hint": "",
+    "answers": [
+     "remets en question"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "remettre en question",
+    "stem": "tu ___",
+    "label": "remettre en question · Présent",
+    "hint": "",
+    "answers": [
+     "remets en question"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "remettre en question",
+    "stem": "il/elle ___",
+    "label": "remettre en question · Présent",
+    "hint": "",
+    "answers": [
+     "remet en question"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "remettre en question",
+    "stem": "nous ___",
+    "label": "remettre en question · Présent",
+    "hint": "",
+    "answers": [
+     "remettons en question"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "remettre en question",
+    "stem": "vous ___",
+    "label": "remettre en question · Présent",
+    "hint": "",
+    "answers": [
+     "remettez en question"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "remettre en question",
+    "stem": "ils/elles ___",
+    "label": "remettre en question · Présent",
+    "hint": "",
+    "answers": [
+     "remettent en question"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "remettre en question",
+    "stem": "j'___",
+    "label": "remettre en question · Passé composé",
+    "hint": "",
+    "answers": [
+     "ai remis en question"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "remettre en question",
+    "stem": "tu ___",
+    "label": "remettre en question · Passé composé",
+    "hint": "",
+    "answers": [
+     "as remis en question"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "remettre en question",
+    "stem": "il/elle ___",
+    "label": "remettre en question · Passé composé",
+    "hint": "",
+    "answers": [
+     "a remis en question"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "remettre en question",
+    "stem": "nous ___",
+    "label": "remettre en question · Passé composé",
+    "hint": "",
+    "answers": [
+     "avons remis en question"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "remettre en question",
+    "stem": "vous ___",
+    "label": "remettre en question · Passé composé",
+    "hint": "",
+    "answers": [
+     "avez remis en question"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "remettre en question",
+    "stem": "ils/elles ___",
+    "label": "remettre en question · Passé composé",
+    "hint": "",
+    "answers": [
+     "ont remis en question"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "remettre en question",
+    "stem": "je ___",
+    "label": "remettre en question · Imparfait",
+    "hint": "",
+    "answers": [
+     "remettais en question"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "remettre en question",
+    "stem": "tu ___",
+    "label": "remettre en question · Imparfait",
+    "hint": "",
+    "answers": [
+     "remettais en question"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "remettre en question",
+    "stem": "il/elle ___",
+    "label": "remettre en question · Imparfait",
+    "hint": "",
+    "answers": [
+     "remettait en question"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "remettre en question",
+    "stem": "nous ___",
+    "label": "remettre en question · Imparfait",
+    "hint": "",
+    "answers": [
+     "remettions en question"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "remettre en question",
+    "stem": "vous ___",
+    "label": "remettre en question · Imparfait",
+    "hint": "",
+    "answers": [
+     "remettiez en question"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "remettre en question",
+    "stem": "ils/elles ___",
+    "label": "remettre en question · Imparfait",
+    "hint": "",
+    "answers": [
+     "remettaient en question"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "remettre en question",
+    "stem": "je ___",
+    "label": "remettre en question · Futur simple",
+    "hint": "",
+    "answers": [
+     "remettrai en question"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "remettre en question",
+    "stem": "tu ___",
+    "label": "remettre en question · Futur simple",
+    "hint": "",
+    "answers": [
+     "remettras en question"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "remettre en question",
+    "stem": "il/elle ___",
+    "label": "remettre en question · Futur simple",
+    "hint": "",
+    "answers": [
+     "remettra en question"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "remettre en question",
+    "stem": "nous ___",
+    "label": "remettre en question · Futur simple",
+    "hint": "",
+    "answers": [
+     "remettrons en question"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "remettre en question",
+    "stem": "vous ___",
+    "label": "remettre en question · Futur simple",
+    "hint": "",
+    "answers": [
+     "remettrez en question"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "remettre en question",
+    "stem": "ils/elles ___",
+    "label": "remettre en question · Futur simple",
+    "hint": "",
+    "answers": [
+     "remettront en question"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "remettre en question",
+    "stem": "je ___",
+    "label": "remettre en question · Conditionnel",
+    "hint": "",
+    "answers": [
+     "remettrais en question"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "remettre en question",
+    "stem": "tu ___",
+    "label": "remettre en question · Conditionnel",
+    "hint": "",
+    "answers": [
+     "remettrais en question"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "remettre en question",
+    "stem": "il/elle ___",
+    "label": "remettre en question · Conditionnel",
+    "hint": "",
+    "answers": [
+     "remettrait en question"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "remettre en question",
+    "stem": "nous ___",
+    "label": "remettre en question · Conditionnel",
+    "hint": "",
+    "answers": [
+     "remettrions en question"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "remettre en question",
+    "stem": "vous ___",
+    "label": "remettre en question · Conditionnel",
+    "hint": "",
+    "answers": [
+     "remettriez en question"
+    ]
+   },
+   {
+    "category": "verbs",
+    "card": "remettre en question",
+    "stem": "ils/elles ___",
+    "label": "remettre en question · Conditionnel",
+    "hint": "",
+    "answers": [
+     "remettraient en question"
+    ]
+   }
+  ],
+  "nouns": [
+   {
+    "category": "nouns",
+    "card": "enjeu",
+    "stem": "l'enjeu → les ___",
+    "label": "plural",
+    "hint": "",
+    "answers": [
+     "enjeux",
+     "les enjeux"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "aboutissement",
+    "stem": "l'aboutissement → les ___",
+    "label": "plural",
+    "hint": "",
+    "answers": [
+     "aboutissements",
+     "les aboutissements"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "méfiance",
+    "stem": "la méfiance → les ___",
+    "label": "plural",
+    "hint": "",
+    "answers": [
+     "méfiances",
+     "les méfiances"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "ampleur",
+    "stem": "l'ampleur → les ___",
+    "label": "plural",
+    "hint": "",
+    "answers": [
+     "ampleurs",
+     "les ampleurs"
+    ]
+   },
+   {
+    "category": "nouns",
+    "card": "conscience",
+    "stem": "la conscience → les ___",
+    "label": "plural",
+    "hint": "",
+    "answers": [
+     "consciences",
+     "les consciences"
+    ]
+   }
+  ],
+  "adjectives": [
+   {
+    "category": "adjectives",
+    "card": "pertinent",
+    "stem": "pertinent → ___",
+    "label": "feminine singular",
+    "hint": "",
+    "answers": [
+     "pertinente"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "pertinent",
+    "stem": "pertinent → ___",
+    "label": "masculine plural",
+    "hint": "",
+    "answers": [
+     "pertinents"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "pertinent",
+    "stem": "pertinent → ___",
+    "label": "feminine plural",
+    "hint": "",
+    "answers": [
+     "pertinentes"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "incontournable",
+    "stem": "incontournable → ___",
+    "label": "feminine singular",
+    "hint": "",
+    "answers": [
+     "incontournable"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "incontournable",
+    "stem": "incontournable → ___",
+    "label": "masculine plural",
+    "hint": "",
+    "answers": [
+     "incontournables"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "incontournable",
+    "stem": "incontournable → ___",
+    "label": "feminine plural",
+    "hint": "",
+    "answers": [
+     "incontournables"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "précaire",
+    "stem": "précaire → ___",
+    "label": "feminine singular",
+    "hint": "",
+    "answers": [
+     "précaire"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "précaire",
+    "stem": "précaire → ___",
+    "label": "masculine plural",
+    "hint": "",
+    "answers": [
+     "précaires"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "précaire",
+    "stem": "précaire → ___",
+    "label": "feminine plural",
+    "hint": "",
+    "answers": [
+     "précaires"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "approfondi",
+    "stem": "approfondi → ___",
+    "label": "feminine singular",
+    "hint": "",
+    "answers": [
+     "approfondie"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "approfondi",
+    "stem": "approfondi → ___",
+    "label": "masculine plural",
+    "hint": "",
+    "answers": [
+     "approfondis"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "approfondi",
+    "stem": "approfondi → ___",
+    "label": "feminine plural",
+    "hint": "",
+    "answers": [
+     "approfondies"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "ambivalent",
+    "stem": "ambivalent → ___",
+    "label": "feminine singular",
+    "hint": "",
+    "answers": [
+     "ambivalente"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "ambivalent",
+    "stem": "ambivalent → ___",
+    "label": "masculine plural",
+    "hint": "",
+    "answers": [
+     "ambivalents"
+    ]
+   },
+   {
+    "category": "adjectives",
+    "card": "ambivalent",
+    "stem": "ambivalent → ___",
+    "label": "feminine plural",
+    "hint": "",
+    "answers": [
+     "ambivalentes"
+    ]
+   }
+  ]
+ },
+ "checks": [
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "ja ___",
+    "label": "bać się · present",
+    "hint": "",
+    "answers": [
+     "boję się",
+     "boję"
+    ]
+   },
+   "text": "boję się",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "ja ___",
+    "label": "bać się · present",
+    "hint": "",
+    "answers": [
+     "boję się",
+     "boję"
+    ]
+   },
+   "text": "BOJĘ SIĘ",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "ja ___",
+    "label": "bać się · present",
+    "hint": "",
+    "answers": [
+     "boję się",
+     "boję"
+    ]
+   },
+   "text": "boje sie",
+   "verdict": "accents"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "ja ___",
+    "label": "bać się · present",
+    "hint": "",
+    "answers": [
+     "boję się",
+     "boję"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "ja ___",
+    "label": "bać się · present",
+    "hint": "",
+    "answers": [
+     "boję się",
+     "boję"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "ty ___",
+    "label": "bać się · present",
+    "hint": "",
+    "answers": [
+     "boisz się",
+     "boisz"
+    ]
+   },
+   "text": "boisz się",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "ty ___",
+    "label": "bać się · present",
+    "hint": "",
+    "answers": [
+     "boisz się",
+     "boisz"
+    ]
+   },
+   "text": "BOISZ SIĘ",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "ty ___",
+    "label": "bać się · present",
+    "hint": "",
+    "answers": [
+     "boisz się",
+     "boisz"
+    ]
+   },
+   "text": "boisz sie",
+   "verdict": "accents"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "ty ___",
+    "label": "bać się · present",
+    "hint": "",
+    "answers": [
+     "boisz się",
+     "boisz"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "ty ___",
+    "label": "bać się · present",
+    "hint": "",
+    "answers": [
+     "boisz się",
+     "boisz"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "on / ona / ono ___",
+    "label": "bać się · present",
+    "hint": "",
+    "answers": [
+     "boi się",
+     "boi"
+    ]
+   },
+   "text": "boi się",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "on / ona / ono ___",
+    "label": "bać się · present",
+    "hint": "",
+    "answers": [
+     "boi się",
+     "boi"
+    ]
+   },
+   "text": "BOI SIĘ",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "on / ona / ono ___",
+    "label": "bać się · present",
+    "hint": "",
+    "answers": [
+     "boi się",
+     "boi"
+    ]
+   },
+   "text": "boi sie",
+   "verdict": "accents"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "on / ona / ono ___",
+    "label": "bać się · present",
+    "hint": "",
+    "answers": [
+     "boi się",
+     "boi"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "on / ona / ono ___",
+    "label": "bać się · present",
+    "hint": "",
+    "answers": [
+     "boi się",
+     "boi"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "my ___",
+    "label": "bać się · present",
+    "hint": "",
+    "answers": [
+     "boimy się",
+     "boimy"
+    ]
+   },
+   "text": "boimy się",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "my ___",
+    "label": "bać się · present",
+    "hint": "",
+    "answers": [
+     "boimy się",
+     "boimy"
+    ]
+   },
+   "text": "BOIMY SIĘ",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "my ___",
+    "label": "bać się · present",
+    "hint": "",
+    "answers": [
+     "boimy się",
+     "boimy"
+    ]
+   },
+   "text": "boimy sie",
+   "verdict": "accents"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "my ___",
+    "label": "bać się · present",
+    "hint": "",
+    "answers": [
+     "boimy się",
+     "boimy"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "my ___",
+    "label": "bać się · present",
+    "hint": "",
+    "answers": [
+     "boimy się",
+     "boimy"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "wy ___",
+    "label": "bać się · present",
+    "hint": "",
+    "answers": [
+     "boicie się",
+     "boicie"
+    ]
+   },
+   "text": "boicie się",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "wy ___",
+    "label": "bać się · present",
+    "hint": "",
+    "answers": [
+     "boicie się",
+     "boicie"
+    ]
+   },
+   "text": "BOICIE SIĘ",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "wy ___",
+    "label": "bać się · present",
+    "hint": "",
+    "answers": [
+     "boicie się",
+     "boicie"
+    ]
+   },
+   "text": "boicie sie",
+   "verdict": "accents"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "wy ___",
+    "label": "bać się · present",
+    "hint": "",
+    "answers": [
+     "boicie się",
+     "boicie"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "wy ___",
+    "label": "bać się · present",
+    "hint": "",
+    "answers": [
+     "boicie się",
+     "boicie"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "oni / one ___",
+    "label": "bać się · present",
+    "hint": "",
+    "answers": [
+     "boją się",
+     "boją"
+    ]
+   },
+   "text": "boją się",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "oni / one ___",
+    "label": "bać się · present",
+    "hint": "",
+    "answers": [
+     "boją się",
+     "boją"
+    ]
+   },
+   "text": "BOJĄ SIĘ",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "oni / one ___",
+    "label": "bać się · present",
+    "hint": "",
+    "answers": [
+     "boją się",
+     "boją"
+    ]
+   },
+   "text": "boja sie",
+   "verdict": "accents"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "oni / one ___",
+    "label": "bać się · present",
+    "hint": "",
+    "answers": [
+     "boją się",
+     "boją"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "oni / one ___",
+    "label": "bać się · present",
+    "hint": "",
+    "answers": [
+     "boją się",
+     "boją"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "on ___",
+    "label": "bać się · past tense",
+    "hint": "",
+    "answers": [
+     "bał się",
+     "bał"
+    ]
+   },
+   "text": "bał się",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "on ___",
+    "label": "bać się · past tense",
+    "hint": "",
+    "answers": [
+     "bał się",
+     "bał"
+    ]
+   },
+   "text": "BAŁ SIĘ",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "on ___",
+    "label": "bać się · past tense",
+    "hint": "",
+    "answers": [
+     "bał się",
+     "bał"
+    ]
+   },
+   "text": "bal sie",
+   "verdict": "accents"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "on ___",
+    "label": "bać się · past tense",
+    "hint": "",
+    "answers": [
+     "bał się",
+     "bał"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "on ___",
+    "label": "bać się · past tense",
+    "hint": "",
+    "answers": [
+     "bał się",
+     "bał"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "ona ___",
+    "label": "bać się · past tense",
+    "hint": "",
+    "answers": [
+     "bała się",
+     "bała"
+    ]
+   },
+   "text": "bała się",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "ona ___",
+    "label": "bać się · past tense",
+    "hint": "",
+    "answers": [
+     "bała się",
+     "bała"
+    ]
+   },
+   "text": "BAŁA SIĘ",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "ona ___",
+    "label": "bać się · past tense",
+    "hint": "",
+    "answers": [
+     "bała się",
+     "bała"
+    ]
+   },
+   "text": "bala sie",
+   "verdict": "accents"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "ona ___",
+    "label": "bać się · past tense",
+    "hint": "",
+    "answers": [
+     "bała się",
+     "bała"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "ona ___",
+    "label": "bać się · past tense",
+    "hint": "",
+    "answers": [
+     "bała się",
+     "bała"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "ono ___",
+    "label": "bać się · past tense",
+    "hint": "",
+    "answers": [
+     "bało się",
+     "bało"
+    ]
+   },
+   "text": "bało się",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "ono ___",
+    "label": "bać się · past tense",
+    "hint": "",
+    "answers": [
+     "bało się",
+     "bało"
+    ]
+   },
+   "text": "BAŁO SIĘ",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "ono ___",
+    "label": "bać się · past tense",
+    "hint": "",
+    "answers": [
+     "bało się",
+     "bało"
+    ]
+   },
+   "text": "balo sie",
+   "verdict": "accents"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "ono ___",
+    "label": "bać się · past tense",
+    "hint": "",
+    "answers": [
+     "bało się",
+     "bało"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "ono ___",
+    "label": "bać się · past tense",
+    "hint": "",
+    "answers": [
+     "bało się",
+     "bało"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "oni ___",
+    "label": "bać się · past tense",
+    "hint": "",
+    "answers": [
+     "bali się",
+     "bali"
+    ]
+   },
+   "text": "bali się",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "oni ___",
+    "label": "bać się · past tense",
+    "hint": "",
+    "answers": [
+     "bali się",
+     "bali"
+    ]
+   },
+   "text": "BALI SIĘ",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "oni ___",
+    "label": "bać się · past tense",
+    "hint": "",
+    "answers": [
+     "bali się",
+     "bali"
+    ]
+   },
+   "text": "bali sie",
+   "verdict": "accents"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "oni ___",
+    "label": "bać się · past tense",
+    "hint": "",
+    "answers": [
+     "bali się",
+     "bali"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "oni ___",
+    "label": "bać się · past tense",
+    "hint": "",
+    "answers": [
+     "bali się",
+     "bali"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "one ___",
+    "label": "bać się · past tense",
+    "hint": "",
+    "answers": [
+     "bały się",
+     "bały"
+    ]
+   },
+   "text": "bały się",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "one ___",
+    "label": "bać się · past tense",
+    "hint": "",
+    "answers": [
+     "bały się",
+     "bały"
+    ]
+   },
+   "text": "BAŁY SIĘ",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "one ___",
+    "label": "bać się · past tense",
+    "hint": "",
+    "answers": [
+     "bały się",
+     "bały"
+    ]
+   },
+   "text": "baly sie",
+   "verdict": "accents"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "one ___",
+    "label": "bać się · past tense",
+    "hint": "",
+    "answers": [
+     "bały się",
+     "bały"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "one ___",
+    "label": "bać się · past tense",
+    "hint": "",
+    "answers": [
+     "bały się",
+     "bały"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "ty ___",
+    "label": "bać się · imperative",
+    "hint": "",
+    "answers": [
+     "bój się",
+     "bój"
+    ]
+   },
+   "text": "bój się",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "ty ___",
+    "label": "bać się · imperative",
+    "hint": "",
+    "answers": [
+     "bój się",
+     "bój"
+    ]
+   },
+   "text": "BÓJ SIĘ",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "ty ___",
+    "label": "bać się · imperative",
+    "hint": "",
+    "answers": [
+     "bój się",
+     "bój"
+    ]
+   },
+   "text": "boj sie",
+   "verdict": "accents"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "ty ___",
+    "label": "bać się · imperative",
+    "hint": "",
+    "answers": [
+     "bój się",
+     "bój"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "verbs",
+    "card": "bać się",
+    "stem": "ty ___",
+    "label": "bać się · imperative",
+    "hint": "",
+    "answers": [
+     "bój się",
+     "bój"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "genitive singular",
+    "hint": "kogo? czego?",
+    "answers": [
+     "biletomatu"
+    ]
+   },
+   "text": "biletomatu",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "genitive singular",
+    "hint": "kogo? czego?",
+    "answers": [
+     "biletomatu"
+    ]
+   },
+   "text": "BILETOMATU",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "genitive singular",
+    "hint": "kogo? czego?",
+    "answers": [
+     "biletomatu"
+    ]
+   },
+   "text": "biletomatu",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "genitive singular",
+    "hint": "kogo? czego?",
+    "answers": [
+     "biletomatu"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "genitive singular",
+    "hint": "kogo? czego?",
+    "answers": [
+     "biletomatu"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "dative singular",
+    "hint": "komu? czemu?",
+    "answers": [
+     "biletomatowi"
+    ]
+   },
+   "text": "biletomatowi",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "dative singular",
+    "hint": "komu? czemu?",
+    "answers": [
+     "biletomatowi"
+    ]
+   },
+   "text": "BILETOMATOWI",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "dative singular",
+    "hint": "komu? czemu?",
+    "answers": [
+     "biletomatowi"
+    ]
+   },
+   "text": "biletomatowi",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "dative singular",
+    "hint": "komu? czemu?",
+    "answers": [
+     "biletomatowi"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "dative singular",
+    "hint": "komu? czemu?",
+    "answers": [
+     "biletomatowi"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "accusative singular",
+    "hint": "kogo? co?",
+    "answers": [
+     "biletomat"
+    ]
+   },
+   "text": "biletomat",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "accusative singular",
+    "hint": "kogo? co?",
+    "answers": [
+     "biletomat"
+    ]
+   },
+   "text": "BILETOMAT",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "accusative singular",
+    "hint": "kogo? co?",
+    "answers": [
+     "biletomat"
+    ]
+   },
+   "text": "biletomat",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "accusative singular",
+    "hint": "kogo? co?",
+    "answers": [
+     "biletomat"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "accusative singular",
+    "hint": "kogo? co?",
+    "answers": [
+     "biletomat"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "instrumental singular",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "biletomatem"
+    ]
+   },
+   "text": "biletomatem",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "instrumental singular",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "biletomatem"
+    ]
+   },
+   "text": "BILETOMATEM",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "instrumental singular",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "biletomatem"
+    ]
+   },
+   "text": "biletomatem",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "instrumental singular",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "biletomatem"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "instrumental singular",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "biletomatem"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "locative singular",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "biletomacie"
+    ]
+   },
+   "text": "biletomacie",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "locative singular",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "biletomacie"
+    ]
+   },
+   "text": "BILETOMACIE",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "locative singular",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "biletomacie"
+    ]
+   },
+   "text": "biletomacie",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "locative singular",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "biletomacie"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "locative singular",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "biletomacie"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "vocative singular",
+    "hint": "o!",
+    "answers": [
+     "biletomacie"
+    ]
+   },
+   "text": "biletomacie",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "vocative singular",
+    "hint": "o!",
+    "answers": [
+     "biletomacie"
+    ]
+   },
+   "text": "BILETOMACIE",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "vocative singular",
+    "hint": "o!",
+    "answers": [
+     "biletomacie"
+    ]
+   },
+   "text": "biletomacie",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "vocative singular",
+    "hint": "o!",
+    "answers": [
+     "biletomacie"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "vocative singular",
+    "hint": "o!",
+    "answers": [
+     "biletomacie"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "nominative plural",
+    "hint": "kto? co?",
+    "answers": [
+     "biletomaty"
+    ]
+   },
+   "text": "biletomaty",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "nominative plural",
+    "hint": "kto? co?",
+    "answers": [
+     "biletomaty"
+    ]
+   },
+   "text": "BILETOMATY",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "nominative plural",
+    "hint": "kto? co?",
+    "answers": [
+     "biletomaty"
+    ]
+   },
+   "text": "biletomaty",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "nominative plural",
+    "hint": "kto? co?",
+    "answers": [
+     "biletomaty"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "nominative plural",
+    "hint": "kto? co?",
+    "answers": [
+     "biletomaty"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "genitive plural",
+    "hint": "kogo? czego?",
+    "answers": [
+     "biletomatów"
+    ]
+   },
+   "text": "biletomatów",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "genitive plural",
+    "hint": "kogo? czego?",
+    "answers": [
+     "biletomatów"
+    ]
+   },
+   "text": "BILETOMATÓW",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "genitive plural",
+    "hint": "kogo? czego?",
+    "answers": [
+     "biletomatów"
+    ]
+   },
+   "text": "biletomatow",
+   "verdict": "accents"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "genitive plural",
+    "hint": "kogo? czego?",
+    "answers": [
+     "biletomatów"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "genitive plural",
+    "hint": "kogo? czego?",
+    "answers": [
+     "biletomatów"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "dative plural",
+    "hint": "komu? czemu?",
+    "answers": [
+     "biletomatom"
+    ]
+   },
+   "text": "biletomatom",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "dative plural",
+    "hint": "komu? czemu?",
+    "answers": [
+     "biletomatom"
+    ]
+   },
+   "text": "BILETOMATOM",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "dative plural",
+    "hint": "komu? czemu?",
+    "answers": [
+     "biletomatom"
+    ]
+   },
+   "text": "biletomatom",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "dative plural",
+    "hint": "komu? czemu?",
+    "answers": [
+     "biletomatom"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "dative plural",
+    "hint": "komu? czemu?",
+    "answers": [
+     "biletomatom"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "accusative plural",
+    "hint": "kogo? co?",
+    "answers": [
+     "biletomaty"
+    ]
+   },
+   "text": "biletomaty",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "accusative plural",
+    "hint": "kogo? co?",
+    "answers": [
+     "biletomaty"
+    ]
+   },
+   "text": "BILETOMATY",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "accusative plural",
+    "hint": "kogo? co?",
+    "answers": [
+     "biletomaty"
+    ]
+   },
+   "text": "biletomaty",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "accusative plural",
+    "hint": "kogo? co?",
+    "answers": [
+     "biletomaty"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "accusative plural",
+    "hint": "kogo? co?",
+    "answers": [
+     "biletomaty"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "instrumental plural",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "biletomatami"
+    ]
+   },
+   "text": "biletomatami",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "instrumental plural",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "biletomatami"
+    ]
+   },
+   "text": "BILETOMATAMI",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "instrumental plural",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "biletomatami"
+    ]
+   },
+   "text": "biletomatami",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "instrumental plural",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "biletomatami"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "instrumental plural",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "biletomatami"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "locative plural",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "biletomatach"
+    ]
+   },
+   "text": "biletomatach",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "locative plural",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "biletomatach"
+    ]
+   },
+   "text": "BILETOMATACH",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "locative plural",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "biletomatach"
+    ]
+   },
+   "text": "biletomatach",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "locative plural",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "biletomatach"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "nouns",
+    "card": "biletomat",
+    "stem": "biletomat → ___",
+    "label": "locative plural",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "biletomatach"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "masculine genitive",
+    "hint": "kogo? czego?",
+    "answers": [
+     "ostrego"
+    ]
+   },
+   "text": "ostrego",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "masculine genitive",
+    "hint": "kogo? czego?",
+    "answers": [
+     "ostrego"
+    ]
+   },
+   "text": "OSTREGO",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "masculine genitive",
+    "hint": "kogo? czego?",
+    "answers": [
+     "ostrego"
+    ]
+   },
+   "text": "ostrego",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "masculine genitive",
+    "hint": "kogo? czego?",
+    "answers": [
+     "ostrego"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "masculine genitive",
+    "hint": "kogo? czego?",
+    "answers": [
+     "ostrego"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "masculine dative",
+    "hint": "komu? czemu?",
+    "answers": [
+     "ostremu"
+    ]
+   },
+   "text": "ostremu",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "masculine dative",
+    "hint": "komu? czemu?",
+    "answers": [
+     "ostremu"
+    ]
+   },
+   "text": "OSTREMU",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "masculine dative",
+    "hint": "komu? czemu?",
+    "answers": [
+     "ostremu"
+    ]
+   },
+   "text": "ostremu",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "masculine dative",
+    "hint": "komu? czemu?",
+    "answers": [
+     "ostremu"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "masculine dative",
+    "hint": "komu? czemu?",
+    "answers": [
+     "ostremu"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "masculine accusative",
+    "hint": "kogo? co?",
+    "answers": [
+     "ostry",
+     "ostrego"
+    ]
+   },
+   "text": "ostry",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "masculine accusative",
+    "hint": "kogo? co?",
+    "answers": [
+     "ostry",
+     "ostrego"
+    ]
+   },
+   "text": "OSTRY",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "masculine accusative",
+    "hint": "kogo? co?",
+    "answers": [
+     "ostry",
+     "ostrego"
+    ]
+   },
+   "text": "ostry",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "masculine accusative",
+    "hint": "kogo? co?",
+    "answers": [
+     "ostry",
+     "ostrego"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "masculine accusative",
+    "hint": "kogo? co?",
+    "answers": [
+     "ostry",
+     "ostrego"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "masculine instrumental",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "ostrym"
+    ]
+   },
+   "text": "ostrym",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "masculine instrumental",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "ostrym"
+    ]
+   },
+   "text": "OSTRYM",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "masculine instrumental",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "ostrym"
+    ]
+   },
+   "text": "ostrym",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "masculine instrumental",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "ostrym"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "masculine instrumental",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "ostrym"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "masculine locative",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "ostrym"
+    ]
+   },
+   "text": "ostrym",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "masculine locative",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "ostrym"
+    ]
+   },
+   "text": "OSTRYM",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "masculine locative",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "ostrym"
+    ]
+   },
+   "text": "ostrym",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "masculine locative",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "ostrym"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "masculine locative",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "ostrym"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "feminine nominative",
+    "hint": "kto? co?",
+    "answers": [
+     "ostra"
+    ]
+   },
+   "text": "ostra",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "feminine nominative",
+    "hint": "kto? co?",
+    "answers": [
+     "ostra"
+    ]
+   },
+   "text": "OSTRA",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "feminine nominative",
+    "hint": "kto? co?",
+    "answers": [
+     "ostra"
+    ]
+   },
+   "text": "ostra",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "feminine nominative",
+    "hint": "kto? co?",
+    "answers": [
+     "ostra"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "feminine nominative",
+    "hint": "kto? co?",
+    "answers": [
+     "ostra"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "feminine genitive",
+    "hint": "kogo? czego?",
+    "answers": [
+     "ostrej"
+    ]
+   },
+   "text": "ostrej",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "feminine genitive",
+    "hint": "kogo? czego?",
+    "answers": [
+     "ostrej"
+    ]
+   },
+   "text": "OSTREJ",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "feminine genitive",
+    "hint": "kogo? czego?",
+    "answers": [
+     "ostrej"
+    ]
+   },
+   "text": "ostrej",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "feminine genitive",
+    "hint": "kogo? czego?",
+    "answers": [
+     "ostrej"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "feminine genitive",
+    "hint": "kogo? czego?",
+    "answers": [
+     "ostrej"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "feminine dative",
+    "hint": "komu? czemu?",
+    "answers": [
+     "ostrej"
+    ]
+   },
+   "text": "ostrej",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "feminine dative",
+    "hint": "komu? czemu?",
+    "answers": [
+     "ostrej"
+    ]
+   },
+   "text": "OSTREJ",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "feminine dative",
+    "hint": "komu? czemu?",
+    "answers": [
+     "ostrej"
+    ]
+   },
+   "text": "ostrej",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "feminine dative",
+    "hint": "komu? czemu?",
+    "answers": [
+     "ostrej"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "feminine dative",
+    "hint": "komu? czemu?",
+    "answers": [
+     "ostrej"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "feminine accusative",
+    "hint": "kogo? co?",
+    "answers": [
+     "ostrą"
+    ]
+   },
+   "text": "ostrą",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "feminine accusative",
+    "hint": "kogo? co?",
+    "answers": [
+     "ostrą"
+    ]
+   },
+   "text": "OSTRĄ",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "feminine accusative",
+    "hint": "kogo? co?",
+    "answers": [
+     "ostrą"
+    ]
+   },
+   "text": "ostra",
+   "verdict": "accents"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "feminine accusative",
+    "hint": "kogo? co?",
+    "answers": [
+     "ostrą"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "feminine accusative",
+    "hint": "kogo? co?",
+    "answers": [
+     "ostrą"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "feminine instrumental",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "ostrą"
+    ]
+   },
+   "text": "ostrą",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "feminine instrumental",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "ostrą"
+    ]
+   },
+   "text": "OSTRĄ",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "feminine instrumental",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "ostrą"
+    ]
+   },
+   "text": "ostra",
+   "verdict": "accents"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "feminine instrumental",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "ostrą"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "feminine instrumental",
+    "hint": "z kim? z czym?",
+    "answers": [
+     "ostrą"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "feminine locative",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "ostrej"
+    ]
+   },
+   "text": "ostrej",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "feminine locative",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "ostrej"
+    ]
+   },
+   "text": "OSTREJ",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "feminine locative",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "ostrej"
+    ]
+   },
+   "text": "ostrej",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "feminine locative",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "ostrej"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "feminine locative",
+    "hint": "o kim? o czym?",
+    "answers": [
+     "ostrej"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "neuter nominative",
+    "hint": "kto? co?",
+    "answers": [
+     "ostre"
+    ]
+   },
+   "text": "ostre",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "neuter nominative",
+    "hint": "kto? co?",
+    "answers": [
+     "ostre"
+    ]
+   },
+   "text": "OSTRE",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "neuter nominative",
+    "hint": "kto? co?",
+    "answers": [
+     "ostre"
+    ]
+   },
+   "text": "ostre",
+   "verdict": "correct"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "neuter nominative",
+    "hint": "kto? co?",
+    "answers": [
+     "ostre"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "pl",
+   "q": {
+    "category": "adjectives",
+    "card": "ostry / ostro",
+    "stem": "ostry → ___",
+    "label": "neuter nominative",
+    "hint": "kto? co?",
+    "answers": [
+     "ostre"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "je ___",
+    "label": "s'apercevoir · Présent",
+    "hint": "",
+    "answers": [
+     "m'aperçois"
+    ]
+   },
+   "text": "m'aperçois",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "je ___",
+    "label": "s'apercevoir · Présent",
+    "hint": "",
+    "answers": [
+     "m'aperçois"
+    ]
+   },
+   "text": "M'APERÇOIS",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "je ___",
+    "label": "s'apercevoir · Présent",
+    "hint": "",
+    "answers": [
+     "m'aperçois"
+    ]
+   },
+   "text": "m'apercois",
+   "verdict": "accents"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "je ___",
+    "label": "s'apercevoir · Présent",
+    "hint": "",
+    "answers": [
+     "m'aperçois"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "je ___",
+    "label": "s'apercevoir · Présent",
+    "hint": "",
+    "answers": [
+     "m'aperçois"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "tu ___",
+    "label": "s'apercevoir · Présent",
+    "hint": "",
+    "answers": [
+     "t'aperçois"
+    ]
+   },
+   "text": "t'aperçois",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "tu ___",
+    "label": "s'apercevoir · Présent",
+    "hint": "",
+    "answers": [
+     "t'aperçois"
+    ]
+   },
+   "text": "T'APERÇOIS",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "tu ___",
+    "label": "s'apercevoir · Présent",
+    "hint": "",
+    "answers": [
+     "t'aperçois"
+    ]
+   },
+   "text": "t'apercois",
+   "verdict": "accents"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "tu ___",
+    "label": "s'apercevoir · Présent",
+    "hint": "",
+    "answers": [
+     "t'aperçois"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "tu ___",
+    "label": "s'apercevoir · Présent",
+    "hint": "",
+    "answers": [
+     "t'aperçois"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "il/elle ___",
+    "label": "s'apercevoir · Présent",
+    "hint": "",
+    "answers": [
+     "s'aperçoit"
+    ]
+   },
+   "text": "s'aperçoit",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "il/elle ___",
+    "label": "s'apercevoir · Présent",
+    "hint": "",
+    "answers": [
+     "s'aperçoit"
+    ]
+   },
+   "text": "S'APERÇOIT",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "il/elle ___",
+    "label": "s'apercevoir · Présent",
+    "hint": "",
+    "answers": [
+     "s'aperçoit"
+    ]
+   },
+   "text": "s'apercoit",
+   "verdict": "accents"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "il/elle ___",
+    "label": "s'apercevoir · Présent",
+    "hint": "",
+    "answers": [
+     "s'aperçoit"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "il/elle ___",
+    "label": "s'apercevoir · Présent",
+    "hint": "",
+    "answers": [
+     "s'aperçoit"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "nous ___",
+    "label": "s'apercevoir · Présent",
+    "hint": "",
+    "answers": [
+     "nous apercevons"
+    ]
+   },
+   "text": "nous apercevons",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "nous ___",
+    "label": "s'apercevoir · Présent",
+    "hint": "",
+    "answers": [
+     "nous apercevons"
+    ]
+   },
+   "text": "NOUS APERCEVONS",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "nous ___",
+    "label": "s'apercevoir · Présent",
+    "hint": "",
+    "answers": [
+     "nous apercevons"
+    ]
+   },
+   "text": "nous apercevons",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "nous ___",
+    "label": "s'apercevoir · Présent",
+    "hint": "",
+    "answers": [
+     "nous apercevons"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "nous ___",
+    "label": "s'apercevoir · Présent",
+    "hint": "",
+    "answers": [
+     "nous apercevons"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "vous ___",
+    "label": "s'apercevoir · Présent",
+    "hint": "",
+    "answers": [
+     "vous apercevez"
+    ]
+   },
+   "text": "vous apercevez",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "vous ___",
+    "label": "s'apercevoir · Présent",
+    "hint": "",
+    "answers": [
+     "vous apercevez"
+    ]
+   },
+   "text": "VOUS APERCEVEZ",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "vous ___",
+    "label": "s'apercevoir · Présent",
+    "hint": "",
+    "answers": [
+     "vous apercevez"
+    ]
+   },
+   "text": "vous apercevez",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "vous ___",
+    "label": "s'apercevoir · Présent",
+    "hint": "",
+    "answers": [
+     "vous apercevez"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "vous ___",
+    "label": "s'apercevoir · Présent",
+    "hint": "",
+    "answers": [
+     "vous apercevez"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "ils/elles ___",
+    "label": "s'apercevoir · Présent",
+    "hint": "",
+    "answers": [
+     "s'aperçoivent"
+    ]
+   },
+   "text": "s'aperçoivent",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "ils/elles ___",
+    "label": "s'apercevoir · Présent",
+    "hint": "",
+    "answers": [
+     "s'aperçoivent"
+    ]
+   },
+   "text": "S'APERÇOIVENT",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "ils/elles ___",
+    "label": "s'apercevoir · Présent",
+    "hint": "",
+    "answers": [
+     "s'aperçoivent"
+    ]
+   },
+   "text": "s'apercoivent",
+   "verdict": "accents"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "ils/elles ___",
+    "label": "s'apercevoir · Présent",
+    "hint": "",
+    "answers": [
+     "s'aperçoivent"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "ils/elles ___",
+    "label": "s'apercevoir · Présent",
+    "hint": "",
+    "answers": [
+     "s'aperçoivent"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "je ___",
+    "label": "s'apercevoir · Passé composé",
+    "hint": "",
+    "answers": [
+     "me suis aperçu",
+     "me suis aperçue"
+    ]
+   },
+   "text": "me suis aperçu",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "je ___",
+    "label": "s'apercevoir · Passé composé",
+    "hint": "",
+    "answers": [
+     "me suis aperçu",
+     "me suis aperçue"
+    ]
+   },
+   "text": "ME SUIS APERÇU",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "je ___",
+    "label": "s'apercevoir · Passé composé",
+    "hint": "",
+    "answers": [
+     "me suis aperçu",
+     "me suis aperçue"
+    ]
+   },
+   "text": "me suis apercu",
+   "verdict": "accents"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "je ___",
+    "label": "s'apercevoir · Passé composé",
+    "hint": "",
+    "answers": [
+     "me suis aperçu",
+     "me suis aperçue"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "je ___",
+    "label": "s'apercevoir · Passé composé",
+    "hint": "",
+    "answers": [
+     "me suis aperçu",
+     "me suis aperçue"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "tu ___",
+    "label": "s'apercevoir · Passé composé",
+    "hint": "",
+    "answers": [
+     "t'es aperçu",
+     "t'es aperçue"
+    ]
+   },
+   "text": "t'es aperçu",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "tu ___",
+    "label": "s'apercevoir · Passé composé",
+    "hint": "",
+    "answers": [
+     "t'es aperçu",
+     "t'es aperçue"
+    ]
+   },
+   "text": "T'ES APERÇU",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "tu ___",
+    "label": "s'apercevoir · Passé composé",
+    "hint": "",
+    "answers": [
+     "t'es aperçu",
+     "t'es aperçue"
+    ]
+   },
+   "text": "t'es apercu",
+   "verdict": "accents"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "tu ___",
+    "label": "s'apercevoir · Passé composé",
+    "hint": "",
+    "answers": [
+     "t'es aperçu",
+     "t'es aperçue"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "tu ___",
+    "label": "s'apercevoir · Passé composé",
+    "hint": "",
+    "answers": [
+     "t'es aperçu",
+     "t'es aperçue"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "il/elle ___",
+    "label": "s'apercevoir · Passé composé",
+    "hint": "",
+    "answers": [
+     "s'est aperçu",
+     "s'est aperçue"
+    ]
+   },
+   "text": "s'est aperçu",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "il/elle ___",
+    "label": "s'apercevoir · Passé composé",
+    "hint": "",
+    "answers": [
+     "s'est aperçu",
+     "s'est aperçue"
+    ]
+   },
+   "text": "S'EST APERÇU",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "il/elle ___",
+    "label": "s'apercevoir · Passé composé",
+    "hint": "",
+    "answers": [
+     "s'est aperçu",
+     "s'est aperçue"
+    ]
+   },
+   "text": "s'est apercu",
+   "verdict": "accents"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "il/elle ___",
+    "label": "s'apercevoir · Passé composé",
+    "hint": "",
+    "answers": [
+     "s'est aperçu",
+     "s'est aperçue"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "il/elle ___",
+    "label": "s'apercevoir · Passé composé",
+    "hint": "",
+    "answers": [
+     "s'est aperçu",
+     "s'est aperçue"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "nous ___",
+    "label": "s'apercevoir · Passé composé",
+    "hint": "",
+    "answers": [
+     "nous sommes aperçus",
+     "nous sommes aperçues"
+    ]
+   },
+   "text": "nous sommes aperçus",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "nous ___",
+    "label": "s'apercevoir · Passé composé",
+    "hint": "",
+    "answers": [
+     "nous sommes aperçus",
+     "nous sommes aperçues"
+    ]
+   },
+   "text": "NOUS SOMMES APERÇUS",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "nous ___",
+    "label": "s'apercevoir · Passé composé",
+    "hint": "",
+    "answers": [
+     "nous sommes aperçus",
+     "nous sommes aperçues"
+    ]
+   },
+   "text": "nous sommes apercus",
+   "verdict": "accents"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "nous ___",
+    "label": "s'apercevoir · Passé composé",
+    "hint": "",
+    "answers": [
+     "nous sommes aperçus",
+     "nous sommes aperçues"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "nous ___",
+    "label": "s'apercevoir · Passé composé",
+    "hint": "",
+    "answers": [
+     "nous sommes aperçus",
+     "nous sommes aperçues"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "vous ___",
+    "label": "s'apercevoir · Passé composé",
+    "hint": "",
+    "answers": [
+     "vous êtes aperçu",
+     "vous êtes aperçus",
+     "vous êtes aperçue",
+     "vous êtes aperçues"
+    ]
+   },
+   "text": "vous êtes aperçu",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "vous ___",
+    "label": "s'apercevoir · Passé composé",
+    "hint": "",
+    "answers": [
+     "vous êtes aperçu",
+     "vous êtes aperçus",
+     "vous êtes aperçue",
+     "vous êtes aperçues"
+    ]
+   },
+   "text": "VOUS ÊTES APERÇU",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "vous ___",
+    "label": "s'apercevoir · Passé composé",
+    "hint": "",
+    "answers": [
+     "vous êtes aperçu",
+     "vous êtes aperçus",
+     "vous êtes aperçue",
+     "vous êtes aperçues"
+    ]
+   },
+   "text": "vous etes apercu",
+   "verdict": "accents"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "vous ___",
+    "label": "s'apercevoir · Passé composé",
+    "hint": "",
+    "answers": [
+     "vous êtes aperçu",
+     "vous êtes aperçus",
+     "vous êtes aperçue",
+     "vous êtes aperçues"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "vous ___",
+    "label": "s'apercevoir · Passé composé",
+    "hint": "",
+    "answers": [
+     "vous êtes aperçu",
+     "vous êtes aperçus",
+     "vous êtes aperçue",
+     "vous êtes aperçues"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "ils/elles ___",
+    "label": "s'apercevoir · Passé composé",
+    "hint": "",
+    "answers": [
+     "se sont aperçus",
+     "se sont aperçues"
+    ]
+   },
+   "text": "se sont aperçus",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "ils/elles ___",
+    "label": "s'apercevoir · Passé composé",
+    "hint": "",
+    "answers": [
+     "se sont aperçus",
+     "se sont aperçues"
+    ]
+   },
+   "text": "SE SONT APERÇUS",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "ils/elles ___",
+    "label": "s'apercevoir · Passé composé",
+    "hint": "",
+    "answers": [
+     "se sont aperçus",
+     "se sont aperçues"
+    ]
+   },
+   "text": "se sont apercus",
+   "verdict": "accents"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "ils/elles ___",
+    "label": "s'apercevoir · Passé composé",
+    "hint": "",
+    "answers": [
+     "se sont aperçus",
+     "se sont aperçues"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "verbs",
+    "card": "s'apercevoir",
+    "stem": "ils/elles ___",
+    "label": "s'apercevoir · Passé composé",
+    "hint": "",
+    "answers": [
+     "se sont aperçus",
+     "se sont aperçues"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "nouns",
+    "card": "enjeu",
+    "stem": "l'enjeu → les ___",
+    "label": "plural",
+    "hint": "",
+    "answers": [
+     "enjeux",
+     "les enjeux"
+    ]
+   },
+   "text": "enjeux",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "nouns",
+    "card": "enjeu",
+    "stem": "l'enjeu → les ___",
+    "label": "plural",
+    "hint": "",
+    "answers": [
+     "enjeux",
+     "les enjeux"
+    ]
+   },
+   "text": "ENJEUX",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "nouns",
+    "card": "enjeu",
+    "stem": "l'enjeu → les ___",
+    "label": "plural",
+    "hint": "",
+    "answers": [
+     "enjeux",
+     "les enjeux"
+    ]
+   },
+   "text": "enjeux",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "nouns",
+    "card": "enjeu",
+    "stem": "l'enjeu → les ___",
+    "label": "plural",
+    "hint": "",
+    "answers": [
+     "enjeux",
+     "les enjeux"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "nouns",
+    "card": "enjeu",
+    "stem": "l'enjeu → les ___",
+    "label": "plural",
+    "hint": "",
+    "answers": [
+     "enjeux",
+     "les enjeux"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "nouns",
+    "card": "aboutissement",
+    "stem": "l'aboutissement → les ___",
+    "label": "plural",
+    "hint": "",
+    "answers": [
+     "aboutissements",
+     "les aboutissements"
+    ]
+   },
+   "text": "aboutissements",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "nouns",
+    "card": "aboutissement",
+    "stem": "l'aboutissement → les ___",
+    "label": "plural",
+    "hint": "",
+    "answers": [
+     "aboutissements",
+     "les aboutissements"
+    ]
+   },
+   "text": "ABOUTISSEMENTS",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "nouns",
+    "card": "aboutissement",
+    "stem": "l'aboutissement → les ___",
+    "label": "plural",
+    "hint": "",
+    "answers": [
+     "aboutissements",
+     "les aboutissements"
+    ]
+   },
+   "text": "aboutissements",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "nouns",
+    "card": "aboutissement",
+    "stem": "l'aboutissement → les ___",
+    "label": "plural",
+    "hint": "",
+    "answers": [
+     "aboutissements",
+     "les aboutissements"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "nouns",
+    "card": "aboutissement",
+    "stem": "l'aboutissement → les ___",
+    "label": "plural",
+    "hint": "",
+    "answers": [
+     "aboutissements",
+     "les aboutissements"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "nouns",
+    "card": "méfiance",
+    "stem": "la méfiance → les ___",
+    "label": "plural",
+    "hint": "",
+    "answers": [
+     "méfiances",
+     "les méfiances"
+    ]
+   },
+   "text": "méfiances",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "nouns",
+    "card": "méfiance",
+    "stem": "la méfiance → les ___",
+    "label": "plural",
+    "hint": "",
+    "answers": [
+     "méfiances",
+     "les méfiances"
+    ]
+   },
+   "text": "MÉFIANCES",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "nouns",
+    "card": "méfiance",
+    "stem": "la méfiance → les ___",
+    "label": "plural",
+    "hint": "",
+    "answers": [
+     "méfiances",
+     "les méfiances"
+    ]
+   },
+   "text": "mefiances",
+   "verdict": "accents"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "nouns",
+    "card": "méfiance",
+    "stem": "la méfiance → les ___",
+    "label": "plural",
+    "hint": "",
+    "answers": [
+     "méfiances",
+     "les méfiances"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "nouns",
+    "card": "méfiance",
+    "stem": "la méfiance → les ___",
+    "label": "plural",
+    "hint": "",
+    "answers": [
+     "méfiances",
+     "les méfiances"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "nouns",
+    "card": "ampleur",
+    "stem": "l'ampleur → les ___",
+    "label": "plural",
+    "hint": "",
+    "answers": [
+     "ampleurs",
+     "les ampleurs"
+    ]
+   },
+   "text": "ampleurs",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "nouns",
+    "card": "ampleur",
+    "stem": "l'ampleur → les ___",
+    "label": "plural",
+    "hint": "",
+    "answers": [
+     "ampleurs",
+     "les ampleurs"
+    ]
+   },
+   "text": "AMPLEURS",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "nouns",
+    "card": "ampleur",
+    "stem": "l'ampleur → les ___",
+    "label": "plural",
+    "hint": "",
+    "answers": [
+     "ampleurs",
+     "les ampleurs"
+    ]
+   },
+   "text": "ampleurs",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "nouns",
+    "card": "ampleur",
+    "stem": "l'ampleur → les ___",
+    "label": "plural",
+    "hint": "",
+    "answers": [
+     "ampleurs",
+     "les ampleurs"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "nouns",
+    "card": "ampleur",
+    "stem": "l'ampleur → les ___",
+    "label": "plural",
+    "hint": "",
+    "answers": [
+     "ampleurs",
+     "les ampleurs"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "nouns",
+    "card": "conscience",
+    "stem": "la conscience → les ___",
+    "label": "plural",
+    "hint": "",
+    "answers": [
+     "consciences",
+     "les consciences"
+    ]
+   },
+   "text": "consciences",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "nouns",
+    "card": "conscience",
+    "stem": "la conscience → les ___",
+    "label": "plural",
+    "hint": "",
+    "answers": [
+     "consciences",
+     "les consciences"
+    ]
+   },
+   "text": "CONSCIENCES",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "nouns",
+    "card": "conscience",
+    "stem": "la conscience → les ___",
+    "label": "plural",
+    "hint": "",
+    "answers": [
+     "consciences",
+     "les consciences"
+    ]
+   },
+   "text": "consciences",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "nouns",
+    "card": "conscience",
+    "stem": "la conscience → les ___",
+    "label": "plural",
+    "hint": "",
+    "answers": [
+     "consciences",
+     "les consciences"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "nouns",
+    "card": "conscience",
+    "stem": "la conscience → les ___",
+    "label": "plural",
+    "hint": "",
+    "answers": [
+     "consciences",
+     "les consciences"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "pertinent",
+    "stem": "pertinent → ___",
+    "label": "feminine singular",
+    "hint": "",
+    "answers": [
+     "pertinente"
+    ]
+   },
+   "text": "pertinente",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "pertinent",
+    "stem": "pertinent → ___",
+    "label": "feminine singular",
+    "hint": "",
+    "answers": [
+     "pertinente"
+    ]
+   },
+   "text": "PERTINENTE",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "pertinent",
+    "stem": "pertinent → ___",
+    "label": "feminine singular",
+    "hint": "",
+    "answers": [
+     "pertinente"
+    ]
+   },
+   "text": "pertinente",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "pertinent",
+    "stem": "pertinent → ___",
+    "label": "feminine singular",
+    "hint": "",
+    "answers": [
+     "pertinente"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "pertinent",
+    "stem": "pertinent → ___",
+    "label": "feminine singular",
+    "hint": "",
+    "answers": [
+     "pertinente"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "pertinent",
+    "stem": "pertinent → ___",
+    "label": "masculine plural",
+    "hint": "",
+    "answers": [
+     "pertinents"
+    ]
+   },
+   "text": "pertinents",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "pertinent",
+    "stem": "pertinent → ___",
+    "label": "masculine plural",
+    "hint": "",
+    "answers": [
+     "pertinents"
+    ]
+   },
+   "text": "PERTINENTS",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "pertinent",
+    "stem": "pertinent → ___",
+    "label": "masculine plural",
+    "hint": "",
+    "answers": [
+     "pertinents"
+    ]
+   },
+   "text": "pertinents",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "pertinent",
+    "stem": "pertinent → ___",
+    "label": "masculine plural",
+    "hint": "",
+    "answers": [
+     "pertinents"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "pertinent",
+    "stem": "pertinent → ___",
+    "label": "masculine plural",
+    "hint": "",
+    "answers": [
+     "pertinents"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "pertinent",
+    "stem": "pertinent → ___",
+    "label": "feminine plural",
+    "hint": "",
+    "answers": [
+     "pertinentes"
+    ]
+   },
+   "text": "pertinentes",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "pertinent",
+    "stem": "pertinent → ___",
+    "label": "feminine plural",
+    "hint": "",
+    "answers": [
+     "pertinentes"
+    ]
+   },
+   "text": "PERTINENTES",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "pertinent",
+    "stem": "pertinent → ___",
+    "label": "feminine plural",
+    "hint": "",
+    "answers": [
+     "pertinentes"
+    ]
+   },
+   "text": "pertinentes",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "pertinent",
+    "stem": "pertinent → ___",
+    "label": "feminine plural",
+    "hint": "",
+    "answers": [
+     "pertinentes"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "pertinent",
+    "stem": "pertinent → ___",
+    "label": "feminine plural",
+    "hint": "",
+    "answers": [
+     "pertinentes"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "incontournable",
+    "stem": "incontournable → ___",
+    "label": "feminine singular",
+    "hint": "",
+    "answers": [
+     "incontournable"
+    ]
+   },
+   "text": "incontournable",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "incontournable",
+    "stem": "incontournable → ___",
+    "label": "feminine singular",
+    "hint": "",
+    "answers": [
+     "incontournable"
+    ]
+   },
+   "text": "INCONTOURNABLE",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "incontournable",
+    "stem": "incontournable → ___",
+    "label": "feminine singular",
+    "hint": "",
+    "answers": [
+     "incontournable"
+    ]
+   },
+   "text": "incontournable",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "incontournable",
+    "stem": "incontournable → ___",
+    "label": "feminine singular",
+    "hint": "",
+    "answers": [
+     "incontournable"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "incontournable",
+    "stem": "incontournable → ___",
+    "label": "feminine singular",
+    "hint": "",
+    "answers": [
+     "incontournable"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "incontournable",
+    "stem": "incontournable → ___",
+    "label": "masculine plural",
+    "hint": "",
+    "answers": [
+     "incontournables"
+    ]
+   },
+   "text": "incontournables",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "incontournable",
+    "stem": "incontournable → ___",
+    "label": "masculine plural",
+    "hint": "",
+    "answers": [
+     "incontournables"
+    ]
+   },
+   "text": "INCONTOURNABLES",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "incontournable",
+    "stem": "incontournable → ___",
+    "label": "masculine plural",
+    "hint": "",
+    "answers": [
+     "incontournables"
+    ]
+   },
+   "text": "incontournables",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "incontournable",
+    "stem": "incontournable → ___",
+    "label": "masculine plural",
+    "hint": "",
+    "answers": [
+     "incontournables"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "incontournable",
+    "stem": "incontournable → ___",
+    "label": "masculine plural",
+    "hint": "",
+    "answers": [
+     "incontournables"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "incontournable",
+    "stem": "incontournable → ___",
+    "label": "feminine plural",
+    "hint": "",
+    "answers": [
+     "incontournables"
+    ]
+   },
+   "text": "incontournables",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "incontournable",
+    "stem": "incontournable → ___",
+    "label": "feminine plural",
+    "hint": "",
+    "answers": [
+     "incontournables"
+    ]
+   },
+   "text": "INCONTOURNABLES",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "incontournable",
+    "stem": "incontournable → ___",
+    "label": "feminine plural",
+    "hint": "",
+    "answers": [
+     "incontournables"
+    ]
+   },
+   "text": "incontournables",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "incontournable",
+    "stem": "incontournable → ___",
+    "label": "feminine plural",
+    "hint": "",
+    "answers": [
+     "incontournables"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "incontournable",
+    "stem": "incontournable → ___",
+    "label": "feminine plural",
+    "hint": "",
+    "answers": [
+     "incontournables"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "précaire",
+    "stem": "précaire → ___",
+    "label": "feminine singular",
+    "hint": "",
+    "answers": [
+     "précaire"
+    ]
+   },
+   "text": "précaire",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "précaire",
+    "stem": "précaire → ___",
+    "label": "feminine singular",
+    "hint": "",
+    "answers": [
+     "précaire"
+    ]
+   },
+   "text": "PRÉCAIRE",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "précaire",
+    "stem": "précaire → ___",
+    "label": "feminine singular",
+    "hint": "",
+    "answers": [
+     "précaire"
+    ]
+   },
+   "text": "precaire",
+   "verdict": "accents"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "précaire",
+    "stem": "précaire → ___",
+    "label": "feminine singular",
+    "hint": "",
+    "answers": [
+     "précaire"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "précaire",
+    "stem": "précaire → ___",
+    "label": "feminine singular",
+    "hint": "",
+    "answers": [
+     "précaire"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "précaire",
+    "stem": "précaire → ___",
+    "label": "masculine plural",
+    "hint": "",
+    "answers": [
+     "précaires"
+    ]
+   },
+   "text": "précaires",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "précaire",
+    "stem": "précaire → ___",
+    "label": "masculine plural",
+    "hint": "",
+    "answers": [
+     "précaires"
+    ]
+   },
+   "text": "PRÉCAIRES",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "précaire",
+    "stem": "précaire → ___",
+    "label": "masculine plural",
+    "hint": "",
+    "answers": [
+     "précaires"
+    ]
+   },
+   "text": "precaires",
+   "verdict": "accents"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "précaire",
+    "stem": "précaire → ___",
+    "label": "masculine plural",
+    "hint": "",
+    "answers": [
+     "précaires"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "précaire",
+    "stem": "précaire → ___",
+    "label": "masculine plural",
+    "hint": "",
+    "answers": [
+     "précaires"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "précaire",
+    "stem": "précaire → ___",
+    "label": "feminine plural",
+    "hint": "",
+    "answers": [
+     "précaires"
+    ]
+   },
+   "text": "précaires",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "précaire",
+    "stem": "précaire → ___",
+    "label": "feminine plural",
+    "hint": "",
+    "answers": [
+     "précaires"
+    ]
+   },
+   "text": "PRÉCAIRES",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "précaire",
+    "stem": "précaire → ___",
+    "label": "feminine plural",
+    "hint": "",
+    "answers": [
+     "précaires"
+    ]
+   },
+   "text": "precaires",
+   "verdict": "accents"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "précaire",
+    "stem": "précaire → ___",
+    "label": "feminine plural",
+    "hint": "",
+    "answers": [
+     "précaires"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "précaire",
+    "stem": "précaire → ___",
+    "label": "feminine plural",
+    "hint": "",
+    "answers": [
+     "précaires"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "approfondi",
+    "stem": "approfondi → ___",
+    "label": "feminine singular",
+    "hint": "",
+    "answers": [
+     "approfondie"
+    ]
+   },
+   "text": "approfondie",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "approfondi",
+    "stem": "approfondi → ___",
+    "label": "feminine singular",
+    "hint": "",
+    "answers": [
+     "approfondie"
+    ]
+   },
+   "text": "APPROFONDIE",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "approfondi",
+    "stem": "approfondi → ___",
+    "label": "feminine singular",
+    "hint": "",
+    "answers": [
+     "approfondie"
+    ]
+   },
+   "text": "approfondie",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "approfondi",
+    "stem": "approfondi → ___",
+    "label": "feminine singular",
+    "hint": "",
+    "answers": [
+     "approfondie"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "approfondi",
+    "stem": "approfondi → ___",
+    "label": "feminine singular",
+    "hint": "",
+    "answers": [
+     "approfondie"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "approfondi",
+    "stem": "approfondi → ___",
+    "label": "masculine plural",
+    "hint": "",
+    "answers": [
+     "approfondis"
+    ]
+   },
+   "text": "approfondis",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "approfondi",
+    "stem": "approfondi → ___",
+    "label": "masculine plural",
+    "hint": "",
+    "answers": [
+     "approfondis"
+    ]
+   },
+   "text": "APPROFONDIS",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "approfondi",
+    "stem": "approfondi → ___",
+    "label": "masculine plural",
+    "hint": "",
+    "answers": [
+     "approfondis"
+    ]
+   },
+   "text": "approfondis",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "approfondi",
+    "stem": "approfondi → ___",
+    "label": "masculine plural",
+    "hint": "",
+    "answers": [
+     "approfondis"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "approfondi",
+    "stem": "approfondi → ___",
+    "label": "masculine plural",
+    "hint": "",
+    "answers": [
+     "approfondis"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "approfondi",
+    "stem": "approfondi → ___",
+    "label": "feminine plural",
+    "hint": "",
+    "answers": [
+     "approfondies"
+    ]
+   },
+   "text": "approfondies",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "approfondi",
+    "stem": "approfondi → ___",
+    "label": "feminine plural",
+    "hint": "",
+    "answers": [
+     "approfondies"
+    ]
+   },
+   "text": "APPROFONDIES",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "approfondi",
+    "stem": "approfondi → ___",
+    "label": "feminine plural",
+    "hint": "",
+    "answers": [
+     "approfondies"
+    ]
+   },
+   "text": "approfondies",
+   "verdict": "correct"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "approfondi",
+    "stem": "approfondi → ___",
+    "label": "feminine plural",
+    "hint": "",
+    "answers": [
+     "approfondies"
+    ]
+   },
+   "text": "zzz",
+   "verdict": "wrong"
+  },
+  {
+   "lang": "fr",
+   "q": {
+    "category": "adjectives",
+    "card": "approfondi",
+    "stem": "approfondi → ___",
+    "label": "feminine plural",
+    "hint": "",
+    "answers": [
+     "approfondies"
+    ]
+   },
+   "text": "",
+   "verdict": "wrong"
+  }
+ ]
+}

@@ -31,12 +31,15 @@ from flashcards import (
     level_name,
 )
 import json
+import random
 from datetime import date
 
 from backup import make_backup, merge_progress, parse_import
 from progress import ProgressStore
 from theme import is_dark, main_style, set_dark
+import grammar
 from adjectives import adjective_html, load_adjectives
+from grammar_ui import GrammarDialog, GrammarSetupDialog
 from examples import examples_html, load_examples
 from nouns import declension_html, load_declensions
 from verbs import conjugation_html, load_conjugations
@@ -440,6 +443,11 @@ class FlashcardWindow(QMainWindow):
         cloze_action.setShortcut(QKeySequence("Ctrl+B"))
         cloze_action.triggered.connect(self.start_cloze)
         study_menu.addAction(cloze_action)
+
+        grammar_action = QAction("&Grammar quiz…", self)
+        grammar_action.setShortcut(QKeySequence("Ctrl+G"))
+        grammar_action.triggered.connect(self.start_grammar)
+        study_menu.addAction(grammar_action)
 
         sentence_action = QAction("&Sentence practice…", self)
         sentence_action.setShortcut(QKeySequence("Ctrl+P"))
@@ -1018,6 +1026,23 @@ class FlashcardWindow(QMainWindow):
             DungeonWindow(self.deck, save_path_for(self.json_path), self).exec()
         self._update_ui()
 
+    def start_grammar(self):
+        lang = "fr" if self.french else "pl"
+        pool = grammar.build_pool(lang, self.conjugations, self.declensions, self.adjectives)
+        if not any(pool.values()):
+            QMessageBox.information(self, "No grammar tables",
+                                    "The grammar quiz is made from verbs.json, nouns.json and adjectives.json next to "
+                                    "your words file, and none of them has entries yet.")
+            return
+        setup = GrammarSetupDialog(pool, self)
+        if setup.exec() != GrammarSetupDialog.DialogCode.Accepted:
+            return
+        questions = grammar.pick(pool, setup.categories(), setup.requested_count(), random.Random())
+        if not questions:
+            QMessageBox.information(self, "Nothing to ask", "Tick at least one kind of question.")
+            return
+        GrammarDialog(questions, lang, self).exec()
+
     def start_sentences(self):
         if not self.deck:
             return
@@ -1107,6 +1132,7 @@ class FlashcardWindow(QMainWindow):
             "Ctrl+F  Search cards (Enter: back to the cards)\n"
             "Ctrl+D  Dark mode on / off\n"
             "Ctrl+P  Sentence practice\n"
+            "Ctrl+G  Grammar quiz\n"
             "F       Show cards failed in a quiz\n"
             "E       Switch English-first / foreign-language-first\n"
             "H       Hear the word read aloud\n"

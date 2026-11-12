@@ -4,7 +4,7 @@ import { levelName } from "../core/deck";
 import { pickSentences } from "../core/sentences";
 import type { SentenceItem } from "../core/tables";
 import type { Shell } from "./shell";
-import { seg, type ReviewHost, type ReviewMode } from "./shell";
+import { REVIEW_TABS, seg, type ReviewHost, type ReviewMode } from "./shell";
 
 export function sentencesScreen(shell: Shell, host: ReviewHost): HTMLElement {
   const { app } = shell;
@@ -19,7 +19,7 @@ export function sentencesScreen(shell: Shell, host: ReviewHost): HTMLElement {
     countIn.addEventListener("input", () => { count = Math.max(1, parseInt(countIn.value, 10) || 10); });
     root.append(h("div", { class: "scroll-body stack" },
       h("header", { class: "top" }, h("h1", null, "Review")),
-      seg<ReviewMode>([["typed", "Type"], ["cloze", "Blank"], ["sentences", "Sentences"]], "sentences", (v) => { if (v !== "sentences") host.setMode(v); }),
+      seg<ReviewMode>(REVIEW_TABS, "sentences", (v) => { if (v !== "sentences") host.setMode(v); }),
       h("p", { class: "muted" }, `Practise with new sentences built from your words: mostly Almost there, plus Learning and To verify. ${app.sentences.length} sentences available.`),
       h("div", { class: "group" }, h("div", { class: "row" }, h("span", { class: "row-text" }, h("span", { class: "row-title" }, "Number of sentences")), countIn)),
       seg<"en" | "pl">([["en", "English → Polish"], ["pl", "Polish → English"]], english ? "en" : "pl", (v) => { english = v === "en"; }),

@@ -6,11 +6,12 @@ after every action, and never modifies the vocabulary deck.
 from __future__ import annotations
 
 import random
+from datetime import date
 from dataclasses import dataclass, field, replace
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 
-from . import config, items, stats as stat_rules
+from . import config, daily, items, stats as stat_rules
 from .battle import ACTIVE, DEFEAT, VICTORY, AnswerResult, Battle, Question
 from .cloze import ClozeSource
 from .dungeons import DUNGEONS
@@ -46,6 +47,7 @@ class DungeonStatus:
     endless: bool = False
     best: int = 0         # tower: highest floor cleared
     unavailable: str | None = None  # why it can't be entered right now (None = open)
+    note: str = ""        # daily challenge: today's twist and your streak
 
 
 @dataclass
@@ -98,7 +100,8 @@ class ItemUse:
 
 class GameManager:
     def __init__(self, deck: Any, save_path: str | Path, rng: random.Random | None = None,
-                 hero_name: str | None = None, examples_path: str | Path | None = None):
+                 hero_name: str | None = None, examples_path: str | Path | None = None,
+                 today: Callable[[], str] | None = None):
         self.deck = deck
         self.repo = GameProgressRepository(save_path)
         self.rng = rng or random.Random()
@@ -120,7 +123,11 @@ class GameManager:
         if self.inventory.refund:          # equipment that was removed from the game
             self.player.coins += self.inventory.refund
             self.inventory.refund = 0
+        self.language = "Polish"      # the language being learned, for texts (the window sets it)
+        self._today = today or (lambda: date.today().isoformat())
+        self.defs: dict[str, Dungeon] = {}      # the dungeons of today (the daily one changes with the date)
         self.progress: dict[str, dict[str, Any]] = {}
+        self.progress[daily.KEY] = self._clean_progress(state["dungeons"], daily.KEY, 6)
         for key, dungeon in DUNGEONS.items():
             self.progress[key] = self._clean_progress(state["dungeons"], key, dungeon.room_count)
 
@@ -128,6 +135,7 @@ class GameManager:
         self.battle: Battle | None = None
         self.outcome: RoomOutcome | None = None
         self._saved_fight = state["fight"] if isinstance(state["fight"], dict) else None
+        self._refresh_daily()
 
         self._apply_gear()
         if not self.player.is_alive:  # saved while dead: come back healthy, fight restarts
@@ -144,9 +152,45 @@ class GameManager:
             v = entry.get(name)
             return max(0, min(high, v)) if isinstance(v, int) and not isinstance(v, bool) else 0
 
-        return {"room": count("room", 10**6 if rooms is None else rooms),
-                "completed": entry.get("completed") is True,
-                "times": count("times", 10**6), "best": count("best", 10**6)}
+        out = {"room": count("room", 10**6 if rooms is None else rooms),
+               "completed": entry.get("completed") is True,
+               "times": count("times", 10**6), "best": count("best", 10**6)}
+        if key == daily.KEY:
+            def day(name: str) -> str:
+                v = entry.get(name)
+                try:
+                    return date.fromisoformat(v).isoformat() if isinstance(v, str) else ""
+                except ValueError:
+                    return ""
+            out.update(date=day("date"), last_done=day("last_done"), tier=count("tier", daily.MAX_TIER),
+                       streak=count("streak", 10**6), best_streak=count("best_streak", 10**6))
+        return out
+
+    def _refresh_daily(self) -> None:
+        """Make the daily challenge the one of today's date (a new day starts a fresh run)."""
+        today = self._today()
+        p = self.progress[daily.KEY]
+        if p["date"] != today:
+            p.update(date=today, room=0, completed=False, tier=0)
+            if self._saved_fight_for(daily.KEY):
+                self._saved_fight = None
+        if p["room"] == 0 and not p["completed"]:
+            p["tier"] = daily.tier_for(self.player.level)      # the strength is fixed once the run starts
+        elif not p["tier"]:
+            p["tier"] = daily.tier_for(self.player.level)
+        built = daily.build(today, p["tier"])
+        self.defs = {daily.KEY: built, **DUNGEONS}
+        if self.dungeon is not None and self.dungeon.key == daily.KEY:
+            self.dungeon = built
+
+    def _saved_fight_for(self, key: str) -> bool:
+        return bool(getattr(self, "_saved_fight", None)) and self._saved_fight.get("dungeon") == key
+
+    def daily_streak(self) -> int:
+        """Days in a row the challenge was finished, counting up to yesterday or today (0 once it is broken)."""
+        p = self.progress[daily.KEY]
+        today = self._today()
+        return p["streak"] if p["last_done"] in (today, daily.yesterday(today)) else 0
 
     def _apply_gear(self) -> None:
         """Bring the player's stats in line with what is equipped."""
@@ -178,10 +222,13 @@ class GameManager:
 
     def unavailable_reason(self, key: str) -> str | None:
         """Why a dungeon can't be entered right now (None = it can)."""
-        d = DUNGEONS[key]
+        self._refresh_daily()
+        d = self.defs[key]
         if self.player.level < d.min_level:
             return f"Requires level {d.min_level}"
         p = self.progress[key]
+        if d.kind == "daily" and p["completed"]:
+            return "Done today. Come back tomorrow!"
         in_progress = 0 < p["room"] < (d.room_count or 0)
         if d.kind == "review" and not self.missed and not in_progress:
             return "No missed words to review"
@@ -189,15 +236,23 @@ class GameManager:
 
     def dungeons(self) -> list[DungeonStatus]:
         out = []
-        for key, d in DUNGEONS.items():
+        self._refresh_daily()
+        for key, d in self.defs.items():
             p = self.progress[key]
             count = d.room_count
             started = p["room"] > 0 and (count is None or p["room"] < count)
             out.append(DungeonStatus(key, d.name, d.description, p["room"], count or 0,
                                      p["completed"], p["times"], started, d.min_level,
                                      self.player.level < d.min_level, d.kind, d.endless,
-                                     p["best"], self.unavailable_reason(key)))
+                                     p["best"], self.unavailable_reason(key),
+                                     self._daily_note() if d.kind == "daily" else ""))
         return out
+
+    def _daily_note(self) -> str:
+        streak = self.daily_streak()
+        bonus = round(daily.streak_bonus(streak + 1) * 100) if not self.progress[daily.KEY]["completed"] else 0
+        text = f"Streak: {streak} day{'s' if streak != 1 else ''}"
+        return text + (f" (today's reward +{bonus}%)" if bonus else "")
 
     def current_room(self) -> Room | None:
         """The next room to play in the selected dungeon; None when it is finished."""
@@ -212,8 +267,8 @@ class GameManager:
     # -- dungeon selection --------------------------------------------------
     def select_dungeon(self, key: str, restart: bool = False) -> None:
         """Choose a dungeon. A finished dungeon (or `restart=True`) starts again from room 1."""
-        dungeon = DUNGEONS[key]
         reason = self.unavailable_reason(key)
+        dungeon = self.defs[key]
         if reason:
             raise ValueError(f"{dungeon.name}: {reason}")
         p = self.progress[key]
@@ -272,6 +327,7 @@ class GameManager:
                 and isinstance(fight.get("monster_hp"), int)):
             hp = fight["monster_hp"]
         battle = Battle(self.player, Monster.spawn(spec, hp), self.selector, self.rng)
+        battle.language = self.language
         gear = self.inventory.totals()
         battle.phoenix = gear.phoenix
         battle.time_bonus = gear.time + self.player.effects.time_bonus
@@ -371,12 +427,28 @@ class GameManager:
             p["completed"] = True
             p["times"] += 1
             outcome.dungeon_completed = True
+            share = 1.0
+            if self.dungeon.kind == "daily":
+                share += self._finish_daily(p)
             outcome.final_reward = self.rewards.dungeon_completed(
-                round(self.dungeon.complete_xp * self.dungeon.reward_scale),
-                round(self.dungeon.complete_coins * self.dungeon.reward_scale))
+                round(self.dungeon.complete_xp * self.dungeon.reward_scale * share),
+                round(self.dungeon.complete_coins * self.dungeon.reward_scale * share))
+            if self.dungeon.kind == "daily":
+                streak = p["streak"]
+                outcome.final_reward.messages.append(
+                    f"Daily streak: {streak} day{'s' if streak != 1 else ''}"
+                    + (f" (+{round((share - 1) * 100)}% reward)" if share > 1 else ""))
             outcome.run = dict(self.run)
         self.save()
         return outcome
+
+    def _finish_daily(self, p: dict[str, Any]) -> float:
+        """Count today's win in the streak; returns the streak's extra share of the reward."""
+        today = self._today()
+        p["streak"] = p["streak"] + 1 if p["last_done"] == daily.yesterday(today) else 1
+        p["best_streak"] = max(p["best_streak"], p["streak"])
+        p["last_done"] = today
+        return daily.streak_bonus(p["streak"])
 
     def _give_loot(self, room: Room) -> str:
         """Hand over a boss drop. Gear you already own is sold at the normal sell price."""

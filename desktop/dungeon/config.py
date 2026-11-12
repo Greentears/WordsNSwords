@@ -106,10 +106,14 @@ class MonsterSpec:
 
     @property
     def abilities(self) -> list[str]:
+        return self.abilities_for("Polish")
+
+    def abilities_for(self, language: str) -> list[str]:
+        """The ability texts, naming the language the player is learning."""
         out = []
         if self.reverse_chance:
-            out.append("Sometimes asks for the Polish word" if self.reverse_chance < 0.5
-                       else "Often asks for the Polish word")
+            out.append(f"Sometimes asks for the {language} word" if self.reverse_chance < 0.5
+                       else f"Often asks for the {language} word")
         if self.armor:
             out.append(f"Armored: your hits do {self.armor} less")
         if self.regen:

@@ -69,7 +69,7 @@ class DungeonDataTests(unittest.TestCase):
 class ProgressionTests(Base):
     def test_fresh_game(self):
         gm = self.manager()
-        st = gm.dungeons()[0]
+        st = gm.dungeons()[1]
         self.assertEqual((st.room, st.completed, st.in_progress), (0, False, False))
         self.assertEqual(gm.player.name, "Adventurer")
 
@@ -132,7 +132,7 @@ class ProgressionTests(Base):
         self.assertEqual(last.run["rooms"], 8)
         self.assertEqual(last.run["monsters"], 6)
         self.assertIsNone(gm.current_room())
-        st = gm.dungeons()[0]
+        st = gm.dungeons()[1]
         self.assertTrue(st.completed)
         self.assertEqual(st.times, 1)
         self.assertEqual(gm.stats["dungeons_completed"], 1)
@@ -146,7 +146,7 @@ class ProgressionTests(Base):
         gm.select_dungeon(KEY)
         self.assertEqual(gm.room_index, 0)
         self.assertEqual(gm.run["rooms"], 0)
-        self.assertTrue(gm.dungeons()[0].completed)  # remembered
+        self.assertTrue(gm.dungeons()[1].completed)  # remembered
 
     def test_enter_room_without_room_raises(self):
         gm = self.manager()
@@ -219,7 +219,7 @@ class PersistenceTests(Base):
         self.assertEqual(gm2.stats, stats)
         gm2.select_dungeon(KEY)
         self.assertEqual(gm2.room_index, 1)
-        self.assertTrue(gm2.dungeons()[0].in_progress)
+        self.assertTrue(gm2.dungeons()[1].in_progress)
 
     def test_fight_resumes_with_monster_hp(self):
         gm = self.manager()

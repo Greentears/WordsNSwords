@@ -37,6 +37,7 @@ const result = (r: Partial<AnswerResult> & Pick<AnswerResult, "correct" | "skipp
   ({ word: "", cleared_from_missed: false, free: false, timed_out: false, ...r });
 
 export class Battle {
+  language = "Polish";          // the language being learned (named in messages; set by the manager)
   question: Question | null = null;
   questions_asked = 0;
   consecutive_wrong = 0;
@@ -278,7 +279,7 @@ export class Battle {
     this.question = null;
     const lead = ({ skip: "Skipped!", timeout: "Time's up!" } as Record<string, string>)[mode] ?? "Incorrect!";
     const meaning = isCloze(q) ? `The missing word was "${q.answer}".`
-      : q.reverse ? `"${q.prompt}" in Polish is "${q.answer}".` : `"${q.prompt}" means "${q.answer}".`;
+      : q.reverse ? `"${q.prompt}" in ${this.language} is "${q.answer}".` : `"${q.prompt}" means "${q.answer}".`;
     let message = `${lead} ${meaning} `;
     if (given.trim()) message += `You answered "${given.trim()}". `;
     message += taken ? `The ${this.monster.name} attacks you for ${taken} damage.` : `The ${this.monster.name} attacks, but misses you.`;
