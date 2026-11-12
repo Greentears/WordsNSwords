@@ -171,6 +171,13 @@ export class App {
    * Load this name's cards and progress. "missing": the repo has no folder for this name (call again with
    * useStarter to begin with the starter deck); "offline": nothing stored yet and the site could not be reached.
    */
+  /** The languages that have a starter deck (users/_template/<deck>), for a name the repository doesn't know. */
+  async templateDecks(): Promise<string[]> {
+    const index = await this.fetchJson("users/index.json");
+    const listed = index && Array.isArray(index["_template"]) ? (index["_template"] as string[]) : [];
+    return listed.length ? listed : [DEFAULT_DECK];
+  }
+
   async openUser(name: string, useStarter: boolean, deck?: string): Promise<"ok" | "missing" | "offline" | "choose"> {
     const slug = userSlug(name);
     if (!slug) return "missing";

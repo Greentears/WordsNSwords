@@ -78,6 +78,10 @@
   "treasure_outdoor"
  ],
  "ui": [
+  "empty_armor",
+  "empty_charm",
+  "empty_companion",
+  "empty_weapon",
   "panel",
   "slot_armor",
   "slot_square",

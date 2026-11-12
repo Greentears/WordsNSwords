@@ -29,6 +29,13 @@ ok((await page.textContent(`${scr} .stat-row`)).includes("Strength: 1") && (awai
 await page.tap(`${scr} [aria-label='Add 5 points to Dexterity']`);
 ok((await page.textContent(`${scr}`)).includes("Dexterity: 5"), "+5 spends five points");
 ok((await page.textContent(`${scr} .panel`)).includes("2 points to spend"), "remaining points are shown");
+ok(await page.evaluate(() => window.__app.game.player.stats.dexterity === 0 && window.__app.game.player.stat_points === 8), "chosen points are not applied yet");
+await page.tap(`${scr} [aria-label='Take 1 point back from Dexterity']`);
+ok((await page.textContent(`${scr}`)).includes("Dexterity: 4") && (await page.textContent(`${scr} .panel`)).includes("3 points to spend"), "a chosen point can be taken back");
+await page.tap(`${scr} [aria-label='Add 1 point to Dexterity']`);
+await page.tap(`${scr} .btn:has-text('Close & confirm')`);
+await page.waitForSelector(`${scr} .hero-panel`);
+ok(await page.evaluate(() => window.__app.game.player.stats.dexterity === 5 && window.__app.game.player.stats.strength === 1 && window.__app.game.player.stat_points === 2), "Close & confirm applies the points");
 await page.evaluate(() => window.__app.pending);
 await page.reload();
 await page.waitForSelector(".card");

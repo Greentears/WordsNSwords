@@ -1,0 +1,57 @@
+[
+  {
+    "card": "enjeu",
+    "nouns": [
+      {
+        "lemma": "enjeu",
+        "gender": "m",
+        "singular": "l'enjeu",
+        "plural": "les enjeux"
+      }
+    ]
+  },
+  {
+    "card": "aboutissement",
+    "nouns": [
+      {
+        "lemma": "aboutissement",
+        "gender": "m",
+        "singular": "l'aboutissement",
+        "plural": "les aboutissements"
+      }
+    ]
+  },
+  {
+    "card": "méfiance",
+    "nouns": [
+      {
+        "lemma": "méfiance",
+        "gender": "f",
+        "singular": "la méfiance",
+        "plural": "les méfiances"
+      }
+    ]
+  },
+  {
+    "card": "ampleur",
+    "nouns": [
+      {
+        "lemma": "ampleur",
+        "gender": "f",
+        "singular": "l'ampleur",
+        "plural": "les ampleurs"
+      }
+    ]
+  },
+  {
+    "card": "conscience",
+    "nouns": [
+      {
+        "lemma": "conscience",
+        "gender": "f",
+        "singular": "la conscience",
+        "plural": "les consciences"
+      }
+    ]
+  }
+]

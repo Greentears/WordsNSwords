@@ -338,3 +338,13 @@ textarea.field { width: 100%; min-height: 96px; padding: 10px 12px; border-radiu
 
 .speak { min-width: 44px; min-height: 36px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface-2); font-size: 18px; line-height: 1; }
 .speak:active { background: var(--surface); }
+
+/* faint silhouettes in empty equipment slots */
+.doll.framed .slot:not(.filled) { background-repeat: no-repeat; background-position: center 38%; background-size: 62% auto; }
+.doll.framed .slot.s-weapon:not(.filled) { background-image: url(art/ui/empty_weapon.webp); background-size: auto 70%; }
+.doll.framed .slot.s-armor:not(.filled) { background-image: url(art/ui/empty_armor.webp); }
+.doll.framed .slot.s-charm:not(.filled) { background-image: url(art/ui/empty_charm.webp); }
+.doll.framed .slot.s-companion:not(.filled) { background-image: url(art/ui/empty_companion.webp); }
+.btn[hidden] { display: none; }
+.doll.framed .slot:not(.filled) .slot-ico { display: none; }
+.doll.framed .slot.s-armor:not(.filled), .doll.framed .slot.s-companion:not(.filled) { background-size: auto 58%; background-position: center 30%; }

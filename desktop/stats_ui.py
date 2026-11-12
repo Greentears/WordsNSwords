@@ -14,7 +14,11 @@ class StatsDialog(QDialog):
         self.resize(560, 560)
         self.layout_ = QVBoxLayout(self)
         self.layout_.setSpacing(8)
+        self.pending = {key: 0 for key in stat_rules.STAT_KEYS}    # chosen, not applied until "Close & confirm"
         self.refresh()
+
+    def _pending_total(self) -> int:
+        return sum(self.pending.values())
 
     def _clear(self) -> None:
         while self.layout_.count():
@@ -33,10 +37,13 @@ class StatsDialog(QDialog):
     def refresh(self, note: str = "") -> None:
         self._clear()
         p = self.gm.player
+        left = p.stat_points - self._pending_total()
+        shown = {key: p.stats[key] + self.pending[key] for key in stat_rules.STAT_KEYS}
         title = QLabel(f"{p.name}  ·  Level {p.level}      🪙 {p.coins}")
         title.setObjectName("title")
         self.layout_.addWidget(title)
-        points = (f"✨ {p.stat_points} point{'s' if p.stat_points != 1 else ''} to spend" if p.stat_points
+        points = (f"✨ {left} point{'s' if left != 1 else ''} to spend" if left
+                  else "All points placed. Press Close & confirm to apply them." if p.stat_points
                   else f"No points to spend. You get {stat_rules.POINTS_PER_LEVEL} per level.")
         self.layout_.addWidget(QLabel(points))
         if note:
@@ -46,40 +53,65 @@ class StatsDialog(QDialog):
             frame.setObjectName("panel")
             row = QHBoxLayout(frame)
             text = QVBoxLayout()
-            name = QLabel(f"<b>{stat_rules.STAT_NAMES[key]}: {p.stats[key]}</b>")
+            extra = f" <span style='color:#f2c14e'>(+{self.pending[key]})</span>" if self.pending[key] else ""
+            name = QLabel(f"<b>{stat_rules.STAT_NAMES[key]}: {shown[key]}</b>{extra}")
             desc = QLabel(stat_rules.DESCRIPTIONS[key])
             desc.setWordWrap(True)
-            now = QLabel(stat_rules.effect_text(key, p.stats, config.SELL_FRACTION))
+            now = QLabel(stat_rules.effect_text(key, shown, config.SELL_FRACTION))
             now.setWordWrap(True)
             text.addWidget(name)
             text.addWidget(desc)
             text.addWidget(now)
             row.addLayout(text, 1)
+            if self.pending[key]:
+                back = QPushButton("−1")
+                back.setToolTip("Take one chosen point back")
+                back.clicked.connect(lambda _=False, k=key: self._stage(k, -1))
+                row.addWidget(back)
             for amount in (1, 5):
-                if amount == 5 and p.stat_points <= 5:
+                if amount == 5 and left <= 5:
                     continue
                 button = QPushButton(f"+{amount}")
-                button.setEnabled(p.stat_points >= amount)
-                button.clicked.connect(lambda _=False, k=key, n=amount: self._spend(k, n))
+                button.setEnabled(left >= amount)
+                button.clicked.connect(lambda _=False, k=key, n=amount: self._stage(k, n))
                 row.addWidget(button)
             self.layout_.addWidget(frame)
         spent = sum(p.stats.values())
         cost = self.gm.respec_cost
         reset = QPushButton(f"Reset points ({cost} coins)" if cost else "Reset points (first one is free)")
-        reset.setEnabled(spent > 0)
+        reset.setEnabled(spent > 0 and not self._pending_total())
         reset.clicked.connect(self._respec)
         self.layout_.addWidget(reset)
         self.layout_.addStretch()
-        close = QPushButton("Close")
-        close.clicked.connect(self.accept)
+        close = QPushButton("Close && confirm" if self._pending_total() else "Close")
+        close.clicked.connect(self._confirm)
         self.layout_.addWidget(close)
 
-    def _spend(self, stat: str, amount: int) -> None:
+    def _stage(self, stat: str, amount: int) -> None:
+        """Choose (or take back) points; nothing is applied until Close & confirm."""
+        left = self.gm.player.stat_points - self._pending_total()
+        self.pending[stat] = max(0, self.pending[stat] + (amount if amount < 0 else min(amount, left)))
+        self.refresh()
+
+    def _confirm(self) -> None:
         try:
-            self.gm.spend_point(stat, min(amount, self.gm.player.stat_points))
-            self.refresh()
+            for stat, amount in self.pending.items():
+                if amount:
+                    self.gm.spend_point(stat, amount)
         except ValueError as exc:
+            self.pending = {key: 0 for key in stat_rules.STAT_KEYS}
             self.refresh(str(exc))
+            return
+        self.pending = {key: 0 for key in stat_rules.STAT_KEYS}
+        self.accept()
+
+    def reject(self) -> None:
+        """Closing the window another way (X, Esc) leaves the chosen points unapplied."""
+        if self._pending_total() and QMessageBox.question(
+                self, "Leave without confirming?",
+                f"The {self._pending_total()} point(s) you chose will not be applied.") != QMessageBox.StandardButton.Yes:
+            return
+        super().reject()
 
     def _respec(self) -> None:
         cost = self.gm.respec_cost

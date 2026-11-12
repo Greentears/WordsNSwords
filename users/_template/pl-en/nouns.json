@@ -1,137 +1,164 @@
 [
-  {
-    "card": "biletomat",
-    "nouns": [
-      {
-        "lemma": "biletomat",
-        "gender": "m",
-        "singular": [
-          "biletomat",
-          "biletomatu",
-          "biletomatowi",
-          "biletomat",
-          "biletomatem",
-          "biletomacie",
-          "biletomacie"
-        ],
-        "plural": [
-          "biletomaty",
-          "biletomatów",
-          "biletomatom",
-          "biletomaty",
-          "biletomatami",
-          "biletomatach",
-          "biletomaty"
-        ]
-      }
+ {
+  "card": "biletomat",
+  "nouns": [
+   {
+    "lemma": "biletomat",
+    "gender": "m",
+    "singular": [
+     "biletomat",
+     "biletomatu",
+     "biletomatowi",
+     "biletomat",
+     "biletomatem",
+     "biletomacie",
+     "biletomacie"
+    ],
+    "plural": [
+     "biletomaty",
+     "biletomatów",
+     "biletomatom",
+     "biletomaty",
+     "biletomatami",
+     "biletomatach",
+     "biletomaty"
     ]
-  },
-  {
-    "card": "chodnik",
-    "nouns": [
-      {
-        "lemma": "chodnik",
-        "gender": "m",
-        "singular": [
-          "chodnik",
-          "chodnika",
-          "chodnikowi",
-          "chodnik",
-          "chodnikiem",
-          "chodniku",
-          "chodniku"
-        ],
-        "plural": [
-          "chodniki",
-          "chodników",
-          "chodnikom",
-          "chodniki",
-          "chodnikami",
-          "chodnikach",
-          "chodniki"
-        ]
-      }
+   }
+  ]
+ },
+ {
+  "card": "chodnik",
+  "nouns": [
+   {
+    "lemma": "chodnik",
+    "gender": "m",
+    "singular": [
+     "chodnik",
+     "chodnika",
+     "chodnikowi",
+     "chodnik",
+     "chodnikiem",
+     "chodniku",
+     "chodniku"
+    ],
+    "plural": [
+     "chodniki",
+     "chodników",
+     "chodnikom",
+     "chodniki",
+     "chodnikami",
+     "chodnikach",
+     "chodniki"
     ]
-  },
-  {
-    "card": "czajnik",
-    "nouns": [
-      {
-        "lemma": "czajnik",
-        "gender": "m",
-        "singular": [
-          "czajnik",
-          "czajnika",
-          "czajnikowi",
-          "czajnik",
-          "czajnikiem",
-          "czajniku",
-          "czajniku"
-        ],
-        "plural": [
-          "czajniki",
-          "czajników",
-          "czajnikom",
-          "czajniki",
-          "czajnikami",
-          "czajnikach",
-          "czajniki"
-        ]
-      }
+   }
+  ]
+ },
+ {
+  "card": "deska do krojenia",
+  "nouns": [
+   {
+    "lemma": "deska do krojenia",
+    "gender": "f",
+    "singular": [
+     "deska do krojenia",
+     "deski do krojenia",
+     "desce do krojenia",
+     "deskę do krojenia",
+     "deską do krojenia",
+     "desce do krojenia",
+     "deska do krojenia"
+    ],
+    "plural": [
+     "deski do krojenia",
+     "desek do krojenia",
+     "deskom do krojenia",
+     "deski do krojenia",
+     "deskami do krojenia",
+     "deskach do krojenia",
+     "deski do krojenia"
     ]
-  },
-  {
-    "card": "deska do krojenia",
-    "nouns": [
-      {
-        "lemma": "deska do krojenia",
-        "gender": "f",
-        "singular": [
-          "deska do krojenia",
-          "deski do krojenia",
-          "desce do krojenia",
-          "deskę do krojenia",
-          "deską do krojenia",
-          "desce do krojenia",
-          "deska do krojenia"
-        ],
-        "plural": [
-          "deski do krojenia",
-          "desek do krojenia",
-          "deskom do krojenia",
-          "deski do krojenia",
-          "deskami do krojenia",
-          "deskach do krojenia",
-          "deski do krojenia"
-        ]
-      }
+   }
+  ]
+ },
+ {
+  "card": "kolejka",
+  "nouns": [
+   {
+    "lemma": "kolejka",
+    "gender": "f",
+    "singular": [
+     "kolejka",
+     "kolejki",
+     "kolejce",
+     "kolejkę",
+     "kolejką",
+     "kolejce",
+     "kolejko"
+    ],
+    "plural": [
+     "kolejki",
+     "kolejek",
+     "kolejkom",
+     "kolejki",
+     "kolejkami",
+     "kolejkach",
+     "kolejki"
     ]
-  },
-  {
-    "card": "dolewka",
-    "nouns": [
-      {
-        "lemma": "dolewka",
-        "gender": "f",
-        "singular": [
-          "dolewka",
-          "dolewki",
-          "dolewce",
-          "dolewkę",
-          "dolewką",
-          "dolewce",
-          "dolewko"
-        ],
-        "plural": [
-          "dolewki",
-          "dolewek",
-          "dolewkom",
-          "dolewki",
-          "dolewkami",
-          "dolewkach",
-          "dolewki"
-        ]
-      }
+   }
+  ]
+ },
+ {
+  "card": "podróż poślubna",
+  "nouns": [
+   {
+    "lemma": "podróż poślubna",
+    "gender": "f",
+    "singular": [
+     "podróż poślubna",
+     "podróży poślubnej",
+     "podróży poślubnej",
+     "podróż poślubną",
+     "podróżą poślubną",
+     "podróży poślubnej",
+     "podróży poślubna"
+    ],
+    "plural": [
+     "podróże poślubne",
+     "podróży poślubnych",
+     "podróżom poślubnym",
+     "podróże poślubne",
+     "podróżami poślubnymi",
+     "podróżach poślubnych",
+     "podróże poślubne"
     ]
-  }
+   }
+  ]
+ },
+ {
+  "card": "reklamówka",
+  "nouns": [
+   {
+    "lemma": "reklamówka",
+    "gender": "f",
+    "singular": [
+     "reklamówka",
+     "reklamówki",
+     "reklamówce",
+     "reklamówkę",
+     "reklamówką",
+     "reklamówce",
+     "reklamówko"
+    ],
+    "plural": [
+     "reklamówki",
+     "reklamówek",
+     "reklamówkom",
+     "reklamówki",
+     "reklamówkami",
+     "reklamówkach",
+     "reklamówki"
+    ]
+   }
+  ]
+ }
 ]

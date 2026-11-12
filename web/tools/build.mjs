@@ -21,7 +21,7 @@ if (existsSync(users)) {
   // users/index.json: which languages (deck folders) each name has, so the app can pick the right one
   const index = {};
   for (const name of readdirSync(users)) {
-    if (name.startsWith("_") || !statSync(join(users, name)).isDirectory()) continue;
+    if ((name.startsWith("_") && name !== "_template") || !statSync(join(users, name)).isDirectory()) continue;
     index[name] = readdirSync(join(users, name)).filter((d) => existsSync(join(users, name, d, "words.json"))).sort();
   }
   writeFileSync(join(dist, "users", "index.json"), JSON.stringify(index));

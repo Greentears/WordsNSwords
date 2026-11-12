@@ -76,7 +76,10 @@ BACKGROUNDS = {"cellar_of_words": "cellar", "whispering_forest": "forest", "libr
                "firecamp": "rest_outdoor", "firecamp_indoor": "rest_indoor",
                "treasure_indoor": "treasure_indoor", "treasure_outdoor": "treasure_outdoor"}
 UI = {"slot_square": "slot_square", "slot_rectangle": "slot_armor", "slot_weapon": "slot_weapon",
-      "character_slot": "panel"}
+      "character_slot": "panel",
+      # faint silhouettes shown inside empty equipment slots
+      "empty_weapon_slot": "empty_weapon", "empty_armour_slot": "empty_armor",
+      "empty_charm_slot": "empty_charm", "empty_companion_slot": "empty_companion"}
 MAX_SIDE = {"monsters": 512, "heroes": 640, "companions": 256, "items": 192,
             "backgrounds": 1280, "ui": 1024}   # pixels, PC
 WEB_SIDE = {"monsters": 384, "heroes": 512, "companions": 192, "items": 128,
@@ -120,6 +123,12 @@ def clear_haze(im: Image.Image) -> Image.Image:
     """Frames: the see-through middle sometimes holds faint specks; make them fully transparent."""
     arr = np.array(im.convert("RGBA"))
     arr[arr[..., 3] < 24] = 0
+    solid = arr[..., 3] > 0
+    labels, n = ndimage.label(solid, structure=np.ones((3, 3), bool))
+    sizes = ndimage.sum(solid, labels, range(1, n + 1))
+    for i, size in enumerate(sizes, start=1):          # loose specks in the empty middle
+        if size < 0.01 * max(sizes):
+            arr[labels == i] = 0
     return Image.fromarray(arr, "RGBA")
 
 
@@ -141,6 +150,9 @@ def main(folders: list[str]) -> int:
         return 1
     index: dict[str, list[str]] = {"monsters": [], "companions": [], "items": [], "heroes": [],
                                    "backgrounds": [], "ui": []}
+    if INDEX.exists():                  # adding a few pictures keeps the ones imported earlier
+        for kind, keys in json.loads(INDEX.read_text(encoding="utf-8")).items():
+            index.setdefault(kind, []).extend(keys)
     unknown = []
     hero_names: dict[str, str] = {}
     for path in files:
@@ -151,12 +163,18 @@ def main(folders: list[str]) -> int:
             continue
         if name in BACKGROUNDS:
             save(Image.open(path).convert("RGB"), "backgrounds", BACKGROUNDS[name])
-            index["backgrounds"].append(BACKGROUNDS[name])
+            if BACKGROUNDS[name] not in index["backgrounds"]:
+                index["backgrounds"].append(BACKGROUNDS[name])
             continue
         if name in UI:
             im = Image.open(path)
-            save(im.convert("RGB") if UI[name] == "panel" else clear_haze(im), "ui", UI[name])
-            index["ui"].append(UI[name])
+            if UI[name] == "panel":
+                im = im.convert("RGB")
+            elif not UI[name].startswith("empty_"):      # silhouettes are faint on purpose
+                im = clear_haze(im)
+            save(im, "ui", UI[name])
+            if UI[name] not in index["ui"]:
+                index["ui"].append(UI[name])
             continue
         if name not in NAMES:
             unknown.append(path.name)
@@ -174,9 +192,10 @@ def main(folders: list[str]) -> int:
         images = {k: im.crop(crop) for k, im in images.items()}
         for k, im in images.items():
             save(im, "heroes", k)
-            index["heroes"].append(k)
+            if k not in index["heroes"]:
+                index["heroes"].append(k)
     for kind in index:
-        index[kind].sort()
+        index[kind] = sorted(set(index[kind]))
     INDEX.write_text(json.dumps(index, indent=1), encoding="utf-8")
     print({k: len(v) for k, v in index.items()})
     if unknown:

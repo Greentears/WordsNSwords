@@ -1,0 +1,72 @@
+[
+  {
+    "card": "pertinent",
+    "adjectives": [
+      {
+        "lemma": "pertinent",
+        "forms": {
+          "ms": "pertinent",
+          "fs": "pertinente",
+          "mp": "pertinents",
+          "fp": "pertinentes"
+        }
+      }
+    ]
+  },
+  {
+    "card": "incontournable",
+    "adjectives": [
+      {
+        "lemma": "incontournable",
+        "forms": {
+          "ms": "incontournable",
+          "fs": "incontournable",
+          "mp": "incontournables",
+          "fp": "incontournables"
+        }
+      }
+    ]
+  },
+  {
+    "card": "précaire",
+    "adjectives": [
+      {
+        "lemma": "précaire",
+        "forms": {
+          "ms": "précaire",
+          "fs": "précaire",
+          "mp": "précaires",
+          "fp": "précaires"
+        }
+      }
+    ]
+  },
+  {
+    "card": "approfondi",
+    "adjectives": [
+      {
+        "lemma": "approfondi",
+        "forms": {
+          "ms": "approfondi",
+          "fs": "approfondie",
+          "mp": "approfondis",
+          "fp": "approfondies"
+        }
+      }
+    ]
+  },
+  {
+    "card": "ambivalent",
+    "adjectives": [
+      {
+        "lemma": "ambivalent",
+        "forms": {
+          "ms": "ambivalent",
+          "fs": "ambivalente",
+          "mp": "ambivalents",
+          "fp": "ambivalentes"
+        }
+      }
+    ]
+  }
+]

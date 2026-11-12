@@ -1,0 +1,352 @@
+[
+  {
+    "card": "s'apercevoir",
+    "verbs": [
+      {
+        "infinitive": "s'apercevoir",
+        "tenses": {
+          "present": [
+            "je m'aperçois",
+            "tu t'aperçois",
+            "il/elle s'aperçoit",
+            "nous nous apercevons",
+            "vous vous apercevez",
+            "ils/elles s'aperçoivent"
+          ],
+          "passe_compose": [
+            "je me suis aperçu(e)",
+            "tu t'es aperçu(e)",
+            "il/elle s'est aperçu(e)",
+            "nous nous sommes aperçu(e)s",
+            "vous vous êtes aperçu(e)(s)",
+            "ils/elles se sont aperçu(e)s"
+          ],
+          "imparfait": [
+            "je m'apercevais",
+            "tu t'apercevais",
+            "il/elle s'apercevait",
+            "nous nous apercevions",
+            "vous vous aperceviez",
+            "ils/elles s'apercevaient"
+          ],
+          "futur": [
+            "je m'apercevrai",
+            "tu t'apercevras",
+            "il/elle s'apercevra",
+            "nous nous apercevrons",
+            "vous vous apercevrez",
+            "ils/elles s'apercevront"
+          ],
+          "conditionnel": [
+            "je m'apercevrais",
+            "tu t'apercevrais",
+            "il/elle s'apercevrait",
+            "nous nous apercevrions",
+            "vous vous apercevriez",
+            "ils/elles s'apercevraient"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "card": "négliger",
+    "verbs": [
+      {
+        "infinitive": "négliger",
+        "tenses": {
+          "present": [
+            "je néglige",
+            "tu négliges",
+            "il/elle néglige",
+            "nous négligeons",
+            "vous négligez",
+            "ils/elles négligent"
+          ],
+          "passe_compose": [
+            "j'ai négligé",
+            "tu as négligé",
+            "il/elle a négligé",
+            "nous avons négligé",
+            "vous avez négligé",
+            "ils/elles ont négligé"
+          ],
+          "imparfait": [
+            "je négligeais",
+            "tu négligeais",
+            "il/elle négligeait",
+            "nous négligions",
+            "vous négligiez",
+            "ils/elles négligeaient"
+          ],
+          "futur": [
+            "je négligerai",
+            "tu négligeras",
+            "il/elle négligera",
+            "nous négligerons",
+            "vous négligerez",
+            "ils/elles négligeront"
+          ],
+          "conditionnel": [
+            "je négligerais",
+            "tu négligerais",
+            "il/elle négligerait",
+            "nous négligerions",
+            "vous négligeriez",
+            "ils/elles négligeraient"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "card": "bouleverser",
+    "verbs": [
+      {
+        "infinitive": "bouleverser",
+        "tenses": {
+          "present": [
+            "je bouleverse",
+            "tu bouleverses",
+            "il/elle bouleverse",
+            "nous bouleversons",
+            "vous bouleversez",
+            "ils/elles bouleversent"
+          ],
+          "passe_compose": [
+            "j'ai bouleversé",
+            "tu as bouleversé",
+            "il/elle a bouleversé",
+            "nous avons bouleversé",
+            "vous avez bouleversé",
+            "ils/elles ont bouleversé"
+          ],
+          "imparfait": [
+            "je bouleversais",
+            "tu bouleversais",
+            "il/elle bouleversait",
+            "nous bouleversions",
+            "vous bouleversiez",
+            "ils/elles bouleversaient"
+          ],
+          "futur": [
+            "je bouleverserai",
+            "tu bouleverseras",
+            "il/elle bouleversera",
+            "nous bouleverserons",
+            "vous bouleverserez",
+            "ils/elles bouleverseront"
+          ],
+          "conditionnel": [
+            "je bouleverserais",
+            "tu bouleverserais",
+            "il/elle bouleverserait",
+            "nous bouleverserions",
+            "vous bouleverseriez",
+            "ils/elles bouleverseraient"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "card": "entreprendre",
+    "verbs": [
+      {
+        "infinitive": "entreprendre",
+        "tenses": {
+          "present": [
+            "j'entreprends",
+            "tu entreprends",
+            "il/elle entreprend",
+            "nous entreprenons",
+            "vous entreprenez",
+            "ils/elles entreprennent"
+          ],
+          "passe_compose": [
+            "j'ai entrepris",
+            "tu as entrepris",
+            "il/elle a entrepris",
+            "nous avons entrepris",
+            "vous avez entrepris",
+            "ils/elles ont entrepris"
+          ],
+          "imparfait": [
+            "j'entreprenais",
+            "tu entreprenais",
+            "il/elle entreprenait",
+            "nous entreprenions",
+            "vous entrepreniez",
+            "ils/elles entreprenaient"
+          ],
+          "futur": [
+            "j'entreprendrai",
+            "tu entreprendras",
+            "il/elle entreprendra",
+            "nous entreprendrons",
+            "vous entreprendrez",
+            "ils/elles entreprendront"
+          ],
+          "conditionnel": [
+            "j'entreprendrais",
+            "tu entreprendrais",
+            "il/elle entreprendrait",
+            "nous entreprendrions",
+            "vous entreprendriez",
+            "ils/elles entreprendraient"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "card": "se méfier",
+    "verbs": [
+      {
+        "infinitive": "se méfier",
+        "tenses": {
+          "present": [
+            "je me méfie",
+            "tu te méfies",
+            "il/elle se méfie",
+            "nous nous méfions",
+            "vous vous méfiez",
+            "ils/elles se méfient"
+          ],
+          "passe_compose": [
+            "je me suis méfié(e)",
+            "tu t'es méfié(e)",
+            "il/elle s'est méfié(e)",
+            "nous nous sommes méfié(e)s",
+            "vous vous êtes méfié(e)(s)",
+            "ils/elles se sont méfié(e)s"
+          ],
+          "imparfait": [
+            "je me méfiais",
+            "tu te méfiais",
+            "il/elle se méfiait",
+            "nous nous méfiions",
+            "vous vous méfiiez",
+            "ils/elles se méfiaient"
+          ],
+          "futur": [
+            "je me méfierai",
+            "tu te méfieras",
+            "il/elle se méfiera",
+            "nous nous méfierons",
+            "vous vous méfierez",
+            "ils/elles se méfieront"
+          ],
+          "conditionnel": [
+            "je me méfierais",
+            "tu te méfierais",
+            "il/elle se méfierait",
+            "nous nous méfierions",
+            "vous vous méfieriez",
+            "ils/elles se méfieraient"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "card": "parvenir à",
+    "verbs": [
+      {
+        "infinitive": "parvenir à",
+        "tenses": {
+          "present": [
+            "je parviens à",
+            "tu parviens à",
+            "il/elle parvient à",
+            "nous parvenons à",
+            "vous parvenez à",
+            "ils/elles parviennent à"
+          ],
+          "passe_compose": [
+            "je suis parvenu(e) à",
+            "tu es parvenu(e) à",
+            "il/elle est parvenu(e) à",
+            "nous sommes parvenu(e)s à",
+            "vous êtes parvenu(e)(s) à",
+            "ils/elles sont parvenu(e)s à"
+          ],
+          "imparfait": [
+            "je parvenais à",
+            "tu parvenais à",
+            "il/elle parvenait à",
+            "nous parvenions à",
+            "vous parveniez à",
+            "ils/elles parvenaient à"
+          ],
+          "futur": [
+            "je parviendrai à",
+            "tu parviendras à",
+            "il/elle parviendra à",
+            "nous parviendrons à",
+            "vous parviendrez à",
+            "ils/elles parviendront à"
+          ],
+          "conditionnel": [
+            "je parviendrais à",
+            "tu parviendrais à",
+            "il/elle parviendrait à",
+            "nous parviendrions à",
+            "vous parviendriez à",
+            "ils/elles parviendraient à"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "card": "remettre en question",
+    "verbs": [
+      {
+        "infinitive": "remettre en question",
+        "tenses": {
+          "present": [
+            "je remets en question",
+            "tu remets en question",
+            "il/elle remet en question",
+            "nous remettons en question",
+            "vous remettez en question",
+            "ils/elles remettent en question"
+          ],
+          "passe_compose": [
+            "j'ai remis en question",
+            "tu as remis en question",
+            "il/elle a remis en question",
+            "nous avons remis en question",
+            "vous avez remis en question",
+            "ils/elles ont remis en question"
+          ],
+          "imparfait": [
+            "je remettais en question",
+            "tu remettais en question",
+            "il/elle remettait en question",
+            "nous remettions en question",
+            "vous remettiez en question",
+            "ils/elles remettaient en question"
+          ],
+          "futur": [
+            "je remettrai en question",
+            "tu remettras en question",
+            "il/elle remettra en question",
+            "nous remettrons en question",
+            "vous remettrez en question",
+            "ils/elles remettront en question"
+          ],
+          "conditionnel": [
+            "je remettrais en question",
+            "tu remettrais en question",
+            "il/elle remettrait en question",
+            "nous remettrions en question",
+            "vous remettriez en question",
+            "ils/elles remettraient en question"
+          ]
+        }
+      }
+    ]
+  }
+]

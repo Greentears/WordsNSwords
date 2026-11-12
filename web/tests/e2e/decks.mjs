@@ -52,6 +52,7 @@ page = await fresh({ pacixii: ["fr-en", "pl-en"] });
 await sign(page, "pacixii");
 await page.waitForSelector(".welcome .btn:has-text('French')");
 ok((await page.textContent(".welcome")).includes("Polish → English"), "both languages are offered");
+ok(!(await page.isVisible(".welcome .btn.primary:has-text(\"Start\")")), "Start is hidden while the language is being chosen");
 await page.tap(".welcome .btn:has-text('French')");
 await page.waitForSelector(".card");
 ok(await page.evaluate(() => window.__app.deckId === "fr-en"), "choosing French opens French");

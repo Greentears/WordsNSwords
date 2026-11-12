@@ -91,8 +91,8 @@ export function dungeonScreen(shell: Shell) {
   }
   function pause() { stopTimer(); }
   /** The dungeon's scenery behind its map, fights and messages, under a dark layer that keeps the text readable. */
-  function applyBackdrop() {
-    const key = gm().dungeon?.key;
+  function applyBackdrop(mapKey?: string) {
+    const key = view === "map" ? mapKey : gm().dungeon?.key;      // on the map: the dungeon whose page you are looking at
     const o = view === "message" ? message?.outcome : null;     // a rest or treasure room has its own picture
     const scene = o && (o.kind === "treasure" || o.kind === "rest") ? sceneKey(o.kind, key) : null;
     const pic = scene ?? key;
@@ -102,7 +102,7 @@ export function dungeonScreen(shell: Shell) {
 
   function render() {
     stopTimer();
-    applyBackdrop();
+    if (view !== "map") applyBackdrop();            // the map sets its own, for the dungeon you are viewing
     if (needsHero()) { shell.fullscreen(false); return renderHeroChoice(); }
     shell.fullscreen(view === "fight");
     if (view === "map") return renderMap();
@@ -149,6 +149,7 @@ export function dungeonScreen(shell: Shell) {
     const list = g.dungeons();
     if (!selected || !list.some((d) => d.key === selected)) selected = defaultKey(list);
     const cur = list.find((d) => d.key === selected)!;
+    applyBackdrop(selected);
     const d = DUNGEONS[cur.key];
     clear(root);
 
@@ -395,35 +396,54 @@ export function dungeonScreen(shell: Shell) {
   }
 
   // ------------------------------------------------------------------ stats
+  /** Points chosen on the stats screen but not applied yet: they only count after "Close & confirm". */
+  let staged: Record<string, number> = {};
+  const stagedTotal = () => Object.values(staged).reduce((a, n) => a + n, 0);
+
   function renderStats(note = "") {
     const g = gm();
     const p = g.player;
     const old = root.querySelector(".scroll-body")?.scrollTop ?? 0;
     clear(root);
-    const spend = (stat: string, n: number) => {
-      try { g.spend_point(stat, Math.min(n, p.stat_points)); renderStats(); } catch (e) { if (e instanceof GameError) renderStats(e.message); else throw e; }
-    };
+    const left = p.stat_points - stagedTotal();
+    const shown = (key: string) => (p.stats as Record<string, number>)[key] + (staged[key] ?? 0);
+    const view = Object.fromEntries(STAT_KEYS.map((k) => [k, shown(k)])) as typeof p.stats;
+    const stage = (stat: string, n: number) => { staged[stat] = Math.max(0, (staged[stat] ?? 0) + Math.min(n, left)); renderStats(); };
+    const unstage = (stat: string) => { staged[stat] = Math.max(0, (staged[stat] ?? 0) - 1); renderStats(); };
     const row = (key: (typeof STAT_KEYS)[number]) => h("div", { class: "shop-item stat-row" },
       h("div", { class: "si-text" },
-        h("b", null, `${STAT_NAMES[key]}: ${p.stats[key]}`),
+        h("b", null, `${STAT_NAMES[key]}: ${shown(key)}`, staged[key] ? h("span", { class: "points-hint" }, ` (+${staged[key]})`) : null),
         h("span", { class: "muted" }, STAT_DESCRIPTIONS[key]),
-        h("span", { class: "stat-now" }, effectText(key, p.stats, SELL_FRACTION))),
+        h("span", { class: "stat-now" }, effectText(key, view, SELL_FRACTION))),
       h("div", { class: "stat-btns" },
-        h("button", { class: "btn small", type: "button", disabled: p.stat_points < 1, "aria-label": `Add 1 point to ${STAT_NAMES[key]}`, onclick: () => spend(key, 1) }, "+1"),
-        p.stat_points > 5 ? h("button", { class: "btn small", type: "button", "aria-label": `Add 5 points to ${STAT_NAMES[key]}`, onclick: () => spend(key, 5) }, "+5") : null));
+        staged[key] ? h("button", { class: "btn small ghost", type: "button", "aria-label": `Take 1 point back from ${STAT_NAMES[key]}`, onclick: () => unstage(key) }, "−1") : null,
+        h("button", { class: "btn small", type: "button", disabled: left < 1, "aria-label": `Add 1 point to ${STAT_NAMES[key]}`, onclick: () => stage(key, 1) }, "+1"),
+        left > 5 ? h("button", { class: "btn small", type: "button", "aria-label": `Add 5 points to ${STAT_NAMES[key]}`, onclick: () => stage(key, 5) }, "+5") : null));
     const cost = g.respec_cost;
     const spent = STAT_KEYS.reduce((a, k) => a + p.stats[k], 0);
     const respec = async () => {
       if (!(await shell.confirm("Reset your points?", cost ? `This costs ${cost} coins and gives all ${spent} spent points back.` : `The first reset is free. All ${spent} spent points come back.`, cost ? `Pay ${cost}` : "Reset"))) return;
-      try { g.respec(); renderStats("Points reset. Spend them again."); } catch (e) { if (e instanceof GameError) renderStats(e.message); else throw e; }
+      try { staged = {}; g.respec(); renderStats("Points reset. Spend them again."); } catch (e) { if (e instanceof GameError) renderStats(e.message); else throw e; }
+    };
+    const confirmAndClose = () => {
+      try {
+        for (const [stat, n] of Object.entries(staged)) if (n > 0) g.spend_point(stat, n);
+      } catch (e) { if (e instanceof GameError) { staged = {}; renderStats(e.message); return; } throw e; }
+      staged = {};
+      go("map");
+    };
+    const leave = async () => {
+      if (stagedTotal() && !(await shell.confirm("Leave without confirming?", `The ${stagedTotal()} point${stagedTotal() > 1 ? "s" : ""} you chose will not be applied.`, "Leave"))) return;
+      staged = {}; go("map");
     };
     const body = h("div", { class: "scroll-body stack" },
-      h("header", { class: "top row-top" }, h("button", { class: "btn small", type: "button", onclick: () => go("map") }, "‹ Map"), h("h1", null, "Stats"), h("span", { class: "coins" }, `🪙 ${p.coins}`)),
+      h("header", { class: "top row-top" }, h("button", { class: "btn small", type: "button", onclick: leave }, "‹ Map"), h("h1", null, "Stats"), h("span", { class: "coins" }, `🪙 ${p.coins}`)),
       h("div", { class: "panel" }, h("b", null, `${p.name} · Level ${p.level}`),
-        h("p", { class: p.stat_points ? "points-hint" : "muted" }, p.stat_points ? `✨ ${p.stat_points} point${p.stat_points > 1 ? "s" : ""} to spend` : "No points to spend. You get 2 per level."),
+        h("p", { class: left ? "points-hint" : "muted" }, left ? `✨ ${left} point${left > 1 ? "s" : ""} to spend` : p.stat_points ? "All points placed. Tap Close & confirm to apply them." : "No points to spend. You get 2 per level."),
         note ? h("p", { class: "warn" }, note) : null),
       STAT_KEYS.map(row),
-      h("button", { class: "btn ghost", type: "button", disabled: spent === 0, onclick: respec }, cost ? `Reset points (${cost} coins)` : "Reset points (first one is free)"));
+      h("button", { class: "btn ghost", type: "button", disabled: spent === 0 || stagedTotal() > 0, onclick: respec }, cost ? `Reset points (${cost} coins)` : "Reset points (first one is free)"),
+      h("button", { class: "btn primary wide", type: "button", onclick: confirmAndClose }, stagedTotal() ? "Close & confirm" : "Close"));
     root.append(body);
     body.scrollTop = old;
   }

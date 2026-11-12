@@ -4,8 +4,9 @@ from pathlib import Path
 from PySide6.QtWidgets import QApplication, QInputDialog, QMessageBox
 
 from ui import FlashcardWindow
-from workspace import (DEFAULT_DECK, Workspace, choose_deck, decks_of, find_root, save_deck, save_user, saved_deck,
-                       saved_user, slug)
+import language
+from workspace import (Workspace, choose_deck, decks_of, find_root, is_new_name, save_deck, save_user, saved_deck,
+                       saved_user, slug, template_decks)
 
 
 def _ask_name(root: Path, current: str = "") -> str | None:
@@ -23,6 +24,8 @@ def _workspace(root: Path) -> Workspace | None:
     name = saved_user(root) or _ask_name(root)
     if not name:
         return None
+    if is_new_name(root, name):            # nobody by this name yet: pick a language, start from its starter deck
+        return _new_user(root, name)
     deck = choose_deck(root, name, saved_deck(root))
     if deck is None:       # several languages and none chosen yet
         choices = decks_of(root, name)
@@ -31,14 +34,35 @@ def _workspace(root: Path) -> Workspace | None:
             return None
     save_deck(root, deck)
     ws = Workspace(root, name, deck)
-    if not ws.exists:
-        answer = QMessageBox.question(
-            None, "No word list found",
-            f"There is no word list for \"{name}\" in the repository (users/{slug(name)}/{deck}).\n\n"
-            "Create it from the starter deck? You can then add your own words to it.",
-        )
-        if answer != QMessageBox.StandardButton.Yes or not ws.create_from_template():
+    if not ws.exists:                      # no words for this name and language: pick a language, then the starter deck
+        return _new_user(root, name)
+    return ws
+
+
+def _language_label(deck: str) -> str:
+    code = deck.split("-")[0]
+    return language.NAMES.get(code, code.upper())
+
+
+def _new_user(root: Path, name: str) -> Workspace | None:
+    decks = template_decks(root)
+    if len(decks) == 1:
+        deck = decks[0]
+    else:
+        labels = [_language_label(d) for d in decks]
+        label, ok = QInputDialog.getItem(
+            None, "WordsNSwords",
+            f"Welcome, {name}! Which language do you want to learn?\n"
+            "You start with a small starter deck of 20 words and can add your own later.",
+            labels, 0, False)
+        if not ok:
             return None
+        deck = decks[labels.index(label)]
+    save_deck(root, deck)
+    ws = Workspace(root, name, deck)
+    if not ws.create_from_template():
+        QMessageBox.warning(None, "No starter deck", f"There is no starter deck for {_language_label(deck)} in users/_template.")
+        return None
     return ws
 
 

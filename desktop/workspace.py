@@ -98,6 +98,16 @@ def save_user(root: Path, name: str) -> None:
     path.write_text(name.strip(), encoding="utf-8")
 
 
+def template_decks(root: Path) -> list[str]:
+    """The languages that have a starter deck (users/_template/<deck>/words.json)."""
+    return decks_of(root, TEMPLATE) or [DEFAULT_DECK]
+
+
+def is_new_name(root: Path, name: str) -> bool:
+    """True when the repository has no words at all for this name (so it must pick a language)."""
+    return not decks_of(root, name)
+
+
 def decks_of(root: Path, name: str) -> list[str]:
     """The languages (deck folders with a words.json) this name has in the repository."""
     folder = root / "users" / slug(name)

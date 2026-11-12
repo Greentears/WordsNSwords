@@ -1,48 +1,140 @@
 [
-  {
-    "card": "domowy / domowo",
-    "adjectives": [
-      {
-        "lemma": "domowy",
-        "forms": {
-          "m": [
-            "domowy",
-            "domowego",
-            "domowemu",
-            "domowy / domowego",
-            "domowym",
-            "domowym",
-            "domowy"
-          ],
-          "f": [
-            "domowa",
-            "domowej",
-            "domowej",
-            "domową",
-            "domową",
-            "domowej",
-            "domowa"
-          ],
-          "n": [
-            "domowe",
-            "domowego",
-            "domowemu",
-            "domowe",
-            "domowym",
-            "domowym",
-            "domowe"
-          ],
-          "pl": [
-            "domowi / domowe",
-            "domowych",
-            "domowym",
-            "domowych / domowe",
-            "domowymi",
-            "domowych",
-            "domowi / domowe"
-          ]
-        }
-      }
-    ]
-  }
+ {
+  "card": "ostry / ostro",
+  "adjectives": [
+   {
+    "lemma": "ostry",
+    "forms": {
+     "m": [
+      "ostry",
+      "ostrego",
+      "ostremu",
+      "ostry / ostrego",
+      "ostrym",
+      "ostrym",
+      "ostry"
+     ],
+     "f": [
+      "ostra",
+      "ostrej",
+      "ostrej",
+      "ostrą",
+      "ostrą",
+      "ostrej",
+      "ostra"
+     ],
+     "n": [
+      "ostre",
+      "ostrego",
+      "ostremu",
+      "ostre",
+      "ostrym",
+      "ostrym",
+      "ostre"
+     ],
+     "pl": [
+      "ostrzy / ostre",
+      "ostrych",
+      "ostrym",
+      "ostrych / ostre",
+      "ostrymi",
+      "ostrych",
+      "ostrzy / ostre"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "card": "pikantny / pikantnie",
+  "adjectives": [
+   {
+    "lemma": "pikantny",
+    "forms": {
+     "m": [
+      "pikantny",
+      "pikantnego",
+      "pikantnemu",
+      "pikantny / pikantnego",
+      "pikantnym",
+      "pikantnym",
+      "pikantny"
+     ],
+     "f": [
+      "pikantna",
+      "pikantnej",
+      "pikantnej",
+      "pikantną",
+      "pikantną",
+      "pikantnej",
+      "pikantna"
+     ],
+     "n": [
+      "pikantne",
+      "pikantnego",
+      "pikantnemu",
+      "pikantne",
+      "pikantnym",
+      "pikantnym",
+      "pikantne"
+     ],
+     "pl": [
+      "pikantni / pikantne",
+      "pikantnych",
+      "pikantnym",
+      "pikantnych / pikantne",
+      "pikantnymi",
+      "pikantnych",
+      "pikantni / pikantne"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "card": "słodki / słodko",
+  "adjectives": [
+   {
+    "lemma": "słodki",
+    "forms": {
+     "m": [
+      "słodki",
+      "słodkiego",
+      "słodkiemu",
+      "słodki / słodkiego",
+      "słodkim",
+      "słodkim",
+      "słodki"
+     ],
+     "f": [
+      "słodka",
+      "słodkiej",
+      "słodkiej",
+      "słodką",
+      "słodką",
+      "słodkiej",
+      "słodka"
+     ],
+     "n": [
+      "słodkie",
+      "słodkiego",
+      "słodkiemu",
+      "słodkie",
+      "słodkim",
+      "słodkim",
+      "słodkie"
+     ],
+     "pl": [
+      "słodcy / słodkie",
+      "słodkich",
+      "słodkim",
+      "słodkich / słodkie",
+      "słodkimi",
+      "słodkich",
+      "słodcy / słodkie"
+     ]
+    }
+   }
+  ]
+ }
 ]

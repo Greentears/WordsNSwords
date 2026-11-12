@@ -8,7 +8,7 @@ from html import escape
 from pathlib import Path
 
 from PySide6.QtCore import Qt, QTimer
-from PySide6.QtGui import QColor, QImage, QPainter, QPixmap
+from PySide6.QtGui import QColor, QGuiApplication, QImage, QPainter, QPixmap
 from PySide6.QtWidgets import (
     QDialog,
     QFrame,
@@ -38,7 +38,7 @@ MAP, COMBAT, MESSAGE, SHOP, INVENTORY = 0, 1, 2, 3, 4
 
 STYLE = """
 QDialog, QWidget#page { background: #14121f; }
-QWidget#pageart { background: transparent; }
+QStackedWidget, QWidget#pageart, QWidget#belt { background: transparent; }
 QLabel { color: #e8e3ff; font-size: 14px; }
 QLabel#title { color: #f2c14e; font-size: 24px; font-weight: bold; }
 QLabel#subtitle { color: #a9a0cf; font-size: 13px; }
@@ -56,8 +56,11 @@ QFrame#slot { background: qlineargradient(x1:0,y1:0,x2:0,y2:1, stop:0 #2b2336, s
 QFrame#slot[empty="true"] { border-color: #3a3157; background: #14101c; }
 QLabel#companion_icon { font-size: 44px; }
 QLabel#slot_icon { font-size: 34px; }
-QLabel#slot_name { color: #f2c14e; font-size: 11px; }
-QLabel#slot_empty { color: #5d5580; font-size: 11px; }
+QLabel#slot_name { color: #e6c46e; font-size: 10px; font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif; }
+QLabel#slot_empty { color: #6f6890; font-size: 10px; font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif; }
+QLabel#slot_count { color: #f4c95d; background: rgba(8,6,14,215); border: 1px solid #8a6d2f; border-radius: 9px; font-size: 12px; font-weight: bold; }
+QLabel#hero_name { color: #f4c95d; font-size: 16px; font-weight: bold; font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif; }
+QLabel#hero_info { color: #d9c9a0; font-size: 13px; font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif; }
 QFrame#arena { background: qradialgradient(cx:0.5, cy:0.55, radius:0.8, fx:0.5, fy:0.55, stop:0 #2c2440, stop:1 #0c0a14); border: 2px solid #3a3157; border-radius: 6px; }
 QLabel#room { color: #e8e3ff; font-size: 14px; padding: 6px 10px; border-radius: 4px; }
 QLabel#room[state="done"] { color: #5ed38a; }
@@ -238,6 +241,11 @@ class ArtPanel(QFrame):
         super().paintEvent(event)
 
 
+def _slot_border(width: int) -> int:
+    """How thick the frame is drawn: thinner on the small belt slots so the item stays big."""
+    return 8 if width < 90 else 12
+
+
 def _slot_frame_style(width: int, height: int) -> str:
     """Stylesheet that draws the slot's picture frame (tall slots use the taller frames)."""
     ratio = height / max(1, width)
@@ -246,7 +254,7 @@ def _slot_frame_style(width: int, height: int) -> str:
     if not path:
         return ""
     return (f"QFrame#slot {{ border-image: url('{path.as_posix()}') 26 26 26 26 stretch stretch; "
-            f"border-width: 13px; border-style: solid; background: #0d0b13; }}")
+            f"border-width: {_slot_border(width)}px; border-style: solid; background: #0d0b13; }}")
 
 
 class HeroChoice(QDialog):
@@ -290,10 +298,16 @@ class HeroChoice(QDialog):
 class DungeonWindow(QDialog):
     def paintEvent(self, event) -> None:
         super().paintEvent(event)
-        dungeon = getattr(self.gm, "dungeon", None)
-        if dungeon is None or self.stack.currentIndex() not in (MAP, COMBAT, MESSAGE):
+        page = self.stack.currentIndex()
+        if page not in (MAP, COMBAT, MESSAGE):
             return
-        key = self._scene if (self._scene and self.stack.currentIndex() == MESSAGE) else dungeon.key
+        if page == MAP:                      # the dungeon whose page you are looking at, even a locked one
+            key = self.dungeon_key
+        else:
+            dungeon = getattr(self.gm, "dungeon", None)
+            if dungeon is None:
+                return
+            key = self._scene if (self._scene and page == MESSAGE) else dungeon.key
         if key not in self._backdrops:
             path = background_file(key)
             self._backdrops[key] = QPixmap(str(path)) if path else QPixmap()
@@ -313,7 +327,8 @@ class DungeonWindow(QDialog):
         self.hero_gender = hero_gender
         self.setWindowTitle("Vocabulary Dungeon")
         self.setStyleSheet(STYLE)
-        self.resize(900, 800)
+        screen = QGuiApplication.primaryScreen().availableGeometry()      # roomier, but never bigger than the screen
+        self.resize(min(1100, screen.width() - 60), min(960, screen.height() - 80))
         self.setMinimumSize(760, 720)
         self.gm = GameManager(deck, save_path, hero_name=hero_name, examples_path=examples_path)
         self.dungeon_key = self._default_dungeon()
@@ -426,6 +441,7 @@ class DungeonWindow(QDialog):
     def _pick_dungeon(self, key: str) -> None:
         self.dungeon_key = key
         self._show_map()
+        self.update()
 
     def _show_map(self) -> None:
         self.clock.stop()
@@ -687,7 +703,7 @@ class DungeonWindow(QDialog):
 
     # -- inventory
     def _slot(self, item, caption: str, width: int = 96, height: int = 96,
-              badge: str = "") -> QFrame:
+              badge: str = "", empty_art: str = "") -> QFrame:
         """One square of the paper doll: the item's icon in a dark, gold-rimmed frame."""
         slot = QFrame()
         slot.setObjectName("slot")
@@ -697,21 +713,36 @@ class DungeonWindow(QDialog):
         if frame:
             slot.setStyleSheet(frame)
         box = QVBoxLayout(slot)
-        box.setContentsMargins(*(((16, 16, 16, 14) if frame else (4, 4, 4, 4))))
+        edge = _slot_border(width) + 2          # room for the text inside the frame
+        box.setContentsMargins(*((edge, edge, edge, edge) if frame else (4, 4, 4, 4)))
         box.setSpacing(0)
-        art = item_pixmap(item, max(32, min(width, height) - 30)) if item else None
+        text_room = 34 if (width >= 90 and not item and caption.strip()) else 0 if item else 16   # name takes up to two lines
+        art = item_pixmap(item, max(28, min(width - 2 * edge, height - 2 * edge - text_room))) if item else None
         icon = _label("" if item and (item.slot == COMPANION or art) else (item_icon(item) if item else ""),
                       "slot_icon")
         if art:
             icon.setPixmap(art)
+        elif not item and empty_art and ui_file(empty_art):      # faint silhouette of what goes here
+            room = max(28, min(width - 2 * edge, height - 2 * edge - text_room))
+            icon.setPixmap(QPixmap(str(ui_file(empty_art))).scaled(
+                room, room, Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation))
         elif item and item.slot == COMPANION:
             icon.setPixmap(sprite_pixmap(item.key, 2))
         icon.setAlignment(Qt.AlignmentFlag.AlignCenter)
         box.addWidget(icon, 1)
-        text = (f"{item.name}{badge}" if item else caption)
-        name = _label(text, "slot_name" if item else "slot_empty", wrap=True)
-        name.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        box.addWidget(name)
+        text = "" if item else caption.strip("· ")      # items show no name; the tooltip has it
+        if text:                                    # an empty belt cell has no text, not even a dot
+            name = _label(text, "slot_empty", wrap=True)
+            name.setAlignment(Qt.AlignmentFlag.AlignCenter)
+            box.addWidget(name)
+        if item and badge.strip():                  # the amount, overlapping the picture's bottom-right corner
+            count = QLabel(badge.strip().lstrip("×x"), slot)
+            count.setObjectName("slot_count")
+            count.setAlignment(Qt.AlignmentFlag.AlignCenter)
+            count.adjustSize()
+            count.setFixedSize(max(22, count.width() + 8), 20)
+            count.move(width - count.width() - 3, height - count.height() - 3)
+            count.raise_()
         if item:
             slot.setToolTip(f"{item.name}\n{item.description}")
         else:
@@ -730,21 +761,27 @@ class DungeonWindow(QDialog):
         hero_box = ArtPanel(ui_file("panel"))
         hero_box.setObjectName("board")
         hero_col = QVBoxLayout(hero_box)
-        hero_col.setContentsMargins(14, 12, 14, 12)
+        hero_col.setContentsMargins(44, 40, 44, 40)      # inside the panel's decorated border
         self.inv_hero = QLabel()
         self.inv_hero.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.inv_hero.setMinimumSize(260, 260)
-        hero_col.addWidget(self.inv_hero)
-        self.inv_stats = _label(name="caption", wrap=True)
+        hero_col.addStretch(1)
+        hero_col.addWidget(self.inv_hero)               # the hero in the middle of the frame
+        hero_col.addStretch(1)
+        self.inv_name = _label(name="hero_name", wrap=True)
+        self.inv_name.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        hero_col.addWidget(self.inv_name)
+        self.inv_stats = _label(name="hero_info", wrap=True)
         self.inv_stats.setTextFormat(Qt.TextFormat.RichText)
+        self.inv_stats.setAlignment(Qt.AlignmentFlag.AlignCenter)
         hero_col.addWidget(self.inv_stats)
-        hero_col.addStretch()
+        hero_col.addSpacing(60)                         # lift the text off the bottom border
         main.addWidget(hero_box, 2)
         # right: the Path of Exile style doll
         board = ArtPanel(ui_file("panel"))
         board.setObjectName("board")
         self.inv_grid = QGridLayout(board)
-        self.inv_grid.setContentsMargins(14, 12, 14, 12)
+        self.inv_grid.setContentsMargins(40, 40, 40, 56)   # inside the panel's decorated border
         self.inv_grid.setSpacing(8)
         main.addWidget(board, 3)
         layout.addLayout(main)
@@ -774,30 +811,40 @@ class DungeonWindow(QDialog):
 
         # Paper doll (Path of Exile style): weapon | companion over armor | charm, then the belt.
         _clear(self.inv_grid)
-        self.inv_hero.setPixmap(self._hero_pixmap(8))
-        self.inv_grid.addWidget(self._slot(worn.get(WEAPON), "Weapon", 100, 300), 0, 0, 3, 1)
-        self.inv_grid.addWidget(self._slot(worn.get(COMPANION), "Companion", 100, 100), 0, 1)
-        self.inv_grid.addWidget(self._slot(worn.get(ARMOR), "Armor", 100, 200), 1, 1, 2, 1)
-        self.inv_grid.addWidget(self._slot(worn.get(CHARM), "Charm", 100, 100), 0, 2)
+        self.inv_hero.setPixmap(self._hero_pixmap(9))
+        middle = Qt.AlignmentFlag.AlignCenter
+        self.inv_grid.setColumnStretch(0, 1)             # outer columns soak up the spare room,
+        self.inv_grid.setColumnStretch(4, 1)             # so the slots stay close together
+        self.inv_grid.setHorizontalSpacing(10)
+        self.inv_grid.setVerticalSpacing(0)
+        # weapon and armour are the same height and side by side; charm over companion beside them
+        self.inv_grid.addWidget(self._slot(worn.get(WEAPON), "Weapon", 120, 240, empty_art="empty_weapon"), 0, 1, 2, 1, middle)
+        self.inv_grid.addWidget(self._slot(worn.get(ARMOR), "Armor", 120, 240, empty_art="empty_armor"), 0, 2, 2, 1, middle)
+        self.inv_grid.addWidget(self._slot(worn.get(CHARM), "Charm", 120, 120, empty_art="empty_charm"), 0, 3,
+                              Qt.AlignmentFlag.AlignHCenter | Qt.AlignmentFlag.AlignBottom)
+        self.inv_grid.addWidget(self._slot(worn.get(COMPANION), "Companion", 120, 120, empty_art="empty_companion"), 1, 3,
+                              Qt.AlignmentFlag.AlignHCenter | Qt.AlignmentFlag.AlignTop)
+        self.inv_grid.setRowMinimumHeight(2, 14)         # a little air above the belt
         bag = [(ITEMS[k], n) for k, n in inv.counts.items()]
         total = max(8, -(-len(bag) // 4) * 4)
         belt_box = QWidget()
+        belt_box.setObjectName("belt")
         belt = QGridLayout(belt_box)
         belt.setContentsMargins(0, 0, 0, 0)
         belt.setSpacing(6)
         for n_slot in range(total):
             if n_slot < len(bag):
                 item, n = bag[n_slot]
-                belt.addWidget(self._slot(item, "", 72, 72, f" ×{n}"), n_slot // 4, n_slot % 4)
+                belt.addWidget(self._slot(item, "", 84, 84, f" ×{n}"), n_slot // 4, n_slot % 4)
             else:
-                belt.addWidget(self._slot(None, "·", 72, 72), n_slot // 4, n_slot % 4)
+                belt.addWidget(self._slot(None, "·", 84, 84), n_slot // 4, n_slot % 4)
         rows = total // 4
-        belt_box.setFixedSize(4 * 72 + 3 * 6, rows * 72 + (rows - 1) * 6)   # known size from the start
-        self.inv_grid.addWidget(belt_box, 3, 0, 1, 3, Qt.AlignmentFlag.AlignHCenter)
+        belt_box.setFixedSize(4 * 84 + 3 * 6, rows * 84 + (rows - 1) * 6)   # known size from the start
+        self.inv_grid.addWidget(belt_box, 3, 0, 1, 5, Qt.AlignmentFlag.AlignHCenter)
 
         t = inv.totals()
-        lines = [f"<b>{escape(p.name)}</b> — level {p.level}  ·  Attack {p.attack_power}  ·  "
-                 f"Max HP {p.max_hp}  ·  Armor {p.gear_reduction}"]
+        self.inv_name.setText(escape(p.name))
+        lines = [f"Level {p.level}  ·  Attack {p.attack_power}  ·  Max HP {p.max_hp}  ·  Armor {p.gear_reduction}"]
         extras = []
         if t.xp_pct:
             extras.append(f"+{t.xp_pct}% XP")

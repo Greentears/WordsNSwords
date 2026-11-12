@@ -1,152 +1,202 @@
 {
-  "bać się": [
-    {
-      "pl": "Nie bój się, ten pies jest bardzo łagodny.",
-      "en": "Don't be afraid, this dog is very gentle."
-    },
-    {
-      "pl": "Boję się latać samolotem.",
-      "en": "I'm afraid of flying."
-    }
-  ],
-  "bardzo mi smakuje": [
-    {
-      "pl": "Dziękuję za obiad, bardzo mi smakuje.",
-      "en": "Thank you for the dinner, I like it very much."
-    },
-    {
-      "pl": "Ta pizza jest pyszna, bardzo mi smakuje!",
-      "en": "This pizza is delicious, I really like it!"
-    }
-  ],
-  "biletomat": [
-    {
-      "pl": "Biletomat nie przyjmuje kart, tylko monety.",
-      "en": "The ticket machine doesn't accept cards, only coins."
-    },
-    {
-      "pl": "Gdzie jest najbliższy biletomat?",
-      "en": "Where is the nearest ticket machine?"
-    }
-  ],
-  "chodnik": [
-    {
-      "pl": "Na chodniku leży dużo liści.",
-      "en": "There are a lot of leaves lying on the sidewalk."
-    },
-    {
-      "pl": "Proszę nie parkować na chodniku.",
-      "en": "Please don't park on the sidewalk."
-    }
-  ],
-  "co mogę zrobić?": [
-    {
-      "pl": "Mam problem z kontem. Co mogę zrobić?",
-      "en": "I have a problem with my account. What can I do?"
-    },
-    {
-      "pl": "Wszystko się zepsuło. Co mogę zrobić, żeby to naprawić?",
-      "en": "Everything broke. What can I do to fix it?"
-    }
-  ],
-  "co mam pokroić?": [
-    {
-      "pl": "Mam pomidory i ogórki. Co mam pokroić najpierw?",
-      "en": "I have tomatoes and cucumbers. What should I cut first?"
-    },
-    {
-      "pl": "Dziś gotuję pierwszy raz. Co mam pokroić?",
-      "en": "Today I'm cooking for the first time. What should I cut?"
-    }
-  ],
-  "czajnik": [
-    {
-      "pl": "Postaw czajnik na kuchence, zrobimy herbatę.",
-      "en": "Put the kettle on the stove, we'll make tea."
-    },
-    {
-      "pl": "W moim czajniku jest dużo kamienia.",
-      "en": "There is a lot of limescale in my kettle."
-    }
-  ],
-  "denerwować się": [
-    {
-      "pl": "Zawsze denerwuję się przed egzaminem.",
-      "en": "I always get nervous before an exam."
-    },
-    {
-      "pl": "Nie ma sensu denerwować się takimi drobiazgami.",
-      "en": "There's no point getting annoyed over such trifles."
-    }
-  ],
-  "deska do krojenia": [
-    {
-      "pl": "Ta deska do krojenia jest wykonana z drewna.",
-      "en": "This cutting board is made of wood."
-    },
-    {
-      "pl": "Umyj deskę do krojenia po mięsie.",
-      "en": "Wash the cutting board after the meat."
-    }
-  ],
-  "dla profesjonalnych graczy": [
-    {
-      "pl": "To specjalna klawiatura dla profesjonalnych graczy.",
-      "en": "This is a special keyboard for professional players."
-    },
-    {
-      "pl": "Organizują darmowe szkolenia dla profesjonalnych graczy.",
-      "en": "They organise free training for professional players."
-    }
-  ],
-  "dla wielu ludzi": [
-    {
-      "pl": "Dla wielu ludzi praca jest bardzo stresująca.",
-      "en": "For many people work is very stressful."
-    },
-    {
-      "pl": "Ten park jest ważnym miejscem dla wielu ludzi.",
-      "en": "This park is an important place for many people."
-    }
-  ],
-  "dobre / ładne pachnie": [
-    {
-      "pl": "Z piekarni dobrze pachnie świeżym chlebem.",
-      "en": "It smells good of fresh bread from the bakery."
-    },
-    {
-      "pl": "Twoje perfumy ładnie pachną.",
-      "en": "Your perfume smells lovely."
-    }
-  ],
-  "dokończyć": [
-    {
-      "pl": "Czy możesz dokończyć to zdanie?",
-      "en": "Can you finish this sentence?"
-    },
-    {
-      "pl": "Dokończymy rozmowę jutro, teraz muszę biec.",
-      "en": "We'll finish the conversation tomorrow, now I have to run."
-    }
-  ],
-  "dolewka": [
-    {
-      "pl": "Poproszę dolewkę lemoniady.",
-      "en": "A refill of lemonade, please."
-    },
-    {
-      "pl": "W tym barze dolewka jest za darmo.",
-      "en": "In this bar the refill is free."
-    }
-  ],
-  "domowy / domowo": [
-    {
-      "pl": "Chętnie zjem domowy rosół.",
-      "en": "I'd gladly eat homemade broth."
-    },
-    {
-      "pl": "U nich w domu jest bardzo domowo.",
-      "en": "It feels very homely at their house."
-    }
-  ]
+ "bać się": [
+  {
+   "pl": "Nie bój się, ten pies jest bardzo łagodny.",
+   "en": "Don't be afraid, this dog is very gentle."
+  },
+  {
+   "pl": "Boję się latać samolotem.",
+   "en": "I'm afraid of flying."
+  }
+ ],
+ "bardzo mi smakuje": [
+  {
+   "pl": "Dziękuję za obiad, bardzo mi smakuje.",
+   "en": "Thank you for the dinner, I like it very much."
+  },
+  {
+   "pl": "Ta pizza jest pyszna, bardzo mi smakuje!",
+   "en": "This pizza is delicious, I really like it!"
+  }
+ ],
+ "biletomat": [
+  {
+   "pl": "Biletomat nie przyjmuje kart, tylko monety.",
+   "en": "The ticket machine doesn't accept cards, only coins."
+  },
+  {
+   "pl": "Gdzie jest najbliższy biletomat?",
+   "en": "Where is the nearest ticket machine?"
+  }
+ ],
+ "chodnik": [
+  {
+   "pl": "Na chodniku leży dużo liści.",
+   "en": "There are a lot of leaves lying on the sidewalk."
+  },
+  {
+   "pl": "Proszę nie parkować na chodniku.",
+   "en": "Please don't park on the sidewalk."
+  }
+ ],
+ "co mogę zrobić?": [
+  {
+   "pl": "Mam problem z kontem. Co mogę zrobić?",
+   "en": "I have a problem with my account. What can I do?"
+  },
+  {
+   "pl": "Wszystko się zepsuło. Co mogę zrobić, żeby to naprawić?",
+   "en": "Everything broke. What can I do to fix it?"
+  }
+ ],
+ "co mam pokroić?": [
+  {
+   "pl": "Mam pomidory i ogórki. Co mam pokroić najpierw?",
+   "en": "I have tomatoes and cucumbers. What should I cut first?"
+  },
+  {
+   "pl": "Dziś gotuję pierwszy raz. Co mam pokroić?",
+   "en": "Today I'm cooking for the first time. What should I cut?"
+  }
+ ],
+ "denerwować się": [
+  {
+   "pl": "Zawsze denerwuję się przed egzaminem.",
+   "en": "I always get nervous before an exam."
+  },
+  {
+   "pl": "Nie ma sensu denerwować się takimi drobiazgami.",
+   "en": "There's no point getting annoyed over such trifles."
+  }
+ ],
+ "deska do krojenia": [
+  {
+   "pl": "Ta deska do krojenia jest wykonana z drewna.",
+   "en": "This cutting board is made of wood."
+  },
+  {
+   "pl": "Umyj deskę do krojenia po mięsie.",
+   "en": "Wash the cutting board after the meat."
+  }
+ ],
+ "dla profesjonalnych graczy": [
+  {
+   "pl": "To specjalna klawiatura dla profesjonalnych graczy.",
+   "en": "This is a special keyboard for professional players."
+  },
+  {
+   "pl": "Organizują darmowe szkolenia dla profesjonalnych graczy.",
+   "en": "They organise free training for professional players."
+  }
+ ],
+ "dla wielu ludzi": [
+  {
+   "pl": "Dla wielu ludzi praca jest bardzo stresująca.",
+   "en": "For many people work is very stressful."
+  },
+  {
+   "pl": "Ten park jest ważnym miejscem dla wielu ludzi.",
+   "en": "This park is an important place for many people."
+  }
+ ],
+ "dobre / ładne pachnie": [
+  {
+   "pl": "Z piekarni dobrze pachnie świeżym chlebem.",
+   "en": "It smells good of fresh bread from the bakery."
+  },
+  {
+   "pl": "Twoje perfumy ładnie pachną.",
+   "en": "Your perfume smells lovely."
+  }
+ ],
+ "gotować": [
+  {
+   "pl": "Mój brat bardzo lubi gotować.",
+   "en": "My brother really likes to cook."
+  },
+  {
+   "pl": "Wieczorem będę gotować zupę z dyni.",
+   "en": "In the evening I'll cook a pumpkin soup."
+  }
+ ],
+ "robić": [
+  {
+   "pl": "Nie wiem, co robić w taki dzień.",
+   "en": "I don't know what to do on a day like this."
+  },
+  {
+   "pl": "Wieczorem lubię robić zdjęcia.",
+   "en": "In the evening I like taking photos."
+  }
+ ],
+ "kolejka": [
+  {
+   "pl": "Stoję w kolejce do lekarza.",
+   "en": "I'm standing in the queue to see the doctor."
+  },
+  {
+   "pl": "Kolejka na lotnisku posuwa się bardzo wolno.",
+   "en": "The queue at the airport is moving very slowly."
+  }
+ ],
+ "ostry / ostro": [
+  {
+   "pl": "Nie lubię ostrych potraw.",
+   "en": "I don't like spicy dishes."
+  },
+  {
+   "pl": "Ten nóż jest bardzo ostry.",
+   "en": "This knife is very sharp."
+  }
+ ],
+ "pachnieć": [
+  {
+   "pl": "Ta róża pięknie pachnie.",
+   "en": "This rose smells beautiful."
+  },
+  {
+   "pl": "Co tak pachnie w kuchni?",
+   "en": "What smells like that in the kitchen?"
+  }
+ ],
+ "pikantny / pikantnie": [
+  {
+   "pl": "Lubię pikantne jedzenie.",
+   "en": "I like spicy food."
+  },
+  {
+   "pl": "Ta kiełbasa jest zbyt pikantna dla dzieci.",
+   "en": "This sausage is too spicy for children."
+  }
+ ],
+ "podróż poślubna": [
+  {
+   "pl": "Dokąd pojedziecie w podróż poślubną?",
+   "en": "Where will you go on your honeymoon?"
+  },
+  {
+   "pl": "Ich podróż poślubna trwała dwa tygodnie.",
+   "en": "Their honeymoon lasted two weeks."
+  }
+ ],
+ "reklamówka": [
+  {
+   "pl": "Czy mogę dostać dużą reklamówkę?",
+   "en": "Can I have a big plastic bag?"
+  },
+  {
+   "pl": "Zakupy niosłem w reklamówce.",
+   "en": "I carried the shopping in a plastic bag."
+  }
+ ],
+ "słodki / słodko": [
+  {
+   "pl": "Ta herbata jest za słodka.",
+   "en": "This tea is too sweet."
+  },
+  {
+   "pl": "Dziecko słodko śpi w łóżeczku.",
+   "en": "The child sleeps sweetly in the cot."
+  }
+ ]
 }

@@ -33,6 +33,14 @@ await page.waitForSelector(".card");
 await page.tap(".tab:has-text('Dungeon')");
 await page.waitForSelector(`${scr} .hero-panel`);
 ok(await page.isHidden(`${scr} .hero-pick`), "the choice is remembered after a reload");
+// the backdrop follows the dungeon whose page you are looking at, locked ones included
+const bgOf = () => page.evaluate(() => document.querySelector(".dg:not([hidden])").style.background);
+await page.tap(`${scr} .chip:has-text("Cathedral")`);
+ok((await bgOf()).includes("backgrounds/cathedral.webp"), "a locked dungeon shows its own background");
+await page.tap(`${scr} .chip:has-text("Forest")`);
+ok((await bgOf()).includes("backgrounds/forest.webp"), "switching dungeon switches the background");
+await page.tap(`${scr} .chip:has-text("Cellar")`);
+ok((await bgOf()).includes("backgrounds/cellar.webp"), "back to the first one");
 await ev(() => window.__app.chooseHero("m"));
 ok((await ev(() => window.__app.hero)) === "f", "the choice can't be changed");
 await snap("20-map");

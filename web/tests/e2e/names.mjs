@@ -21,12 +21,24 @@ const sign = async (page, name) => { await page.fill(".welcome input", name); aw
 // ---- a name that is not in the repo
 let page = await fresh();
 await sign(page, "Zed Quux");
-await page.waitForSelector(".welcome .btn:has-text('starter deck')");
-ok((await page.textContent(".welcome")).includes("No word list found"), "unknown name explains that the repo has no list");
+await page.waitForSelector(".welcome .btn:has-text('French')");
+ok((await page.textContent(".welcome")).includes("Which language"), "an unknown name is asked which language to learn");
+ok(await page.isVisible(".welcome .btn:has-text('Polish')"), "Polish and French are offered");
 ok(!(await page.isVisible(".card")), "no deck is loaded behind it");
-await page.tap(".welcome .btn:has-text('Use the starter deck')");
+await page.tap(".welcome .btn:has-text('French')");
 await page.waitForSelector(".card");
-ok((await ev(page, () => window.__app.deck.words.length)) === 15, "starter deck has 15 cards");
+ok((await ev(page, () => window.__app.deckId)) === "fr-en", "the French starter deck is opened");
+ok((await ev(page, () => window.__app.deck.words.length)) === 20, "the French starter deck has 20 cards");
+ok((await ev(page, () => window.__app.deck.words[0].word)) === "s'apercevoir", "it is the French list Pacixii has");
+// a second newcomer picks Polish
+await ev(page, () => window.__app.pending);
+const polish = await fresh();
+await sign(polish, "Zed Polish");
+await polish.waitForSelector(".welcome .btn:has-text('Polish')");
+await polish.tap(".welcome .btn:has-text('Polish')");
+await polish.waitForSelector(".card");
+ok((await ev(polish, () => window.__app.deck.words.length)) === 20, "the Polish starter deck has 20 cards");
+ok((await ev(polish, () => window.__app.deck.words[0].word)) === "bać się", "it holds known words of the Polish list");
 ok((await ev(page, () => window.__app.game.player.name)) === "Zed Quux", "hero carries the name");
 await page.tap(".tab:has-text('Dungeon')");
 if (await page.$(".hero-pick")) await page.tap(".hero-pick >> nth=1");
